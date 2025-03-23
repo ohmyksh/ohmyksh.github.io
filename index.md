@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: default
 ---
 
@@ -101,18 +101,6 @@ end
 ![Branching](https://guides.github.com/activities/hello-world/branching.png)
 
 
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
 
 ```
 Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
@@ -120,4 +108,72 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 
 ```
 The final element.
-```
+``` -->
+
+<p> Hello! I am a senior student at Pohang University of Science and Technology, expected to graduate in Aug 2025.</p>
+
+<p>My research focuses on Natural Language Processing, aiming to enable large language models to perform human-like reasoning by leveraging external knowledge and feedback to solve complex problems, particularly through retrieval-augmented LMs. </p>
+<p> I really enjoy exchanging ideas and getting inspired by others. Feel free to reach out through any channel if you’re interested in my work or just want to connect!</p>
+
+
+---
+
+### Educations
+<p style="margin:0">
+  <div style="display:flex; justify-content:space-between">
+    <a href="https://www.postech.ac.kr/eng/index.do">Pohang University of Science and Technology</a>
+    <span> Feb 2021-Aug 2025</span>
+  </div>
+    <li>B.S. in Computer Science and Engineering</li>
+    <li>GPA: 3.91/4.3, Major GPA: 3.99/4.3 <b>(Summa Cum Laude)</b></li>
+</p>
+
+<p style="margin:0">
+  <div style="display:flex; justify-content:space-between">
+    Hansung Science High School for the Gifted
+    <span style>Mar 2018 - Feb 2021</span>
+  </div>
+</p>
+
+---
+
+
+### Research Experience
+
+<p style="margin:0">
+  <div style="display:flex; justify-content:space-between">
+  <a href="https://vision.snu.ac.kr/">
+    Vision and Learning Lab, Seoul National University</a>
+    <span style>Jan 2025–present</span>
+  </div>
+  Advised by Prof. Gunhee Kim
+</p>
+
+<p style="margin:0">
+  <div style="display:flex; justify-content:space-between">
+  <a href="https://ldilab.github.io/">
+    Language and Data Intelligence Lab, Seoul National University</a>
+    <span style>Sep 2024–Nov 2024</span>
+  </div>
+  Advised by Prof. Seungwon Hwang
+</p>
+
+<p style="margin:0">
+  <div style="display:flex; justify-content:space-between">
+  <a href="https://dslab.postech.ac.kr/">
+    Data Systems Lab, POSTECH</a>
+    <span style>Feb 2024–Aug 2024</span>
+  </div>
+  Advised by Prof. Wookshin Han
+</p>
+
+---
+
+### Work Experience
+<p>
+  <div style="display:flex; justify-content:space-between">
+    Samsung Electronics Inc.
+    <span style>Jul 2023–Aug 2023</span>
+  </div>
+  Internship at System RnD Team, MX Department
+</p>

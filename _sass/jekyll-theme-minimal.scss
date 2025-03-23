@@ -4,8 +4,8 @@
 body {
   background-color: #fff;
   padding:50px;
-  font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#727272;
+  font: 14px/1.5 "Arial", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#5e5e5e;
   font-weight:400;
 }
 
@@ -34,13 +34,18 @@ h3, h4, h5, h6 {
   color:#494949;
 }
 
+a.title {
+  color:#000000;
+  text-decoration:none;
+}
+
 a {
-  color:#267CB9;
+  color:hsl(217, 82%, 64%);
   text-decoration:none;
 }
 
 a:hover, a:focus {
-  color:#069;
+  color:hsl(217, 82%, 64%);
   font-weight: bold;
 }
 
@@ -101,8 +106,10 @@ th {
 }
 
 img {
-  max-width:100%;
+  max-width:60%;
 }
+
+
 
 kbd {
   background-color: #fafbfc;
@@ -119,10 +126,16 @@ kbd {
 }
 
 header {
-  width:270px;
-  float:left;
-  position:fixed;
+  width: 250px;
+  float:none;
+  position:static;
   -webkit-font-smoothing:subpixel-antialiased;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 ul.downloads {
@@ -137,7 +150,7 @@ ul.downloads {
 
 .downloads li {
   width:89px;
-  float:left;
+  float:none;
   border-right:1px solid #e0e0e0;
   height:40px;
 }
@@ -186,8 +199,8 @@ strong {
 }
 
 section {
-  width:500px;
-  float:right;
+  width:auto;
+  float:static;
   padding-bottom:50px;
 }
 
@@ -203,9 +216,9 @@ hr {
 }
 
 footer {
-  width:270px;
-  float:left;
-  position:fixed;
+  width:auto;
+  float:none;
+  position:static;
   bottom:50px;
   -webkit-font-smoothing:subpixel-antialiased;
 }
