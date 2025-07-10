@@ -21,7 +21,7 @@
     <span> Feb 2021-Aug 2025</span>
   </div>
     <li>B.S. in Computer Science and Engineering</li>
-    <li>Summa Cum Laude</b></li>
+    <li>Summa Cum Laude</li>
 </p>
 
 <p style="margin:0">
