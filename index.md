@@ -21,7 +21,7 @@
     <span> Feb 2021-Aug 2025</span>
   </div>
     <li>B.S. in Computer Science and Engineering</li>
-    <li>GPA: 3.91/4.3, Major GPA: 3.98/4.3 <b>(Summa Cum Laude)</b></li>
+    <li>Summa Cum Laude</b></li>
 </p>
 
 <p style="margin:0">
