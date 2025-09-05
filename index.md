@@ -1,5 +1,5 @@
 <div style="height:15px;"></div>
-<p> Hello! I am an incoming Ph.D. student at Seoul National University, advised by <a href="https://vision.snu.ac.kr/gunhee/">Prof. Gunhee Kim</a>. Prior to that, I received my B.S. in CSE from POSTECH in 2025.</p>
+<p> Hello! I am a Ph.D. student at Seoul National University, advised by <a href="https://vision.snu.ac.kr/gunhee/">Prof. Gunhee Kim</a>. Prior to that, I received my B.S. in CSE from POSTECH in 2025.</p>
 
 <p>My research focuses on Natural Language Processing, aiming to enable large language models to perform human-like reasoning by leveraging external knowledge and feedback to solve complex problems, particularly through retrieval-augmented methods and reasoning models. </p>
 <p> I really enjoy exchanging ideas and getting inspired by others. Feel free to reach out through any channel if you’re interested in my work or just want to connect!</p>
@@ -12,7 +12,7 @@
     <a href="https://www.snu.ac.kr/">Seoul National University</a>
     <span> Sep 2025-Present</span>
   </div>
-    <li>M.S/Ph.D in Artificial Intelligence</li>
+    <li>M.S/Ph.D in AI</li>
 </p>
 
 <p style="margin:0">
@@ -36,6 +36,13 @@
 ### Publication
 <p style="margin:0">
   <div style="display:flex; justify-content:space-between">
+  <a href="https://arxiv.org/pdf/2508.19113">Hybrid Deep Searcher: Integrating Parallel and Sequential Search Reasoning</a>
+  </div>Dayoon Ko, Jihyuk Kim, Haeju Park, <b>Sohyeon Kim</b>, Dahyun Lee, Yongrae Jo, Gunhee Kim, Moontae Lee, Kyungjae Lee<br>
+  Preprint 
+</p>
+
+<p style="margin:0">
+  <div style="display:flex; justify-content:space-between">
   <a href="https://arxiv.org/abs/2506.01877">When Should Dense Retrievers Be Updated in Evolving Corpora? Detecting Out-of-Distribution Corpora Using GradNormIR</a>
   </div>
   Dayoon Ko, Jinyoung Kim, <b>Sohyeon Kim</b>, Jinhyuk Kim, Jaehoon Lee, Seonghak Song, Minyoung Lee, Gunhee Kim<br>
@@ -50,7 +57,7 @@
   <div style="display:flex; justify-content:space-between">
   <a href="https://vision.snu.ac.kr/">
     Vision and Learning Lab, SNU</a>
-    <span style>Jan 2025–present</span>
+    <span style>Jan 2025–Aug 2025</span>
   </div>
   Advised by Prof. Gunhee Kim
 </p>
