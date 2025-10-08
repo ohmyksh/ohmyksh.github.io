@@ -15,25 +15,27 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1><a.title href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a.title></h1>
-
+        <h1><a class="title" href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+        {% if page.url == "/" %}
           <img src="/assets/img/profile.png" style="width:80%; max-width:170px" alt="Logo" />
-        
+        {% endif %}
         </p>
-        <p>CSE @ POSTECH<br>sooohyun at postech at kr<br>
-          <a href="mailto:sooohyun@postech.ac.kr">[Mail]</a>
-          <a href="https:/github.com/ohmyksh">[Github]</a>
-          <a href="https://www.linkedin.com/in/kimsohyeon/">[LinkedIn]</a>
-        </p>
+        <p>Ph.D @ SNU<br>sohyeon.kim@vision.snu.ac.kr</p>
+        <div style="margin-top: 3px; display: flex; gap: 10px; font-weight: 500; font-size: 13px;">
+          <a href="mailto:sohyeon.kim@vision.snu.ac.kr" style="text-decoration: none; color: #5e5e5e;;">Mail</a>
+          <a href="https:/github.com/ohmyksh" style="text-decoration: none; color: #5e5e5e;">Github</a>
+          <a href="https://www.linkedin.com/in/kimsohyeon/" style="text-decoration: none; color: #5e5e5e;">LinkedIn</a>
+          <a href="{{ "/blog/" | relative_url }}" style="text-decoration: none; color: #5e5e5e;">Essays</a>
+        </div>
       </header>
-      <div style="height:15px;"></div>
+      <div style="height:30px;"></div>
       <section>
 
       {{ content }}
 
       </section>
       <footer>
-        <small>Last updated: June 2025</small>
+        <small>Last updated: Oct 2025</small>
       </p></footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>

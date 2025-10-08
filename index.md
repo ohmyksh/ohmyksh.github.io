@@ -1,8 +1,9 @@
 <div style="height:15px;"></div>
-<p> Hello! I am a Ph.D. student at Seoul National University, advised by <a href="https://vision.snu.ac.kr/gunhee/">Prof. Gunhee Kim</a>. Prior to that, I received my B.S. in CSE from POSTECH in 2025.</p>
+<p> Hello! I am a first-year Ph.D. student at Seoul National University, advised by <a href="https://vision.snu.ac.kr/gunhee/">Prof. Gunhee Kim</a>. Before that, I received my B.S. in CSE from POSTECH in 2025.</p>
 
-<p>My research focuses on Natural Language Processing, aiming to enable large language models to perform human-like reasoning by leveraging external knowledge and feedback to solve complex problems, particularly through retrieval-augmented methods and reasoning models. </p>
-<p> I really enjoy exchanging ideas and getting inspired by others. Feel free to reach out through any channel if you’re interested in my work or just want to connect!</p>
+<p>My research focuses on Natural Language Processing, aiming to enable large language models to perform human-like reasoning while improving their reliability and interpretability. I’m also interested in developing efficient and scalable AI systems that make such models practical for real-world deployment.</p>
+
+<p>Beyond research, I’m also deeply interested in startups and emerging tech trends, especially in how cutting-edge ideas can make a meaningful impact in the real world. I love deep, thought-provoking conversations and getting inspired by others. Feel free to reach out through any channel if you’re interested in my work or just want to connect!</p>
 <div style="height:15px;"></div>
 ---
 <div style="height:15px;"></div>
@@ -34,13 +35,6 @@
 ---
 <div style="height:15px;"></div>
 ### Publication
-<p style="margin:0">
-  <div style="display:flex; justify-content:space-between">
-  <a href="https://arxiv.org/pdf/2508.19113">Hybrid Deep Searcher: Integrating Parallel and Sequential Search Reasoning</a>
-  </div>Dayoon Ko, Jihyuk Kim, Haeju Park, <b>Sohyeon Kim</b>, Dahyun Lee, Yongrae Jo, Gunhee Kim, Moontae Lee, Kyungjae Lee<br>
-  Preprint 
-</p>
-
 <p style="margin:0">
   <div style="display:flex; justify-content:space-between">
   <a href="https://arxiv.org/abs/2506.01877">When Should Dense Retrievers Be Updated in Evolving Corpora? Detecting Out-of-Distribution Corpora Using GradNormIR</a>
