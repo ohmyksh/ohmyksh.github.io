@@ -3,9 +3,7 @@
 
 <p>My research focuses on interleaving <b>reasoning</b> with external <b>searching</b>, aiming to enable large language models to perform human-like reasoning while improving their reliability and interpretability. I’m also interested in building efficient and scalable AI systems that make such models practical for real-world deployment.</p>
 
-<p>
-  Beyond research, I’m also deeply interested in startups and emerging tech trends, especially in how cutting-edge ideas can make a meaningful impact in the real world. I love deep, thought-provoking conversations and getting inspired by others. If you’d like to have a quick chat, please book a 30-minute conversation via my <a class="underline-link" href="https://calendar.app.google/ouKHq8Vdxz6LgcV28" target="_blank" rel="noopener noreferrer">calendar</a>.
-</p>
+<p> Beyond research, I’m also deeply interested in startups and emerging tech trends, especially in how cutting-edge ideas can make a meaningful impact in the real world. I love deep, thought-provoking conversations and getting inspired by others. If you’d like to have a quick chat, please book a 30-minute conversation via my <a class="underline-link" href="https://calendar.app.google/ouKHq8Vdxz6LgcV28" target="_blank" rel="noopener noreferrer">calendar</a>.</p>
 <div style="height:15px;"></div>
 ---
 <div style="height:15px;"></div>
