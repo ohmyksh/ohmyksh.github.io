@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Questions That Matter"
+title: "Questions for Someone New"
 date: 2025-10-18
 ---
 
