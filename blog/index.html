@@ -3,25 +3,27 @@ layout: default
 title: Blog
 ---
 
-<h2>Essays</h2>
+    <h2>Thoughts</h2>
 <ul style="padding-left: 14px;">
   {% for post in site.posts %}
-    <li style="margin: 8px 0;">
+    <li style="margin: 12px 0; line-height: 1.55;">
       <a href="{{ post.url | relative_url }}" 
-         style="text-decoration:none; font-weight:normal;"
+         style="text-decoration:none; font-weight:normal; font-size:15px; color:#000;"
          onmouseover="this.style.fontWeight='bold';" 
          onmouseout="this.style.fontWeight='normal';">
          {{ post.title }}
       </a>
-      <small style="color:#888; font-size:13px;"> - {{ post.date | date: "%Y-%m-%d" }}</small>
+      <small style="color:#888; font-size:13px; margin-left:6px;"> {{ post.date | date: "%b %d, %Y" }}</small>
     </li>
   {% endfor %}
 </ul>
 <div style="margin-top: 24px;">
   <a href="{{ '/' | relative_url }}"
-     style="text-decoration:none; color:#555; border:1px solid #ccc; padding:4px 8px; border-radius:4px; font-size:12px;"
+     style="text-decoration:none; color:#666; border:none; padding:2px 4px; border-radius:0; font-size:18px; font-weight:700; line-height:1;"
+     aria-label="Back to Home"
+     title="Back to Home"
      onmouseover="this.style.backgroundColor='#f2f2f2';"
      onmouseout="this.style.backgroundColor='transparent';">
-     Back to Home
+     &larr;
   </a>
 </div>
