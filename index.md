@@ -1,8 +1,8 @@
 <div style="height:15px;"></div>
-<p> I am a first-year Ph.D. student at Seoul National University, advised by <a href="https://vision.snu.ac.kr/gunhee/">Prof. Gunhee Kim</a>. Before that, I received my B.S. in CSE from POSTECH in 2025.</p>
+<p style="color:#000;"> I am a first-year Ph.D. student at Seoul National University, advised by <a href="https://vision.snu.ac.kr/gunhee/" style="color:#000;">Prof. Gunhee Kim</a>. Before that, I received my B.S. in CSE from POSTECH in 2025.</p>
 
-<p>
-  I am deeply interested in the limits of the thinking machine and what can and cannot be computed. Can the human mind be simulated by a machine? Currently, I study the interaction between reasoning and knowledge retrieval, with a focus on Retrieval-Augmented Generation through Multi-turn Search-integrated Reasoning and LLM Agents. I am particularly interested in the behavioral patterns and limitations of RL-based LLM agents.<br><br>
+<p style="color:#000;">
+  Throughout my life, I’ve been thinking about how to formulate the right questions at the right time. This naturally connects to my research: understanding what is known and unknown to a model, and how it decides what to _search_ next to achieve its goals. More broadly, I’m interested in whether the human mind can be simulated as a thinking machine. Currently, I study knowledge retrieval and memory systems, with a focus on retrieval-augmented generation and agent memory.<br><br>
   In parallel, I enjoy abstracting thoughts and mapping their relationships into my own language. For me, conversation serves as a medium to interpret others' mental models, allowing me to discover new axes for my thinking.
 </p>
 
