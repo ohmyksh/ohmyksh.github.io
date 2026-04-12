@@ -1,8 +1,11 @@
+---
+layout: default
+---
 <div style="height:15px;"></div>
-<p style="color:#000;"> I am a first-year Ph.D. student at Seoul National University, advised by <a href="https://vision.snu.ac.kr/gunhee/" style="color:#000;">Prof. Gunhee Kim</a>. Before that, I received my B.S. in CSE from POSTECH in 2025.</p>
+<p style="color:#000;"> I am a first-year M.S./Ph.D. student at Seoul National University, advised by <a href="https://vision.snu.ac.kr/gunhee/" style="color:#481163;">Gunhee Kim</a>. Previously, I received my B.S. in Computer Science and Engineering from POSTECH in 2025.</p>
 
 <p style="color:#000;">
-  Throughout my life, I’ve been thinking about how to formulate the right questions at the right time. This naturally connects to my research: understanding what is known and unknown to a model, and how it decides what to _search_ next to achieve its goals. More broadly, I’m interested in whether the human mind can be simulated as a thinking machine. Currently, I study knowledge retrieval and memory systems, with a focus on retrieval-augmented generation and agent memory.<br><br>
+  Throughout my life, I’ve been thinking about what I want, what I have, and how to reach it. What makes a good question? This naturally connects to my research: understanding what is known and unknown to a model, and how it decides what to *search* next to achieve its goals. More specifically, I’m interested in non-parametric memory and leveraging it, i.e., retrieval-augmented generation, information retrieval, and agent memory.<br><br>
   In parallel, I enjoy abstracting thoughts and mapping their relationships into my own language. For me, conversation serves as a medium to interpret others' mental models, allowing me to discover new axes for my thinking.
 </p>
 
@@ -13,7 +16,7 @@
 <p style="margin:0">
   <div style="display:flex; justify-content:space-between">
     <a href="https://www.snu.ac.kr/">Seoul National University</a>
-    <span> Sep 2025-Present</span>
+    <span> Sep 2025–Present</span>
   </div>
     <li style="margin-left: 12px;">M.S/Ph.D in AI</li>
 </p>
@@ -21,7 +24,7 @@
 <p style="margin:0">
   <div style="display:flex; justify-content:space-between">
     <a href="https://www.postech.ac.kr/eng/index.do">Pohang University of Science and Technology</a>
-    <span> Feb 2021-Aug 2025</span>
+    <span> Feb 2021–Aug 2025</span>
   </div>
     <li style="margin-left: 12px;">B.S. in Computer Science and Engineering</li>
     <li style="margin-left: 12px;">Summa Cum Laude</li>
@@ -30,7 +33,7 @@
 <p style="margin:0">
   <div style="display:flex; justify-content:space-between">
     Hansung Science High School for the Gifted
-    <span style>Mar 2018 - Feb 2021</span>
+    <span style>Mar 2018–Feb 2021</span>
   </div>
 </p>
 <div style="height:15px;"></div>
@@ -56,7 +59,7 @@
   <a href="https://arxiv.org/abs/2506.01877">When Should Dense Retrievers Be Updated in Evolving Corpora? Detecting Out-of-Distribution Corpora Using GradNormIR</a>
   </div>
   Dayoon Ko, Jinyoung Kim, <b>Sohyeon Kim</b>, Jinhyuk Kim, Jaehoon Lee, Seonghak Song, Minyoung Lee, Gunhee Kim<br>
-  ACL 2025 Findings <a href="https://arxiv.org/abs/2506.01877">[pdf]</a> <a href="https://github.com/dayoon-ko/gradnormir">[code]</a>
+  ACL 2025 Findings 
 </p>
 <div style="height:15px;"></div>
 ---

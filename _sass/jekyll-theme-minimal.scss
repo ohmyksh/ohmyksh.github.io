@@ -4,9 +4,13 @@
 body {
   background-color: #fff;
   padding:50px;
-  font: 14px/1.5 "Arial", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#5e5e5e;
+  font: 15px/1.5 "Book Antiqua", "Palatino Linotype", Palatino, serif;
+  color:#000;
   font-weight:400;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -27,11 +31,11 @@ h1 {
 }
 
 h2 {
-  color:#393939;
+  color:#000;
 }
 
 h3, h4, h5, h6 {
-  color:#494949;
+  color:#000;
 }
 
 a.title {
@@ -69,7 +73,8 @@ blockquote {
   border-left:1px solid #e5e5e5;
   margin:0;
   padding:0 0 0 20px;
-  font-style:italic;
+  font-style:normal;
+  color:#999;
 }
 
 code, pre {

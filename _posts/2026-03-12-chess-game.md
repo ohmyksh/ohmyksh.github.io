@@ -10,7 +10,7 @@ On what kind of board are we playing our game? Which king are we trying to lead 
 
 We may ask for advice from those who have played this game many times before. We may step into the match ourselves and learn by playing. Or perhaps we may even decide to design a new kind of game, rather than follow the standard rules.
 
-Sometimes, through good luck—or bad—forces beyond our control may shake the board itself and change the entire position of the game.
+Sometimes, through good luck, or bad, forces beyond our control may shake the board itself and change the entire position of the game.
 
 There are a million races being run. You just have to get into one of them and win.
 — Richard Hamming, You and Your Research
