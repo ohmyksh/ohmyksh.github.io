@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Conference @ COEX</title>
+  <link rel="stylesheet" href="fonts.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --font-serif: var(--font-main);
+      --font-sans: var(--font-main);
+      --ink: #1d1d1f; --ink-soft: #3a3a3c; --muted: #6e6e73;
+      --line: #e5e5e7; --accent: #3a3a3c; --pad: clamp(20px, 5vw, 60px);
+    }
+    body {
+      background: #fff;
+      font-family: var(--font-serif);
+      color: var(--ink);
+      font-size: 15.5px;
+      line-height: 1.5;
+      -webkit-font-smoothing: auto;
+    }
+    .page { max-width: 1100px; margin: 0 auto; padding: 36px var(--pad) 80px; }
+    .back { display: inline-flex; align-items: center; font-size: 16px; font-weight: 400; color: #1d1d1f; background: none; border: none; padding: 0; text-decoration: none; margin-top: 12px; margin-bottom: 32px; }
+    .back:hover { color: #3273dc; background: none; opacity: 1; }
+    h2 { font-size: clamp(20px, 3vw, 26px); font-weight: 400; color: var(--ink); margin-bottom: 20px; }
+    h3 { font-size: 19px; font-weight: 400; color: var(--ink); margin: 28px 0 10px; }
+    h3:first-of-type { margin-top: 0; }
+    p { color: var(--ink-soft); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+    ul { padding-left: 20px; color: var(--ink-soft); margin-bottom: 12px; }
+    li { margin-bottom: 5px; line-height: 1.6; }
+    strong { color: var(--ink); font-weight: 700; }
+    a { color: #3273dc; text-decoration: underline; }
+    a:hover { opacity: 0.7; }
+    .lb {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 0.63em; font-weight: 700;
+      min-width: 1.7em; height: 1.7em; padding: 0 4px;
+      border-radius: 99px; vertical-align: middle;
+      white-space: nowrap; color: #fff; font-family: var(--font-sans); letter-spacing: 0;
+    }
+    .l1  { background: #004A85; } .l2  { background: #00A23F; }
+    .l3  { background: #ED6C00; } .l4  { background: #009BCE; }
+    .l5  { background: #794698; } .l6  { background: #7C4932; }
+    .l7  { background: #6E7E31; } .l9  { background: #A49D87; }
+    .map-embed {
+      width: 100%; height: 300px;
+      border-radius: 10px; overflow: hidden; margin: 16px 0;
+    }
+    .map-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .header-row {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 8px; margin-bottom: 12px;
+    }
+    .header-row h3 { margin: 0; }
+
+    /* F&B section */
+    .search-box {
+      width: 100%;
+      padding: 10px 14px;
+      font-family: var(--font-serif);
+      font-size: 15.5px;
+      border: 1.5px solid var(--line);
+      border-radius: 10px;
+      outline: none;
+      margin-bottom: 20px;
+      color: var(--ink);
+    }
+    .search-box:focus { border-color: #c9aee0; }
+    .cats { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .cat-btn {
+      font-family: var(--font-serif);
+      font-size: 15.5px;
+      font-weight: 400;
+      padding: 5px 14px;
+      border-radius: 8px;
+      border: 1.5px solid var(--line);
+      background: #fff;
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .cat-btn.active { background: #e8f0fd; border-color: #3273dc; color: #3273dc; font-weight: 400; }
+    .floor-btn {
+      font-family: var(--font-serif);
+      font-size: 15.5px;
+      font-weight: 400;
+      padding: 5px 14px;
+      border-radius: 8px;
+      border: 1.5px solid #c5d8f8;
+      background: #e8f0fd;
+      color: #3273dc;
+      cursor: pointer;
+    }
+    .floor-btn.active { border-color: #3273dc; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-name-en { font-weight: 400; font-size: 17px; color: var(--ink); margin-bottom: 2px; }
+    .card-name-ko { font-family: var(--font-sans); font-size: 15.5px; color: var(--muted); margin-bottom: 8px; }
+    .card-floor {
+      display: inline-block;
+      font-size: 13px; font-weight: 400;
+      background: #f0f0f2; color: #5a5a5f;
+      padding: 2px 8px; border-radius: 99px; margin-bottom: 10px;
+    }
+    .card-floor-row { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 10px; }
+    .card-link { font-size: 14px; color: #3273dc; text-decoration: underline; }
+    .card-link:hover { opacity: 0.7; }
+    .empty { color: var(--muted); padding: 40px 0; text-align: center; font-size: 15.5px; }
+    .quick-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0 28px; }
+    .quick-tile {
+      display: flex; align-items: center; justify-content: center;
+      background: #3a3a3c; border: 1.5px solid #3a3a3c; border-radius: 12px;
+      padding: 14px 18px; text-decoration: none;
+      font-family: var(--font-serif); font-size: 16px; font-weight: 700;
+      color: #fff; text-align: center;
+    }
+    .quick-tile:hover { background: #555; border-color: #555; opacity: 1; }
+    @media (max-width: 600px) {
+      .page { padding-top: 20px; }
+      .back { margin-bottom: 20px; }
+      .cat-btn { font-size: 13px; padding: 4px 10px; }
+      .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .card { padding: 12px 12px; min-width: 0; }
+      .card-name-en { font-size: 15px; }
+      .card-name-ko { font-size: 13.5px; }
+      body { font-size: 14.5px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a href="index.html" class="back">← Back to Guide</a>
+
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+      <h2 style="margin-bottom:0;">The Conference @ COEX</h2>
+      <div style="display:flex; gap:12px;">
+        <a href="https://www.coex.co.kr/" target="_blank" rel="noopener" style="color:#3273dc; text-decoration:underline; font-size:16px;">Official Site</a>
+        <a href="https://maps.app.goo.gl/pZpdu8FM5hJ1gw6Y6" target="_blank" rel="noopener" style="color:#3273dc; text-decoration:underline; font-size:16px;">Open in Maps</a>
+      </div>
+    </div>
+    <p><span class="lb l2">2</span> Samseong (Exits 5, 6), <span class="lb l9">9</span> Bongeunsa (Exit 7), <span class="lb l7">7</span> Cheongdam (Exit 2)</p>
+    <p style="margin-top:8px;">For station maps and directions, see the <a href="https://www.coex.co.kr/guide/directions/" target="_blank" rel="noopener">official COEX directions page</a>.</p>
+
+    <div class="map-embed">
+      <iframe
+        src="https://maps.google.com/maps?q=COEX%20Convention%20%26%20Exhibition%20Center%2C%20Seoul&t=m&z=16&output=embed"
+        title="COEX on Google Maps"
+        loading="lazy"
+        allowfullscreen></iframe>
+    </div>
+
+    <!-- F&B Section -->
+    <div style="margin-top:60px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; margin-bottom:12px;">
+        <h3 style="margin:0;">Restaurants &amp; Cafes at Starfield COEX</h3>
+        <span style="font-size:14px; color:#b0b0b5;">Places without a Maps link are not yet listed on Google Maps</span>
+      </div>
+      <ul style="margin-bottom:20px; font-size:16px;">
+        <li><a href="https://m.starfield.co.kr/coexmall/tenant/floorInfo" target="_blank" rel="noopener">Floor Info</a></li>
+        <li><a href="https://m.starfield.co.kr/coexmall/cafeDining/main" target="_blank" rel="noopener">F&amp;B Info</a></li>
+      </ul>
+
+      <input class="search-box" type="text" id="search" placeholder="Search by name…" oninput="render()" />
+      <div class="cats" id="cats"></div>
+      <div class="cats" id="floors"></div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" style="display:none">No results found.</p>
+    </div>
+  </div>
+
+  <script>
+    const CAT_LABELS = {
+      '카페/디저트': 'Cafe & Dessert',
+      '한식': 'Korean',
+      '양식': 'Western',
+      '중식': 'Chinese',
+      '아시안': 'Asian',
+      '일식': 'Japanese',
+      '퓨전': 'Fusion',
+      '분식': 'Korean Snacks',
+      '패스트푸드': 'Fast Food',
+      '고메스트리트': 'Gourmet Street',
+    };
+
+    let data = {};
+    let activeCat = 'all';
+    let activeFloor = 'all';
+
+    fetch('source.json')
+      .then(r => r.json())
+      .then(d => { data = d.restaurants; buildCats(); buildFloors(); render(); });
+
+    function buildCats() {
+      const el = document.getElementById('cats');
+      const all = document.createElement('button');
+      all.className = 'cat-btn active';
+      all.textContent = 'All Categories';
+      all.onclick = () => { activeCat = 'all'; updateActive(el, all); render(); };
+      el.appendChild(all);
+      Object.keys(data).forEach(k => {
+        const b = document.createElement('button');
+        b.className = 'cat-btn';
+        b.textContent = CAT_LABELS[k] || k;
+        b.onclick = () => { activeCat = k; updateActive(el, b); render(); };
+        el.appendChild(b);
+      });
+    }
+
+    function buildFloors() {
+      const el = document.getElementById('floors');
+      const FLOORS = ['all', 'B2', 'B1', '1F', '2F'];
+      FLOORS.forEach(f => {
+        const b = document.createElement('button');
+        b.className = 'cat-btn' + (f === 'all' ? ' active' : '');
+        b.textContent = f === 'all' ? 'All Floors' : f;
+        b.onclick = () => { activeFloor = f; updateActive(el, b); render(); };
+        el.appendChild(b);
+      });
+    }
+
+    function updateActive(container, btn) {
+      container.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function render() {
+      const q = document.getElementById('search').value.toLowerCase();
+      const grid = document.getElementById('grid');
+      const empty = document.getElementById('empty');
+      grid.innerHTML = '';
+
+      const isGourmet = activeCat === '고메스트리트';
+      const cats = (activeCat === 'all' || isGourmet) ? Object.keys(data) : [activeCat];
+      let count = 0;
+
+      cats.forEach(cat => {
+        (data[cat] || []).forEach(r => {
+          const en = (r.name_en || '').toLowerCase();
+          const ko = (r.name_ko || '').toLowerCase();
+          if (q && !en.includes(q) && !ko.includes(q)) return;
+          if (activeFloor !== 'all' && r.floor !== activeFloor) return;
+          if (isGourmet && !r.gourmet_street) return;
+          count++;
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `
+            <div class="card-name-en">${r.name_en || r.name_ko}</div>
+            <div class="card-name-ko">${r.name_ko}</div>
+            <div class="card-floor-row">
+              <span class="card-floor">${r.floor}</span>
+              ${r.google_maps_url ? `<a class="card-link" href="${r.google_maps_url}" target="_blank" rel="noopener">Google Maps</a>` : ''}
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      });
+
+      empty.style.display = count === 0 ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>

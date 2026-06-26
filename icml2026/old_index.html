@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>ICML 2026 · Seoul Guide</title>
+  <meta name="description" content="A friendly local guide for ICML 2026 attendees at COEX, Seoul: restaurants, cafes, places to visit, and travel tips." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="top">
+    <input type="radio" name="active-section" id="sec-conf" class="section-radio" checked />
+    <input type="radio" name="active-section" id="sec-food" class="section-radio" />
+    <input type="radio" name="active-section" id="sec-cafe" class="section-radio" />
+    <input type="radio" name="active-section" id="sec-explore" class="section-radio" />
+    <input type="radio" name="active-section" id="sec-tips" class="section-radio" />
+    <!-- HERO -->
+    <section class="hero">
+      <img class="hero-logo" src="img/icml-logo.png" alt="ICML 2026" />
+      <h1>A local guide to <span class="accent-text">Seoul</span><br/>for the ICML community.</h1>
+      <p class="lede">
+        Welcome to Seoul. This is an unofficial, handpicked guide to the COEX venue and its neighborhood.
+      </p>
+    </section>
+
+
+    <nav class="section-tabs" aria-label="Sections">
+      <div class="section-tabs-inner">
+        <label for="sec-conf">Conference</label>
+        <label for="sec-food">Food</label>
+        <label for="sec-cafe">Cafés</label>
+        <label for="sec-explore">Explore</label>
+        <label for="sec-tips">Tips</label>
+      </div>
+    </nav>
+
+    <!-- CONFERENCE -->
+    <section id="conference" class="section">
+      <header class="section-head">
+        <h2>The Conference <img class="venue-mark" src="img/Coex_CI.svg.png" alt="COEX" /></h2>
+        <p class="section-sub">Everything you need to know about getting to COEX and finding your way around.</p>
+      </header>
+
+      <div class="venue-map">
+        <iframe
+          src="https://maps.google.com/maps?q=COEX%20Convention%20%26%20Exhibition%20Center%2C%20Seoul&t=m&z=16&output=embed"
+          title="COEX Convention &amp; Exhibition Center on Google Maps"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+
+      <div class="grid two">
+        <article class="card">
+          <h3>Getting to COEX</h3>
+          <p>
+            COEX is in the Gangnam business district, directly above
+            <strong>Samseong Station (Line 2, green)</strong>. From Incheon Airport (ICN),
+            the easiest options are:
+          </p>
+          <ul class="clean-list">
+            <li><strong>AREX + Line 2</strong>: ~80 min, ₩5,000. Take AREX to Seoul Station, transfer to Line 2.</li>
+            <li><strong>Airport Limousine 6103</strong>: ~75 min, ₩18,000. Stops near COEX.</li>
+            <li><strong>Taxi / Kakao T</strong>: 60–90 min, ₩70–90,000 depending on traffic.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Inside COEX</h3>
+          <p>
+            The convention center sits on top of <strong>Starfield COEX Mall</strong>, a vast
+            underground complex with restaurants, cafés, an aquarium, and the famous
+            <em>Byeolmadang Library</em>. Useful landmarks:
+          </p>
+          <ul class="clean-list">
+            <li>Hall A–E: main sessions and posters</li>
+            <li>Grand Ballroom: keynotes and socials</li>
+            <li>Mall B1/B2: quick lunch options</li>
+            <li>Bongeunsa Temple: across the street, free to visit</li>
+          </ul>
+          <p class="card-links">
+            <a href="https://www.coex.co.kr/" target="_blank" rel="noopener">Official site</a>
+            <a href="https://share.google/YVZ4rRM5X0gGQvxFv" target="_blank" rel="noopener">Open in Maps</a>
+          </p>
+        </article>
+      </div>
+
+      <!-- Directions tabs -->
+      <div class="transit-section">
+        <div class="transit-head">
+          <h3 class="transit-heading">How to get to COEX</h3>
+          <p class="transit-sub">
+            For detailed station maps and bus stop diagrams, see the
+            <a href="https://www.coex.co.kr/guide/directions/" target="_blank" rel="noopener">official COEX directions page</a>.
+          </p>
+        </div>
+
+        <div class="transit-tabs">
+          <input type="radio" name="transit" id="t-subway" checked />
+          <input type="radio" name="transit" id="t-bus" />
+          <input type="radio" name="transit" id="t-car" />
+          <input type="radio" name="transit" id="t-bike" />
+
+          <div class="transit-labels" role="tablist">
+            <label for="t-subway">Subway</label>
+            <label for="t-bus">Bus</label>
+            <label for="t-car">Car &amp; Taxi</label>
+            <label for="t-bike">Bicycle</label>
+          </div>
+
+          <div class="transit-panels">
+            <div class="transit-panel">
+              <h4>Nearest subway stations</h4>
+              <ul class="transit-list">
+                <li>
+                  <strong>Samseong Station: Line 2 <span class="line-dot l2"></span></strong>
+                  <span>Direct underground connection via Exits 5 &amp; 6. The fastest option.</span>
+                </li>
+                <li>
+                  <strong>Bongeunsa Station: Line 9 <span class="line-dot l9"></span></strong>
+                  <span>Exit 7 · ~3 min walk through the mall.</span>
+                </li>
+                <li>
+                  <strong>Cheongdam Station: Line 7 <span class="line-dot l7"></span></strong>
+                  <span>Exit 2 · ~10 min walk.</span>
+                </li>
+              </ul>
+              <p class="muted small">From Incheon Airport, take AREX to Seoul Station, transfer to Line 2 toward Samseong (~80 min total).</p>
+            </div>
+
+            <div class="transit-panel">
+              <h4>Bus stops near COEX</h4>
+              <ul class="transit-list">
+                <li><strong>COEX City Airport Terminal</strong><span>Airport limousine buses (6103 from ICN, 6006 from GMP).</span></li>
+                <li><strong>Grand InterContinental Hotel</strong><span>By Samseong Station Exit 5.</span></li>
+                <li><strong>COEX Artium (Trade Tower)</strong><span>Northwest corner of the complex.</span></li>
+                <li><strong>COEX East Gate</strong><span>Closest to Halls D &amp; E.</span></li>
+                <li><strong>Across from Bongeunsa Temple</strong><span>Northeast side, near Bongeunsa Station.</span></li>
+                <li><strong>Samseong Station Exit 7</strong><span>South side of the complex.</span></li>
+              </ul>
+            </div>
+
+            <div class="transit-panel">
+              <h4>By car or taxi</h4>
+              <p>The easiest way to take a taxi is the <strong>Kakao T</strong> app. It works like Uber, lets you pay in-app, and avoids language barriers. Standard taxis can also be hailed on the street.</p>
+              <p>Drop-off points around COEX include the East Gate, the Trade Tower, and the Grand InterContinental driveway. Common routes from:</p>
+              <ul class="transit-list compact">
+                <li>Gangnam Station · Daechi-dong · Jamsil Station</li>
+                <li>Gangnam Express Bus Terminal</li>
+                <li>Across the Yeongdong Bridge from northern Seoul</li>
+              </ul>
+              <p class="muted small">Paid parking is available under COEX (~₩1,000 per 10 min). Traffic peaks 8–10 a.m. and 6–8 p.m.</p>
+            </div>
+
+            <div class="transit-panel">
+              <h4>By bicycle</h4>
+              <p>A public bicycle rack is available at the <strong>Trade Tower</strong> on the COEX grounds. Seoul's <strong>Ttareungi</strong> public bike share is available throughout Gangnam. Download the Seoul Bike app and rent for as little as ₩1,000 per hour.</p>
+              <p class="muted small">The Han River bike paths are ~15 min south by bike, and connect to most of central Seoul.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOD -->
+    <section id="food" class="section">
+      <header class="section-head">
+        <h2>Where to Eat</h2>
+        <p class="section-sub">A short list of places worth the walk, from quick lunches near COEX to a proper Korean BBQ night out.</p>
+      </header>
+
+      <h3 class="group-title">Walking distance from COEX</h3>
+      <div class="grid three">
+        <article class="place">
+          <div class="place-body">
+            <p class="tag">Korean BBQ</p>
+            <h4>Maple Tree House (단풍나무집)</h4>
+            <p>A classic Gangnam BBQ spot famous for marinated galbi. English menu, foreigner-friendly. Reservations recommended.</p>
+            <p class="meta">Samseong · 10 min walk · ₩₩₩</p>
+          </div>
+        </article>
+        <article class="place">
+          <div class="place-body">
+            <p class="tag">Noodles</p>
+            <h4>Myeongdong Kyoja (명동교자): COEX branch</h4>
+            <p>Hand-cut kalguksu noodles in a rich broth. A Seoul institution; the COEX branch is inside the mall.</p>
+            <p class="meta">COEX Mall B1 · 2 min · ₩</p>
+          </div>
+        </article>
+        <article class="place">
+          <div class="place-body">
+            <p class="tag">Tofu Stew</p>
+            <h4>Bukchang-dong Sundubu</h4>
+            <p>Bubbling soft-tofu stew with rice and side dishes. Comforting, fast, and cheap. Great for a solo lunch.</p>
+            <p class="meta">Samseong · 8 min · ₩</p>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="group-title">Worth a subway ride</h3>
+      <div class="grid three">
+        <article class="place">
+          <div class="place-body">
+            <p class="tag">Street Food</p>
+            <h4>Gwangjang Market (광장시장)</h4>
+            <p>Seoul's most famous traditional food market. Try bindae-tteok (mung bean pancake), mayak gimbap, and live octopus if you dare.</p>
+            <p class="meta">Jongno-5-ga, Line 1 · ₩</p>
+          </div>
+        </article>
+        <article class="place">
+          <div class="place-body">
+            <p class="tag">Samgyetang</p>
+            <h4>Tosokchon (토속촌)</h4>
+            <p>Whole young chicken stuffed with rice and ginseng in a hot broth. The line moves fast.</p>
+            <p class="meta">Gyeongbokgung, Line 3 · ₩₩</p>
+          </div>
+        </article>
+        <article class="place">
+          <div class="place-body">
+            <p class="tag">Korean BBQ</p>
+            <h4>Geumdwaeji Sikdang (금돼지식당)</h4>
+            <p>One of Seoul's most loved pork BBQ spots. Thick-cut samgyeopsal cooked at your table. Expect a wait.</p>
+            <p class="meta">Sindang, Line 6 · ₩₩</p>
+          </div>
+        </article>
+        <article class="place">
+          <div class="place-body">
+            <p class="tag">Modern Korean</p>
+            <h4>Mingles (밍글스)</h4>
+            <p>Two-Michelin-star contemporary Korean tasting menu. Book a month in advance.</p>
+            <p class="meta">Cheongdam · ₩₩₩₩</p>
+          </div>
+        </article>
+        <article class="place">
+          <div class="place-body">
+            <p class="tag">Vegetarian</p>
+            <h4>Balwoo Gongyang (발우공양)</h4>
+            <p>Buddhist temple cuisine, refined and seasonal. One Michelin star. Vegan-friendly by default.</p>
+            <p class="meta">Insadong, Line 3 · ₩₩₩</p>
+          </div>
+        </article>
+        <article class="place">
+          <div class="place-body">
+            <p class="tag">Late Night</p>
+            <h4>Jinhalmae Wonjo Dakhanmari</h4>
+            <p>A whole chicken simmered in broth with leek, potato, and rice cakes. Cozy, communal, perfect after drinks.</p>
+            <p class="meta">Dongdaemun · ₩₩</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CAFE -->
+    <section id="cafe" class="section">
+      <header class="section-head">
+        <h2>Cafés &amp; Bakeries</h2>
+        <p class="section-sub">Seoul is a café city. Here are a few that are worth a detour between sessions.</p>
+      </header>
+
+      <div class="grid three">
+        <article class="place">
+          <div class="place-body">
+            <p class="tag">Specialty Coffee</p>
+            <h4>Fritz Coffee Company</h4>
+            <p>Korea's best-known specialty roaster. The Dohwa flagship is in a restored hanok. Try the seasonal espresso blend.</p>
+            <p class="meta">Multiple locations · ₩₩</p>
+          </div>
+        </article>
+        <article class="place">
+          <div class="place-body">
+            <p class="tag">Bakery</p>
+            <h4>Onion (어니언)</h4>
+            <p>A hanok turned bakery. The pandoro and salted cream pastry sell out by noon. The Anguk branch is the prettiest.</p>
+            <p class="meta">Anguk · Seongsu · Gwanghwamun · ₩₩</p>
+          </div>
+        </article>
+        <article class="place">
+          <div class="place-body">
+            <p class="tag">Pastry</p>
+            <h4>Nudake</h4>
+            <p>Sculptural, almost art-piece pastries. The Haus Dosan branch is part of a Gentle Monster concept store.</p>
+            <p class="meta">Apgujeong · Hannam · ₩₩</p>
+          </div>
+        </article>
+        <article class="place">
+          <div class="place-body">
+            <p class="tag">Specialty Coffee</p>
+            <h4>Anthracite Coffee</h4>
+            <p>Industrial-chic roaster in a former shoe factory. The Hapjeong original is the must-visit.</p>
+            <p class="meta">Hapjeong · Hannam · Seongsu · ₩₩</p>
+          </div>
+        </article>
+        <article class="place">
+          <div class="place-body">
+            <p class="tag">Library Vibe</p>
+            <h4>Starfield Library (별마당 도서관)</h4>
+            <p>Not a café, but the two-story open library inside COEX Mall is a quiet, photogenic place to read with a coffee.</p>
+            <p class="meta">COEX Mall · free</p>
+          </div>
+        </article>
+        <article class="place">
+          <div class="place-body">
+            <p class="tag">Dessert</p>
+            <h4>Café Layered</h4>
+            <p>Famous for layered scones and earl grey cake. The Yeonnam branch has the longest line, but it moves.</p>
+            <p class="meta">Yeonnam · Anguk · ₩₩</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPLORE -->
+    <section id="explore" class="section">
+      <header class="section-head">
+        <h2>Things to Do in Seoul</h2>
+        <p class="section-sub">A handful of neighborhoods and sights worth your free afternoon or post-conference day.</p>
+      </header>
+
+      <div class="grid two">
+        <article class="card feature">
+          <h3>Gyeongbokgung &amp; Bukchon</h3>
+          <p>
+            The main Joseon-era palace. Free entry if you arrive wearing rented hanbok.
+            Catch the changing-of-the-guard ceremony at 10:00 or 14:00. Walk uphill afterward
+            into <strong>Bukchon Hanok Village</strong> for quiet alleys of traditional houses.
+          </p>
+          <p class="meta">Gyeongbokgung Station, Line 3</p>
+        </article>
+
+        <article class="card feature">
+          <h3>Seongsu-dong</h3>
+          <p>
+            Often called "the Brooklyn of Seoul." Former shoe factories turned into cafés,
+            galleries, and concept stores. Good for an afternoon of wandering, with
+            Anthracite, Nudake, and Daelim Changgo nearby.
+          </p>
+          <p class="meta">Seongsu Station, Line 2</p>
+        </article>
+
+        <article class="card feature">
+          <h3>Han River at Night</h3>
+          <p>
+            Take Line 5 or 9 to a riverside park (<em>Yeouido</em>, <em>Ttukseom</em>, or
+            <em>Banpo</em>). Grab convenience-store ramen and a beer, watch the
+            <strong>Banpo Bridge Rainbow Fountain</strong> show (20:00, 21:00 nightly).
+          </p>
+          <p class="meta">Yeouinaru / Ttukseom Resort Station</p>
+        </article>
+
+        <article class="card feature">
+          <h3>N Seoul Tower &amp; Namsan</h3>
+          <p>
+            City views from the top of Namsan Mountain. Walk up from Myeongdong (~30 min)
+            or take the cable car. Best at sunset, just before the city lights up.
+          </p>
+          <p class="meta">Myeongdong Station, Line 4</p>
+        </article>
+
+        <article class="card feature">
+          <h3>Insadong &amp; Ikseon-dong</h3>
+          <p>
+            Traditional tea houses, calligraphy shops, and souvenirs in Insadong; tiny
+            renovated hanok bars and dessert spots in neighboring Ikseon-dong. Best in the
+            early evening.
+          </p>
+          <p class="meta">Anguk Station, Line 3</p>
+        </article>
+
+        <article class="card feature">
+          <h3>Hongdae &amp; Yeonnam</h3>
+          <p>
+            Youthful, music-driven district around Hongik University. Live indie shows,
+            late-night bars, and the leafy Gyeongui Line Forest Park stretching into Yeonnam.
+          </p>
+          <p class="meta">Hongik Univ. Station, Line 2 / AREX</p>
+        </article>
+
+        <article class="card feature">
+          <h3>Lotte World Tower (Seoul Sky)</h3>
+          <p>
+            123-floor tower with a glass-floor observation deck. Two subway stops from COEX,
+            so it's an easy add-on after sessions end.
+          </p>
+          <p class="meta">Jamsil Station, Line 2 / Line 8</p>
+        </article>
+
+        <article class="card feature">
+          <h3>DMZ Day Trip</h3>
+          <p>
+            Half-day or full-day tours from Seoul to the Demilitarized Zone with Korean
+            and English guides. Book at least a few days ahead; bring your passport.
+          </p>
+          <p class="meta">Tours depart central Seoul · 4–8 hrs</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- TIPS -->
+    <section id="tips" class="section">
+      <header class="section-head">
+        <h2>Practical Tips</h2>
+        <p class="section-sub">Small things that make a Seoul trip much smoother.</p>
+      </header>
+
+      <div class="grid two">
+        <article class="card">
+          <h3>Transit &amp; T-money</h3>
+          <p>
+            Buy a <strong>T-money card</strong> at any convenience store (₩4,000) and top it up
+            with cash. It works on the subway, all buses, and most taxis. The subway is the
+            fastest way to get almost anywhere in central Seoul.
+          </p>
+          <p class="muted">Tip: There is also a "Climate Card": unlimited transit for ₩65,000 / 30 days.</p>
+        </article>
+
+        <article class="card">
+          <h3>Money &amp; Cards</h3>
+          <p>
+            Most places accept Visa/Mastercard, but small restaurants and markets are
+            sometimes cash-only. Use Citibank or KEB Hana ATMs for foreign cards. Tipping is
+            not expected anywhere.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Connectivity</h3>
+          <p>
+            Easiest option: an <strong>eSIM</strong> from Airalo, Holafly, or KT roaming
+            (~$10–30 for a week). Pocket WiFi is also available at the airport. Public WiFi
+            is widely available but inconsistent.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Weather in early July</h3>
+          <p>
+            Hot and humid: typically 24–30 °C with high humidity. Early July falls inside the
+            <em>jangma</em> monsoon, so expect short, heavy rain showers most days. Bring a
+            compact umbrella and clothes that breathe; indoor air conditioning is strong.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Shopping</h3>
+          <ul class="clean-list">
+            <li><strong>Hyundai Department Store COEX</strong>: connected to the venue.</li>
+            <li><strong>Starfield COEX Mall</strong>: basics, electronics, gifts.</li>
+            <li><strong>Myeongdong</strong>: cosmetics, street food.</li>
+            <li><strong>Gwangjang &amp; Dongdaemun</strong>: markets, late-night clothing.</li>
+            <li>Tax refund: look for the <em>Tax Free</em> sticker; refund at the airport or via kiosk.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Etiquette</h3>
+          <ul class="clean-list">
+            <li>Take off your shoes when entering a home or traditional restaurant.</li>
+            <li>Receive and give things (cards, money) with two hands.</li>
+            <li>It's fine to be loud at a BBQ table; not on the subway.</li>
+            <li>"감사합니다" (kam-sa-ham-ni-da) = thank you. Goes a long way.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Emergencies</h3>
+          <ul class="clean-list">
+            <li><strong>112</strong>: police</li>
+            <li><strong>119</strong>: fire / ambulance</li>
+            <li><strong>1330</strong>: 24/7 tourist hotline in English</li>
+            <li>Severance, Asan, and Samsung Medical Center all have international clinics.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>A few Korean phrases</h3>
+          <ul class="clean-list">
+            <li><strong>안녕하세요</strong> annyeong-haseyo: hello</li>
+            <li><strong>감사합니다</strong> kamsa-hamnida: thank you</li>
+            <li><strong>여기요</strong> yeogi-yo: excuse me (to call a waiter)</li>
+            <li><strong>계산해주세요</strong> gyesan-hae-juseyo: the bill, please</li>
+            <li><strong>맛있어요</strong> mas-isseoyo: it's delicious</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  </footer>
+
+  <script>
+    (function () {
+      var headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 48;
+      document.querySelectorAll('.section-radio').forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          var tabs = document.querySelector('.section-tabs');
+          if (!tabs) return;
+          var target = tabs.offsetTop - headerH;
+          if (window.scrollY > target) {
+            window.scrollTo(0, target);
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICML 2026 Seoul Guide</title>
+  <link rel="stylesheet" href="fonts.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --font-serif: var(--font-main);
+      --font-sans: var(--font-main);
+      --ink: #1d1d1f;
+      --ink-soft: #3a3a3c;
+      --muted: #6e6e73;
+      --line: #e5e5e7;
+      --accent: #481163;
+      --pad: clamp(24px, 6vw, 80px);
+      --max: 1120px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #ffffff;
+      font-family: var(--font-main);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.5;
+      -webkit-font-smoothing: auto;
+    }
+
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: clamp(20px, 3vw, 36px) var(--pad) 80px;
+    }
+
+    /* Header */
+    .site-header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 36px var(--pad) 0;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .contact-link {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .hero-logo {
+      height: clamp(36px, 5vw, 56px);
+      width: auto;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(22px, 3.5vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .hero-sub {
+      font-family: var(--font-serif);
+      font-size: clamp(16px, 2.2vw, 22px);
+      font-style: normal;
+      color: #3a3a3c;
+      margin-top: -8px;
+    }
+
+    /* Nav tiles */
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 220px;
+      gap: 14px;
+      margin: 28px 0 28px;
+    }
+
+    .tile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      padding: 36px 24px;
+      text-decoration: none;
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      transition: box-shadow 0.15s, transform 0.15s;
+    }
+    .tile:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.18); transform: translateY(-2px); }
+    .tile:active { transform: translateY(0); box-shadow: none; }
+    .tile-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.48);
+      border-radius: 14px;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .tile-title, .tile-sub, .tile-inner-btns {
+      position: relative;
+      z-index: 1;
+    }
+    .tile-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .tile-sub {
+      font-family: var(--font-serif);
+      font-size: 16.5px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+    }
+
+    .tile-inner-btns {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      margin-top: 14px;
+    }
+    .tile-inner-btn {
+      display: block;
+      flex: 1;
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.65);
+      border-radius: 8px;
+      padding: 9px 12px;
+      text-align: center;
+      transition: background 0.15s;
+    }
+    .tile-inner-btn:hover { background: rgba(255,255,255,0.2); }
+    .tile-sub-link { color: rgba(255,255,255,0.85); text-decoration: underline; }
+    .tile-sub-link:hover { color: #fff; }
+
+    .resource-tiles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 16px 0 20px;
+    }
+    .resource-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 4px;
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-weight: 700;
+      color: #3a3a3c;
+      text-decoration: none;
+      border: 1.5px solid #3a3a3c;
+      border-radius: 10px;
+      padding: 12px 10px;
+      background: #fff;
+      transition: background 0.15s;
+    }
+    .resource-tile span { font-size: 13px; font-weight: 400; color: var(--muted); }
+    .resource-tile:hover { background: #f5f5f5; }
+
+    /* Sections */
+    .section {
+      margin-bottom: 56px;
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 3vw, 26px);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(16px, 2vw, 19px);
+      font-weight: 700;
+      color: var(--ink);
+      margin: 28px 0 10px;
+    }
+
+    p {
+      color: var(--ink-soft);
+      margin-bottom: 12px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      padding-left: 20px;
+      color: var(--ink-soft);
+      margin-bottom: 12px;
+    }
+
+    li { margin-bottom: 5px; line-height: 1.6; }
+
+    strong { color: var(--ink); font-weight: 700; }
+
+    a { color: #3273dc; text-decoration: underline; }
+    a:hover { opacity: 0.7; }
+
+    blockquote {
+      background: #f2f2f2;
+      border-radius: 10px;
+      margin: 16px 0;
+      padding: 14px 18px;
+      font-style: normal;
+    }
+    blockquote p { color: var(--ink-soft); margin-bottom: 6px; }
+    blockquote a { color: var(--accent); }
+
+    /* Subway line badges */
+    .lb {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.63em;
+      font-weight: 700;
+      min-width: 1.7em;
+      height: 1.7em;
+      padding: 0 4px;
+      border-radius: 99px;
+      vertical-align: 0;
+      white-space: nowrap;
+      color: #fff;
+      font-family: var(--font-sans);
+      letter-spacing: 0;
+    }
+    .l1  { background: #004A85; }
+    .l2  { background: #00A23F; }
+    .l3  { background: #ED6C00; }
+    .l4  { background: #009BCE; }
+    .l5  { background: #794698; }
+    .l6  { background: #7C4932; }
+    .l7  { background: #6E7E31; }
+    .l8  { background: #D11D70; }
+    .l9  { background: #A49D87; }
+    .lsb { background: #ECA300; }
+    .lgj { background: #6AC2B3; }
+    .lsd { background: #B81B30; }
+
+    /* Map embed */
+    .map-embed {
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 16px 0;
+    }
+    .map-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 40px 0;
+    }
+    .header-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .header-row h3 { margin: 0; }
+
+    /* Neighborhood grid */
+    .neighborhood-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 28px;
+      margin-top: 24px;
+    }
+
+    .neighborhood-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .place-img {
+      width: 100%;
+      aspect-ratio: 3/2;
+      background: #e5e5e7;
+      border-radius: 8px;
+      margin: 10px 0 12px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .bio-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; flex-wrap: nowrap; }
+    .examples-btn {
+      display: inline-block;
+      font-family: var(--font-main);
+      font-size: 13px;
+      color: #3273dc;
+      background: #e8f0fd;
+      border: none;
+      border-radius: 6px;
+      padding: 4px 10px;
+      cursor: pointer;
+      margin-top: 6px;
+    }
+    .examples-btn:hover { background: #d0e2fb; }
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.52);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-box {
+      background: #fff;
+      border-radius: 16px;
+      max-width: 600px;
+      width: 100%;
+      padding: 28px 24px 24px;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 14px; right: 16px;
+      background: none; border: none;
+      font-size: 18px; cursor: pointer;
+      color: var(--muted); line-height: 1;
+    }
+    .modal-close:hover { color: var(--ink); }
+    .modal-img { width: 100%; border-radius: 10px; display: block; margin-bottom: 8px; }
+    .modal-caption { font-size: 15px; color: var(--muted); text-align: center; line-height: 1.5; }
+    .bio-header strong { font-size: 22px; white-space: nowrap; line-height: 1.5; }
+    .bio-links { display: flex; gap: 12px; align-items: baseline; font-size: 17px; flex-wrap: nowrap; line-height: 1.5; }
+    .nav-btn {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background: #fff;
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      text-decoration: none;
+      min-height: 72px;
+      transition: box-shadow 0.15s, transform 0.15s;
+    }
+    .nav-btn:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.09); transform: translateY(-2px); }
+    .nav-btn:active { transform: translateY(0); box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    .btn-arrow { color: var(--muted); font-size: 16px; flex-shrink: 0; margin-left: 8px; align-self: center; }
+
+    @media (max-width: 640px) {
+      .neighborhood-grid { grid-template-columns: 1fr; }
+      .tiles { grid-template-columns: 1fr; grid-auto-rows: 160px; }
+      .tile { height: 160px; }
+      .hero-title { font-size: 26px; }
+      .bio-header { gap: 8px; }
+      .bio-header strong { font-size: 16px; }
+      .bio-links { font-size: 15px; gap: 8px; }
+      .btn-arrow { display: none; }
+    }
+    @media (min-width: 641px) and (max-width: 900px) {
+      .tiles { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Hero -->
+    <div class="hero">
+      <img src="img/icml-logo.png" alt="ICML 2026" class="hero-logo" />
+      <h1 class="hero-title">ICML Seoul Guide</h1>
+    </div>
+
+    <div class="bio-header">
+      <strong>Sohyeon Kim</strong>
+      <div class="bio-links">
+        <a href="https://ohmyksh.github.io/" target="_blank" rel="noopener" style="color:#3273dc; text-decoration:none;">Home</a>
+        <a href="https://x.com/ohmyksh" target="_blank" rel="noopener" style="color:#3273dc; text-decoration:none;">𝕏 @ohmyksh</a>
+        <a href="https://www.linkedin.com/in/kimsohyeon/" target="_blank" rel="noopener" style="color:#3273dc; text-decoration:none;">LinkedIn</a>
+      </div>
+    </div>
+    <p style="font-size:14px;">I research AI at Seoul National University and grew up in Seoul. Since friends often ask me for Seoul recommendations, I put together this guide for ICML attendees, featuring some of my favorite places as well as spots still on my own bucket list. <a href="#" onclick="openExamples();return false;" style="color:#3273dc; text-decoration:underline; margin-left:10px;">→ See 500+ places on my maps!</a></p>
+    <p style="font-size:14px;">For those interested, my research focuses on RAG and Agent Memory. You can find more on my website linked above. I love meeting new researchers and chatting about research, technology, and careers, so I'd be happy to connect at ICML!</p>
+
+    <!-- Nav buttons -->
+    <div style="display:flex; flex-direction:column; gap:10px; margin-top:36px;">
+      <a href="must-visit.html" class="nav-btn" style="background:#e8f0fd; border-color:#3273dc; min-height:0; padding:7px 16px;">
+        <div style="font-size:15px; font-weight:400; color:#3273dc;">★ My Top 5 Must-Visit Places</div>
+        <span class="btn-arrow" style="color:#3273dc;">→</span>
+      </a>
+      <a href="https://maps.app.goo.gl/wyLubMayBohUizSi6" target="_blank" rel="noopener" class="nav-btn" style="background:#e8f0fd; border-color:#3273dc; min-height:0; padding:7px 16px;">
+        <div style="font-size:15px; font-weight:400; color:#3273dc;">★ My Google Maps with 100+ Recommendations</div>
+        <span class="btn-arrow" style="color:#3273dc;">→</span>
+      </a>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:2px;">
+        <a href="workshops.html" class="nav-btn">
+          <div>
+            <div style="font-size:17.5px; font-weight:400; color:var(--ink);">Workshops</div>
+            <div style="font-size:14px; color:var(--muted); margin-top:3px;">Workshop info by date, with homepage links</div>
+          </div>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="socials.html" class="nav-btn">
+          <div>
+            <div style="font-size:17.5px; font-weight:400; color:var(--ink);">Socials</div>
+            <div style="font-size:14px; color:var(--muted); margin-top:3px;">Events, parties, and meetups</div>
+          </div>
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Nav tiles -->
+    <nav class="tiles" style="margin-top: 14px;">
+      <a href="other-tips.html" class="tile" style="background-image:url('img/tile-tips.png');">
+        <div class="tile-overlay"></div>
+        <span class="tile-title">Other Small Tips</span>
+        <span class="tile-sub">Transit, Prices, Facilities, Shopping</span>
+      </a>
+      <a href="coex-guide.html" class="tile" style="background-image:url('img/tile-coex.png');">
+        <div class="tile-overlay"></div>
+        <span class="tile-title">COEX</span>
+        <span class="tile-sub">Restaurant &amp; cafe search with Google Maps links</span>
+      </a>
+      <a href="explore-seoul.html" class="tile" style="background-image:url('img/tile-tour.jpg');">
+        <div class="tile-overlay"></div>
+        <span class="tile-title">Explore Seoul</span>
+        <span class="tile-sub">Popular areas to explore around Seoul</span>
+      </a>
+    </nav>
+
+    <h3 style="font-size:16.5px; font-weight:400; margin:28px 0 8px;">Useful Links</h3>
+    <ul style="padding-left:20px; margin:0 0 20px; font-size:14.5px; line-height:2;">
+      <li><a href="https://icml.cc/" target="_blank" rel="noopener" style="color:#3273dc;">ICML 2026 Website</a>, <a href="https://icml.cc/virtual/2026/index.html" target="_blank" rel="noopener" style="color:#3273dc;">Conference</a>, <a href="https://icml.cc/virtual/2026/calendar?filter_events=&filter_rooms=" target="_blank" rel="noopener" style="color:#3273dc;">Schedule</a>, <a href="https://icml.cc/virtual/2026/events/workshop" target="_blank" rel="noopener" style="color:#3273dc;">Workshop</a></li>
+      <li>Subway: <a href="https://apps.apple.com/us/app/subway-korea/id325924444" target="_blank" rel="noopener" style="color:#3273dc;">Seoul Subway App</a> (iOS, English), <a href="http://www.seoulmetro.co.kr/en/cyberStation.do" target="_blank" rel="noopener" style="color:#3273dc;">Official Subway Map</a> (website, English), <a href="https://map.naver.com/p/subway/1000/-/-/-" target="_blank" rel="noopener" style="color:#3273dc;">Naver Subway Map</a> (website, Korean)</li>
+      <li>COEX: <a href="https://www.coex.co.kr/" target="_blank" rel="noopener" style="color:#3273dc;">Official Site</a>, <a href="https://maps.app.goo.gl/pZpdu8FM5hJ1gw6Y6" target="_blank" rel="noopener" style="color:#3273dc;">Open in Maps</a>, <a href="https://m.starfield.co.kr/coexmall/tenant/floorInfo" target="_blank" rel="noopener" style="color:#3273dc;">Floor Info</a></li>
+      <li>Delivery: <a href="https://apps.apple.com/kr/app/baemin-food-delivery/id378084485?l=en-GB" target="_blank" rel="noopener" style="color:#3273dc;">Baemin</a>, <a href="https://apps.apple.com/kr/app/coupang-eats-food-delivery/id1445504255?l=en-GB" target="_blank" rel="noopener" style="color:#3273dc;">Coupang Eats</a></li>
+      <li>Taxi: <a href="https://apps.apple.com/kr/app/kakao-t/id981110422?l=en-GB" target="_blank" rel="noopener" style="color:#3273dc;">Kakao T</a></li>
+    </ul>
+
+    <p style="text-align:center; font-size:15.5px; color:#6e6e73; margin-top:80px; margin-bottom:80px;">Have a wonderful time at ICML!</p>
+
+  </div>
+
+  <!-- Examples modal -->
+  <div id="examples-modal" class="modal-backdrop" onclick="if(event.target===this)closeExamples()">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeExamples()">✕</button>
+      <img src="img/my-map.jpg" alt="My Google Maps" class="modal-img">
+      <p class="modal-caption">My Maps with 500+ saved places</p>
+    </div>
+  </div>
+
+  <script>
+    function openExamples() { document.getElementById('examples-modal').classList.add('open'); }
+    function closeExamples() { document.getElementById('examples-modal').classList.remove('open'); }
+  </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Top 5 Must-Visit Places</title>
+  <link rel="stylesheet" href="fonts.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1d1d1f; --ink-soft: #3a3a3c; --muted: #6e6e73;
+      --line: #e5e5e7; --pad: clamp(20px, 5vw, 60px);
+    }
+    body { background: #fff; font-family: var(--font-main); color: var(--ink); font-size: 15.5px; line-height: 1.5; }
+    .page { max-width: 1300px; margin: 0 auto; padding: 36px var(--pad) 80px; }
+    .back { display: inline-flex; align-items: center; font-size: 16px; font-weight: 400; color: #1d1d1f; text-decoration: none; margin-bottom: 32px; }
+    .back:hover { color: #3273dc; }
+    h2 { font-size: clamp(20px, 3vw, 26px); font-weight: 400; margin-bottom: 16px; }
+    .intro { font-size: 15px; color: var(--ink-soft); margin-bottom: 40px; line-height: 1.5; }
+    .intro a { font-weight: 700; }
+    a { color: #3273dc; text-decoration: underline; }
+    a:hover { opacity: 0.7; }
+
+    .routes-list { display: flex; flex-direction: column; gap: 32px; }
+    .route-item { display: flex; flex-direction: column; gap: 12px; }
+
+    .route-section {
+      display: flex; gap: 0; align-items: stretch;
+      background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+    }
+    .route-img { width: 340px; flex-shrink: 0; position: relative; }
+    .route-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .route-img .slideshow { position: relative; width: 100%; height: 100%; }
+    .route-img .slideshow img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease; display: block; }
+    .route-img .slideshow img.active { opacity: 1; }
+    .route-content {
+      flex: 1; min-width: 0;
+      padding: 22px 24px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .route-title { font-size: 19px; font-weight: 400; color: var(--ink); }
+    .route-path { font-size: 15.5px; color: #3273dc; background: #e8f0fd; border-radius: 10px; padding: 9px 14px; line-height: 1.5; }
+    .route-desc { font-size: 15px; color: var(--ink-soft); line-height: 1.5; }
+    .route-links {
+      background: #f0f0f2;
+      border-radius: 10px;
+      padding: 8px 14px 8px 28px;
+      font-size: 13.5px;
+      list-style: disc;
+    }
+    .route-links li { margin-bottom: 3px; line-height: 1.6; }
+    .route-links li:last-child { margin-bottom: 0; }
+
+    /* Tip block */
+    .tip-block {
+      display: flex; gap: 0; align-items: stretch;
+      background: #fff; border: 1.5px solid #3273dc;
+      border-radius: 14px; overflow: hidden;
+    }
+    .tip-img { width: 200px; flex-shrink: 0; object-fit: cover; display: block; }
+    .tip-body { flex: 1; padding: 16px 22px; display: flex; flex-direction: column; justify-content: center; gap: 6px; }
+    .tip-label { font-size: 15.5px; font-weight: 700; color: #3273dc; }
+    .tip-title { font-size: 15.5px; font-weight: 400; color: #3273dc; }
+    .tip-desc { font-size: 15.5px; color: var(--ink); line-height: 1.6; margin: 0; }
+    @media (max-width: 540px) {
+      .tip-block { flex-direction: column; }
+      .tip-img { width: 100%; height: 160px; }
+    }
+
+    .lb {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 0.7em; font-weight: 700;
+      min-width: 1.7em; height: 1.7em; padding: 0 4px;
+      border-radius: 99px; vertical-align: middle;
+      white-space: nowrap; color: #fff; font-family: var(--font-main); letter-spacing: 0;
+    }
+    .l2 { background: #00A23F; } .l3 { background: #ED6C00; }
+    .l4 { background: #009BCE; } .l6 { background: #7C4932; }
+    .l8 { background: #D11D70; } .lsb { background: #ECA300; }
+    .lgj { background: #6AC2B3; }
+
+    @media (max-width: 768px) {
+      .route-section {
+        flex-direction: column; gap: 12px;
+        background: none; border: none; border-radius: 0; overflow: visible;
+      }
+      .route-img { width: 100%; aspect-ratio: 3/2; border-radius: 12px; overflow: hidden; }
+      .route-img img { height: 100%; }
+      .route-content { padding: 0; }
+      .tip-block { flex-direction: column; }
+      .tip-img { width: 100%; height: 160px; }
+      .tip-label, .tip-title { font-size: 13px; }
+      .tip-desc { font-size: 12.5px; }
+      body { font-size: 14.5px; }
+      .intro { font-size: 14.5px; }
+      .back { font-size: 14.5px; }
+      .route-desc { font-size: 14.5px; }
+      .route-path { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a href="index.html" class="back">← Back to Guide</a>
+    <h2>My Top 5 Must-Visit Places</h2>
+    <p class="intro">These are the routes I recommend most often to friends visiting Seoul. Each itinerary groups together nearby places that are easy to explore on foot or by a short subway ride. You can always adjust the route based on your schedule, and for more restaurants, cafes, and hidden gems, check out my <a href="https://maps.app.goo.gl/wyLubMayBohUizSi6" target="_blank" rel="noopener">Google Maps list</a> and the <a href="explore-seoul.html">Explore Seoul</a> section.</p>
+
+    <div class="routes-list">
+
+      <div class="route-item">
+        <div class="route-section">
+          <div class="route-img"><img src="img/tour-jongno-4.jpg" alt="Bukchon Hanok Village"></div>
+          <div class="route-content">
+            <div class="route-title">1. Bukchon Hanok Village &amp; Anguk</div>
+            <div class="route-path">Anguk Station <span class="lb l3">3</span> → Bukchon Hanok Village → National Museum of Modern and Contemporary Art → Insadong / Ikseon-dong (Jongno 3-ga Station <span class="lb l3">3</span>)</div>
+            <p class="route-desc">My favorite area in Seoul! Wander through traditional hanok streets, enjoy panoramic city views, and explore one of the city's best neighborhoods for cafes, modern Korean restaurants, and galleries. The palace stone-wall roads also make for a relaxing walk.</p>
+            <ul class="route-links">
+              <li><a href="https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=97932" target="_blank" rel="noopener">Bukchon Hanok Village</a></li>
+              <li><a href="https://www.mmca.go.kr/eng/" target="_blank" rel="noopener">National Museum of Modern and Contemporary Art (MMCA Seoul)</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="route-item">
+        <div class="route-section">
+          <div class="route-img">
+            <div class="slideshow">
+              <img src="img/tour-jongno-1.webp" alt="Gyeongbokgung Palace" class="active">
+              <img src="img/royal-guard-ceremony.jpg" alt="Royal Guard Changing Ceremony">
+            </div>
+          </div>
+          <div class="route-content">
+            <div class="route-title">2. Gyeongbokgung &amp; Gwanghwamun</div>
+            <div class="route-path">Gyeongbokgung Station <span class="lb l3">3</span> → Gyeongbokgung Palace → Gwanghwamun Square → Deoksugung Palace → Cheonggyecheon (Euljiro 3-ga Station <span class="lb l2">2</span>)</div>
+            <p class="route-desc">A great route if you're interested in Seoul's history. Walk between two royal palaces, then continue to Cheonggyecheon, where many locals enjoy takeaway food while strolling in the evening. If you have extra time, head west into Seochon for excellent cafes and restaurants.</p>
+            <ul class="route-links">
+              <li><a href="https://royal.cha.go.kr/ENG/contents/E702000000.do" target="_blank" rel="noopener">Gyeongbokgung Palace</a></li>
+              <li><a href="https://royal.cha.go.kr/ENG/contents/E103010000.do" target="_blank" rel="noopener">Deoksugung Palace</a></li>
+              <li><a href="https://www.mmca.go.kr/eng/" target="_blank" rel="noopener">MMCA Deoksugung</a></li>
+              <li><a href="https://english.seoul.go.kr/service/amusement/attractions/cheonggyecheon/" target="_blank" rel="noopener">Cheonggyecheon</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="tip-block">
+          <div class="tip-body">
+            <div class="tip-title"><span class="tip-label">Tip.</span> Royal Guard Changing Ceremony</div>
+            <p class="tip-desc">A reenactment of the Joseon Dynasty royal guard ceremony, featuring traditional uniforms, weapons, and military rituals from the 15th century. <span style="color:#3a3a3c; font-weight:700;">(10:00 &amp; 14:00, 20 min)</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="route-item">
+        <div class="route-section">
+          <div class="route-img"><img src="img/tour-seongsu-1.jpg" alt="Seoul Forest"></div>
+          <div class="route-content">
+            <div class="route-title">3. Seoul Forest &amp; Seongsu</div>
+            <div class="route-path">Seoul Forest Station <span class="lb lsb">수인분당</span> → Seoul Forest → Seongsu Cafe Street → Seongsu Station <span class="lb l2">2</span></div>
+            <p class="route-desc">Seongsu is one of Seoul's trendiest neighborhoods, known for pop-up stores, cafes, and creative brands. If the weather is nice, I highly recommend walking through Seoul Forest before exploring Seongsu. Most visitors take Line 2 to Seongsu Station directly; the Suin–Bundang Line is a good option if you'd like to start from Seoul Forest.</p>
+            <ul class="route-links">
+              <li><a href="https://seoulforest.or.kr/" target="_blank" rel="noopener">Seoul Forest</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="route-item">
+        <div class="route-section">
+          <div class="route-img"><img src="img/tour-yongsan-1.jpg" alt="National Museum of Korea"></div>
+          <div class="route-content">
+            <div class="route-title">4. Yongsan &amp; National Museum of Korea</div>
+            <div class="route-path">Ichon Station <span class="lb l4">4</span> <span class="lb lgj">경의중앙</span> → National Museum of Korea → Sinyongsan <span class="lb l4">4</span> → Samgakji <span class="lb l4">4</span> <span class="lb l6">6</span> → War Memorial of Korea</div>
+            <p class="route-desc">The National Museum of Korea is one of the country's largest museums and a great introduction to Korean history and culture. Afterwards, explore the rapidly growing Sinyongsan area for food and cafes, or continue to the War Memorial. You'll also get some beautiful views of Namsan Tower along the way.</p>
+            <ul class="route-links">
+              <li><a href="https://www.museum.go.kr/ENG/main/index.do" target="_blank" rel="noopener">National Museum of Korea</a></li>
+              <li><a href="https://www.warmemo.or.kr/Eng/" target="_blank" rel="noopener">War Memorial of Korea</a></li>
+              <li><a href="https://www.seoultower.co.kr/" target="_blank" rel="noopener">Namsan Seoul Tower</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="route-item">
+        <div class="route-section">
+          <div class="route-img"><img src="img/tour-jamsil-1.jpg" alt="Lotte World Tower"></div>
+          <div class="route-content">
+            <div class="route-title">5. Jamsil &amp; Gangnam</div>
+            <div class="route-path">Jamsil Station <span class="lb l2">2</span> <span class="lb l8">8</span> → Lotte World Tower → Seokchon Lake → Songridan-gil → Gangnam Station <span class="lb l2">2</span></div>
+            <p class="route-desc">Perfect for hot or rainy days. Lotte World Tower offers shopping, food, and indoor attractions, while nearby Seokchon Lake is great for a walk. Finish in Songridan-gil for cafes and restaurants, or hop on Line 2 to Gangnam.</p>
+            <ul class="route-links">
+              <li><a href="https://www.lwt.co.kr/en/" target="_blank" rel="noopener">Lotte World Tower &amp; Mall</a></li>
+              <li><a href="https://seoulsky.lotteworld.com/" target="_blank" rel="noopener">Seoul Sky</a></li>
+              <li><a href="https://adventure.lotteworld.com/eng/main/index.do" target="_blank" rel="noopener">Lotte World Adventure</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.route-img .slideshow').forEach(ss => {
+      const imgs = ss.querySelectorAll('img');
+      if (imgs.length < 2) return;
+      let idx = 0;
+      setInterval(() => {
+        imgs[idx].classList.remove('active');
+        idx = (idx + 1) % imgs.length;
+        imgs[idx].classList.add('active');
+      }, 3500);
+    });
+  </script>
+</body>
+</html>
