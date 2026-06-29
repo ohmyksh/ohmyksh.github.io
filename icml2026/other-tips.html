@@ -20,7 +20,7 @@
       font-size: 15.5px;
       line-height: 1.5;
     }
-    .page { max-width: 1100px; margin: 0 auto; padding: 36px var(--pad) 80px; }
+    .page { max-width: 1150px; margin: 0 auto; padding: 36px var(--pad) 80px; }
     .back { display: inline-flex; align-items: center; font-size: 16px; font-weight: 400; color: #1d1d1f; background: none; border: none; padding: 0; text-decoration: none; margin-top: 12px; margin-bottom: 32px; }
     .back:hover { color: #3273dc; background: none; opacity: 1; }
     h2 { font-size: clamp(20px, 3vw, 26px); font-weight: 400; color: var(--ink); margin-bottom: 20px; }
@@ -29,8 +29,10 @@
     p { color: var(--ink-soft); margin-bottom: 12px; }
     p:last-child { margin-bottom: 0; }
     ul { padding-left: 20px; color: var(--ink-soft); margin-bottom: 12px; }
+    ul ul { margin-bottom: 0; margin-top: 2px; }
     li { margin-bottom: 4px; line-height: 1.5; }
-    strong { color: var(--ink); font-weight: 400; }
+    strong { color: #3a3a3c; font-weight: 600; }
+    a strong { color: inherit; }
     a { color: #3273dc; text-decoration: underline; }
     a:hover { opacity: 0.7; }
     blockquote {
@@ -46,7 +48,24 @@
       border-radius: 99px; vertical-align: middle;
       white-space: nowrap; color: #fff; font-family: var(--font-sans); letter-spacing: 0;
     }
-    .l2 { background: #00A23F; } .l9 { background: #A49D87; }
+    .l1 { background: #004A85; } .l2 { background: #00A23F; } .l3 { background: #ED6C00; }
+    .l5 { background: #794698; } .l7 { background: #6E7E31; } .l8 { background: #D11D70; }
+    .l9 { background: #A49D87; } .lsb { background: #ECA300; } .lgj { background: #6AC2B3; }
+    .qnav-card { background: #fff; border: 1.5px solid #c5d8f8; border-radius: 14px; padding: 18px 22px; margin-bottom: 36px; }
+    .qnav { display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; align-items: baseline; }
+    .qnav-section { font-size: 14.5px; font-weight: 400; color: #3273dc; white-space: nowrap; text-decoration: none; }
+    .sep { padding: 0 4px; color: var(--muted); }
+    .qnav-section:hover { opacity: 0.7; }
+    .qnav-items { font-size: 14.5px; color: var(--ink-soft); line-height: 1.7; }
+    .qnav-items a { color: var(--ink-soft); text-decoration: none; }
+    .qnav-items a:hover { color: #3273dc; opacity: 1; }
+    .qnav-rule { grid-column: 1 / -1; border-top: 1px solid var(--line); margin: 2px 0; }
+    @media (max-width: 640px) {
+      .qnav { grid-template-columns: 1fr; gap: 4px; }
+      .qnav-section { font-size: 14px; }
+      .qnav-items { font-size: 13.5px; }
+      .qnav-rule { margin: 8px 0; }
+    }
     @media (max-width: 640px) { body { font-size: 14.5px; } }
   </style>
 </head>
@@ -56,87 +75,161 @@
 
     <h2>Other Tips</h2>
 
-    <h3>Food and Cafes</h3>
+    <div class="qnav-card">
+    <p style="font-size:17px; font-weight:400; color:#3273dc; margin-bottom:14px;">Quick Navigation</p>
+    <div class="qnav">
+      <a href="#food" class="qnav-section">Food &amp; Cafes</a>
+      <div class="qnav-items"><a href="#prices">Prices</a> <span class="sep">/</span> <a href="#ordering">Ordering</a> <span class="sep">/</span> <a href="#payment-food">Payment</a> <span class="sep">/</span> <a href="#cafe">Cafe Culture</a> <span class="sep">/</span> <a href="#delivery">Food Delivery</a> <span class="sep">/</span> <a href="#convenience">Convenience Stores</a> <span class="sep">/</span> <a href="#restaurants">Finding Good Restaurants</a></div>
+      <div class="qnav-rule"></div>
+      <a href="#transit" class="qnav-section">Getting Around</a>
+      <div class="qnav-items"><a href="#subway">Subway</a> <span class="sep">/</span> <a href="#taxi">Taxi</a> <span class="sep">/</span> <a href="#payment-transit">Transit Payment</a> <span class="sep">/</span> <a href="#transit-notes">Transit Tips</a></div>
+      <div class="qnav-rule"></div>
+      <a href="#shopping" class="qnav-section">Shopping</a>
+      <div class="qnav-items"><a href="#dept">Department Stores</a> <span class="sep">/</span> <a href="#supermarkets">Supermarkets</a> <span class="sep">/</span> <a href="#daiso">Daiso</a> <span class="sep">/</span> <a href="#oliveyoung">Olive Young</a> <span class="sep">/</span> <a href="#wifi">Free Internet</a></div>
+    </div>
+    </div>
 
-    <h3 style="font-size:17px; margin-top:20px;">Prices</h3>
+<h3 id="food" style="margin-top:60px;">Food and Cafes</h3>
+
+    <h3 id="prices" style="font-size:17px; margin-top:20px;">Prices</h3>
     <ul>
-      <li>Most meals run around <strong>10–20 USD</strong>; anything over <strong>30 USD</strong> is on the pricier side.</li>
-      <li>Coffee: an Americano costs about <strong>1.5 USD</strong> at chains like The Venti, Mega Coffee, Paik's Coffee, and Compose Coffee.</li>
-      <li>Starbucks drinks run <strong>3 to 6 USD</strong>.</li>
+      <li>Most casual meals cost around <strong>10–20 USD</strong>. Meals over 30 USD are generally considered expensive by local standards.</li>
+      <li>Coffee: an Americano costs about 1.5 USD at chains like The Venti, Mega Coffee, Paik's Coffee, and Compose Coffee.</li>
+      <li>Starbucks drinks run 3 to 6 USD.</li>
     </ul>
 
-    <h3 style="font-size:17px; margin-top:20px;">Ordering System</h3>
+    <h3 id="ordering" style="font-size:17px; margin-top:20px;">Ordering System</h3>
     <ul>
-      <li><strong>Table service:</strong> sit down and press the call button to order. Cash is accepted.</li>
-      <li>Water and side dishes or salad bars are often self-serve, and side dishes are usually free to refill.</li>
-      <li><strong>Kiosks:</strong> pay with a physical card, Kakao Pay, or Payco.</li>
-      <li>There is no tipping culture in Korea.</li>
+      <li>There are three common ways to order at restaurants in Korea:
+        <ul>
+          <li><strong>Call button:</strong> Press the button at your table to call a staff member.</li>
+          <li><strong>Table ordering device:</strong> Order directly from the touchscreen at your table.</li>
+          <li><strong>Kiosk:</strong> Some restaurants use self-service kiosks for ordering.</li>
+        </ul>
+      </li>
+      <li>Chopsticks, spoons, and napkins are often kept in a drawer under the table or in a dispenser on the table.</li>
+      <li>Water is free at almost every restaurant and is usually self-serve.</li>
     </ul>
 
-    <h3 style="font-size:17px; margin-top:20px;">Cafe Culture</h3>
+    <h3 id="payment-food" style="font-size:17px; margin-top:20px;">Payment</h3>
     <ul>
-      <li>It's common for people to spend hours working or studying in cafes. Many cafes have power outlets available.</li>
-      <li>If you need a quiet place to work, study cafes (스터디카페) are widely available. They are library-like spaces where you can rent a desk by the hour.</li>
+      <li>Most restaurants use <strong>post-payment</strong>. In some places with table ordering devices, however, you will pay by card before your order is sent to the kitchen.</li>
+      <li>Payment is usually accepted by credit/debit cards, Samsung Pay, Apple Pay (where supported), Payco, and in most cases cash as well.</li>
+      <li>There is <strong>no tipping</strong> culture in Korea, and menu prices already include VAT and service charges. The price you see on the menu is exactly what you will pay.</li>
     </ul>
 
-    <h3 style="font-size:17px; margin-top:20px;">Finding Good Restaurants</h3>
+    <h3 id="cafe" style="font-size:17px; margin-top:20px;">Cafe Culture</h3>
     <ul>
-      <li>Naver Map generally has more reviews and is widely used by locals.</li>
-      <li><strong>Instagram tags</strong> can be quite useful. Try searching tags like #강남맛집 (Gangnam food) or #성수맛집 (Seongsu food).</li>
+      <li>When ordering, you will be asked whether you are dining in or taking out. If you order a takeout cup, you cannot use the indoor seating.</li>
+      <li>It is very common for people to spend several hours working or studying in cafes. Most cafes provide free Wi-Fi and power outlets.</li>
+      <li>If you need a quieter place to focus, I highly recommend trying a study cafe (스터디카페). These are library-like workspaces with quiet desks, usually equipped with Wi-Fi, power outlets, water dispensers, and sometimes complimentary coffee. You simply pay for the amount of time you would like to stay.</li>
     </ul>
 
-    <h3 style="font-size:17px; margin-top:20px;">Delivery</h3>
+    <h3 id="delivery" style="font-size:17px; margin-top:20px;">Delivery</h3>
     <ul>
-      <li>Apps like <a href="https://apps.apple.com/kr/app/baemin-food-delivery/id378084485?l=en-GB" target="_blank" rel="noopener" style="color:#3273dc; font-weight:400;">Baemin</a> and <a href="https://apps.apple.com/kr/app/coupang-eats-food-delivery/id1445504255?l=en-GB" target="_blank" rel="noopener" style="color:#3273dc; font-weight:400;">Coupang Eats</a> offer fast delivery, often within 30–60 minutes, depending on the location and time of day.</li>
+      <li>Many hotels allow food delivery, although some require you to pick it up in the lobby. Korea has an incredible food delivery culture, so I highly recommend trying popular delivery dishes such as tteokbokki, Korean fried chicken, mala tang (Spicy Hot Pot), mala xiang guo (Dry Spicy Hot Pot), or jjimdak (Braised Chicken).</li>
+      <li>Apps like <a href="https://apps.apple.com/kr/app/baemin-food-delivery/id378084485?l=en-GB" target="_blank" rel="noopener">Baemin</a> and <a href="https://apps.apple.com/kr/app/coupang-eats-food-delivery/id1445504255?l=en-GB" target="_blank" rel="noopener">Coupang Eats</a> usually deliver within 30–60 minutes, depending on your location and the time of day.</li>
     </ul>
 
-    <p style="background:#e8f0fd; color:#3273dc; border-radius:10px; padding:12px 16px; margin-top:16px; line-height:1.6;">My personal recommendation: If you want to eat like a Korean college student, grab some Korean fried chicken (there are countless chains, including Kkanbu Chicken), tteokbokki (Dookki or Yupdduk), and dessert at Sulbing or Baskin-Robbins. Then stop by Olive Young or Daiso. :)</p>
-
-    <h3>Getting Around</h3>
-
-    <h3 style="font-size:17px; margin-top:20px;">Subway</h3>
-    <p>COEX sits at Samseong Station <span class="lb l2">2</span> (Exits 5, 6) and Bongeunsa Station <span class="lb l9">9</span> (Exit 7), so you will mostly use those two lines. A small fee may apply on some transfers.</p>
+    <h3 id="convenience" style="font-size:17px; margin-top:20px;">Convenience Store Food</h3>
     <ul>
+      <li>Korean convenience stores are worth visiting even if you do not need anything. They are almost a tourist attraction on their own.</li>
+      <li>They offer a huge variety of Korean snacks, drinks, and limited-edition products that change almost every month.</li>
+      <li>Although it is only available in Korean, Instagram accounts such as <a href="https://www.instagram.com/omuk.official/" target="_blank" rel="noopener">@omuk.official</a> regularly post new convenience store releases.</li>
+      <li>They also have surprisingly good ready-to-eat meals. I highly recommend trying triangle kimbap (samgak kimbap) and cup ramen. You will also find many different flavors of Buldak spicy ramen available in cup noodle form.</li>
+    </ul>
+
+    <h3 id="restaurants" style="font-size:17px; margin-top:20px;">Finding Good Restaurants</h3>
+    <ul>
+      <li><a href="https://map.naver.com/" target="_blank" rel="noopener"><strong>Naver Maps</strong></a> has far more local reviews than Google Maps and is by far the most widely used map app among Koreans. It is much more popular than Kakao Maps for finding restaurants.</li>
+      <li>Instagram is also surprisingly useful for discovering restaurants. Try searching hashtags such as #강남맛집 (Gangnam restaurants) or #성수맛집 (Seongsu restaurants) to see what is currently popular.</li>
+    </ul>
+    <p style="background:#f2f2f2; border-radius:10px; padding:12px 16px; color:#6e6e73; font-size:14px; line-height:1.5; margin-top:10px;">Note: I actually use Naver Maps most of the time. I made the Google Maps version because I figured it would be much more familiar for international visitors and easier to read reviews in English. I am planning to add a Naver Maps version soon.</p>
+
+    <h3 id="transit">Getting Around</h3>
+
+    <h3 id="subway" style="font-size:17px; margin-top:20px;">Subway</h3>
+    <ul>
+      <li>COEX sits at Samseong Station <span class="lb l2">2</span> (Exits 5, 6) and Bongeunsa Station <span class="lb l9">9</span> (Exit 7), so you will mostly use those two lines. A small fee may apply on some transfers.</li>
       <li><a href="https://apps.apple.com/us/app/subway-korea/id325924444" target="_blank" rel="noopener">Seoul Subway App</a> (iOS, English)</li>
       <li><a href="http://www.seoulmetro.co.kr/en/cyberStation.do" target="_blank" rel="noopener">Official Subway Map</a> (website, English)</li>
       <li><a href="https://map.naver.com/p/subway/1000/-/-/-" target="_blank" rel="noopener">Naver Subway Map</a> (website, Korean)</li>
     </ul>
 
-    <h3 style="font-size:17px; margin-top:20px;">Payment</h3>
+    <h3 id="taxi" style="font-size:17px; margin-top:20px;">Taxi</h3>
     <ul>
-      <li>Apple Pay is supported at many stores, though not everywhere.</li>
-      <li>A T-money card is required for the subway and buses. Pick one up at any convenience store, or add a virtual card to Apple Wallet if your device supports it.</li>
+      <li>Base fare is 4,800 KRW (about 3 USD) for the first 1.6 km. Late-night and long-distance surcharges may apply.</li>
+      <li><a href="https://apps.apple.com/kr/app/kakao-t/id981110422?l=en-GB" target="_blank" rel="noopener"><strong>Kakao T</strong></a> is the most widely used taxi app in Korea and supports English. You can usually hail a taxi on the street, especially in busy areas, though using Kakao T is often more convenient.</li>
+      <li>Most taxis accept credit card.</li>
+      <li>The destination is often entered through the driver's navigation system, so having the address or name in Korean (or showing it on Naver Maps or Google Maps) can be helpful.</li>
     </ul>
 
-    <h3 style="font-size:17px; margin-top:20px;">Map Apps</h3>
-    <p><a href="https://map.naver.com/" target="_blank" rel="noopener">Naver Map</a>, <a href="https://maps.google.com/" target="_blank" rel="noopener">Google Maps</a>, and <a href="https://apps.apple.com/kr/app/kakao-t/id981110422?l=en-GB" target="_blank" rel="noopener">Kakao T</a> (taxi).</p>
-
-    <h3 style="font-size:17px; margin-top:20px;">Transit Notes</h3>
+    <h3 id="payment-transit" style="font-size:17px; margin-top:20px;">Transit Payment</h3>
     <ul>
-      <li>It's worth checking last train times before heading out.</li>
+      <li>A <strong>T-money card</strong> is required for the subway and buses. You can pick one up at any convenience store, load it with credit, and recharge it as needed. Any remaining balance can be refunded at a convenience store when you leave.</li>
+      <li><a href="https://www.apple.com/kr/apple-pay/transit/" target="_blank" rel="noopener">Apple Pay</a> is supported at many stores, though not everywhere.</li>
+    </ul>
+
+    <h3 id="transit-notes" style="font-size:17px; margin-top:20px;">Transit Tips</h3>
+    <ul>
+      <li>If you are out after around 11 PM, it is worth checking the last train times before heading back.</li>
+      <li>Major areas in Seoul remain lively until around midnight, so it is common to see lots of people out even late at night.</li>
       <li>Transfers to a different line or bus are discounted if you tag your card again within 30 minutes of getting off.</li>
       <li>Rush hour (especially weekday mornings and 5–7 PM) can be quite crowded.</li>
       <li>Coin lockers are available at major subway stations, useful for storing bags before check-in or after checkout.</li>
       <li>Bus number colors indicate route type.</li>
-      <li>Priority seats for pregnant passengers and the elderly are kept empty.</li>
+      <li>Priority seats for pregnant passengers and the elderly are generally left available for those who need them.</li>
+      <li>Public restrooms are common in subway stations, department stores, and shopping malls.</li>
     </ul>
 
-    <h3>Shopping &amp; Convenience</h3>
+    <h3 id="shopping">Shopping &amp; Convenience</h3>
 
-    <h3 style="font-size:17px; margin:20px 0 10px;">Daiso</h3>
-    <p>Daiso is a great place for inexpensive everyday essentials. You can find almost anything there.</p>
-
-    <h3 style="font-size:17px; margin:20px 0 10px;">Olive Young</h3>
-    <p>Cosmetics and daily essentials.</p>
-
-    <h3 style="font-size:17px; margin-top:20px;">Korean Convenience Stores</h3>
+    <h3 id="dept" style="font-size:17px; margin-top:20px;">Department Stores</h3>
     <ul>
-      <li>Tasty trendy Korean snacks and drinks.</li>
-      <li>Quick meals to grab on the go.</li>
-      <li>A wide range of everyday items.</li>
+      <li>If you want to shop indoors and eat well, I highly recommend visiting a department store. The basement food halls in particular are absolutely packed with incredible options. I always feel like I am visiting Diagon Alley!</li>
+      <li>There are many department store brands and branches in Seoul, but I recommend the following three:
+        <ul>
+          <li><strong>The Hyundai Seoul</strong> <span class="lb l5">5</span>: Built just a few years ago, it has fantastic food, great shopping, and a beautiful interior. A visit here pairs perfectly with a walk along Yeouido Han River Park nearby.
+            <ul>
+              <li><a href="https://maps.app.goo.gl/iG77AjtuN2HA2h1r6" target="_blank" rel="noopener">Google Maps</a></li>
+            </ul>
+          </li>
+          <li><strong>Shinsegae Gangnam</strong> <span class="lb l3">3</span> <span class="lb l7">7</span> <span class="lb l9">9</span>: Conveniently located in Gangnam and easy to reach. The underground Famille Station is full of great food and things to explore.
+            <ul>
+              <li><a href="https://maps.app.goo.gl/Enhiqb7H2yzx59hR6" target="_blank" rel="noopener">Google Maps</a></li>
+              <li><a href="https://maps.app.goo.gl/XxjXbii4vLL9YT7y5" target="_blank" rel="noopener">Famille Station</a></li>
+            </ul>
+          </li>
+          <li><strong>Lotte Department Store Jamsil</strong> <span class="lb l2">2</span> <span class="lb l8">8</span>: Right next to Lotte World Mall, making it a great stop if you are planning a full shopping day in Jamsil.</li>
+        </ul>
+      </li>
     </ul>
 
-    <h3 style="font-size:17px; margin-top:20px;">Internet</h3>
+    <h3 id="supermarkets" style="font-size:17px; margin-top:20px;">Supermarkets</h3>
+    <ul>
+      <li>If you want to browse Korean snacks, processed foods, jellies, and everyday essentials all in one place, E-Mart is the place to go. Think of it as Korea's version of a large supermarket.</li>
+      <li>Prices are slightly lower than convenience stores and the variety is much greater. The cup ramen aisle alone is enormous compared to what you will find at a convenience store.</li>
+      <li>E-Mart has many locations across the city. These two are well situated for most itineraries:
+        <ul>
+          <li><a href="https://maps.app.goo.gl/u2dZXvR949zzLFBGA" target="_blank" rel="noopener">E-Mart Yeoksam</a> <span class="lb l2">2</span> <span class="lb lsb">수인분당</span></li>
+          <li><a href="https://maps.app.goo.gl/BE2YQWqxYJyJkcho9" target="_blank" rel="noopener">E-Mart Yongsan</a> <span class="lb l1">1</span> <span class="lb lgj">경의중앙</span>. <a href="https://maps.app.goo.gl/V3ABV7mNWbQSHm3r6" target="_blank" rel="noopener">I'Park Mall</a> is right next door and worth visiting as well.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3 id="daiso" style="font-size:17px; margin-top:20px;">Daiso</h3>
+    <ul>
+      <li>Daiso is one of the best places to buy inexpensive yet surprisingly useful everyday items. You can find almost anything there, and most products cost only 1 to 2 USD.</li>
+      <li><a href="https://www.daisomall.co.kr/ds/rank/C105?srsltid=AfmBOopUl8-mmolzJwO5GDpUlVsXSkYMOyKppYJZhkUuXW8XLVILRGXn" target="_blank" rel="noopener">Daiso Best Sellers</a></li>
+    </ul>
+
+    <h3 id="oliveyoung" style="font-size:17px; margin-top:20px;">Olive Young</h3>
+    <ul>
+      <li>Olive Young is Korea's most popular health and beauty store, offering a huge selection of cosmetics, skincare products, and unique everyday items. Even as a local, I often stop by with friends just to browse and see what's new.</li>
+      <li><a href="https://global.oliveyoung.com/" target="_blank" rel="noopener">Olive Young Global</a></li>
+    </ul>
+
+    <h3 id="wifi" style="font-size:17px; margin-top:20px;">Free Internet</h3>
     <ul>
       <li>Many restaurants and cafes offer free Wi-Fi, often with the network name and password posted inside. If nothing is posted, asking the staff usually works.</li>
       <li>The Seoul subway offers free public Wi-Fi.</li>

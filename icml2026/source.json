@@ -1720,6 +1720,38 @@
       "url": "https://luma.com/7nt9s63z"
     },
     {
+      "name": "D4D | Deploy for Defense Hackathon APAC — Seoul",
+      "date": "2026-07-04",
+      "day": "Saturday",
+      "time": "9:00 AM – 4:00 PM",
+      "location": null,
+      "url": "https://luma.com/2ew4xn7b"
+    },
+    {
+      "name": "ICML 2026: Opening Reception",
+      "date": "2026-07-05",
+      "day": "Sunday",
+      "time": "4:00 PM–6:00 PM",
+      "location": null,
+      "url": "https://luma.com/bncxfdjm"
+    },
+    {
+      "name": "SMW AI Networking Mixer before ICML",
+      "date": "2026-07-05",
+      "day": "Sunday",
+      "time": "4:00 PM–8:00 PM",
+      "location": null,
+      "url": "https://luma.com/64qex8js"
+    },
+    {
+      "name": "ProbML 2026",
+      "date": "2026-07-05",
+      "day": "Sunday",
+      "time": "8:00 AM–6:00 PM",
+      "location": null,
+      "url": "https://luma.com/td9d3qxl"
+    },
+    {
       "name": "Korea AI4Science Gathering @ ICML 2026",
       "date": "2026-07-06",
       "day": "Monday",
@@ -1736,18 +1768,10 @@
       "url": "https://luma.com/vessl-9xxv"
     },
     {
-      "name": "a2sys Dinner",
+      "name": "FriendliAI & Z.ai Night at ICML 2026",
       "date": "2026-07-06",
       "day": "Monday",
-      "time": "TBA",
-      "location": null,
-      "url": "https://docs.google.com/forms/d/e/1FAIpQLSejqmUdauYDP4ornjfUxVddzG1hbPPXLC0S7zSyBGisPsdtVw/viewform"
-    },
-    {
-      "name": "FriendliAI Night",
-      "date": "2026-07-06",
-      "day": "Monday",
-      "time": "7:00–9:00 PM",
+      "time": "6:30 PM–8:30 PM",
       "location": null,
       "url": "https://luma.com/lyx6rsfx"
     },
@@ -1758,6 +1782,46 @@
       "time": "7:00–9:00 PM",
       "location": null,
       "url": "https://luma.com/2z0dmzlp"
+    },
+    {
+      "name": "TAIC'26: Thinking about AI's Capability",
+      "date": "2026-07-06",
+      "day": "Monday",
+      "time": "9:00 AM–5:30 PM",
+      "location": null,
+      "url": "https://luma.com/ojd6dd4p"
+    },
+    {
+      "name": "a2sys Dinner",
+      "date": "2026-07-06",
+      "day": "Monday",
+      "time": "TBA",
+      "location": null,
+      "url": "https://docs.google.com/forms/d/e/1FAIpQLSejqmUdauYDP4ornjfUxVddzG1hbPPXLC0S7zSyBGisPsdtVw/viewform"
+    },
+    {
+      "name": "Computer-Use Agents Researcher Roundtable · ICML 2026 Week",
+      "date": "2026-07-07",
+      "day": "Tuesday",
+      "time": "6:00 PM–9:00 PM",
+      "location": null,
+      "url": "https://luma.com/simular-kjpc"
+    },
+    {
+      "name": "Sakana AI Dinner Meetup #ICML2026",
+      "date": "2026-07-07",
+      "day": "Tuesday",
+      "time": "7:00 PM",
+      "location": null,
+      "url": "https://forms.gle/qWUJ3jc284yoGMTr5"
+    },
+    {
+      "name": "Women in Frontier AI – ICML Edition",
+      "date": "2026-07-07",
+      "day": "Tuesday",
+      "time": "7:00 PM–11:30 PM",
+      "location": null,
+      "url": "https://luma.com/yn86kqnv"
     },
     {
       "name": "Cafe Compute @ ICML",
@@ -1784,12 +1848,12 @@
       "url": "https://luma.com/rmev9nn6"
     },
     {
-      "name": "Sakana AI Dinner Meetup #ICML2026",
-      "date": "2026-07-07",
-      "day": "Tuesday",
-      "time": "7:00 PM",
+      "name": "ICML Cafe with GMI Cloud, Sky9, AttentionX, Z Potentials",
+      "date": "2026-07-08",
+      "day": "Wednesday",
+      "time": "10:00 AM–6:00 PM",
       "location": null,
-      "url": "https://forms.gle/qWUJ3jc284yoGMTr5"
+      "url": "https://luma.com/gmicloud-2mqn"
     },
     {
       "name": "Turing After Hours",
@@ -1808,6 +1872,30 @@
       "url": "https://luma.com/h700je7w"
     },
     {
+      "name": "Meta Networking Mixer at ICML 2026",
+      "date": "2026-07-08",
+      "day": "Wednesday",
+      "time": "6:30 PM–9:30 PM",
+      "location": null,
+      "url": "https://icmlnetworkingevent2026.splashthat.com/"
+    },
+    {
+      "name": "ICML Happy Hour — Liner × VESSL AI: Research to Scale",
+      "date": "2026-07-08",
+      "day": "Wednesday",
+      "time": "7:00 PM–10:00 PM",
+      "location": null,
+      "url": "https://luma.com/2js3bisk"
+    },
+    {
+      "name": "ICML 2026: AI × Education",
+      "date": "2026-07-08",
+      "day": "Wednesday",
+      "time": "7:00 PM–10:00 PM",
+      "location": null,
+      "url": "https://luma.com/61aacz14"
+    },
+    {
       "name": "Liner × VESSL AI",
       "date": "2026-07-08",
       "day": "Wednesday",
@@ -1822,6 +1910,46 @@
       "time": "7:30 PM",
       "location": "RLWRLD Lab, Gangnam, Seoul (2 blocks from COEX)",
       "url": "https://rlwrld.co/icml"
+    },
+    {
+      "name": "Cantina Labs @ ICML 2026 Cocktail Evening",
+      "date": "2026-07-09",
+      "day": "Thursday",
+      "time": "7:00 PM–9:30 PM",
+      "location": null,
+      "url": "https://luma.com/2kzz8fox"
+    },
+    {
+      "name": "Researchers' Happy Hour @ ICML w/ Gradient, Fusion Fund & Memories AI",
+      "date": "2026-07-09",
+      "day": "Thursday",
+      "time": "7:00 PM–9:30 PM",
+      "location": null,
+      "url": "https://luma.com/gradient-hwsb"
+    },
+    {
+      "name": "SNU × Simular — ICML 2026 Side Event",
+      "date": "2026-07-10",
+      "day": "Friday",
+      "time": "9:00 PM–11:00 PM",
+      "location": null,
+      "url": "https://luma.com/simular-l4tr"
+    },
+    {
+      "name": "Google DeepMind Research x GDG AI for Science Meetup",
+      "date": "2026-07-11",
+      "day": "Saturday",
+      "time": "1:00 PM–5:00 PM",
+      "location": "Google Korea Office 24F",
+      "url": "https://gdg.community.dev/events/details/google-gdg-ai-for-science-korea-presents-google-deepmind-research-x-gdg-ai-for-science-meetup-1/"
+    },
+    {
+      "name": "OpenAI ICML 2026 – Safety + Alignment Event",
+      "date": "2026-07-12",
+      "day": "TBA",
+      "time": "TBA",
+      "location": null,
+      "url": "https://docs.google.com/forms/d/e/1FAIpQLSdLoDHt3eBn-QNOklHf1ZazLioA3x0ZRkNcVV-WNE1mm8vyeA/viewform"
     }
   ]
 }
