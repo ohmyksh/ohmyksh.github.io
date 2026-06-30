@@ -1800,6 +1800,30 @@
       "url": "https://docs.google.com/forms/d/e/1FAIpQLSejqmUdauYDP4ornjfUxVddzG1hbPPXLC0S7zSyBGisPsdtVw/viewform"
     },
     {
+      "name": "Meet with Modal at ICML",
+      "date": "2026-07-06",
+      "day": "Monday",
+      "time": "1:00 PM – 5:30 PM (Jul 9)",
+      "location": null,
+      "url": "https://luma.com/modal-icml"
+    },
+    {
+      "name": "AI for Games – ICML Social",
+      "date": "2026-07-06",
+      "day": "Monday",
+      "time": "7:00 PM – 9:00 PM",
+      "location": null,
+      "url": "https://luma.com/wf7pe0ee"
+    },
+    {
+      "name": "Let's Talk Robots & AI — ICML Seoul After-Dinner Social",
+      "date": "2026-07-06",
+      "day": "Monday",
+      "time": "7:30 PM – 12:30 AM",
+      "location": null,
+      "url": "https://luma.com/a4llcged"
+    },
+    {
       "name": "Computer-Use Agents Researcher Roundtable · ICML 2026 Week",
       "date": "2026-07-07",
       "day": "Tuesday",
@@ -1846,6 +1870,62 @@
       "time": "8:00–10:30 PM",
       "location": null,
       "url": "https://luma.com/rmev9nn6"
+    },
+    {
+      "name": "Seoul Forum on AI Safety & Security (SFASS)",
+      "date": "2026-07-07",
+      "day": "Tuesday",
+      "time": "6:30 AM – 6:00 PM (Jul 8)",
+      "location": null,
+      "url": "https://luma.com/624r9wwh"
+    },
+    {
+      "name": "AI and Bio Evening Social",
+      "date": "2026-07-07",
+      "day": "Tuesday",
+      "time": "6:00 PM – 9:00 PM",
+      "location": null,
+      "url": "https://luma.com/2g1rr4v6"
+    },
+    {
+      "name": "A Night of Science & Art @ ICML 2026",
+      "date": "2026-07-07",
+      "day": "Tuesday",
+      "time": "6:30 PM – 11:30 PM",
+      "location": null,
+      "url": "https://luma.com/8hns7pb2"
+    },
+    {
+      "name": "ICML: Rooftop Dinner ft. Elorian + Ricursive + Striker",
+      "date": "2026-07-07",
+      "day": "Tuesday",
+      "time": "7:00 PM – 10:00 PM",
+      "location": null,
+      "url": "https://partiful.com/e/7qj7GW6CtIaXUTJUeLLr"
+    },
+    {
+      "name": "Autonomous Research Happy Hour with Quadrillion",
+      "date": "2026-07-07",
+      "day": "Tuesday",
+      "time": "7:00 PM – 10:00 PM",
+      "location": null,
+      "url": "https://luma.com/vgo1i1nf"
+    },
+    {
+      "name": "Creative Intelligence After Hours",
+      "date": "2026-07-07",
+      "day": "Tuesday",
+      "time": "7:00 PM – 11:00 PM",
+      "location": null,
+      "url": "https://luma.com/5xnxusbr"
+    },
+    {
+      "name": "Multi-Agent Systems and Scientific Discovery Party",
+      "date": "2026-07-07",
+      "day": "Tuesday",
+      "time": "7:00 PM – 1:00 AM",
+      "location": null,
+      "url": "https://luma.com/vdg8iani"
     },
     {
       "name": "ICML Cafe with GMI Cloud, Sky9, AttentionX, Z Potentials",
@@ -1912,6 +1992,78 @@
       "url": "https://rlwrld.co/icml"
     },
     {
+      "name": "A Night at Bloom Bar · Drinks with the Snorkel AI Research Team",
+      "date": "2026-07-08",
+      "day": "Wednesday",
+      "time": "6:00 PM – 9:00 PM",
+      "location": null,
+      "url": "https://luma.com/rdikz922"
+    },
+    {
+      "name": "OpenAI Codex Meetup – Seoul",
+      "date": "2026-07-08",
+      "day": "Wednesday",
+      "time": "6:30 PM – 9:15 PM",
+      "location": null,
+      "url": "https://luma.com/azfldlz7"
+    },
+    {
+      "name": "ICML 2026 Networking Lunch @ ML2",
+      "date": "2026-07-09",
+      "day": "Thursday",
+      "time": "11:00 AM – 2:00 PM",
+      "location": null,
+      "url": "https://luma.com/jgjhzhly"
+    },
+    {
+      "name": "NUS × Jane Street Summit on Self-Evolution of AI Agents and Multiagent Systems",
+      "date": "2026-07-09",
+      "day": "Thursday",
+      "time": "2:30 PM – 7:00 PM",
+      "location": null,
+      "url": "https://luma.com/rzkweojj"
+    },
+    {
+      "name": "LLHH: Longitude Labs Happy Hour",
+      "date": "2026-07-09",
+      "day": "Thursday",
+      "time": "5:00 PM – 8:00 PM",
+      "location": null,
+      "url": "https://partiful.com/e/rPoLpRQwpOFYsBf0dydG"
+    },
+    {
+      "name": "ICML AfterParty Yacht",
+      "date": "2026-07-09",
+      "day": "Thursday",
+      "time": "6:00 PM – 8:00 PM",
+      "location": null,
+      "url": "https://luma.com/k20wov5o"
+    },
+    {
+      "name": "ICML Jazz Night: Deccan AI × AWS",
+      "date": "2026-07-09",
+      "day": "Thursday",
+      "time": "6:00 PM – 9:00 PM",
+      "location": null,
+      "url": "https://luma.com/zxzcy7hq"
+    },
+    {
+      "name": "Japan Night @ ICML 2026",
+      "date": "2026-07-09",
+      "day": "Thursday",
+      "time": "7:00 PM – 9:00 PM",
+      "location": null,
+      "url": "https://luma.com/22j50ix5"
+    },
+    {
+      "name": "Seoul After Dark: Night Market Food Tour",
+      "date": "2026-07-09",
+      "day": "Thursday",
+      "time": "7:00 PM – 10:00 PM",
+      "location": null,
+      "url": "https://luma.com/j7lvelgz"
+    },
+    {
       "name": "Cantina Labs @ ICML 2026 Cocktail Evening",
       "date": "2026-07-09",
       "day": "Thursday",
@@ -1936,6 +2088,14 @@
       "url": "https://luma.com/simular-l4tr"
     },
     {
+      "name": "TAIGR 2026 Workshop Afterparty",
+      "date": "2026-07-10",
+      "day": "Friday",
+      "time": "6:00 PM – 10:00 PM",
+      "location": null,
+      "url": "https://luma.com/1wiotk0y"
+    },
+    {
       "name": "Google DeepMind Research x GDG AI for Science Meetup",
       "date": "2026-07-11",
       "day": "Saturday",
@@ -1944,9 +2104,17 @@
       "url": "https://gdg.community.dev/events/details/google-gdg-ai-for-science-korea-presents-google-deepmind-research-x-gdg-ai-for-science-meetup-1/"
     },
     {
+      "name": "AI4Science @ ICML Afterparty",
+      "date": "2026-07-11",
+      "day": "Saturday",
+      "time": "6:00 PM – 11:30 PM",
+      "location": null,
+      "url": "https://luma.com/0kkypzso"
+    },
+    {
       "name": "OpenAI ICML 2026 – Safety + Alignment Event",
-      "date": "2026-07-12",
-      "day": "TBA",
+      "date": "TBD",
+      "day": "TBD",
       "time": "TBA",
       "location": null,
       "url": "https://docs.google.com/forms/d/e/1FAIpQLSdLoDHt3eBn-QNOklHf1ZazLioA3x0ZRkNcVV-WNE1mm8vyeA/viewform"
