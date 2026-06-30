@@ -171,24 +171,30 @@
     }
     .resource-tile {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      gap: 4px;
+      gap: 10px;
       font-family: var(--font-serif);
-      font-size: 15px;
-      font-weight: 700;
+      font-size: 16px;
+      font-weight: 400;
       color: #3a3a3c;
       text-decoration: none;
-      border: 1.5px solid #3a3a3c;
+      border: 1.5px solid #3273dc;
       border-radius: 10px;
-      padding: 12px 10px;
+      padding: 3px 10px;
+      white-space: nowrap;
       background: #fff;
-      transition: background 0.15s;
+      transition: box-shadow 0.15s, transform 0.15s, background 0.15s;
     }
     .resource-tile span { font-size: 13px; font-weight: 400; color: var(--muted); }
-    .resource-tile:hover { background: #f5f5f5; }
+    .resource-tile:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.09); transform: translateY(-2px); }
+    .resource-tile:active { transform: translateY(0); box-shadow: none; }
+    @media (max-width: 640px) {
+      .resource-tile { flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 15px; text-align: center; white-space: normal; padding: 8px 4px; line-height: 1.35; }
+      .bio-text { font-size: 14px !important; }
+      .useful-links { font-size: 14px !important; line-height: 1.9 !important; }
+    }
 
     /* Sections */
     .section {
@@ -409,20 +415,32 @@
         <a href="https://www.linkedin.com/in/kimsohyeon/" target="_blank" rel="noopener" style="color:#3273dc; text-decoration:none;">LinkedIn</a>
       </div>
     </div>
-    <p style="font-size:14px;">I research AI at Seoul National University and grew up in Seoul. Since friends often ask me for Seoul recommendations, I put together this guide for ICML attendees, featuring some of my favorite places as well as spots still on my own bucket list.</p>
-    <p style="font-size:14px;">For those interested, my research focuses on RAG and Agent Memory. You can find more on my website linked above. I love meeting new researchers and chatting about research, technology, and careers, so I'd be happy to connect at ICML!</p>
+    <p class="bio-text" style="font-size:16px;">I research AI at Seoul National University and grew up in Seoul. Since friends often ask me for Seoul recommendations, I put together this guide for ICML attendees, featuring some of my favorite places as well as spots still on my own bucket list.</p>
+    <p class="bio-text" style="font-size:16px;">For those interested, my research focuses on non-parametric memory systems, including RAG, Information Retrieval, and Agent Memory. You can find more on my website linked above. I always enjoy discussing research, technology, and their implications for a post-AGI society, so feel free to reach out!</p>
 
     <!-- Nav buttons -->
-    <div style="display:flex; flex-direction:column; gap:10px; margin-top:36px;">
-      <a href="must-visit.html" class="nav-btn" style="background:#e8f0fd; border-color:#3273dc; min-height:0; padding:7px 16px;">
-        <div style="font-size:15px; font-weight:400; color:#3273dc;">★ My Top 5 Must-Visit Places</div>
+    <div style="display:flex; flex-direction:column; gap:14px; margin-top:20px;">
+      <div style="display:flex; justify-content:center; margin: 10px 0 28px;">
+        <div class="resource-tiles" style="margin:0; max-width:580px; width:100%;">
+          <a href="https://naver.me/xvCNzd0k" target="_blank" rel="noopener" class="resource-tile" style="border-color:#c7c7cc; color:var(--ink);">
+            <img src="img/naver-map.png" alt="" style="width:28px; height:28px; object-fit:contain; flex-shrink:0;">
+            Naver Map
+          </a>
+          <a href="https://maps.app.goo.gl/wyLubMayBohUizSi6" target="_blank" rel="noopener" class="resource-tile" style="border-color:#c7c7cc; color:var(--ink);">
+            <img src="img/google-map.png" alt="" style="width:26px; height:26px; object-fit:contain; flex-shrink:0;">
+            Google Map
+          </a>
+          <a href="vegan.html" class="resource-tile" style="border-color:#c7c7cc; color:var(--ink);">
+            <img src="img/vegan.png" alt="" style="width:32px; height:32px; object-fit:contain; flex-shrink:0;">
+            Vegan Places
+          </a>
+        </div>
+      </div>
+      <a href="must-visit.html" class="nav-btn" style="background:#e8f0fd; border-color:#3273dc; min-height:0; padding:8px 16px;">
+        <div style="font-size:16px; font-weight:400; color:#3273dc;">★ My Top 5 Must-Visit Places</div>
         <span class="btn-arrow" style="color:#3273dc;">→</span>
       </a>
-      <a href="https://maps.app.goo.gl/wyLubMayBohUizSi6" target="_blank" rel="noopener" class="nav-btn" style="background:#e8f0fd; border-color:#3273dc; min-height:0; padding:7px 16px;">
-        <div style="font-size:15px; font-weight:400; color:#3273dc;">★ My Google Maps with 100+ Recommendations</div>
-        <span class="btn-arrow" style="color:#3273dc;">→</span>
-      </a>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:2px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:0;">
         <a href="workshops.html" class="nav-btn">
           <div>
             <div style="font-size:17.5px; font-weight:400; color:var(--ink);">Workshops</div>
@@ -460,7 +478,7 @@
     </nav>
 
     <h3 style="font-size:16.5px; font-weight:400; margin:28px 0 8px;">Useful Links</h3>
-    <ul style="padding-left:20px; margin:0 0 20px; font-size:14.5px; line-height:2;">
+    <ul class="useful-links" style="padding-left:20px; margin:0 0 20px; font-size:16px; line-height:2.2;">
       <li><a href="https://icml.cc/" target="_blank" rel="noopener" style="color:#3273dc;">ICML 2026 Website</a>, <a href="https://icml.cc/virtual/2026/index.html" target="_blank" rel="noopener" style="color:#3273dc;">Conference</a>, <a href="https://icml.cc/virtual/2026/calendar?filter_events=&filter_rooms=" target="_blank" rel="noopener" style="color:#3273dc;">Schedule</a>, <a href="https://icml.cc/virtual/2026/events/workshop" target="_blank" rel="noopener" style="color:#3273dc;">Workshop</a></li>
       <li>Subway: <a href="https://apps.apple.com/us/app/subway-korea/id325924444" target="_blank" rel="noopener" style="color:#3273dc;">Seoul Subway App</a> (iOS, English), <a href="http://www.seoulmetro.co.kr/en/cyberStation.do" target="_blank" rel="noopener" style="color:#3273dc;">Official Subway Map</a> (website, English), <a href="https://map.naver.com/p/subway/1000/-/-/-" target="_blank" rel="noopener" style="color:#3273dc;">Naver Subway Map</a> (website, Korean)</li>
       <li>COEX: <a href="https://www.coexcenter.com/" target="_blank" rel="noopener" style="color:#3273dc;">Official Site</a>, <a href="https://maps.app.goo.gl/pZpdu8FM5hJ1gw6Y6" target="_blank" rel="noopener" style="color:#3273dc;">Open in Maps</a>, <a href="https://m.starfield.co.kr/coexmall/tenant/floorInfo" target="_blank" rel="noopener" style="color:#3273dc;">Floor Info</a></li>
