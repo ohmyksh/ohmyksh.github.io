@@ -1824,6 +1824,14 @@
       "url": "https://luma.com/a4llcged"
     },
     {
+      "name": "Evening Social with Citadel Securities",
+      "date": "2026-07-07",
+      "day": "Tuesday",
+      "time": "6:00 PM",
+      "location": null,
+      "url": "https://events.citadelsecurities.com/icml2026experienced"
+    },
+    {
       "name": "Computer-Use Agents Researcher Roundtable · ICML 2026 Week",
       "date": "2026-07-07",
       "day": "Tuesday",
@@ -1936,6 +1944,46 @@
       "url": "https://luma.com/gmicloud-2mqn"
     },
     {
+      "name": "Pitch Your Poster and Happy Hour (Gensyn)",
+      "date": "2026-07-08",
+      "day": "Wednesday",
+      "time": "4:30 PM – 7:00 PM",
+      "location": null,
+      "url": "https://luma.com/PosterPitchICML"
+    },
+    {
+      "name": "Altos Ventures & AfterQuery Welcome You to Seoul (ICML Edition)",
+      "date": "2026-07-08",
+      "day": "Wednesday",
+      "time": "6:00 PM – 10:00 PM",
+      "location": null,
+      "url": "https://luma.com/qw62a4k4"
+    },
+    {
+      "name": "General Catalyst × Proximal ICML Dinner",
+      "date": "2026-07-08",
+      "day": "Wednesday",
+      "time": "6:30 PM – 10:30 PM",
+      "location": null,
+      "url": "https://luma.com/y1i0ohtp"
+    },
+    {
+      "name": "Evening Social with Citadel | Citadel Securities",
+      "date": "2026-07-08",
+      "day": "Wednesday",
+      "time": "7:00 PM",
+      "location": null,
+      "url": "https://events.citadel.com/icml2026eveningsocial"
+    },
+    {
+      "name": "General Intuition ICML 2026 Party",
+      "date": "2026-07-08",
+      "day": "Wednesday",
+      "time": "7:00 PM – 11:00 PM",
+      "location": null,
+      "url": "https://luma.com/owkha7u2"
+    },
+    {
       "name": "Turing After Hours",
       "date": "2026-07-08",
       "day": "Wednesday",
@@ -2006,6 +2054,30 @@
       "time": "6:30 PM – 9:15 PM",
       "location": null,
       "url": "https://luma.com/azfldlz7"
+    },
+    {
+      "name": "Networking Lunch with Citadel | Citadel Securities",
+      "date": "2026-07-09",
+      "day": "Thursday",
+      "time": "11:30 AM",
+      "location": null,
+      "url": "https://events.citadel.com/icml2026luncehon"
+    },
+    {
+      "name": "Abridge @ ICML 2026",
+      "date": "2026-07-09",
+      "day": "Thursday",
+      "time": "4:30 PM – 6:30 PM",
+      "location": null,
+      "url": "https://luma.com/dautnozx"
+    },
+    {
+      "name": "Beyond Scaling Laws: Founders & Researchers @ ICML",
+      "date": "2026-07-09",
+      "day": "Thursday",
+      "time": "5:30 PM – 8:00 PM",
+      "location": null,
+      "url": "https://luma.com/gradient-hwsb"
     },
     {
       "name": "ICML 2026 Networking Lunch @ ML2",
@@ -2088,12 +2160,28 @@
       "url": "https://luma.com/simular-l4tr"
     },
     {
+      "name": "Modal × Applied Compute: Rooftop Happy Hour @ ICML",
+      "date": "2026-07-10",
+      "day": "Friday",
+      "time": "6:00 PM – 11:00 PM",
+      "location": null,
+      "url": "https://luma.com/modal-AC-icml-HH"
+    },
+    {
       "name": "TAIGR 2026 Workshop Afterparty",
       "date": "2026-07-10",
       "day": "Friday",
       "time": "6:00 PM – 10:00 PM",
       "location": null,
       "url": "https://luma.com/1wiotk0y"
+    },
+    {
+      "name": "Hugging Face Seoul Meetup",
+      "date": "2026-07-11",
+      "day": "Saturday",
+      "time": "12:00 PM – 5:30 PM",
+      "location": null,
+      "url": "https://luma.com/xej0o2jr"
     },
     {
       "name": "Google DeepMind Research x GDG AI for Science Meetup",
