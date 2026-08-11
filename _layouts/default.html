@@ -20,13 +20,20 @@
           <img src="/assets/img/profile.png" style="width:80%; max-width:170px" alt="Logo" />
         {% endif %}
         </p>
-        <p style="color:#000;">M.S./Ph.D. @ SNU<br>sohyeon.kim@vision.snu.ac.kr</p>
+        {% if page.url == "/" %}
+        <p style="color:#000;">sohyeon@stanford.edu<br>sohyeon.kim@vision.snu.ac.kr</p>
+        {% endif %}
         <div style="margin-top: 3px; display: flex; gap: 10px; font-weight: 400; font-size: 14.5px;">
+          {% if page.layout == "post" or page.url == "/blog/" %}
+          <a href="{{ "/" | relative_url }}" style="text-decoration: none; color: #481163;">Home</a>
+          {% endif %}
           <a href="https://github.com/ohmyksh" style="text-decoration: none; color: #481163;">Github</a>
           <a href="https://scholar.google.com/citations?user=Oe6wbtMAAAAJ&hl=en" style="text-decoration: none; color: #481163;">Scholar</a>
           <a href="https://www.linkedin.com/in/kimsohyeon/" style="text-decoration: none; color: #481163;">LinkedIn</a>
           <a href="https://x.com/ohmyksh?s=21" style="text-decoration: none; color: #481163;">X</a>
-          <a href="{{ "/blog/" | relative_url }}" style="text-decoration: none; color: #481163;">(Thoughts)</a>
+          {% unless page.layout == "post" or page.url == "/blog/" %}
+          <a href="{{ "/blog/" | relative_url }}" style="text-decoration: none; color: #481163;">Blog</a>
+          {% endunless %}
         </div>
       </header>
       <div style="height:30px;"></div>
@@ -36,7 +43,7 @@
 
       </section>
       <footer>
-        <small style="font-size: 13px;">Last updated: May 2026</small>
+        <small style="font-size: 13px;">Last updated: Aug 2026</small>
       </p></footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>

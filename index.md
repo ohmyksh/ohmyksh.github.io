@@ -2,20 +2,28 @@
 layout: default
 ---
 <div style="height:15px;"></div>
-<p style="color:#000;"> I am a first-year M.S./Ph.D. student at Seoul National University, advised by <a href="https://vision.snu.ac.kr/gunhee/" style="color:#481163;">Gunhee Kim</a>. Previously, I received my B.S. in Computer Science and Engineering from POSTECH.</p>
+<p style="color:#000;"> I am a first-year Ph.D. student at <a href="https://www.snu.ac.kr/" style="color:#481163;">Seoul National University</a>, working with Prof. <a href="https://vision.snu.ac.kr/gunhee/" style="color:#481163;">Gunhee Kim</a>. I am also a visiting researcher at <a href="https://irislab.stanford.edu/" style="color:#481163;">Stanford University</a>, hosted by Prof. <a href="https://ai.stanford.edu/~cbfinn/" style="color:#481163;">Chelsea Finn</a>. Previously, I received my Bachelor's degree with honors in Computer Science and Engineering at <a href="https://www.postech.ac.kr/eng/index.do" style="color:#481163;">POSTECH</a>.</p>
 
 <p style="color:#000;">
-  Throughout my life, I’ve been thinking about what I want, what I know, and how to explore what I do not know. This curiosity extends into my research: how knowledge is stored, retrieved, and leveraged during reasoning. I am particularly interested in non-parametric memory systems, including RAG, information retrieval, and agent memory. Currently, I explore how models can leverage existing knowledge to discover the unknown.
+  Throughout my life, I’ve been thinking about what I want, what I know, and how to explore what I do not know. This curiosity has grown into the research question I want to pursue: how should models interact with external knowledge? I want to explore what should be memorized versus externalized, how models retrieve and reason over external knowledge, and how memory should be organized. These interests draw me to information retrieval, RAG, and agent memory.
 </p>
 
 <p style="color:#000;">
-  In parallel, I enjoy abstracting thoughts and mapping their relationships into my own language. For me, conversation serves as a medium to interpret others' mental models, allowing me to discover new axes for thinking. Reading has also been a source of inspiration for me, and lately I've been marveling at the imagination of Asimov, P. K. Dick, and Clarke. Just as they explored futures unbound by their present, I hope to push the limits of intelligence.
+  In parallel, I enjoy abstracting thoughts and mapping their relationships into my own language. For me, conversation serves as a medium for interpreting others’ mental models and discovering new axes of thinking. You can find more of these reflections on my <a href="{{ '/blog/' | relative_url }}" style="color:#481163;">Blog</a>.
 </p>
 
 <div style="height:15px;"></div>
 
 <div style="height:15px;"></div>
 ### Education
+<p style="margin:0">
+  <div style="display:flex; justify-content:space-between">
+    <a href="https://www.stanford.edu/">Stanford University</a>
+    <span> May 2026–Present</span>
+  </div>
+    <li style="margin-left: 12px;">Visiting Student Researcher at <a href="https://irislab.stanford.edu/">IRIS Lab</a></li>
+</p>
+
 <p style="margin:0">
   <div style="display:flex; justify-content:space-between">
     <a href="https://www.snu.ac.kr/">Seoul National University</a>

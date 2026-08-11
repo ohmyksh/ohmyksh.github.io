@@ -1,0 +1,243 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1785325447667,
+  "projectRoot": "/gallery_louvre/sohyeon.kim/ohmyksh.github.io",
+  "techStack": {
+    "languages": [
+      {
+        "name": "Ruby",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "Gemfile"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": "bundler",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "assets"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "_includes": {
+      "path": "_includes",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1785325447660,
+      "keyFiles": [
+        "head-custom-google-analytics.html",
+        "head-custom.html"
+      ]
+    },
+    "_layouts": {
+      "path": "_layouts",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1785325447663,
+      "keyFiles": [
+        "default.html",
+        "post.html"
+      ]
+    },
+    "_posts": {
+      "path": "_posts",
+      "purpose": null,
+      "fileCount": 9,
+      "lastAccessed": 1785325447664,
+      "keyFiles": [
+        "2024-06-14-optimization-in-life.md",
+        "2024-11-7-relativity.md",
+        "2025-03-23-lemonade.md",
+        "2025-04-27-inefficiency.md",
+        "2025-11-25-mental-models.md"
+      ]
+    },
+    "_sass": {
+      "path": "_sass",
+      "purpose": null,
+      "fileCount": 4,
+      "lastAccessed": 1785325447664,
+      "keyFiles": [
+        "fonts.scss",
+        "jekyll-theme-minimal.scss",
+        "minimal.scss",
+        "rouge-github.scss"
+      ]
+    },
+    "_site": {
+      "path": "_site",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1785325447664,
+      "keyFiles": [
+        "LICENSE",
+        "index.html"
+      ]
+    },
+    "assets": {
+      "path": "assets",
+      "purpose": "Static assets",
+      "fileCount": 0,
+      "lastAccessed": 1785325447665,
+      "keyFiles": []
+    },
+    "blog": {
+      "path": "blog",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1785325447665,
+      "keyFiles": [
+        "index.html"
+      ]
+    },
+    "icml2026": {
+      "path": "icml2026",
+      "purpose": null,
+      "fileCount": 12,
+      "lastAccessed": 1785325447665,
+      "keyFiles": [
+        "coex-guide.html",
+        "coex.html",
+        "coex_starfield_restaurants.json",
+        "explore-seoul.html",
+        "fonts.css"
+      ]
+    },
+    "private-posts": {
+      "path": "private-posts",
+      "purpose": null,
+      "fileCount": 4,
+      "lastAccessed": 1785325447665,
+      "keyFiles": [
+        "2024-04-12-selection-box.md",
+        "2024-07-06-good.md",
+        "2024-12-20-philosophy.md",
+        "2026-06-11-rag.md"
+      ]
+    },
+    "_site/assets": {
+      "path": "_site/assets",
+      "purpose": "Static assets",
+      "fileCount": 0,
+      "lastAccessed": 1785325447666,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "index.md",
+      "accessCount": 99,
+      "lastAccessed": 1786436644782,
+      "type": "file"
+    },
+    {
+      "path": "assets/css/style.scss",
+      "accessCount": 63,
+      "lastAccessed": 1785329761932,
+      "type": "file"
+    },
+    {
+      "path": "_layouts/default.html",
+      "accessCount": 37,
+      "lastAccessed": 1786441206788,
+      "type": "file"
+    },
+    {
+      "path": "blog/index.html",
+      "accessCount": 9,
+      "lastAccessed": 1786436432550,
+      "type": "file"
+    },
+    {
+      "path": "_layouts/post.html",
+      "accessCount": 6,
+      "lastAccessed": 1785329150661,
+      "type": "file"
+    },
+    {
+      "path": "_includes/head-custom-google-analytics.html",
+      "accessCount": 3,
+      "lastAccessed": 1785329559766,
+      "type": "file"
+    },
+    {
+      "path": "Gemfile",
+      "accessCount": 3,
+      "lastAccessed": 1786435729209,
+      "type": "file"
+    },
+    {
+      "path": "_posts/2026-05-09-sf.md",
+      "accessCount": 3,
+      "lastAccessed": 1786436433777,
+      "type": "file"
+    },
+    {
+      "path": "icml2026/index.html",
+      "accessCount": 2,
+      "lastAccessed": 1782460727978,
+      "type": "file"
+    },
+    {
+      "path": "_config.yml",
+      "accessCount": 2,
+      "lastAccessed": 1782613376461,
+      "type": "file"
+    },
+    {
+      "path": "_includes/head-custom.html",
+      "accessCount": 1,
+      "lastAccessed": 1782612969824,
+      "type": "file"
+    },
+    {
+      "path": "assets/img/profile.png",
+      "accessCount": 1,
+      "lastAccessed": 1784461804151,
+      "type": "file"
+    },
+    {
+      "path": "assets/js/scale.fix.js",
+      "accessCount": 1,
+      "lastAccessed": 1784462484661,
+      "type": "file"
+    },
+    {
+      "path": ".bundle/config",
+      "accessCount": 1,
+      "lastAccessed": 1785326458255,
+      "type": "file"
+    },
+    {
+      "path": "_site/assets/css/style.css",
+      "accessCount": 1,
+      "lastAccessed": 1785329568230,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
