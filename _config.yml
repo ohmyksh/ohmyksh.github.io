@@ -16,3 +16,5 @@ defaults:
     layout: "default"
 exclude:
 - private-posts
+- vendor
+- .omc

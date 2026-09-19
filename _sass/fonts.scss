@@ -1,4 +1,74 @@
 @font-face {
+  font-family: 'Noto Sans Light';
+  font-weight: 100 900;
+  font-style: normal;
+  src: url('../fonts/NotoSansVariable/NotoSans-Variable.ttf') format('truetype-variations');
+}
+
+@font-face {
+  font-family: 'Noto Sans Light';
+  font-weight: 100 900;
+  font-style: italic;
+  src: url('../fonts/NotoSansVariable/NotoSans-Italic-Variable.ttf') format('truetype-variations');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../fonts/Lato/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-style: normal;
+  src: url('../fonts/Lato/Lato-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-weight: 400;
+  font-style: italic;
+  src: url('../fonts/Lato/Lato-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-style: italic;
+  src: url('../fonts/Lato/Lato-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'TeX Gyre Pagella';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../fonts/TeXGyrePagella/texgyrepagella-regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'TeX Gyre Pagella';
+  font-weight: 700;
+  font-style: normal;
+  src: url('../fonts/TeXGyrePagella/texgyrepagella-bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'TeX Gyre Pagella';
+  font-weight: 400;
+  font-style: italic;
+  src: url('../fonts/TeXGyrePagella/texgyrepagella-italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'TeX Gyre Pagella';
+  font-weight: 700;
+  font-style: italic;
+  src: url('../fonts/TeXGyrePagella/texgyrepagella-bolditalic.otf') format('opentype');
+}
+
+@font-face {
   font-family: 'Book Antiqua';
   font-weight: 400;
   font-style: normal;

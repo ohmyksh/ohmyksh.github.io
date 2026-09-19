@@ -3,7 +3,7 @@ layout: default
 ---
 
 <small style="font-size:14px; display:block; margin-bottom:7px; ">{{ page.date | date: "%b %d, %Y" }}</small>
-<h1 style="font-size: 26px; margin-bottom: 40px; font-weight: 700; line-height: 1.35;">{{ page.title }}</h1>
+<h1 style="font-size: 26px; margin-bottom: 40px; font-weight: 500; line-height: 1.35;">{{ page.title }}</h1>
 
 <style>
   .post-content blockquote {
@@ -11,6 +11,9 @@ layout: default
     border-left: 3px solid #ccc;
     margin: 10px 0;
     padding-left: 10px;
+  }
+  .post-content b, .post-content strong {
+    font-weight: 450;
   }
   @media print, screen and (max-width: 960px) {
     section {
