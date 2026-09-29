@@ -1,0 +1,221 @@
+{
+  "samples": [
+    {
+      "paper_id": "arxiv_2604.10546",
+      "title": "Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression",
+      "domain": "cs.CV",
+      "award": "CVPR 2026 Oral",
+      "core_query": {
+        "question": "Extreme image compression faces a fundamental tension between reducing the transmitted information to an extremely low bitrate and preserving high reconstruction quality. Most learned perceptual compression methods build on the variational image compression framework, where analysis transforms, scalar quantization, entropy coding, and synthesis transforms are optimized jointly under a rate-distortion objective, while generative priors such as GANs or diffusion models are typically incorporated without fundamentally changing this formulation. At very low bitrates, however, pointwise scalar quantization may be inefficient in preserving structured feature information, which has motivated vector-quantized approaches that transmit compact discrete indices. Although such representations can be effective, their reconstruction objectives and subsequent entropy coding are often optimized separately rather than being jointly shaped by rate and distortion. This separation raises the possibility that representations learned only for reconstruction may not necessarily be easy to predict or encode, while the similarity between autoregressive token prediction in generative models and entropy modeling in compression suggests a deeper connection between the two problems. Can vector-quantized representations for extreme image compression be jointly shaped by both reconstruction quality and coding rate by exploiting the common probabilistic structure underlying autoregressive generation and entropy coding?",
+        "key_paper": {
+          "id": "arxiv_2403.03736",
+          "title": "Unifying Generation and Compression: Ultra-low bitrate Image Coding Via Multi-stage Transformer",
+          "cited": true,
+          "rationale": "This work made an important connection between autoregressive generation and entropy coding: both require modeling the probability distribution of discrete tokens, and the same learned prior can therefore be used both to estimate probabilities for entropy coding and to generate missing image tokens. The idea I brought from this paper was that an autoregressive model should not be viewed only as a generative prior attached to a compression system. Its predicted token probabilities are also directly related to the number of bits required to encode those tokens. This suggested that autoregressive probability modeling could provide the rate signal needed to optimize a VQ representation itself, potentially bringing VQ-based compression closer to the joint rate-distortion optimization used in conventional learned compression. I expected this connection to be useful because the paper explicitly demonstrated the mathematical relationship between likelihood modeling and entropy estimation, and experimentally showed that applying entropy estimation to the same VQ codec improved its rate-distortion performance over the VQ-Kmeans baseline. These observations provided direct evidence that better probabilistic modeling of VQ indices translates into actual bitrate savings, motivating me to investigate whether the representation and the probabilistic model could be optimized together rather than in separate stages."
+        }
+      },
+      "thread": {
+        "question": "Traditional learned image compression relies on scalar quantization with differentiable approximations to allow gradients from the rate penalty to update the encoder. Vector quantization provides structural advantages over scalar quantization but relies on discrete assignments that block these continuous gradients. How can the coding rate of discrete vector-quantized representations be modeled and incorporated into end-to-end rate-distortion optimization?",
+        "criterion": "End-to-End Optimized Image Compression (2017) established the foundation of end-to-end learned image compression by formulating compression as a rate-distortion optimization problem. It demonstrated that the encoder, decoder, and entropy model can be jointly optimized, allowing the rate term to directly influence the learned representation rather than treating compression as a separate coding stage. This principle provided the fundamental insight behind our investigation into how discrete representations could be optimized jointly with their coding efficiency. Variational Image Compression with a Scale Hyperprior (2018) further developed the end-to-end learned compression framework by introducing a learned scale hyperprior for more accurate entropy modeling. Beyond improving rate estimation, it reinforced the importance of jointly optimizing representation learning and entropy modeling under a rate-distortion objective. This insight motivated our exploration of whether vector-quantized representations could also benefit from a similar optimization principle, where coding efficiency contributes to shaping the learned discrete representation.",
+        "positives": [
+          {"id": "arxiv_1802.01436", "title": "Variational image compression with a scale hyperprior", "cited": true},
+          {"id": "arxiv_1611.01704", "title": "End-to-end Optimized Image Compression", "cited": true}
+        ],
+        "hard_negatives": [
+          {"id": "arxiv_2310.03004", "title": "Soft Convex Quantization: Revisiting Vector Quantization with Convex Optimization", "cited": false},
+          {"id": "arxiv_2405.14222", "title": "Rate-Adaptive Quantization: A Multi-Rate Codebook Adaptation for Vector Quantization-based Generative Models", "cited": false},
+          {"id": "arxiv_2410.00557", "title": "STanH : Parametric Quantization for Variable Rate Learned Image Compression", "cited": false},
+          {"id": "s2_0a1355e822c8305b5ad7fccfa262b363ae8ac962", "title": "Adaptive Bitrate Quantization Scheme Without Codebook for Learned Image Compression", "cited": true},
+          {"id": "arxiv_2007.01919", "title": "Efficient Marginalization of Discrete and Structured Latent Variables via Sparsity", "cited": false},
+          {"id": "arxiv_2212.07372", "title": "Image Compression with Product Quantized Masked Image Modeling", "cited": true},
+          {"id": "arxiv_2104.03305", "title": "Learned transform compression with optimized entropy encoding", "cited": false},
+          {"id": "arxiv_2002.08111", "title": "Hierarchical Quantized Autoencoders", "cited": false},
+          {"id": "arxiv_2305.16025", "title": "NVTC: Nonlinear Vector Transform Coding", "cited": false},
+          {"id": "arxiv_2410.06424", "title": "Restructuring Vector Quantization with the Rotation Trick", "cited": false}
+        ]
+      }
+    },
+    {
+      "paper_id": "arxiv_2509.22281",
+      "title": "MesaTask: Towards Task-Driven Tabletop Scene Generation via 3D Spatial Reasoning",
+      "domain": "cs.CV",
+      "award": "NeurIPS 2025 Spotlight",
+      "core_query": {
+        "question": "Tabletop scene generation is fundamentally a structured layout generation problem, where a scene is defined not only by its constituent objects but also by their semantic attributes and spatial organization. However, a high-level manipulation instruction typically specifies only the desired task outcome, leaving the required objects, their interrelations, and their concrete geometric arrangements largely unspecified. Translating such an instruction into a complete scene therefore requires reasoning from task intent to a structured layout rather than merely retrieving relevant objects or satisfying isolated spatial constraints. Moreover, physically plausible tabletop arrangements must reflect realistic patterns of object co-occurrence, support, stacking, and containment that are difficult to fully prescribe with handcrafted rules alone. How can the implicit object composition and spatial organization required by a high-level robotic manipulation task be inferred to generate a realistic, physically plausible, and executable 3D tabletop scene?",
+        "key_paper": {
+          "id": "arxiv_2312.09067",
+          "title": "Holodeck: Language Guided Generation of 3D Embodied AI Environments",
+          "cited": true,
+          "rationale": "Holodeck introduced a fully automated and modular workflow that converts a language prompt into an interactive 3D environment by using GPT-4 to infer scene content and spatial constraints, retrieving matching 3D assets, and optimizing object placements to satisfy those constraints. I adopted its key factorization between semantic scene planning and geometric instantiation: first determine what objects and relationships a scene should contain, and then realize that specification using retrieved assets. I extended this factorization to dense tabletop manipulation scenes and treated the metric layout itself as a learnable structured output, rather than leaving its realization entirely to a prompt-driven constraint optimizer. I expected the factorized representation and retrieval strategy to transfer because Holodeck's large-scale human evaluation favored its scenes over procedural baselines, and its generated environments were sufficiently functional for training embodied navigation agents, demonstrating that LLM-derived scene specifications can be instantiated as useful interactive environments."
+        }
+      },
+      "thread": {
+        "question": "Large language models possess strong semantic priors that can be harnessed to translate high-level text prompts into structural arrangements of 3D objects in simulated environments. How can we design a structured reasoning process that allows a language model to infer necessary objects and final 3D bounding box layouts directly from abstract task instructions?",
+        "criterion": "These methods all utilize an LLM to generate scenarios based on instructions, including training and training-free methods.",
+        "positives": [
+          {"id": "arxiv_2305.15393", "title": "LayoutGPT: Compositional Visual Planning and Generation with Large Language Models", "cited": true},
+          {"id": "arxiv_2312.09067", "title": "Holodeck: Language Guided Generation of 3D Embodied AI Environments", "cited": true},
+          {"id": "arxiv_2406.03866", "title": "LLplace: The 3D Indoor Scene Layout Generation and Editing via Large Language Model", "cited": true},
+          {"id": "arxiv_2404.02838", "title": "I-Design: Personalized LLM Interior Designer", "cited": true}
+        ],
+        "hard_negatives": [
+          {"id": "arxiv_2211.04604", "title": "StructDiffusion: Language-Guided Creation of Physically-Valid Structures using Unseen Objects", "cited": false},
+          {"id": "arxiv_2403.13801", "title": "Natural Language as Policies: Reasoning for Coordinate-Level Embodied Control with LLMs", "cited": false},
+          {"id": "arxiv_2305.15808", "title": "Towards Language-guided Interactive 3D Generation: LLMs as Layout Interpreter with Generative Feedback", "cited": false},
+          {"id": "arxiv_2407.21333", "title": "Chat2Layout: Interactive 3D Furniture Layout with a Multimodal LLM", "cited": false},
+          {"id": "arxiv_2310.10640", "title": "LLM Blueprint: Enabling Text-to-Image Generation with Complex and Detailed Prompts", "cited": false},
+          {"id": "arxiv_2402.09052", "title": "L3GO: Language Agents with Chain-of-3D-Thoughts for Generating Unconventional Objects", "cited": false},
+          {"id": "arxiv_2303.06247", "title": "Task and Motion Planning with Large Language Models for Object Rearrangement", "cited": false},
+          {"id": "arxiv_2304.02893", "title": "Object-centric Inference for Language Conditioned Placement: A Foundation Model based Approach", "cited": false},
+          {"id": "arxiv_2403.09675", "title": "Open-Universe Indoor Scene Generation using LLM Program Synthesis and Uncurated Object Databases", "cited": false},
+          {"id": "arxiv_2407.07580", "title": "InstructLayout: Instruction-Driven 2D and 3D Layout Synthesis with Semantic Graph Prior", "cited": false}
+        ]
+      }
+    },
+    {
+      "paper_id": "arxiv_2601.22027",
+      "title": "CAR-bench: Evaluating the Consistency and Limit-Awareness of LLM Agents under Real-World Uncertainty",
+      "domain": "cs.AI",
+      "award": "ACL 2026 Outstanding Paper",
+      "core_query": {
+        "question": "Existing benchmarks for Large Language Model agents primarily focus on idealized task completion by assuming task solvability and providing complete information and full tool coverage upfront. While recent advancements have introduced dynamic multi-turn interactions and policy constraints to better mimic real-world operations, they still predominantly evaluate an agent's ability to successfully execute satisfiable tasks. In real user-facing settings, however, agents must operate under uncertainty, where requests may be ambiguous, information may be insufficient, or required capabilities may be unavailable, making reliable behavior depend not only on successful execution but also on recognizing when to clarify, refrain from acting, or proceed safely. A comprehensive evaluation should therefore assess whether agents consistently calibrate their behavior to the request, available information, capabilities, and applicable policies across both straightforward and uncertain situations. How can we systematically evaluate whether multi-turn, policy-guided agents exhibit consistent and calibrated action under real-world uncertainty, including when to act, when to seek clarification, and when not to act?",
+        "key_paper": {
+          "id": "arxiv_2406.12045",
+          "title": "$\\tau$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+          "cited": true,
+          "rationale": "tau-bench established a realistic evaluation environment for agents operating in industry applications. Its key contribution was to identify three requirements for reliable real-world agents: (1) dynamic interaction with both users and programmatic APIs, (2) adherence to domain-specific rules and policies, and (3) consistency and robustness across repeated trials. In doing so, tau-bench moved agent evaluation beyond isolated tool-use tasks toward interactive, policy-constrained environments. The new idea I derived from this was to evaluate calibrated action. In tau-bench, tasks are generally constructed such that a correct solution exists and the information needed to reach it can be obtained through interaction. In real deployments, however, agents also encounter requests that exceed their capabilities or are underspecified in ways that make immediate action unsafe or inappropriate. I therefore extended the evaluation setting with unsatisfiable requests and ambiguous requests, requiring the agent to recognize when it should not act, when it should ask for clarification, and when execution is actually justified. I additionally transferred this evaluation paradigm to a domain in which I was able to personally incorporate detailed real-world constraints and expert knowledge. I expected this idea to work because tau-bench already showed that reliable real-world agents must adapt their behavior to interaction context and domain constraints rather than simply maximize task completion. Its results also demonstrated substantial failures in policy adherence and consistency even when tasks were solvable. This suggested that evaluating only whether an agent can successfully complete a feasible task leaves an important part of reliability unmeasured. Extending the benchmark to situations in which the correct behavior may be to clarify or refuse therefore provides a more complete test of whether an agent can calibrate its actions to its capabilities, the available information, and the constraints of the environment."
+        }
+      },
+      "thread": {
+        "question": "Prior work evaluates language model agents by measuring their ability to execute single and sequential API calls within diverse simulated environments. How can we design an evaluation framework that systematically assesses the consistency and robustness of tool-using agents across repeated trials in complex interactive settings?",
+        "criterion": "Establish realistic real-world human-AI interaction through dynamic and large-scale environments, including user and agent stochastic actions.",
+        "positives": [
+          {"id": "arxiv_2406.12045", "title": "$\\tau$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains", "cited": true},
+          {"id": "arxiv_2408.04682", "title": "ToolSandbox: A Stateful, Conversational, Interactive Evaluation Benchmark for LLM Tool Use Capabilities", "cited": true},
+          {"id": "arxiv_2307.13854", "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents", "cited": true},
+          {"id": "arxiv_2409.16427", "title": "HAICOSYSTEM: An Ecosystem for Sandboxing Safety Risks in Human-AI Interactions", "cited": false}
+        ],
+        "hard_negatives": [
+          {"id": "arxiv_2404.06411", "title": "AgentQuest: A Modular Benchmark Framework to Measure Progress and Improve LLM Agents", "cited": false},
+          {"id": "arxiv_2401.13178", "title": "AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents", "cited": false},
+          {"id": "arxiv_2403.07714", "title": "StableToolBench: Towards Stable Large-Scale Benchmarking on Tool Learning of Large Language Models", "cited": true},
+          {"id": "arxiv_2407.08713", "title": "GTA: A Benchmark for General Tool Agents", "cited": false},
+          {"id": "arxiv_2305.13455", "title": "Clembench: Using Game Play to Evaluate Chat-Optimized Language Models as Conversational Agents", "cited": false},
+          {"id": "arxiv_2206.09203", "title": "Interactive Visual Reasoning under Uncertainty", "cited": false},
+          {"id": "arxiv_2401.00741", "title": "ToolEyes: Fine-Grained Evaluation for Tool Learning Capabilities of Large Language Models in Real-world Scenarios", "cited": false},
+          {"id": "arxiv_2311.10775", "title": "ToolTalk: Evaluating Tool-Usage in a Conversational Setting", "cited": true}
+        ]
+      }
+    },
+    {
+      "paper_id": "arxiv_2506.10947",
+      "title": "Spurious Rewards: Rethinking Training Signals in RLVR",
+      "domain": "cs.AI",
+      "award": "ICML 2026 Spotlight",
+      "core_query": {
+        "question": "Reinforcement learning with verifiable rewards has proven highly effective at improving mathematical reasoning in large language models. Recent studies suggest that these techniques might not be teaching models novel reasoning skills but are instead eliciting latent capabilities acquired during pretraining. We wanted to explore unsupervised reinforcement learning methods. There have been methods showing that using a majority-voted answer as the ground-truth labels can also help improve the model performance. Therefore, we wondered if we can use that to help improve model performance, and if so, how much noise in the majority-voted labels can it tolerate.",
+        "key_paper": {
+          "id": "arxiv_2411.04109",
+          "title": "Self-Consistency Preference Optimization",
+          "cited": true,
+          "rationale": "This paper performed RL training with majority-voted answers as the training labels and showed that such weak supervision can result in performance similar to that of ground-truth labels. There had not been a study showing how weak these signals could become while still providing meaningful training signals. We therefore tried progressively weaker signals in RL to see how it would work. We expected to observe a spectrum that would reveal the minimum signal needed for RL. The results were model-dependent, and for some models even random rewards could work, which led us to an analysis paper. Other papers on RL for reasoning do not consider using weak training signals derived from training-data annotations and thus did not provide useful guidance for addressing this question."
+        }
+      },
+      "thread": {
+        "question": "Previous research has explored applying reinforcement learning to language models using unsupervised reward signals derived from self-consistency or majority voting rather than ground-truth labels. How much noise can this method tolerate when the reward signals are not reliable in practice?",
+        "criterion": "These papers mostly use majority-voted answers as the unsupervised RLVR labels, which is the method that we found can work spuriously on Qwen math models.",
+        "positives": [
+          {"id": "arxiv_2504.16084", "title": "TTRL: Test-Time Reinforcement Learning", "cited": true},
+          {"id": "arxiv_2505.19590", "title": "Learning to Reason without External Rewards", "cited": false},
+          {"id": "arxiv_2504.20571", "title": "Reinforcement Learning for Reasoning in Large Language Models with One Training Example", "cited": true},
+          {"id": "arxiv_2411.04109", "title": "Self-Consistency Preference Optimization", "cited": true},
+          {"id": "arxiv_2504.05812", "title": "Right Question is Already Half the Answer: Fully Unsupervised LLM Reasoning Incentivization", "cited": false},
+          {"id": "arxiv_2505.22660", "title": "Maximizing Confidence Alone Improves Reasoning", "cited": true}
+        ],
+        "hard_negatives": [
+          {"id": "arxiv_2410.17126", "title": "Exploring RL-based LLM Training for Formal Language Tasks with Programmed Rewards", "cited": false},
+          {"id": "arxiv_2401.06081", "title": "Improving Large Language Models via Fine-grained Reinforcement Learning with Minimum Editing Constraint", "cited": false},
+          {"id": "arxiv_2410.15115", "title": "On Designing Effective RL Reward at Training Time for LLM Reasoning", "cited": true},
+          {"id": "arxiv_2411.00418", "title": "Self-Evolved Reward Learning for LLMs", "cited": false},
+          {"id": "s2_2eed1fad9bbf887d4395de40f20144c4fafefd7f", "title": "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning", "cited": true},
+          {"id": "arxiv_2505.21444", "title": "Can Large Reasoning Models Self-Train?", "cited": true},
+          {"id": "arxiv_2403.19279", "title": "Fine-Tuning Language Models with Reward Learning on Policy", "cited": false},
+          {"id": "arxiv_2308.06385", "title": "ZYN: Zero-Shot Reward Models with Yes-No Questions for RLAIF", "cited": false},
+          {"id": "arxiv_2401.07382", "title": "Beyond Sparse Rewards: Enhancing Reinforcement Learning with Language Model Critique in Text Generation", "cited": false}
+        ]
+      }
+    },
+    {
+      "paper_id": "arxiv_2510.27172",
+      "title": "Adaptive Defense against Harmful Fine-Tuning for Large Language Models via Bayesian Data Scheduler",
+      "domain": "cs.LG",
+      "award": "NeurIPS 2025 Spotlight",
+      "core_query": {
+        "question": "Fine-tuning-as-a-service allows users to adapt foundation models to specific tasks, but it also introduces a severe vulnerability known as harmful fine-tuning. Malicious users can inject a small fraction of harmful examples into their uploaded datasets to compromise the model's safety alignment established during pre-training. Existing defenses generally seek to establish robustness before fine-tuning by simulating attacks, yet this strategy is fundamentally constrained by the difficulty of extending attack simulations beyond bounded threat models and by its limited adaptability to varying attack settings. How can LLMs be protected against harmful fine-tuning under unknown and varying attack conditions without relying on attack simulation, while preserving their ability to learn from benign fine-tuning data?",
+        "key_paper": {
+          "id": "arxiv_2410.10014",
+          "title": "Safety-Aware Fine-Tuning of Large Language Models",
+          "cited": true,
+          "rationale": "Safety-Aware Fine-Tuning (SAFT) introduced a data-centric defense that automatically identifies and removes potentially harmful examples before fine-tuning. Specifically, it constructs a harmfulness-related subspace from the model's internal representations, scores each example according to its projection onto that subspace, and uses a manually selected threshold to divide the fine-tuning dataset into retained and removed subsets. This work directly inspired our view that harmful fine-tuning should be addressed at the level of individual data examples because different examples can have substantially different effects on model safety. In our work, we extended this idea by replacing deterministic scoring and hard filtering with Bayesian inference: we model each example's safety attribute as a latent variable, infer its posterior distribution conditioned on the encountered fine-tuning and alignment datasets, and continuously weight its contribution during optimization rather than removing it outright. We expected this extension to work because SAFT showed that targeted filtering consistently reduced harmfulness across models and contamination ratios, while randomly removing the same number of examples was substantially less effective and preserving the selected data maintained helpfulness. Its additional finding that even some examples labeled as benign could adversely affect safety further suggested that fixed semantic labels or hard decisions may be insufficient, motivating our probabilistic and adaptive treatment of sample-level safety."
+        }
+      },
+      "thread": {
+        "question": "Prior work has shown that stochastic gradient Markov Chain Monte Carlo methods enable scalable Bayesian inference for complex models by introducing controlled noise into gradient updates. In the context of learning from potentially untrusted data, robust training often requires estimating the unobserved reliability of each individual data point. How can we leverage scalable Bayesian sampling techniques to efficiently infer the posterior distributions of data-specific weights during model training?",
+        "criterion": "The positive papers provide the foundational ideas of SGLD and Bayesian data selection used in our work. We only rely on these basic principles and do not involve the more advanced extensions or improvements to SGLD studied in the remaining papers.",
+        "positives": [
+          {"id": "arxiv_1907.06986", "title": "Stochastic gradient Markov chain Monte Carlo", "cited": true},
+          {"id": "arxiv_2411.03768", "title": "A Bayesian Approach to Data Point Selection", "cited": true},
+          {"id": "arxiv_2308.10544", "title": "Towards Accelerated Model Training via Bayesian Data Selection", "cited": true}
+        ],
+        "hard_negatives": [
+          {"id": "arxiv_2008.13600", "title": "β-Cores: Robust Large-Scale Bayesian Data Summarization in the Presence of Outliers", "cited": false},
+          {"id": "arxiv_2303.11278", "title": "Bayesian Pseudo-Coresets via Contrastive Divergence", "cited": false},
+          {"id": "arxiv_2006.05087", "title": "Isotropic SGD: a Practical Approach to Bayesian Posterior Sampling", "cited": false},
+          {"id": "arxiv_2107.09028", "title": "Structured Stochastic Gradient MCMC", "cited": false},
+          {"id": "arxiv_2406.00104", "title": "Scalable Bayesian Learning with posteriors", "cited": false},
+          {"id": "arxiv_2303.05101", "title": "Scalable Stochastic Gradient Riemannian Langevin Dynamics in Non-Diagonal Metrics", "cited": false},
+          {"id": "arxiv_2002.02842", "title": "Assessing the Adversarial Robustness of Monte Carlo and Distillation Methods for Deep Bayesian Neural Network Classification", "cited": false},
+          {"id": "arxiv_2306.02729", "title": "Gibbs Sampling the Posterior of Neural Networks", "cited": false},
+          {"id": "arxiv_2107.04296", "title": "Differentially private training of neural networks with Langevin dynamics for calibrated predictive uncertainty", "cited": false},
+          {"id": "arxiv_2212.02895", "title": "Training Neural Networks on Data Sources with Unknown Reliability", "cited": false}
+        ]
+      }
+    },
+    {
+      "paper_id": "arxiv_2502.19417",
+      "title": "Hi Robot: Open-Ended Instruction Following with Hierarchical Vision-Language-Action Models",
+      "domain": "cs.RO",
+      "award": "ICML 2025",
+      "core_query": {
+        "question": "Robots working in human-centric settings receive language that is far messier than the atomic commands studied in language-conditioned imitation learning. A line of work trains policies to map instructions such as \"pick up the coke can\" to actions and generalizes well within that regime, but real requests carry constraints, preferences, and mid-execution corrections (\"that's not trash,\" \"I'm allergic to pickles\") whose meaning depends on what the robot is currently seeing and doing. A separate line of work uses LLMs and VLMs off the shelf to decompose long-horizon tasks over predefined or hand-designed skills. These systems parse richer language but inherit the limited dexterity of their skill libraries and rarely react to a user who interrupts mid-task. Both lines leave a gap between the semantics a system can interpret and the physical behavior it can actually produce, and it is not obvious whether that gap is best closed by making language interpretation more capable or by making dexterous learned policies more promptable. How can a robot with dexterous, learned manipulation skills interpret open-ended prompts and real-time human feedback, grounded in its own observations, and act on them while the task is underway?",
+        "key_paper": {
+          "id": "arxiv_2403.12910",
+          "title": "Yell At Your Robot: Improving On-the-Fly from Language Corrections",
+          "cited": true,
+          "rationale": "YAY Robot showed that a two-level architecture, a high-level policy emitting short language commands, and a low-level language-conditioned policy executing them, lets a human intervene mid-episode by simply speaking. Corrections like \"go lower\" or \"move to the left\" are injected into the language channel between the layers, take effect immediately during a long-horizon bimanual task, and can subsequently be distilled back into the high-level policy to improve it. The key move was treating language not as a task specification given once at episode start, but as a live control interface that stays open while the robot acts. The idea I carried forward is that the interface between deliberative reasoning and reactive control should be natural language, and that this interface remains writable at execution time. That is the structural commitment underlying my work: whatever produces high-level commands can be swapped or made far more capable without touching the low-level policy, because the contract between them is just a short atomic instruction. YAY Robot's limitation is also what defined my question. Its high-level policy is trained on a single task prompt and on the specific correction phrases its human operators happened to utter, so the space of things a user can say is bounded by what appeared in the annotation set. Inheriting the interface but replacing the bottleneck became the direction. YAY Robot already provided the empirical evidence for the hard part: it demonstrated that a low-level policy trained on segmented skill labels genuinely responds to language issued mid-rollout, and that human corrections measurably raised success on a contact-rich long-horizon task. So the mechanism of real-time language steering was not speculative. It had been shown to move policy behavior on real hardware. What remained untested was whether the high-level end could be made open-ended rather than closed-vocabulary, which is a question about language coverage rather than about whether the control channel functions at all."
+        }
+      },
+      "thread": {
+        "question": "A line of work already lets users correct a robot while it acts. Some approaches edit trajectories from verbal feedback, others train recovery behaviors from simulator-constructed perturbations, and others route spoken corrections through a language channel between a high-level and a low-level policy. Each demonstrates that mid-execution language can redirect behavior, but each is bounded: by a single task prompt, by the specific correction phrases human annotators happened to produce, or by feedback that never depends on what the robot is currently seeing. Utterances like \"that's not trash\" or \"leave it alone\" are unresolvable from text alone. They refer to whatever is in the gripper right now. What determines the range of corrections such a system can absorb, and can a robot ground feedback in its live observations while also handling phrasings and situations that never appeared in its interaction data?",
+        "criterion": "Positive papers each contribute a mechanism for a human to redirect a robot mid-execution with language grounded in the current scene, which is exactly what bounds the range of absorbable corrections. Negative papers contribute modality binding, cross-session adaptation, self-generated correction signals, reward synthesis, and in-context control loops, none of which turn on a human grounding feedback in what the robot is doing right now.",
+        "positives": [
+          {"id": "arxiv_2310.17555", "title": "Interactive Robot Learning from Verbal Correction", "cited": true},
+          {"id": "arxiv_2403.12910", "title": "Yell At Your Robot: Improving On-the-Fly from Language Corrections", "cited": true},
+          {"id": "arxiv_2409.14674", "title": "RACER: Rich Language-Guided Failure Recovery Policies for Imitation Learning", "cited": true},
+          {"id": "arxiv_2301.02555", "title": "\"No, to the Right\" -- Online Language Corrections for Robotic Manipulation via Shared Autonomy", "cited": false}
+        ],
+        "hard_negatives": [
+          {"id": "arxiv_2411.15033", "title": "One to rule them all: natural language to bind communication, perception and action", "cited": false},
+          {"id": "arxiv_2204.05186", "title": "Correcting Robot Plans with Natural Language Feedback", "cited": false},
+          {"id": "arxiv_2402.11450", "title": "Learning to Learn Faster from Human Feedback with Language Model Predictive Control", "cited": false},
+          {"id": "arxiv_2406.11548", "title": "AIC MLLM: Autonomous Interactive Correction MLLM for Robust Robotic Manipulation", "cited": false},
+          {"id": "arxiv_2306.08647", "title": "Language to Rewards for Robotic Skill Synthesis", "cited": false},
+          {"id": "arxiv_2210.06407", "title": "Interactive Language: Talking to Robots in Real Time", "cited": false},
+          {"id": "arxiv_2402.05188", "title": "InCoRo: In-Context Learning for Robotics Control with Feedback Loops", "cited": false},
+          {"id": "arxiv_2412.12602", "title": "Don't Yell at Your Robot: Physical Correction as the Collaborative Interface for Language Model Powered Robots", "cited": false},
+          {"id": "arxiv_2311.10678", "title": "Distilling and Retrieving Generalizable Knowledge for Robot Manipulation via Language Corrections", "cited": false}
+        ]
+      }
+    }
+  ]
+}
