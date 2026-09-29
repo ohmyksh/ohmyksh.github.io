@@ -1,0 +1,5 @@
+/* Change font here — updates all pages at once */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+:root { --font-main: 'Noto Sans KR', sans-serif; }
+body  { font-family: var(--font-main); }

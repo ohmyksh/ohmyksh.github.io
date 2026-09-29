@@ -1,0 +1,1069 @@
+{
+  "카페/디저트": [
+    {
+      "name_ko": "아라비카",
+      "name_en": "% Arabica",
+      "floor": "1F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJRXSGkt6lfDURtp-SSHYkLnA",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202209081415288625",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-I6qO83Mdt3560"
+    },
+    {
+      "name_ko": "가배도",
+      "name_en": "Gabaedo Coex",
+      "floor": "1F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJeUPGSWylfDURU_dVfJP0X6A",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202012071635366142",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-rfBQ3btPj6713"
+    },
+    {
+      "name_ko": "고디바",
+      "name_en": "Godiva Chocolatier",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJbfVFMRWkfDURTEDSKh-4Q8c",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560405",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-Wvj384Rqn3519",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "공차코엑스몰점",
+      "name_en": "Gong Cha COEX Mall",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJtR7gbQClfDURc1Ry9iESj7U",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560449",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-nd3BOCJPB9886"
+    },
+    {
+      "name_ko": "더죠이",
+      "name_en": "THEJoy",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJrY3oPGqkfDUR112Lbp92EoQ",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560455",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-mAFNUCfsN6421"
+    },
+    {
+      "name_ko": "도레도레",
+      "name_en": "DoreDore COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJg1YIaLKlfDURozDJWa19sqE",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202205191633017624",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-J_UUJ9rgo9165",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "드코닝",
+      "name_en": "De Koning",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJaXt25WqlfDURjQMahmBttTg",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560480",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-M29sa27u24486"
+    },
+    {
+      "name_ko": "로네펠트티하우스",
+      "name_en": "Ronnefeldt Teehaus",
+      "floor": "1F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJy4ey72qkfDURVj56dYXtIss",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560373",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-a1vozScNu0184"
+    },
+    {
+      "name_ko": "메이",
+      "name_en": "MAY",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJGeMWK2qkfDURQ-OZRAicoGc",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560462",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-h_15IAo6T4138"
+    },
+    {
+      "name_ko": "모찌이야기",
+      "name_en": "Mochi Iyagi COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJLfD1jkalfDUR2TE68cap4l4",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202308161022372001",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-m4rPObb5Y3747"
+    },
+    {
+      "name_ko": "백미당",
+      "name_en": "Baegmidang",
+      "floor": "1F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJOXhldwClfDURkaiKjVyUeOs",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202504080934306122",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-jqJNrUPxy5992",
+      "note": "This pin is the Hyundai Department Store Samseong branch nearby; the exact COEX Mall stand may differ."
+    },
+    {
+      "name_ko": "베르체",
+      "name_en": "Berche Coffee COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJQV_2A5ylfDUR-cFy6FGMj1U",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202309041053562161",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-0Lrwfn6OP3914"
+    },
+    {
+      "name_ko": "보난자커피",
+      "name_en": "Bonanza Coffee",
+      "floor": "B1",
+      "google_maps_url": null,
+      "search_url": "https://www.google.com/maps/search/?api=1&query=Bonanza+Coffee+COEX+Seoul",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202601281355407409",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-Mz7AxIlVH6998",
+      "note": "No COEX branch found on Google Maps; the only Bonanza Coffee pin is in Gunja, far from COEX."
+    },
+    {
+      "name_ko": "빠우",
+      "name_en": "Pao COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJveX-jpOlfDUR9NELbaoPeT0",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202509181017106686",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-1lWa3kGYM7693"
+    },
+    {
+      "name_ko": "빨라쪼델프레도",
+      "name_en": "Palazzo del Freddo",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJIfisU2qkfDURU8PgQXj72R0",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560362",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-xi-5vTQS44125",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "삼송빵집",
+      "name_en": "Samsong Bakery COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ65Q9a9alfDUR3qYxzyjUAWA",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202010281517096005",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-Tsp62x2Ii0988"
+    },
+    {
+      "name_ko": "소울마켓베이커리",
+      "name_en": "Soul Market",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ57T-i3GlfDURgFldc7nIiss",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202306121338281562",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-SqHCSvxu51070"
+    },
+    {
+      "name_ko": "스타벅스리저브코엑스몰점",
+      "name_en": "Starbucks Reserve Starfield COEX Mall",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJm0LeJkCkfDURYc5jpJNIGA0",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560367",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO--VIMmJQmz1319"
+    },
+    {
+      "name_ko": "스타벅스코엑스몰점",
+      "name_en": "Starbucks COEX Mall",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJS1R1zLClfDURWTmorVvy3Vs",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560366",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-E1jWZjdQ42058"
+    },
+    {
+      "name_ko": "스타벅스코엑스별마당점",
+      "name_en": "Starbucks COEX Byeolmadang",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJS1R1zLClfDURWTmorVvy3Vs",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202004141459285085",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-0SRwYpQ2x2870",
+      "note": "Located inside Starfield Library (Byeolmadang); this pin is the in-library Starbucks."
+    },
+    {
+      "name_ko": "스타벅스코엑스아셈타워",
+      "name_en": "Starbucks COEX ASEM Tower",
+      "floor": "1F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJHTI_F-GlfDURRrclKjjeNzg",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202011030908136041",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-vi5Do7ggj6034"
+    },
+    {
+      "name_ko": "앤레커피",
+      "name_en": "ANLE COFFEE",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJXYMSz2qkfDUR9ZS_Nxz9sNs",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570590",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-_t100MGsS7588"
+    },
+    {
+      "name_ko": "앤티앤스프레즐",
+      "name_en": "Auntie Anne's Pretzel",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJu1VhQWqkfDURB_Dq0CuYt6w",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560376",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-egnQCyJoI5423"
+    },
+    {
+      "name_ko": "에덴스벨리",
+      "name_en": "Eden's Valley COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJSRLiHmOlfDURSRG14qjvG_k",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202305161041581241",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-qjlAnCWKZ8617"
+    },
+    {
+      "name_ko": "에이그레이트까페",
+      "name_en": "A Great Cafe",
+      "floor": "B2",
+      "google_maps_url": null,
+      "search_url": "https://www.google.com/maps/search/?api=1&query=A+Great+Cafe+COEX+Seoul",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560387",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-Nfdm2vEVU7101",
+      "note": "Could not confirm a distinct COEX pin on Google Maps; search the name on-site."
+    },
+    {
+      "name_ko": "위니비니",
+      "name_en": "WEENY BEENY",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJXyqXyWukfDURcwQvp5m7uvs",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570647",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-UsgpGDbSo2134"
+    },
+    {
+      "name_ko": "이코복스",
+      "name_en": "Ikovox Coffee",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJX66Mm2qkfDURNXjkcanQKN4"
+    },
+    {
+      "name_ko": "잠바주스",
+      "name_en": "Jamba",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJTX-vJmukfDURGh3B-z2LHRk",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570568",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-xX0nvy9QP8150"
+    },
+    {
+      "name_ko": "카페드리옹",
+      "name_en": "Cafe de Lion COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJGbs1O3qlfDURJqf7Fd3Rz_M",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202102261115166373",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-I5CH0oVpo4148"
+    },
+    {
+      "name_ko": "카페쎄미",
+      "name_en": "STEM COFFEE COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJRR1il0ClfDURTIEJR4CxYx8",
+      "note": "Best match on Google Maps; verify the name on-site as listings differ."
+    },
+    {
+      "name_ko": "커피빈",
+      "name_en": "The Coffee Bean & Tea Leaf COEX",
+      "floor": "1F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJL36qtGukfDURdWGRM1Qf-VU",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570504",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-vKYH1YVVI2022"
+    },
+    {
+      "name_ko": "크림라벨",
+      "name_en": "Cream Label",
+      "floor": "1F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJsSgTGAClfDURNQHNurvlMk0",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202604071454047697",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-uhiRaF64v6646"
+    },
+    {
+      "name_ko": "테라로사",
+      "name_en": "Terarosa Coffee",
+      "floor": "1F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJRZO7336lfDURDCIvfC4eC2M",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560365",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-18K1fjDPe4619"
+    },
+    {
+      "name_ko": "토이셔초콜릿라운지",
+      "name_en": "Teuscher Chocolate Lounge",
+      "floor": "1F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ4Znk6WqkfDUR_c90tt3BpZc",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560326",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-Z3KP_c72c8816"
+    },
+    {
+      "name_ko": "폴바셋",
+      "name_en": "Paul Bassett COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJVdq8-hSkfDURtJ5AwwpE7fs",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560325",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-6HjRSZ0af6534"
+    },
+    {
+      "name_ko": "푸롤리",
+      "name_en": "Fulolli The Polar",
+      "floor": "1F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJdXCS5VKlfDURxqQPr6p9U6Q",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202508290958276590",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-9nG1UTpS46808"
+    },
+    {
+      "name_ko": "피어커피",
+      "name_en": "Peer Coffee",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/Peer+coffee+Coex/data=!3m1!4b1!4m6!3m5!1s0x357ca596ca670c81:0x617640d092ee45c1!8m2!3d37.5114143!4d127.058519!16s%2Fg%2F11ss4x9sp_?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
+      "search_url": "https://www.google.com/maps/search/?api=1&query=Peer+Coffee+COEX+Seoul",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202303151345500602",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-cvzimY2e-8376",
+      "note": "Could not confirm a COEX pin on Google Maps; search the name on-site.",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "한스케익",
+      "name_en": "Hans Cake",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJichMAdSlfDUR3QBC-wEyYDk",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570636",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-TizCDToBQ7318"
+    },
+    {
+      "name_ko": "할리스커피도심공항2F",
+      "name_en": "Hollys Coffee City Airport Terminal 2F",
+      "floor": "2F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJjTRFs2ukfDURLlav8V2EPzk",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560328",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-iU2c3fPuP1031",
+      "note": "Best Hollys pin in the COEX/City Airport complex; floor listing may differ."
+    },
+    {
+      "name_ko": "할리스커피코엑스몰점",
+      "name_en": "Hollys Coffee COEX Mall",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJjTRFs2ukfDURLlav8V2EPzk",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560404"
+    }
+  ],
+  "한식": [
+    {
+      "name_ko": "가득드림",
+      "name_en": "Gadeuk Deurim",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJoYqslGqkfDUR7I31r_wPcJc",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560457",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-bhvToFyMN9522"
+    },
+    {
+      "name_ko": "강남교자",
+      "name_en": "Gangnam Gyoza Starfield COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJD2YdIvClfDURyfwd8MOgqns",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202303151345530603",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-nLDEBxB8c3823",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "경성면옥",
+      "name_en": "Kyeongseongmyeonok",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJcY7K0WqkfDURHsgF0gTXVzY",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202409241450285602",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-iVOvjXRM92250"
+    },
+    {
+      "name_ko": "고봉삼계탕",
+      "name_en": "Gobong Samgyetang",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJMUg8e2qkfDURwWJ58mECjWo",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201710171826024486",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-02qrd5-vB4392"
+    },
+    {
+      "name_ko": "광화문석갈비",
+      "name_en": "Gwanghwamun Seokgalbi COEX",
+      "floor": "1F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJaRl8Sz2lfDURlbObeMb_Z9I",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202005061700485161",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-H6upfYUod5090"
+    },
+    {
+      "name_ko": "금복당",
+      "name_en": "Geumbokdang COEX Mall",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJGbvL-dylfDURZqOKsR3uSi0",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201904251247083416",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-QxmIPxyw20849"
+    },
+    {
+      "name_ko": "난포",
+      "name_en": "Nanpo",
+      "floor": "B1",
+      "google_maps_url": null,
+      "search_url": "https://www.google.com/maps/search/?api=1&query=Nanpo+COEX+Seoul",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202512221526127322",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?maps=eyJzaG93VHlwZSI6MCwiZGV0YWlsIjp7InhfY3RuX2NvcmQiOjM5MTIuODc5Mjk2NzI2MDg5NywieV9jdG5fY29yZCI6MTU2MS4xOTQyMzU2MDE0MDQsImZsIjoiQjEiLCJ0bnRfbm1fa28iOiLrgpztj6wiLCJtYXBfaWQiOiJQTy1aWF8zeWlJTFoxMTA3IiwidG50X3NlcSI6IlROMjAyNTEyMjIxNTI2MTI3MzIyIiwiZmxvb3JfaWQiOiJGTC1ya3pqMHl1OWhlN28wODA1In0sImZsb29yIjoiQjEifQ==",
+      "note": "Google Maps only lists the Seongsu branch; no separate COEX pin was found."
+    },
+    {
+      "name_ko": "노야",
+      "name_en": "Noya Shabu",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJkXzQZimlfDURj-lDPyHA4FA",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202302151658590261",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-aZ5s7xdnF1958",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "명동칼국수",
+      "name_en": "Myeong-dong Kalguksu",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ24OmgGmkfDURHOL-4hVL990",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560458",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-wKqrRlcg96573"
+    },
+    {
+      "name_ko": "모박사부대찌개",
+      "name_en": "Mobaksa Budaejjigae",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJLQoH_2qkfDURFMaglUg7N6E",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560453",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-A05vB6utY5411"
+    },
+    {
+      "name_ko": "무교낙지",
+      "name_en": "Mukyo Nakji",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ9f8J0GqkfDURFDb-KyPyCBw",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560383",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-m4NBmFxG55417"
+    },
+    {
+      "name_ko": "밀밭",
+      "name_en": "Milbat",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJyzBJIWukfDURecnchr0lkFU",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202409241511245605",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-Q3VBbNtGn3819"
+    },
+    {
+      "name_ko": "반하는보쌈밥상",
+      "name_en": "Banhaneun Bossam & Bapsang COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJL_pCvWukfDUR7eh6AOAru4I",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570515",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-fp69DFJPl1504"
+    },
+    {
+      "name_ko": "배꼽집",
+      "name_en": "Baekkop House COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJXXqTpIWlfDURkARW8P2cPqs",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201905280835342965",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-gIc1Nu7Q99536"
+    },
+    {
+      "name_ko": "본죽",
+      "name_en": "Bonjuk City Airport Terminal",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJL36qtGukfDUR2JooNDRAW94",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202409241514015606",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-c_D3BDxkq0486"
+    },
+    {
+      "name_ko": "북창동순두부코엑스몰점",
+      "name_en": "BukChangDong Soondubu",
+      "floor": "B1",
+      "google_maps_url": null,
+      "search_url": "https://www.google.com/maps/search/?api=1&query=BukChangDong+Soondubu+COEX+Seoul",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202409241517175607",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-BHv3Fs6wx0078",
+      "note": "Google Maps shows the Gangnam-gu Office branch nearby; no separate COEX Mall pin was found."
+    },
+    {
+      "name_ko": "불고기브라더스도시락점",
+      "name_en": "Bulgogi Brothers COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJL36qtGukfDUR3GtgpIA85QQ",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201902111000290291",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-6bLYeyKif0298"
+    },
+    {
+      "name_ko": "사리원",
+      "name_en": "Sariwon",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJN736_GqkfDURwG0Cg2E9x-w",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560343",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-zW6YoUdS59249",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "샤브촌계백집",
+      "name_en": "Shabuchon Gyebaekjip COEX Mall",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJo9nuQPulfDURJl84_u8-qJ0",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202208241410408445",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-FSF5Xdqv56933"
+    },
+    {
+      "name_ko": "서울깍두기",
+      "name_en": "Seoul Kkakdugi",
+      "floor": "B1",
+      "google_maps_url": null,
+      "search_url": "https://www.google.com/maps/search/?api=1&query=Seoul+Kkakdugi+COEX+Seoul",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202409241522515608",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-yzWPGMXVq7963",
+      "note": "Could not confirm a COEX pin on Google Maps; search the name on-site."
+    },
+    {
+      "name_ko": "서울덮밥김치찜",
+      "name_en": "Seoul Deopbap",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJzYQbPVylfDURldEMhuIQd80",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570556",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-WmA1yjeMA0266"
+    },
+    {
+      "name_ko": "셰프의국수육개장",
+      "name_en": "Chef's Noodles N Beef Soup",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJJ2pRPGqkfDURbCuiKKTCMbU",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570509",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-47QCCNkC52745"
+    },
+    {
+      "name_ko": "솥내음",
+      "name_en": "Sotneum",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJC_wBf-OlfDUR8Dzc8tSuQm4",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202402280954374161",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-yz2yppQ5I8689"
+    },
+    {
+      "name_ko": "솥밥예찬",
+      "name_en": "Sotbap Yechan",
+      "floor": "B1",
+      "google_maps_url": null,
+      "search_url": "https://www.google.com/maps/search/?api=1&query=Sotbap+Yechan+COEX+Seoul",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202504110927316128",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-oqjwCriee7121",
+      "note": "Could not confirm a COEX pin on Google Maps; search the name on-site."
+    },
+    {
+      "name_ko": "아오내순대",
+      "name_en": "Aonae Sundae Coex Mall",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJRes727-lfDUR1Isw7bxsS-0",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202508061326426504",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-MA13YFm7H5925"
+    },
+    {
+      "name_ko": "안동찜닭해물떡찜",
+      "name_en": "Andong Jjimdak & Haemulddeokjjim",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJWVkqPWqkfDURTIQ187gSmI8",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560454",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-h4OJsIPas7781"
+    },
+    {
+      "name_ko": "예가낙지마을",
+      "name_en": "Yega Nakji",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJPaiAK2qkfDURHXMr86domI4",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560463",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-CJof_f6366265"
+    },
+    {
+      "name_ko": "이천가든",
+      "name_en": "Icheon Garden",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJDVZkbuilfDUR4M1CmKbS3hM",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202001200922435582",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-bAU9TbbMT2191",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "제주오전복",
+      "name_en": "Jeju O Jeonbok COEX Mall",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJucxsmKOlfDURIo8h68yfGj0",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202012181319166151",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-sfJVo_NWL4566"
+    },
+    {
+      "name_ko": "쭈불앤쭈불",
+      "name_en": "Jjubul & Jjubul",
+      "floor": "B1",
+      "google_maps_url": null,
+      "search_url": "https://www.google.com/maps/search/?api=1&query=Jjubul+&+Jjubul+COEX+Seoul",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570558",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-mzrQavxVI7714",
+      "note": "Could not confirm a COEX pin on Google Maps; search the name on-site."
+    },
+    {
+      "name_ko": "초계국수",
+      "name_en": "Chogye Guksu",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJmWJEEvGlfDURYZRsQJXP-pE",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570571",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO--NWiuhgWw5592"
+    },
+    {
+      "name_ko": "코엑스전주비빔밥",
+      "name_en": "Jeonju Bibimbap",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ4ay5I2ukfDURlfql2019ykI",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202409241542445611",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-MX1qffX_01243"
+    },
+    {
+      "name_ko": "플랜튜드",
+      "name_en": "Plantude",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJGfZxMZilfDURfOxYZrvWytI",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202205191627527623",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-2yfnAlrhH6305",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "하동관",
+      "name_en": "Hadongkwan",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJr_FvJ0CkfDUR-hjmnYkbDqk",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560352"
+    },
+    {
+      "name_ko": "아웃백스테이크하우스",
+      "name_en": "Outback Steakhouse Coex",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJL36qtGukfDURYnq9G7uyStU",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202306081728161542",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-j92dFzpEu5367"
+    }
+  ],
+  "양식": [
+    {
+      "name_ko": "노브랜드버거",
+      "name_en": "No Brand Burger COEX",
+      "floor": "1F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJASEEnZqlfDUR0bXKZfEfQGM",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201910011037450864",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-M22Bc5P__8770"
+    },
+    {
+      "name_ko": "더플레이스",
+      "name_en": "THE PLACE Italian Urban Bistro",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJxS3oAEbfejUR5wyvYQFnPs0",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560403",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-CLbX0wfIx8228"
+    },
+    {
+      "name_ko": "데블스도어",
+      "name_en": "Devil's Door",
+      "floor": "1F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJDR9KXXGlfDURmpU0AMXr1uc",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201806051300282448",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-25A0Th1Iy6531"
+    },
+    {
+      "name_ko": "뽀모도로",
+      "name_en": "Pomodoro",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJX9b0lmukfDURmU3dY3k2WPY",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570502",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-h9W7-g7h13115"
+    },
+    {
+      "name_ko": "스윗버튼",
+      "name_en": "Sweet Button",
+      "floor": "1F",
+      "google_maps_url": null,
+      "search_url": "https://www.google.com/maps/search/?api=1&query=Sweet+Button+COEX+Seoul",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202510221358566796",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-W9eo1SsMn9838",
+      "note": "Could not confirm a COEX pin on Google Maps; search the name on-site."
+    },
+    {
+      "name_ko": "온더보더",
+      "name_en": "On The Border",
+      "floor": "1F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJt8Mb0WqkfDURrciiSxz2sgE",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560384",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-cGmIEcxya7169"
+    },
+    {
+      "name_ko": "이비티",
+      "name_en": "ebt",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJDWOCwPqlfDURnHFDSt7mebM",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202102231435276345",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-KhiFzMg6B8246",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "캘리포니아피자키친",
+      "name_en": "California Pizza Kitchen",
+      "floor": "1F",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJbQx8_GqkfDUR7TsXMTvRIaI",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570594",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-kDvIdCOp68931"
+    },
+    {
+      "name_ko": "케르반",
+      "name_en": "Kervan Turkish Restaurant COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJm_PtY2qkfDUR7UFsmCK6IBA",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560344",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-pCNugjIut0268",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "파파밸리",
+      "name_en": "Papa Valley Pizza COEX Mall",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJOf-AVnClfDURhc3wVvn6uu4",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201903211501044482",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-byMp9RxcS3556"
+    },
+    {
+      "name_ko": "힘난다",
+      "name_en": "HIMNANDA",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJT2y8RmqkfDURpEHWq1m9Eno",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201901081321574723"
+    },
+    {
+      "name_ko": "아웃백스테이크하우스",
+      "name_en": "Outback Steakhouse Coex",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJL36qtGukfDURYnq9G7uyStU",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202306081728161542",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-j92dFzpEu5367"
+    }
+  ],
+  "중식": [
+    {
+      "name_ko": "무탄",
+      "name_en": "MUTAN COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJlQqAYNelfDURg2zfveD4eW4",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202302231401110381",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-DS1l_nFad4410",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "우면관",
+      "name_en": "Woomyeongwan Starfield COEX Mall",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJYRr_Yu-lfDUR0KXRtlY2R-Y",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202211181243249363",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-1KJ8ClnM29937"
+    },
+    {
+      "name_ko": "치바오by위안바오",
+      "name_en": "Chibao by Yuanbao Starfield COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ45Myi16lfDURap0GKNBnpqo",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202409241540195610",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-whYZGib484104"
+    },
+    {
+      "name_ko": "호우섬",
+      "name_en": "Housum COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ5Z_4dROlfDURzv2rksN_tu0",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202108061434176807",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-dAwWFJLPa5773"
+    },
+    {
+      "name_ko": "흑백홍",
+      "name_en": "Heukbaekhong",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJD_nG92qkfDURRHLczXzjjfM",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560448"
+    }
+  ],
+  "아시안": [
+    {
+      "name_ko": "르사이공",
+      "name_en": "Le Saigon",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJjTRFs2ukfDURS3xEkS93xQw",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570584",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-G67PxJoIt2766",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "브릭커리",
+      "name_en": "Brick Curry Starfield COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJiZSFoxWlfDUR-MUUj8az5wk",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202604200953257721",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-ZaOPr-qJX4895"
+    },
+    {
+      "name_ko": "소이연남",
+      "name_en": "Soi Yeonnam COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ8fyIo3SlfDURRCs00b3q7kc",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202409241525575609",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-7PToqvGxn2444"
+    },
+    {
+      "name_ko": "아그라",
+      "name_en": "Agra",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJgxl4CX2lfDURh-TozVFrfLQ",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560378",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-fHxJMG6cC7587",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "피에프창",
+      "name_en": "P.F. Chang's",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJC3bBJmukfDURkj_c0JpM61U",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570591"
+    }
+  ],
+  "일식": [
+    {
+      "name_ko": "갓덴스시",
+      "name_en": "Gatten Sushi COEX Mall",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJeQSFTgClfDURZs3F79oDOAo",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202409241441485601",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-z995qQTGY9021"
+    },
+    {
+      "name_ko": "도모다찌",
+      "name_en": "Domodachi",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJjTRFs2ukfDURVzVAqXuUjw4",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570514",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-YckxdVY0X9371"
+    },
+    {
+      "name_ko": "동경",
+      "name_en": "Dong-Gyeong",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJAZ1n-GqkfDURFv2IskTV8m4",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560447",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-hxNoNrwh19280"
+    },
+    {
+      "name_ko": "멘쇼쿠",
+      "name_en": "Menshoku COEX Branch",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJTfEcMcilfDURdRwVHZQYky8",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202409241501525604",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-KAIqxFrXK5888"
+    },
+    {
+      "name_ko": "사보텐",
+      "name_en": "Saboten COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ75I5HGukfDURwvFCclxtRBI",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560347",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-sVu1KKZbK8924",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "소노야",
+      "name_en": "Sonoya",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJw6guz_alfDUR9bIMOdLeqX0",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560450",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-c_BooBoYa7085"
+    },
+    {
+      "name_ko": "쇼군",
+      "name_en": "Shogun",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJVTHx42qkfDURHwUwBBHvCwc",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560459",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-mtZf2vFwb5378"
+    },
+    {
+      "name_ko": "슈파런치",
+      "name_en": "Shupa Lunch COEX",
+      "floor": "B1",
+      "google_maps_url": null,
+      "search_url": "https://www.google.com/maps/search/?api=1&query=Shupa+Lunch+COEX+COEX+Seoul",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202603161124567581",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-b-rx5xgCn8428",
+      "note": "Could not confirm a COEX pin on Google Maps; search the name on-site."
+    },
+    {
+      "name_ko": "스시한판",
+      "name_en": "Sushi Hanpan",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJJzW_omukfDURWbyexK5Y4ys",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560452",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-c_4dwuyHj8872"
+    },
+    {
+      "name_ko": "시마스시",
+      "name_en": "Sima Sushi Coex Mall Branch",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJo_7wZCulfDURJdLkFT2g17s",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202103021547316388",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-qYtd0DyIU9523",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "핫쵸",
+      "name_en": "Hatcho COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJTdHLzEilfDUROpkJ828sScw",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202502261637135999",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-lFZReNz490167"
+    },
+    {
+      "name_ko": "호호식당",
+      "name_en": "Hoho Restaurant Starfield Coex",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJp3fqq3WlfDURZELEfuFuUIg",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202309131052002261",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-yRjnKezAF7504"
+    },
+    {
+      "name_ko": "홍대돈부리",
+      "name_en": "Hongdae Donburi",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJwfe7-WqkfDURyfC7Y679PnI",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560460"
+    },
+    {
+      "name_ko": "브릭커리",
+      "name_en": "Brick Curry Starfield COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJiZSFoxWlfDUR-MUUj8az5wk",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202604200953257721",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-ZaOPr-qJX4895"
+    }
+  ],
+  "퓨전": [
+    {
+      "name_ko": "니뽕내뽕",
+      "name_en": "Nippong Naepong COEX",
+      "floor": "B1",
+      "google_maps_url": null,
+      "search_url": "https://www.google.com/maps/search/?api=1&query=Nippong+Naepong+COEX+COEX+Seoul",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560372",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-og5Dpf2vX5932",
+      "note": "Could not confirm a COEX pin on Google Maps; search the name on-site.",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "브릭커리",
+      "name_en": "Brick Curry Starfield COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJiZSFoxWlfDUR-MUUj8az5wk",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202604200953257721",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-ZaOPr-qJX4895"
+    },
+    {
+      "name_ko": "소울마켓베이커리",
+      "name_en": "Soul Market",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ57T-i3GlfDURgFldc7nIiss",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202306121338281562",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-SqHCSvxu51070"
+    },
+    {
+      "name_ko": "플랜튜드",
+      "name_en": "Plantude",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJGfZxMZilfDURfOxYZrvWytI",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202205191627527623",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-2yfnAlrhH6305",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "피에프창",
+      "name_en": "P.F. Chang's",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJC3bBJmukfDURkj_c0JpM61U",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570591"
+    }
+  ],
+  "분식": [
+    {
+      "name_ko": "공수간",
+      "name_en": "Gongsugan",
+      "floor": "B1",
+      "google_maps_url": null,
+      "search_url": "https://www.google.com/maps/search/?api=1&query=Gongsugan+COEX+Seoul",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105560433",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-DiVgZGakw8166",
+      "note": "Google Maps only shows a Yeoksam-dong location; no COEX Mall pin was found.",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "김피라",
+      "name_en": "Kimpira",
+      "floor": "B1",
+      "google_maps_url": null,
+      "search_url": "https://www.google.com/maps/search/?api=1&query=Kimpira+COEX+Seoul",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202409241455365603",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-b8FaWjIZ49250",
+      "note": "Google Maps only shows a Bundang branch; no COEX Mall pin was found."
+    },
+    {
+      "name_ko": "남포동수제비",
+      "name_en": "Nampo-dong Sujebi Starfield COEX Mall",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJi3_urumlfDURuj1hc0pt8tM",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202009141556105823",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-gOu1HncoV0219"
+    },
+    {
+      "name_ko": "사이드쇼",
+      "name_en": "SIDESHOW",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJQ6iSxWqkfDURowyTG_GbHzg",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570625",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-sI_DxvGyd0754"
+    },
+    {
+      "name_ko": "소풍",
+      "name_en": "Sopung",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJPd_Z2mqkfDURr2KZIQD-juE",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570532",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-n4decvYfl2431"
+    },
+    {
+      "name_ko": "쌍둥이분식트윈쿡",
+      "name_en": "Twins Cook",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJuZ6BO2qkfDUReHxsENLSD9Q",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201902070949486527"
+    }
+  ],
+  "패스트푸드": [
+    {
+      "name_ko": "KFC",
+      "name_en": "KFC COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ6y1UAmukfDUR__sGgovv2e8",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570578",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-dKjgUeoF23389"
+    },
+    {
+      "name_ko": "맥도날드",
+      "name_en": "McDonald's COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJG9hVIkCkfDURA6xS2-mFs7s",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN201708291105570589"
+    }
+  ],
+  "고메스트리트": [
+    {
+      "name_ko": "더타코부스엔와이씨",
+      "name_en": "The Taco Booth NYC COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJrx6aiuelfDURJiID7y4SdWs",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202504231816496163",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-efvonk8Ze2313",
+      "gourmet_street": true
+    },
+    {
+      "name_ko": "호우섬",
+      "name_en": "Housum COEX",
+      "floor": "B1",
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ5Z_4dROlfDURzv2rksN_tu0",
+      "starfield_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?tnId=TN202108061434176807",
+      "starfield_location_url": "https://m.starfield.co.kr/coexmall/cafeDining/main?qrId=PO-dAwWFJLPa5773",
+      "note": "Likely a typo/duplicate of Housum (호우섬).",
+      "gourmet_street": true
+    }
+  ]
+}

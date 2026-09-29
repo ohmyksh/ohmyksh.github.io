@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vegan Map — ICML 2026 Seoul</title>
+  <link rel="stylesheet" href="fonts.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1d1d1f; --ink-soft: #3a3a3c; --muted: #6e6e73;
+      --line: #e5e5e7; --pad: clamp(20px, 5vw, 60px);
+    }
+    body { background: #fff; font-family: var(--font-main); color: var(--ink); font-size: 15.5px; line-height: 1.5; }
+    .page { max-width: 1000px; margin: 0 auto; padding: 36px var(--pad) 80px; }
+    .back { display: inline-flex; align-items: center; font-size: 16px; font-weight: 400; color: #1d1d1f; text-decoration: none; margin-bottom: 32px; }
+    .back:hover { color: #3273dc; }
+    h2 { font-size: clamp(20px, 3vw, 26px); font-weight: 400; margin-bottom: 20px; }
+    p { color: var(--ink); margin-bottom: 12px; }
+    ul { padding-left: 20px; color: var(--ink); margin-bottom: 12px; }
+    li { margin-bottom: 16px; line-height: 1.6; }
+    a { color: #3273dc; text-decoration: underline; }
+    a:hover { opacity: 0.7; }
+    .dish-name { color: #00704a; font-weight: 600; }
+    .dish-kr { color: var(--ink); font-weight: 400; }
+    .food-img { display: block; width: 100%; max-width: 220px; height: 140px; border-radius: 10px; margin: 14px auto 0; object-fit: cover; }
+    @media (min-width: 641px) {
+      .dish-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; padding-left: 0; list-style: none; }
+      .dish-list li { margin-bottom: 0; }
+      .food-img { max-width: 240px; height: 155px; }
+    }
+
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-main);
+      font-size: 15px;
+      font-weight: 700;
+      color: #00704a;
+      text-decoration: none;
+      border: 1.5px solid #00704a;
+      border-radius: 10px;
+      padding: 8px 16px;
+      background: #e8f5ee;
+      margin-bottom: 28px;
+      transition: box-shadow 0.15s, transform 0.15s;
+    }
+    .map-btn:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.09); transform: translateY(-2px); opacity: 1; }
+    .map-btn:active { transform: translateY(0); box-shadow: none; }
+    .map-btn img { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; }
+
+    @media (max-width: 640px) { body { font-size: 14.5px; } .food-img { max-width: 160px; height: 105px; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a href="index.html" class="back">← Back to Guide</a>
+    <h2>Vegetarian-Friendly Foods</h2>
+
+    <a href="https://naver.me/5p05Fe1c" target="_blank" rel="noopener" class="map-btn">
+      <img src="img/vegan.png" alt="">
+      Open Vegan Map
+    </a>
+
+    <p>I'm not vegetarian myself, but I put together a list of 100 vegan-friendly restaurants in Seoul. Please double-check before ordering, just in case!</p>
+    <p style="margin-top:10px;">Korean cuisine also has a rich tradition of vegetable-based dishes — a great way to experience the flavors of Korea.</p>
+
+    <ul class="dish-list" style="margin-top:40px;">
+      <li><strong class="dish-name">Temple Food</strong> <span class="dish-kr">(사찰음식):</span> Traditional Buddhist cuisine made with seasonal vegetables, tofu, mushrooms, and wild greens.
+        <img src="img/vegan-temple-food.jpeg" alt="Temple Food" class="food-img">
+      </li>
+      <li><strong class="dish-name">Mountain Vegetable Bibimbap</strong> <span class="dish-kr">(산채비빔밥):</span> Mixed rice topped with assorted seasoned mountain vegetables. Ask to hold the egg if needed.
+        <img src="img/vegan-mountain-vegetable-bibimbap.webp" alt="Mountain Vegetable Bibimbap" class="food-img">
+      </li>
+      <li><strong class="dish-name">Gondre Bibimbap</strong> <span class="dish-kr">(곤드레비빔밥):</span> Rice mixed with Korean mountain thistle (gondre) and soy sauce seasoning.
+        <img src="img/vegan-gondre-bibimbap.webp" alt="Gondre Bibimbap" class="food-img">
+      </li>
+      <li><strong class="dish-name">Perilla Seed Soft Tofu Stew</strong> <span class="dish-kr">(들깨순두부):</span> Soft tofu stew in a rich, nutty perilla seed broth.
+        <img src="img/vegan-perilla-seed-soft-tofu-stew.webp" alt="Perilla Seed Soft Tofu Stew" class="food-img">
+      </li>
+      <li><strong class="dish-name">Tofu Hot Pot</strong> <span class="dish-kr">(두부전골):</span> A hearty hot pot with tofu, vegetables, and mushrooms.
+        <img src="img/vegan-tofu-hot-pot.jpg" alt="Tofu Hot Pot" class="food-img" style="object-position: top;">
+      </li>
+      <li><strong class="dish-name">Mushroom Hot Pot</strong> <span class="dish-kr">(버섯전골):</span> A hot pot featuring a variety of mushrooms and vegetables.
+        <img src="img/vegan-mushroom-hot-pot.jpeg" alt="Mushroom Hot Pot" class="food-img">
+      </li>
+      <li><strong class="dish-name">Kongbiji Jjigae</strong> <span class="dish-kr">(콩비지찌개):</span> A thick stew made from ground soybean pulp.
+        <img src="img/vegan-kongbiji-jjigae.jpg" alt="Kongbiji Jjigae" class="food-img">
+      </li>
+      <li><strong class="dish-name">Kongguksu</strong> <span class="dish-kr">(콩국수, summer only):</span> Cold noodles served in a creamy soybean broth.
+        <img src="img/vegan-kongguksu.webp" alt="Kongguksu" class="food-img">
+      </li>
+      <li><strong class="dish-name">Acorn Jelly</strong> <span class="dish-kr">(도토리묵):</span> A savory jelly made from acorn starch, usually served with soy sauce dressing.
+        <img src="img/vegan-acorn-jelly.jpg" alt="Acorn Jelly" class="food-img">
+      </li>
+      <li><strong class="dish-name">Buckwheat Noodles</strong> <span class="dish-kr">(메밀국수 / 막국수):</span> Korean buckwheat noodles, similar to Japanese soba, served chilled in a light broth or with a spicy sauce.
+        <img src="img/vegan-buckwheat-noodles.webp" alt="Buckwheat Noodles" class="food-img">
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

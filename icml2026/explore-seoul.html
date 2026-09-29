@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Seoul</title>
+  <link rel="stylesheet" href="fonts.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --font-serif: var(--font-main);
+      --font-sans: var(--font-main);
+      --ink: #1d1d1f; --ink-soft: #3a3a3c; --muted: #6e6e73;
+      --line: #e5e5e7; --accent: #3a3a3c; --pad: clamp(20px, 5vw, 60px);
+    }
+    body {
+      background: #fff;
+      font-family: var(--font-serif);
+      color: var(--ink);
+      font-size: 15.5px;
+      line-height: 1.5;
+    }
+    .page { max-width: 1100px; margin: 0 auto; padding: 36px var(--pad) 80px; }
+    .back { display: inline-flex; align-items: center; font-size: 16px; font-weight: 400; color: #1d1d1f; background: none; border: none; padding: 0; text-decoration: none; margin-top: 12px; margin-bottom: 32px; }
+    .back:hover { color: #3273dc; background: none; opacity: 1; }
+    h2 { font-size: clamp(20px, 3vw, 26px); font-weight: 400; color: var(--ink); margin-bottom: 16px; }
+    h3 { font-size: 19px; font-weight: 400; color: var(--ink); margin: 0 0 10px; }
+    p { color: var(--ink-soft); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+    ul { padding-left: 20px; color: var(--ink-soft); margin-bottom: 12px; }
+    li { margin-bottom: 5px; line-height: 1.6; }
+    strong { color: var(--ink); font-weight: 700; }
+    a { color: #3273dc; text-decoration: underline; }
+    a:hover { opacity: 0.7; }
+    .lb {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 0.63em; font-weight: 700;
+      min-width: 1.7em; height: 1.7em; padding: 0 4px;
+      border-radius: 99px; vertical-align: middle;
+      white-space: nowrap; color: #fff; font-family: var(--font-sans); letter-spacing: 0;
+    }
+    .l1  { background: #004A85; } .l2  { background: #00A23F; }
+    .l3  { background: #ED6C00; } .l4  { background: #009BCE; }
+    .l5  { background: #794698; } .l6  { background: #7C4932; }
+    .l7  { background: #6E7E31; } .l8  { background: #D11D70; }
+    .l9  { background: #A49D87; } .lsb { background: #ECA300; }
+    .lgj { background: #6AC2B3; } .lsd { background: #B81B30; }
+    .neighborhood-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 28px;
+      margin-top: 24px;
+    }
+    .neighborhood-card h3 { margin-top: 0; margin-bottom: 10px; }
+    .place-img {
+      width: 100%;
+      aspect-ratio: 3/2;
+      background: #e5e5e7;
+      border-radius: 8px;
+      margin: 10px 0 12px;
+      object-fit: cover;
+      display: block;
+    }
+    .slideshow {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3/2;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 10px 0 12px;
+      background: #e5e5e7;
+    }
+    .slideshow img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+    .slideshow img.active { opacity: 1; }
+    @media (max-width: 600px) {
+      .neighborhood-grid { grid-template-columns: 1fr; }
+      body { font-size: 14.5px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a href="index.html" class="back">← Back to Guide</a>
+
+    <h2>Explore Seoul</h2>
+    <p>Explore Seoul's most popular neighborhoods for food, cafes, shopping, and sightseeing. Most are within about an hour of COEX by public transit.</p>
+
+    <div class="neighborhood-grid">
+
+      <div class="neighborhood-card">
+        <h3>Gangnam <span class="lb l2">2</span> <span class="lb lsd">신분당</span></h3>
+        <div class="slideshow">
+          <img src="img/tour-gangnam-1.png" alt="Gangnam" class="active">
+          <img src="img/tour-gangnam-2.jpg" alt="Gangnam street">
+        </div>
+        <p>The densest concentration of restaurants, cafes, and shopping in Seoul, just a short subway ride from COEX. Gangnam Station sits above a large underground shopping center, and the streets above are full of fashion shops, bookstores, and places to eat.</p>
+      </div>
+
+      <div class="neighborhood-card">
+        <h3>Seongsu and Seoul Forest <span class="lb l2">2</span> <span class="lb lsb">수인분당</span></h3>
+        <div class="slideshow">
+          <img src="img/tour-seongsu-1.jpg" alt="Seoul Forest" class="active">
+          <img src="img/tour-seongsu-2.jpg" alt="Seoul Forest">
+          <img src="img/tour-seongsu-3.jpg" alt="Seoul Forest">
+          <img src="img/tour-seongsu-4.jpg" alt="Seongsu">
+        </div>
+        <p>Seoul Forest is a large green space good for walking and relaxing in nature. Nearby Seongsu is the city's current hotspot, where old factories have been turned into stylish cafes, with new pop-up stores and a street of handmade shoe shops.</p>
+      </div>
+
+      <div class="neighborhood-card">
+        <h3>Royal Palaces <span class="lb l3">3</span> <span class="lb l5">5</span></h3>
+        <div class="slideshow">
+          <img src="img/tour-jongno-1.webp" alt="Gwanghwamun Gate" class="active">
+          <img src="img/tour-jongno-2.jpg" alt="Gyeongbokgung Palace">
+          <img src="img/tour-jongno-3.jpg" alt="Changdeokgung Palace">
+        </div>
+        <p>Gyeongbokgung, Changdeokgung, Changgyeonggung, Deoksugung, and Jongmyo Shrine are all in this area, with Gwanghwamun Gate marking the main entrance. Rent a hanbok nearby and you can walk into the palaces for free.</p>
+      </div>
+
+      <div class="neighborhood-card">
+        <h3>Bukchon Hanok Village <span class="lb l3">3</span></h3>
+        <div class="slideshow">
+          <img src="img/tour-jongno-4.jpg" alt="Bukchon Hanok Village" class="active">
+          <img src="img/tour-jongno-5.avif" alt="Bukchon Hanok Village">
+        </div>
+        <p>A hillside neighborhood of traditional hanok houses between Gyeongbokgung and Changdeokgung palaces. Best explored on foot, with narrow alleyways opening onto views over the tiled rooftops.</p>
+      </div>
+
+      <div class="neighborhood-card">
+        <h3>Jamsil <span class="lb l2">2</span></h3>
+        <div class="slideshow">
+          <img src="img/tour-jamsil-1.jpg" alt="Lotte World Tower" class="active">
+          <img src="img/tour-jamsil-2.jpg" alt="Lotte World, Jamsil">
+        </div>
+        <p>Home to Lotte World Tower and Lotte World. The tower has an observatory high above the city along with shopping and restaurants, and nearby Seokchon Lake is a pleasant walk. Songridangil, between Seokchon and Jamsil stations, is lined with restaurants and cafes.</p>
+      </div>
+
+      <div class="neighborhood-card">
+        <h3>Yongsan and Namsan <span class="lb l1">1</span> <span class="lb lgj">경의중앙</span> <span class="lb l4">4</span> <span class="lb l6">6</span></h3>
+        <div class="slideshow">
+          <img src="img/tour-yongsan-1.jpg" alt="National Museum of Korea" class="active">
+          <img src="img/tour-yongsan-2.jpg" alt="N Seoul Tower">
+          <img src="img/tour-yongsan-3.jpg" alt="N Seoul Tower view">
+        </div>
+        <p>Good restaurants and cafes, plus the National Museum of Korea nearby. N Seoul Tower on Namsan offers a panoramic city view and is a short cable car or hike away.</p>
+      </div>
+
+      <div class="neighborhood-card">
+        <h3>Itaewon and Haebangchon <span class="lb l6">6</span></h3>
+        <div class="slideshow">
+          <img src="img/tour-itaewon-1.jpg" alt="Itaewon" class="active">
+          <img src="img/tour-itaewon-2.jpg" alt="Haebangchon">
+        </div>
+        <p>Itaewon is Seoul's most international neighborhood, with restaurants and bars from around the world. Nearby Haebangchon, up the hill by Noksapyeong Station, is a quieter area of cafes and local spots with lovely views over the city.</p>
+      </div>
+
+      <div class="neighborhood-card">
+        <h3>Yeouido <span class="lb l5">5</span> <span class="lb l9">9</span></h3>
+        <div class="slideshow">
+          <img src="img/tour-yeouido-1.jpg" alt="The Hyundai Seoul" class="active">
+          <img src="img/tour-yeouido-2.webp" alt="The Hyundai Seoul interior">
+        </div>
+        <p>Home to The Hyundai Seoul, one of the most talked-about department stores in the city. Great for shopping and dining. The IFC Mall is nearby as well, and Yeouido Park is a pleasant spot for a walk.</p>
+      </div>
+
+      <div class="neighborhood-card">
+        <h3>Hongdae <span class="lb l2">2</span> <span class="lb lgj">경의중앙</span></h3>
+        <div class="slideshow">
+          <img src="img/tour-hongdae-1.jpg" alt="Hongdae" class="active">
+          <img src="img/tour-hongdae-2.jpg" alt="Hongdae street">
+        </div>
+        <p>A lively university neighborhood with lots of street food, bars, and live music. Great for a night out with a young, energetic atmosphere.</p>
+      </div>
+
+      <div class="neighborhood-card">
+        <h3>Myeongdong and Euljiro <span class="lb l4">4</span> <span class="lb l2">2</span></h3>
+        <div class="slideshow">
+          <img src="img/tour-myeongdong-1.jpg" alt="Myeongdong" class="active">
+          <img src="img/tour-myeongdong-2.jpg" alt="Myeongdong street food">
+        </div>
+        <p>A popular shopping district known for street food stalls, skincare shops, and a lively atmosphere. Nearby Euljiro, nicknamed Hipjiro, hides trendy cafes and bars among its old printing shops.</p>
+      </div>
+
+      <div class="neighborhood-card">
+        <h3>Han River Parks</h3>
+        <div class="slideshow">
+          <img src="img/tour-hanriver-1.jpg" alt="Han River Park" class="active">
+          <img src="img/tour-hanriver-2.jpg" alt="Han River Park">
+          <img src="img/tour-hanriver-3.jpg" alt="Han River Park">
+        </div>
+        <p>The riverside parks along the Han River are a great place to relax. Locals bring picnic mats and enjoy delivery or takeout food by the water. A short taxi ride is the easiest way to get there.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.slideshow').forEach(ss => {
+      const imgs = ss.querySelectorAll('img');
+      if (imgs.length < 2) return;
+      let idx = 0;
+      setInterval(() => {
+        imgs[idx].classList.remove('active');
+        idx = (idx + 1) % imgs.length;
+        imgs[idx].classList.add('active');
+      }, 3500);
+    });
+  </script>
+</body>
+</html>
