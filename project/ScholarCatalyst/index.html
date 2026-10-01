@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
     <style>
       @font-face { font-family:"Optimistic"; src:url("assets/Optimistic.ttf") format("truetype"); font-display:swap; }
-      :root { --ink:#333; --muted:#555; --plum:#7A005E; --deep-plum:#640954; --yellow:#FFC100; --line:#E9E9E9; --link:#7A005E; }
+      :root { --text-w:840px; --ink:#333; --muted:#555; --plum:#7A005E; --deep-plum:#640954; --yellow:#FFC100; --line:#E9E9E9; --link:#7A005E; }
       * { box-sizing:border-box; }
       html { scroll-behavior:smooth; }
       body { margin:0; background:#fff; color:var(--ink); font-family:"Noto Sans",Arial,sans-serif; font-size:16px; font-weight:400; line-height:1.55; }
@@ -22,29 +22,67 @@
       .kicker { margin:0 0 12px; color:#666; font-size:14px; letter-spacing:.02em; }
       h1 { font-family:"Google Sans","Noto Sans",Arial,sans-serif; }
       h1 { max-width:900px; margin:0 auto; color:var(--plum); font-size:clamp(46px,6vw,68px); font-weight:700; letter-spacing:-.04em; line-height:1.05; }
-      .wordmark-logo { display:inline-block; height:.84em; margin:0 .02em -.06em .01em; vertical-align:baseline; }
+      .wordmark-logo { display:inline-block; height:.84em; margin:0 -.015em -.06em .01em; vertical-align:baseline; }
       .wordmark-prefix { color:var(--yellow); }
       .wordmark-suffix { color:var(--plum); }
-      .wordmark-inline { color:var(--plum); font-family:"Google Sans","Noto Sans",Arial,sans-serif; font-weight:700; }
+      .wordmark-inline { font-family:"Google Sans","Noto Sans",Arial,sans-serif; font-weight:700; }
+      /* Yellow glint that sweeps through the text on hover; base color comes from --sheen-base. */
+      .sheen { --sheen-base:var(--plum); color:var(--sheen-base); background:linear-gradient(100deg,var(--sheen-base) 0 38%,var(--yellow) 50%,var(--sheen-base) 62% 100%); background-size:260% 100%; background-position:100% 0; -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+      .sheen:hover { animation:wordmark-sheen .55s cubic-bezier(.2,.7,.3,1) 1; }
+      @keyframes wordmark-sheen { from { background-position:100% 0; } to { background-position:0 0; } }
+      /* One idle sweep on scroll-in so visitors discover the hover effect. */
+      .sheen.is-teasing { animation:wordmark-sheen .9s cubic-bezier(.2,.7,.3,1) 1; }
       .hero-title { max-width:850px; margin:11px auto 0; color:var(--plum); font-family:"Google Sans","Noto Sans",Arial,sans-serif; font-size:clamp(22px,2.8vw,33px); font-weight:500; letter-spacing:-.025em; line-height:1.2; }
       .subtitle { max-width:760px; margin:20px auto 0; color:#333; font-size:20px; line-height:1.48; }
       .authors { max-width:1060px; margin:32px auto 0; color:#333; font-family:"Google Sans","Noto Sans",Arial,sans-serif; font-size:19px; line-height:1.75; }
       .authors a { color:#222; text-decoration:none; }
-      .authors a:hover { color:var(--plum); font-weight:500; text-decoration:none; }
+      .authors a:hover { color:var(--plum); text-decoration:none; }
       .authors sup { margin-left:1px; font-size:.68em; line-height:0; vertical-align:super; }
-      .authors a + sup { margin-left:-3px; position:relative; left:-1px; }
+      .authors a + sup { margin-left:1px; }
       .equal-marker { color:var(--plum); }
       .authors .equal-marker { font-size:.72em; margin-left:1px; vertical-align:super; position:relative; left:-1px; top:-.05em; }
       .equal-note .equal-marker { display:inline-block; font-size:.8em; margin-right:3px; vertical-align:middle; transform:translateY(-1px); }
       .equal-note { margin:2px auto 0; color:#666; font-family:"Google Sans","Noto Sans",Arial,sans-serif; font-size:14px; }
       .affiliations { margin:10px auto 0; color:#555; font-family:"Google Sans","Noto Sans",Arial,sans-serif; font-size:16px; line-height:1.35; }
       .affiliation-logos { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:16px 26px; margin:8px auto 0; }
-      .affiliation-logos img { display:block; width:auto; height:36px; max-width:145px; object-fit:contain; }
-      .affiliation-logos img.logo-stanford { height:42px; max-width:155px; }
+      .affiliation-logos img { display:block; width:auto; height:36px; max-width:145px; object-fit:contain; transform-origin:center; transition:transform .45s cubic-bezier(.2,.8,.2,1), opacity .35s ease, filter .35s ease; }
+      .affiliation-logos img.logo-stanford { height:46px; max-width:60px; }
       .affiliation-logos img.logo-cmu { height:40px; max-width:150px; }
       .affiliation-logos img.logo-ai2 { height:31px; max-width:96px; }
       .affiliation-logos img.logo-snu { height:48px; max-width:125px; }
       .affiliation-logos img.logo-mit { height:36px; max-width:135px; }
+      /* Hover choreography: the hovered author (or institution) and everything linked to it stay vivid; the rest recede. */
+      .author { position:relative; display:inline-block; transition:opacity .35s ease; }
+      .author a { position:relative; transition:color .25s ease; }
+      .author a::after { content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; border-radius:2px; background:linear-gradient(90deg,var(--yellow),var(--plum)); transform:scaleX(0); transform-origin:left; transition:transform .4s cubic-bezier(.2,.8,.2,1); }
+      .author sup, .author .equal-marker { transition:color .25s ease, transform .35s cubic-bezier(.2,.8,.2,1); display:inline-block; }
+      .hero.has-affil-hover .author { opacity:.7; }
+      .hero.has-affil-hover .author.is-lit { opacity:1; }
+      .hero.has-affil-hover .author.is-lit a { color:var(--plum); }
+      .hero.has-affil-hover .author.is-source a::after { transform:scaleX(1); }
+      .hero.has-affil-hover .author.is-lit sup { color:var(--plum); }
+      .hero.has-affil-hover .affiliation-logos img { opacity:.55; filter:saturate(.5); }
+      .hero.has-affil-hover .affiliation-logos img.is-lit { opacity:1; filter:none; transform:translateY(-3px) scale(1.16); }
+      .affiliations .affil-name { display:inline-block; white-space:nowrap; transition:color .3s ease, opacity .3s ease; }
+      .hero.has-affil-hover .affiliations .affil-name { opacity:.7; }
+      .hero.has-affil-hover .affiliations .affil-name.is-lit { opacity:1; color:var(--plum); }
+      .equal-note { transition:color .3s ease, opacity .3s ease; }
+      .hero.has-affil-hover .equal-note { opacity:.7; }
+      .hero.has-affil-hover .equal-note.is-lit { opacity:1; color:var(--plum); }
+      /* Equal-contribution markers: a brief pulse with a yellow glint passing through, then back to plum. */
+      .equal-marker { display:inline-block; }
+      .hero.has-affil-hover .author.is-equal-lit .equal-marker, .hero.has-affil-hover .equal-note.is-lit .equal-marker { animation:equal-pulse 1.8s cubic-bezier(.45,0,.25,1) 1; }
+      @keyframes equal-pulse {
+        0% { transform:scale(1); color:var(--plum); }
+        30% { color:var(--plum); }
+        45% { transform:scale(1.4); color:var(--yellow); text-shadow:0 0 5px rgba(255,193,0,.45); }
+        65% { color:var(--plum); text-shadow:none; }
+        100% { transform:scale(1); color:var(--plum); }
+      }
+      @media (hover:none) { .hero.has-affil-hover * { opacity:1 !important; transform:none !important; filter:none !important; } }
+      @media (prefers-reduced-motion:reduce) { .hero * { transition:none !important; } }
+      .justify { text-align:justify; text-align-last:left; hyphens:auto; -webkit-hyphens:auto; text-wrap:pretty; }
+      .center .justify { text-align:justify; text-align-last:left; }
       .links { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:38px; }
       .button { display:inline-flex; align-items:center; gap:7px; padding:8px 16px; border-radius:999px; background:#4B0B3D; color:#fff; text-decoration:none; font-family:"Noto Sans",Arial,sans-serif; font-size:15px; font-weight:400; }
       .button:hover { background:#35072b; color:#fff; }
@@ -53,11 +91,11 @@
       .button:hover .button-icon { filter:none; }
       .pending { margin:13px 0 0; color:#777; font-size:13px; }
       section { padding:50px 0; }
-      .narrow { width:min(100%,920px); margin:0 auto; }
-      .abstract-content { width:min(100%,840px); margin:0 auto; }
-      .outro-content { width:min(100%,760px); }
+      .narrow { width:min(100%,var(--text-w)); margin:0 auto; }
+      .abstract-content { width:min(100%,var(--text-w)); margin:0 auto; }
+      .outro-content { width:min(100%,var(--text-w)); }
       .center { text-align:center; }
-      h2 { margin:0 0 20px; color:var(--plum); font-family:"Noto Sans",Arial,sans-serif; font-size:29px; font-weight:500; letter-spacing:-.025em; line-height:1.2; }
+      h2 { width:min(100%,var(--text-w)); margin:0 auto 20px; color:var(--plum); text-align:left; font-family:"Noto Sans",Arial,sans-serif; font-size:29px; font-weight:500; letter-spacing:-.025em; line-height:1.2; }
       h3 { margin:0 0 10px; font-family:"Noto Sans",Arial,sans-serif; font-size:21px; letter-spacing:-.015em; }
       p { margin:0 0 16px; }
       .figure-section { padding:32px 0 38px; }
@@ -69,47 +107,110 @@
       .paper-figure img { display:block; width:100%; height:auto; }
       .paper-figure figcaption { margin-top:12px; color:var(--muted); font-family:"Noto Sans",Arial,sans-serif; font-size:15px; line-height:1.5; text-align:left; }
       .demo-section { padding:38px 0 48px; }
-      .demo-intro { max-width:760px; margin:0 auto 24px; color:var(--muted); }
-      .pipeline-list { max-width:860px; margin:0 auto 24px; padding-left:22px; color:var(--muted); text-align:left; }
+      .browser-section { padding:0 0 10px; }
+      .demo-intro { width:min(100%,var(--text-w)); margin:0 auto 24px; color:var(--muted); }
+      .pipeline-list { max-width:none; margin:0 0 24px; padding-left:22px; color:var(--muted); text-align:left; }
       .pipeline-list li { margin:0 0 12px; padding-left:4px; }
       .pipeline-list li:last-child { margin-bottom:0; }
       .pipeline-list strong { color:#222; font-weight:500; }
-      .demo-card { overflow:hidden; border:2px solid var(--line); border-radius:8px; background:#fff; box-shadow:0 14px 30px rgba(34,16,30,.07); text-align:left; }
-      .demo-navigator { display:flex; align-items:center; justify-content:center; gap:12px; padding:19px 28px 14px; }
-      .query-tabs { display:flex; flex-wrap:wrap; justify-content:center; gap:6px; }
-      .query-tab { border:0; border-radius:4px; background:transparent; color:#999; cursor:pointer; font:16px "Optimistic","Noto Sans",sans-serif; padding:5px 8px; }
-      .query-tab.is-active { background:#F9EEF6; color:var(--plum); }
-      .query-tab[data-query-type="thread"].is-active { background:#ECF7F7; color:#008780; }
-      .query-tab:disabled { cursor:default; }
-      .demo-card__body { padding:10px 32px 28px; }
-      .instance-table { margin:0; }
-      .instance-row { display:grid; grid-template-columns:122px minmax(0,1fr); gap:15px; padding:16px 0; }
-      .instance-row + .instance-row { border-top:1px solid var(--line); }
-      .instance-row--source { grid-template-columns:1fr; gap:8px; align-items:start; text-align:center; }
-      .instance-row--source .instance-label { order:1; }
-      .instance-row--source .demo-source { order:2; }
-      .instance-label { color:var(--plum); font-family:"Optimistic","Noto Sans",sans-serif; font-size:15px; font-weight:400; letter-spacing:0; text-transform:none; }
-      .demo-card[data-query-type="thread"] .instance-label { color:#008780; }
-      .instance-row--query .instance-label { color:var(--plum) !important; }
+      .demo-card { overflow:hidden; border:1px solid #ECE3EA; border-radius:18px; background:#fff; box-shadow:0 1px 2px rgba(34,16,30,.04), 0 24px 60px -24px rgba(74,11,61,.18); text-align:left; }
+      .browser-section .demo-card { width:min(100%,1240px); margin:0 auto; }
+      .browser-section .container { width:min(100% - 40px,1240px); }
+      .demo-topbar { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 22px; border-bottom:1px solid #F1EBF0; background:linear-gradient(180deg,#FCF8FB,#fff); }
+      .demo-kicker { color:#8a7686; font:500 13px "Noto Sans",Arial,sans-serif; letter-spacing:.04em; text-transform:uppercase; }
+      .demo-hf { display:inline-flex; align-items:center; gap:7px; padding:7px 14px; border:1px solid #E6DCE3; border-radius:999px; background:#fff; color:#4B0B3D; font-size:13.5px; font-weight:500; text-decoration:none; transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+      .demo-hf:hover { border-color:var(--plum); box-shadow:0 4px 14px rgba(122,0,94,.12); transform:translateY(-1px); }
+      .hf-icon { display:inline-block; width:18px; height:18px; object-fit:contain; }
+      .demo-navigator { display:grid; grid-template-columns:40px minmax(0,1fr) 40px; align-items:center; gap:14px; padding:16px 22px 12px; }
+      .demo-source-block { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+      .demo-source-row { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px 12px; }
+      .demo-meta { flex-shrink:0; }
+      .demo-stage { will-change:transform, opacity; }
+      .demo-source { color:#1d1d1d; font-family:"Google Sans","Noto Sans",Arial,sans-serif; font-size:17px; font-weight:500; line-height:1.3; letter-spacing:-.01em; text-decoration:none; transition:color .2s ease; }
+      .demo-source:hover { color:var(--plum); }
+      .demo-source.is-unlinked { pointer-events:none; }
+      .demo-counter-text { margin-left:10px; color:#a39aa0; font-size:12.5px; font-variant-numeric:tabular-nums; letter-spacing:0; text-transform:none; }
+      .demo-control { width:40px; height:40px; padding:0; border:1px solid #E6DCE3; border-radius:50%; background:#fff; color:#8a7686; cursor:pointer; font-size:13px; line-height:1; transition:color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease; }
+      .demo-control:hover { color:var(--plum); border-color:var(--plum); background:#FBF4F9; }
+      .demo-control:active { transform:scale(.94); }
+      .demo-card__body { padding:0 22px 22px; }
+      .query-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+      .query-column { padding:20px 24px 22px; border-radius:14px; }
+      .query-column--core { background:#FBF5FA; }
+      .query-column--thread { background:#F1F9F9; }
+      .query-heading { margin:0 0 14px; font:500 14px "Optimistic","Noto Sans",sans-serif; letter-spacing:.03em; text-transform:uppercase; }
+      .query-column--core .query-heading { color:var(--plum); }
+      .query-column--thread .query-heading { color:#008780; }
+      .query-column--thread .instance-label, .query-column--thread .query-rationale summary { color:#008780; }
+      .instance-label.sheen { color:var(--sheen-base); }
+      .instance-label.sheen:hover { animation-duration:1.1s; }
+      .instance-label.sheen.is-teasing { animation-duration:1.4s; }
+      .query-block { padding:12px 0 14px; }
+      .query-block + .query-block { border-top:1px solid rgba(0,0,0,.06); }
+      .instance-label { margin-bottom:6px; color:var(--plum); font-family:"Optimistic","Noto Sans",sans-serif; font-size:15px; font-weight:400; letter-spacing:0; text-transform:none; }
       .instance-value { min-width:0; color:#222; font-size:15px; line-height:1.55; }
       .instance-value p { margin:0; }
-      .demo-source { color:#222; font-family:"Google Sans","Noto Sans",Arial,sans-serif; font-size:17px; font-weight:500; line-height:1.4; }
-      .award { display:inline-block; padding:6px 11px; border-radius:6px; background:#FFE47A; color:#514100; font-family:"Noto Sans",Arial,sans-serif; font-size:13px; font-weight:500; line-height:1.3; white-space:nowrap; }
+      .award { display:inline-block; padding:5px 11px; border-radius:999px; background:#FFE47A; color:#514100; font-family:"Noto Sans",Arial,sans-serif; font-size:12.5px; font-weight:500; line-height:1.3; white-space:nowrap; }
       .demo-meta { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:7px; }
-      .domain { display:inline-block; padding:6px 10px; border-radius:6px; background:#F3F3F3; color:#555; font-family:"Noto Sans",Arial,sans-serif; font-size:13px; font-weight:500; line-height:1.3; white-space:nowrap; }
-      .demo-question { font-size:15px; line-height:1.58; }
-      .demo-positive { padding:0; background:transparent; border-radius:0; }
-      .demo-positive h3 { margin:0 0 4px; color:#222; font-size:16px; font-weight:600; }
-      .demo-positive p { margin:0 0 6px; font-size:15px; line-height:1.5; }
+      .domain { display:inline-block; padding:5px 10px; border-radius:999px; background:#F1F1F1; color:#555; font-family:"Noto Sans",Arial,sans-serif; font-size:12.5px; font-weight:500; line-height:1.3; white-space:nowrap; }
+      .demo-question { font-size:15px; line-height:1.6; }
+      .demo-positive p { margin:0 0 7px; padding-left:14px; text-indent:-14px; font-size:15px; line-height:1.5; }
       .demo-positive p:last-child { margin-bottom:0; }
-      .demo-rationale { margin:0; color:#222; font-size:15px; line-height:1.55; }
-      .demo-controls { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:20px; }
-      .demo-counter { color:#777; font-size:14px; text-decoration:none; }
-      .demo-counter:hover { color:var(--plum); text-decoration:none; }
-      .hf-icon { display:inline-block; width:18px; height:18px; margin-right:6px; background:transparent; object-fit:contain; vertical-align:-4px; }
-      .demo-control { width:22px; padding:0; border:0; background:transparent; color:#b7b7b7; cursor:pointer; font-size:15px; line-height:1; }
-      .demo-control:hover { color:#777; }
-      .mobile-rationale { display:none; }
+      .paper-link { color:#222; text-decoration:none; border-bottom:1px solid rgba(0,0,0,.15); transition:color .15s ease, border-color .15s ease; }
+      .paper-link:hover { color:var(--plum); border-bottom-color:var(--plum); }
+      .paper-link.sheen { --sheen-base:#222; }
+      .paper-link.sheen:hover { --sheen-base:var(--plum); animation-duration:.8s; border-bottom-color:var(--plum); }
+      .query-rationale { margin-top:2px; padding-top:12px; border-top:1px solid rgba(0,0,0,.06); text-align:left; }
+      .query-rationale summary { color:var(--plum); cursor:pointer; font:400 15px "Optimistic","Noto Sans",sans-serif; list-style:none; }
+      .query-rationale summary::-webkit-details-marker { display:none; }
+      .query-rationale summary::before { content:"▸ "; }
+      .query-rationale[open] summary::before { content:"▾ "; }
+      .demo-negatives { margin-top:10px; }
+      .demo-negatives .paper-link { color:#555; border-bottom-color:rgba(0,0,0,.1); }
+      .demo-negatives .paper-link:hover { color:var(--plum); border-bottom-color:var(--plum); }
+      .query-rationale p { margin:10px 0 0; color:#222; font-size:14.5px; line-height:1.55; }
+      .demo-challenge { margin:0 0 16px; padding:0 2px; color:#5a4a55; font-size:14.5px; line-height:1.55; }
+      .quiz-definition { margin:0 0 10px; color:#6b5b66; font-size:13.5px; line-height:1.5; }
+      .quiz-options { display:flex; flex-direction:column; gap:8px; margin-top:6px; }
+      .quiz-option { display:grid; grid-template-columns:22px minmax(0,1fr) auto; align-items:start; gap:10px; padding:10px 12px; border:1px solid rgba(0,0,0,.08); border-radius:10px; background:#fff; cursor:pointer; text-align:left; transition:border-color .2s ease, box-shadow .2s ease, background .2s ease, transform .2s ease; }
+      .quiz-option:hover { border-color:rgba(122,0,94,.35); }
+      .quiz-option.is-selected { border-color:var(--plum); box-shadow:0 0 0 2px rgba(122,0,94,.12); }
+      .quiz-option.is-locked { cursor:default; }
+      .quiz-option.is-locked:hover { border-color:rgba(0,0,0,.08); }
+      .quiz-option.is-answer.is-locked:hover { border-color:var(--yellow); }
+      .quiz-option.is-wrong.is-locked:hover { border-color:#e3b4c2; }
+      .quiz-option.is-locked .quiz-radio.is-hidden { display:none; }
+      .quiz-option:has(.quiz-radio.is-hidden) { grid-template-columns:minmax(0,1fr); }
+      a.quiz-option { text-decoration:none; color:inherit; cursor:pointer; }
+      a.quiz-option:hover { border-color:rgba(122,0,94,.35) !important; transform:translateY(-1px); box-shadow:0 6px 16px -8px rgba(34,16,30,.25); }
+      a.quiz-option.is-answer:hover .quiz-title.sheen { animation:wordmark-sheen 1.2s cubic-bezier(.2,.7,.3,1) 1; }
+      .quiz-radio { width:18px; height:18px; margin-top:1px; border:2px solid #c9b8c4; border-radius:50%; transition:border-color .2s ease, background .2s ease; }
+      .quiz-option.is-selected .quiz-radio { border-color:var(--plum); background:radial-gradient(circle, var(--plum) 45%, transparent 50%); }
+      .quiz-title { font-size:15px; line-height:1.45; color:#222; }
+      .quiz-open { color:#8a7686; font-size:12.5px; text-decoration:none; white-space:nowrap; padding:2px 6px; border-radius:6px; transition:color .15s ease, background .15s ease; }
+      .quiz-open:hover { color:var(--plum); background:#F9EEF6; }
+      .quiz-tag { display:inline-block; margin-top:6px; padding:2px 8px; border-radius:999px; font-size:11.5px; font-weight:500; letter-spacing:.02em; }
+      .quiz-option.is-answer { border-color:rgba(255,193,0,.8); background:#FFFDF3; }
+      .quiz-option.is-answer .quiz-title { font-weight:500; }
+      .quiz-option.is-answer .quiz-tag { background:#FFE47A; color:#514100; }
+      .quiz-option.is-wrong { border-color:#e3b4c2; background:#FFF6F8; }
+      .quiz-option.is-wrong .quiz-tag { background:#F6D5DE; color:#7a1f3d; }
+      .quiz-option.is-negative .quiz-title { color:#666; }
+      .quiz-option.is-negative .quiz-tag { background:#EFEFEF; color:#666; }
+      .quiz-actions { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:14px; }
+      .quiz-button { padding:8px 16px; border:1px solid #E6DCE3; border-radius:999px; background:#fff; color:#4B0B3D; cursor:pointer; font:500 14px "Noto Sans",Arial,sans-serif; transition:background .2s ease, border-color .2s ease, color .2s ease, opacity .2s ease; }
+      .quiz-button:hover:not(:disabled) { border-color:var(--plum); background:#FBF4F9; }
+      .quiz-button--primary { background:#4B0B3D; border-color:#4B0B3D; color:#fff; }
+      .quiz-button--primary:hover:not(:disabled) { background:#35072b; border-color:#35072b; }
+      .quiz-button:disabled { opacity:.45; cursor:not-allowed; }
+      .quiz-verdict { font-size:14px; color:#5a4a55; }
+      .quiz-verdict.is-correct { color:#1a7f37; font-weight:500; }
+      .quiz-verdict.is-wrong { color:#9a1f4a; font-weight:500; }
+      .quiz-reveal { margin-top:14px; padding-top:14px; border-top:1px solid rgba(0,0,0,.06); animation:reveal-in .45s cubic-bezier(.2,.8,.2,1) both; }
+      .quiz-reveal p { margin:0; }
+      @keyframes reveal-in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+      .thread-locked { margin-top:6px; padding:18px 14px; border:1px dashed rgba(0,135,128,.35); border-radius:10px; color:#4e7f7c; font-size:14px; text-align:center; }
+      #thread-reveal { animation:reveal-in .45s cubic-bezier(.2,.8,.2,1) both; }
       .task { margin:30px auto 0; padding:26px; border:1px solid var(--line); border-radius:6px; text-align:left; }
       .task-label { margin:0 0 6px; color:var(--plum); font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
       .task-text { margin:0; font-size:19px; line-height:1.45; }
@@ -126,7 +227,13 @@
       .result { padding:22px 18px; border:1px solid var(--line); border-radius:6px; }
       .result-number { margin-bottom:8px; color:var(--plum); font-family:"Noto Sans",Arial,sans-serif; font-size:40px; font-weight:700; letter-spacing:-.04em; line-height:1; }
       .result p { margin:0; color:var(--muted); font-size:15px; }
-      .citation { padding:24px; border:1px solid var(--line); border-radius:6px; background:#fafafa; color:#333; font-family:"Noto Sans",Arial,sans-serif; font-size:16px; line-height:1.6; white-space:pre-wrap; text-align:left; }
+      .citation-wrap { border:1px solid #d1d9e0; border-radius:8px; background:#f6f8fa; overflow:hidden; text-align:left; }
+      .citation-bar { display:flex; align-items:center; justify-content:space-between; padding:6px 8px 6px 14px; border-bottom:1px solid #d1d9e0; background:#f6f8fa; }
+      .citation-lang { color:#59636e; font:12px ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace; }
+      .copy-button { display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border:1px solid #d1d9e0; border-radius:6px; background:#f6f8fa; color:#59636e; cursor:pointer; font:12px "Noto Sans",Arial,sans-serif; transition:background .15s ease, color .15s ease; }
+      .copy-button:hover { background:#eff2f5; color:#1f2328; }
+      .copy-button.is-copied { color:#1a7f37; border-color:#1a7f37; }
+      .citation { margin:0; padding:16px 18px; overflow-x:auto; color:#1f2328; font:13.5px/1.6 ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace; white-space:pre; tab-size:4; }
       .citation-section { padding-bottom:48px; }
       .site-license { padding:0 20px 48px; color:#777; font-size:13px; text-align:center; }
       .site-license a { color:#777; }
@@ -156,15 +263,15 @@
       .main-results-table .group-row td { padding:8px; color:#666; background:#F2F2F2; font-size:12px; font-style:normal; text-align:left; }
       .main-results-image { display:block; width:min(100%,830px); height:auto; margin:0 auto; }
       .main-results-scroll { max-width:100%; }
-      .results-summary { max-width:840px; margin:0 auto 24px; }
-      .analysis-block { max-width:900px; margin:0 auto 54px; }
+      .results-summary { width:min(100%,var(--text-w)); margin:0 auto 24px; }
+      .analysis-block { max-width:none; margin:0 0 54px; }
       .analysis-block:last-child { margin-bottom:0; }
       .analysis-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:38px; max-width:960px; margin:0 auto; }
       .analysis-pair .analysis-block { max-width:none; margin:0; }
       .analysis-pair .analysis-copy { max-width:none; }
       .analysis-pair .analysis-figure { width:100%; }
-      .analysis-heading { margin:0 0 12px; color:#222; font:500 22px/1.2 "Noto Sans",Arial,sans-serif; letter-spacing:-.015em; }
-      .analysis-copy { max-width:800px; margin:0 auto 22px; }
+      .analysis-heading { margin:0 0 12px; color:#222; text-align:left; font:500 22px/1.2 "Noto Sans",Arial,sans-serif; letter-spacing:-.015em; }
+      .analysis-copy { max-width:none; margin:0 0 22px; }
       .analysis-figure { margin:0 auto; }
       .analysis-figure--recognition { width:min(100% - 180px,480px); }
       .analysis-figure--inspiration { width:min(100% - 180px,400px); }
@@ -172,8 +279,8 @@
       @media (max-width:760px) {
         .analysis-pair { grid-template-columns:1fr; gap:46px; }
       }
-      .task-copy { max-width:820px; margin:0 auto 15px; }
-      .temporal-note { max-width:760px; margin:0 auto 25px; color:#3e2438; }
+      .task-copy { max-width:none; margin:0 0 15px; }
+      .temporal-note { max-width:none; margin:0 0 25px; color:#3e2438; }
       .temporal-note strong { color:var(--plum); font-family:"Optimistic","Noto Sans",sans-serif; font-weight:500; }
       .contributor-card { width:fit-content; max-width:calc(100% - 32px); margin:22px auto 0; border:2px solid var(--plum); border-radius:16px; background:#fff; box-shadow:0 11px 25px rgba(34,16,30,.08); text-align:center; }
       .contributor-card[open] { width:min(100%,920px); }
@@ -181,7 +288,7 @@
       .contributor-card summary { padding:10px 16px; color:var(--plum); cursor:pointer; font:500 16px "Optimistic","Noto Sans",sans-serif; text-align:center; list-style:none; }
       .contributor-card summary::-webkit-details-marker { display:none; }
       .contributor-card summary span { float:right; color:#888; font:400 13px "Noto Sans",Arial,sans-serif; }
-      .contributor-card p { padding:0 30px 28px; margin:0; color:#111; font-size:15px; line-height:1.75; text-align:center; }
+      .contributor-card p { padding:0 30px 28px; margin:0; color:#111; font-size:15px; line-height:1.75; text-align:left; }
       .contributor-card .contributor-note { padding-bottom:14px; color:var(--plum); font-size:14px; line-height:1.65; }
       @media (hover:hover) {
         .contributor-card { transition:transform .2s ease, box-shadow .2s ease; }
@@ -195,11 +302,13 @@
         h1 { font-size:clamp(38px,12vw,48px); }
         .hero-title { margin-top:10px; font-size:22px; line-height:1.18; }
         .authors { margin-top:26px; font-size:16px; line-height:1.7; }
+        .authors-break { display:none; }
+        .justify, .center .justify { text-align:left; hyphens:auto; }
         .equal-note { margin-top:4px; font-size:13px; }
         .affiliations { margin-top:10px; font-size:14px; line-height:1.45; }
         .affiliation-logos { gap:11px 17px; margin-top:10px; }
         .affiliation-logos img { height:28px; max-width:112px; }
-        .affiliation-logos img.logo-stanford { height:32px; max-width:125px; }
+        .affiliation-logos img.logo-stanford { height:36px; max-width:48px; }
         .affiliation-logos img.logo-cmu { height:31px; max-width:118px; }
         .affiliation-logos img.logo-ai2 { height:25px; max-width:78px; }
         .affiliation-logos img.logo-snu { height:35px; max-width:92px; }
@@ -221,20 +330,22 @@
         .main-results-scroll .main-results-image { width:720px; max-width:none; padding:0 4px; }
         .results-summary { margin-bottom:18px; }
         .demo-section { padding-top:36px; }
-        .demo-navigator { gap:8px; padding:15px 14px 10px; }
-        .query-tab { padding:6px 7px; font-size:15px; }
-        .demo-card__body { padding:6px 18px 18px; }
-        .instance-row { grid-template-columns:1fr; gap:5px; padding:14px 0; }
-        .instance-row--source,.instance-row--rationale { display:none; }
-        .instance-label { font-size:15px; }
+        .browser-section { padding:0 0 4px; }
+        .demo-topbar { padding:12px 14px; }
+        .demo-kicker { font-size:0; }
+        .demo-kicker .demo-counter-text { font-size:12.5px; margin-left:0; }
+        .demo-hf { font-size:13px; padding:6px 12px; }
+        .demo-navigator { grid-template-columns:34px minmax(0,1fr) 34px; gap:8px; padding:14px 12px 10px; }
+        .demo-control { width:34px; height:34px; }
+        .demo-source { font-size:16px; }
+        .demo-source-row { flex-direction:column; gap:8px; }
+        .demo-card__body { padding:0 12px 12px; }
+        .query-columns { grid-template-columns:1fr; gap:12px; }
+        .query-column { padding:16px 16px 18px; }
+        .quiz-option { grid-template-columns:20px minmax(0,1fr); }
+        .quiz-open { grid-column:2; justify-self:start; padding-left:0; }
+        .demo-challenge { font-size:14px; }
         .instance-value,.demo-question,.demo-positive p { font-size:15px; line-height:1.55; }
-        .demo-positive p { margin-bottom:8px; }
-        .mobile-rationale { display:block; margin-top:2px; padding-top:13px; border-top:1px solid var(--line); text-align:left; }
-        .mobile-rationale summary { color:var(--plum); cursor:pointer; font:400 15px "Optimistic","Noto Sans",sans-serif; }
-        .mobile-rationale p { margin:10px 0 0; color:#222; font-size:15px; line-height:1.55; }
-        .demo-controls { justify-content:center; margin-top:15px; }
-        .demo-controls > span { display:none; }
-        .hf-icon { width:17px; height:17px; }
         .contributor-card { margin-top:18px; border-radius:14px; }
         .contributor-card summary { padding:17px 18px; font-size:16px; }
         .contributor-card p { padding:0 18px 22px; font-size:14px; line-height:1.7; }
@@ -244,7 +355,7 @@
         .analysis-heading { font-size:20px; }
         .analysis-copy { margin-bottom:18px; }
         .analysis-figure,.analysis-pair .analysis-figure { width:min(100% - 12px,500px); }
-        .citation { padding:18px; font-size:14px; line-height:1.55; overflow-wrap:anywhere; }
+        .citation { padding:14px; font-size:12.5px; }
         .citation-section { padding-bottom:38px; }
         .site-license { padding:0 20px 36px; font-size:12px; }
         .stats,.steps,.results { grid-template-columns:1fr; }
@@ -259,131 +370,127 @@
       <header class="hero container">
         <h1>
 <span class="wordmark-prefix">Scholar</span>
-<img class="wordmark-logo" src="assets/catalyst-c.png" alt="C" />
-<span class="wordmark-suffix">atalyst</span>
+<img class="wordmark-logo" src="assets/catalyst-c.png" alt="C" /><span class="wordmark-suffix">atalyst</span>
 </h1>
         <p class="hero-title">A Benchmark for Retrieving Papers<br />that Inspire New Research</p>
         <p class="authors">
-<a href="https://ohmyksh.github.io/" target="_blank" rel="noreferrer">Sohyeon Kim</a><span class="equal-marker" aria-label="Equal contribution">◆</span><sup>1,2</sup>, <a href="https://yoonholee.com/" target="_blank" rel="noreferrer">Yoonho Lee</a><span class="equal-marker" aria-label="Equal contribution">◆</span><sup>1</sup>, <a href="https://benjamin-eecs.github.io/" target="_blank" rel="noreferrer">Bo Liu</a>
-<sup>1,3</sup>, <a href="https://dayoon-ko.github.io/" target="_blank" rel="noreferrer">Dayoon Ko</a>
-<sup>2</sup>, <a href="https://rulinshao.github.io/" target="_blank" rel="noreferrer">Rulin Shao</a>
-<sup>3</sup>,<br />
-<a href="https://seungonekim.github.io/" target="_blank" rel="noreferrer">Seungone Kim</a>
-<sup>4</sup>, <a href="https://www.phontron.com/" target="_blank" rel="noreferrer">Graham Neubig</a>
-<sup>4</sup>, <a href="https://koh.pw/" target="_blank" rel="noreferrer">Pang Wei Koh</a>
-<sup>3</sup>, <a href="https://www.achowdhery.com/" target="_blank" rel="noreferrer">Aakanksha Chowdhery</a>
-<sup>1</sup>,<br />
-<a href="https://akariasai.github.io/" target="_blank" rel="noreferrer">Akari Asai</a>
-<sup>4,5</sup>, <a href="https://omarkhattab.com/" target="_blank" rel="noreferrer">Omar Khattab</a>
-<sup>6</sup>, <a href="https://yejinc.github.io/" target="_blank" rel="noreferrer">Yejin Choi</a>
-<sup>1</sup>, <a href="https://vision.snu.ac.kr/gunhee/" target="_blank" rel="noreferrer">Gunhee Kim</a>
-<sup>2</sup>, <a href="https://ai.stanford.edu/~cbfinn/" target="_blank" rel="noreferrer">Chelsea Finn</a>
-<sup>1</sup>
+<span class="author" data-affil="1 2" data-equal="1"><a href="https://ohmyksh.github.io/" target="_blank" rel="noreferrer">Sohyeon Kim</a><span class="equal-marker" aria-label="Equal contribution">◆</span><sup>1,2</sup></span>, <span class="author" data-affil="1" data-equal="1"><a href="https://yoonholee.com/" target="_blank" rel="noreferrer">Yoonho Lee</a><span class="equal-marker" aria-label="Equal contribution">◆</span><sup>1</sup></span>, <span class="author" data-affil="1 3"><a href="https://benjamin-eecs.github.io/" target="_blank" rel="noreferrer">Bo Liu</a><sup>1,3</sup></span>, <span class="author" data-affil="2"><a href="https://dayoon-ko.github.io/" target="_blank" rel="noreferrer">Dayoon Ko</a><sup>2</sup></span>, <span class="author" data-affil="3"><a href="https://rulinshao.github.io/" target="_blank" rel="noreferrer">Rulin Shao</a><sup>3</sup></span>,<br class="authors-break" />
+<span class="author" data-affil="4"><a href="https://seungonekim.github.io/" target="_blank" rel="noreferrer">Seungone Kim</a><sup>4</sup></span>, <span class="author" data-affil="4"><a href="https://www.phontron.com/" target="_blank" rel="noreferrer">Graham Neubig</a><sup>4</sup></span>, <span class="author" data-affil="3"><a href="https://koh.pw/" target="_blank" rel="noreferrer">Pang Wei Koh</a><sup>3</sup></span>, <span class="author" data-affil="1"><a href="https://www.achowdhery.com/" target="_blank" rel="noreferrer">Aakanksha Chowdhery</a><sup>1</sup></span>,<br class="authors-break" />
+<span class="author" data-affil="4 5"><a href="https://akariasai.github.io/" target="_blank" rel="noreferrer">Akari Asai</a><sup>4,5</sup></span>, <span class="author" data-affil="6"><a href="https://omarkhattab.com/" target="_blank" rel="noreferrer">Omar Khattab</a><sup>6</sup></span>, <span class="author" data-affil="1"><a href="https://yejinc.github.io/" target="_blank" rel="noreferrer">Yejin Choi</a><sup>1</sup></span>, <span class="author" data-affil="2"><a href="https://vision.snu.ac.kr/gunhee/" target="_blank" rel="noreferrer">Gunhee Kim</a><sup>2</sup></span>, <span class="author" data-affil="1"><a href="https://ai.stanford.edu/~cbfinn/" target="_blank" rel="noreferrer">Chelsea Finn</a><sup>1</sup></span>
 </p>
-        <p class="equal-note"><span class="equal-marker">◆</span> Equal contribution</p>
+        <p class="equal-note" id="equal-note"><span class="equal-marker">◆</span> Equal contribution</p>
         <div class="affiliations">
 <div>
-<sup>1</sup> Stanford University &nbsp;&nbsp; <sup>2</sup> Seoul National University &nbsp;&nbsp; <sup>3</sup> University of Washington</div>
+<span class="affil-name" data-affil="1"><sup>1</sup> Stanford University</span> &nbsp;&nbsp; <span class="affil-name" data-affil="2"><sup>2</sup> Seoul National University</span> &nbsp;&nbsp; <span class="affil-name" data-affil="3"><sup>3</sup> University of Washington</span></div>
 <div>
-<sup>4</sup> Carnegie Mellon University &nbsp;&nbsp; <sup>5</sup> Allen Institute for AI &nbsp;&nbsp; <sup>6</sup> MIT</div>
-<div class="affiliation-logos" aria-label="Affiliated institutions"><img class="logo-stanford" src="assets/stanford-simple.svg" alt="Stanford University" /><img class="logo-snu" src="assets/snu.svg" alt="Seoul National University" /><img src="assets/uw.webp" alt="University of Washington" /><img class="logo-cmu" src="assets/cmu-simple-cropped.png" alt="Carnegie Mellon University" /><img class="logo-ai2" src="assets/ai2.jpeg" alt="Allen Institute for AI" /><img class="logo-mit" src="assets/mit-cropped.png" alt="MIT" /></div>
+<span class="affil-name" data-affil="4"><sup>4</sup> Carnegie Mellon University</span> &nbsp;&nbsp; <span class="affil-name" data-affil="5"><sup>5</sup> Allen Institute for AI</span> &nbsp;&nbsp; <span class="affil-name" data-affil="6"><sup>6</sup> MIT</span></div>
+<div class="affiliation-logos" aria-label="Affiliated institutions"><img class="logo-stanford" data-affil="1" src="assets/stanford-block-s.png" alt="Stanford University" /><img class="logo-snu" data-affil="2" src="assets/snu.svg" alt="Seoul National University" /><img data-affil="3" src="assets/uw.webp" alt="University of Washington" /><img class="logo-cmu" data-affil="4" src="assets/cmu-simple-cropped.png" alt="Carnegie Mellon University" /><img class="logo-ai2" data-affil="5" src="assets/ai2.png" alt="Allen Institute for AI" /><img class="logo-mit" data-affil="6" src="assets/mit-cropped.png" alt="MIT" /></div>
 </div>
         <div class="links" aria-label="Project links">
           <a class="button" href="#intro"><i class="ai ai-arxiv" aria-hidden="true"></i>Paper</a>
           <a class="button" href="https://huggingface.co/ScholarCatalyst" target="_blank" rel="noreferrer"><img class="button-icon" src="assets/hf.webp?v=1" alt="" />Data</a>
           <a class="button" href="https://github.com/stanford-iris-lab/ScholarCatalyst" target="_blank" rel="noreferrer"><img class="button-icon" src="assets/github-white-icon.png" alt="" />GitHub</a>
-          <a class="button" href="https://x.com/ohmyksh?s=21" target="_blank" rel="noreferrer">𝕏 Twitter</a>
+          <a class="button" href="https://x.com/ohmyksh?s=21" target="_blank" rel="noreferrer">𝕏 Thread</a>
         </div>
       </header>
+
+      <section id="browser" class="browser-section">
+<div class="container">
+<article class="demo-card" aria-label="Benchmark instance browser">
+<div class="demo-topbar">
+<span class="demo-kicker">Browse the benchmark <span id="demo-counter-text" class="demo-counter-text"></span></span>
+<a class="demo-hf" href="https://huggingface.co/ScholarCatalyst" target="_blank" rel="noreferrer"><img class="hf-icon" src="assets/hf.webp?v=1" alt="" />Full set on Hugging Face</a>
+</div>
+<div class="demo-stage">
+<div class="demo-navigator">
+<button id="demo-previous" class="demo-control" type="button" aria-label="Previous source paper">◀</button>
+<div class="demo-source-block">
+<div class="demo-source-row"><a id="demo-source" class="demo-source" href="#" target="_blank" rel="noreferrer"></a><span class="demo-meta"><span id="demo-award" class="award"></span><span id="demo-domain" class="domain"></span></span></div>
+</div>
+<button id="demo-next" class="demo-control" type="button" aria-label="Next source paper">▶</button>
+</div>
+<div class="demo-card__body">
+<p class="demo-challenge justify">Try it yourself: one of the five papers below is the one the authors credit as the catalyst for this project. This five-way multiple choice question is much easier than the full task models face, where they have to pick the catalyst out of about 190,000 papers.</p>
+<div class="query-columns">
+<section class="query-column query-column--core" aria-label="Core Research Query">
+<h3 class="query-heading">Core Research Query</h3>
+<div class="query-block"><div class="instance-label">Query</div><div id="core-question" class="instance-value demo-question justify"></div></div>
+<div class="query-block">
+<div class="instance-label sheen">Which is a catalyst paper?</div>
+<p class="quiz-definition">A catalyst paper is one whose ideas did or would have moved the project forward in its early stage. Whether a paper counts as a catalyst comes directly from the project's lead authors, who did the work and thought through every part of it.</p>
+<div id="quiz-options" class="quiz-options" role="radiogroup" aria-label="Candidate papers"></div>
+<div class="quiz-actions">
+<button id="quiz-submit" class="quiz-button quiz-button--primary" type="button" disabled>Submit guess</button>
+<button id="quiz-reveal" class="quiz-button" type="button">Reveal answer</button>
+<span id="quiz-verdict" class="quiz-verdict" aria-live="polite"></span>
+</div>
+</div>
+<div id="core-reveal" class="quiz-reveal" hidden>
+<div class="instance-label">Author rationale</div>
+<p id="core-rationale" class="instance-value justify"></p>
+</div>
+</section>
+<section class="query-column query-column--thread" aria-label="Subfield specific Query">
+<h3 class="query-heading">Subfield specific Query</h3>
+<div class="query-block"><div class="instance-label">Query</div><div id="thread-question" class="instance-value demo-question justify"></div></div>
+<div id="thread-locked" class="thread-locked"><span>Catalyst papers and rationale for this query unlock with the answer on the left.</span></div>
+<div id="thread-reveal" hidden>
+<div class="query-block"><div id="thread-catalyst-label" class="instance-label sheen" style="--sheen-base:#008780">Catalyst papers and hard negatives</div><div id="thread-cards" class="quiz-options"></div></div>
+<div class="quiz-reveal"><div class="instance-label">Author rationale</div><p id="thread-rationale" class="instance-value justify"></p></div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
 
       <section id="intro">
 <div class="container abstract-content center">
 <h2>Abstract</h2>
-<p>What makes great scientists great? Even as AI systems start to make progress on open problems, scientists remain far ahead of them at sensing which prior idea, buried in an ever-growing archive of research, a new problem needs. To study this skill, we draw on researchers who know firsthand which earlier work advanced their completed projects, with papers serving as pointers to the ideas within. Using our automated pipeline that makes author annotation scalable, we build <span class="wordmark-inline">ScholarCatalyst</span> by having 184 lead authors of 207 recent computer science papers label which candidates did or could have advanced their project, each with a detailed rationale. We introduce a <em>retrieval task</em> with author-provided judgments: given an initial research question, retrieve these papers from only the literature available when the project began. Agentic search does no better than embedding retrieval (0.42 vs. 0.48 Recall@20) despite calling that same retriever as a tool. Even an agent built on Claude Fable 5.1, which may have seen the completed papers during training, reaches only 0.51 R@20. These results highlight the need for new training recipes that equip models with expert intuition for searching broad corpora. We envision <span class="wordmark-inline">ScholarCatalyst</span> as a step toward scientific agents that can take a half-formed idea and point to the prior research it needs.</p>
+<p class="justify">What makes great scientists great? Even as AI systems start to make progress on open problems, scientists remain far ahead of them at sensing which prior idea, buried in an ever-growing archive of research, a new problem needs. To study this skill, we draw on researchers who know firsthand which earlier work advanced their completed projects, with papers serving as pointers to the ideas within. Using our automated pipeline that makes author annotation scalable, we build <span class="wordmark-inline sheen">ScholarCatalyst</span> by having 184 lead authors of 207 recent computer science papers label which candidates did or could have advanced their project, each with a detailed rationale. We introduce a <em>retrieval task</em> with author-provided judgments: given an initial research question, retrieve these papers from only the literature available when the project began. Agentic search does no better than embedding retrieval (0.42 vs. 0.48 Recall@20) despite calling that same retriever as a tool. Even an agent built on Claude Fable 5.1, which may have seen the completed papers during training, reaches only 0.51 R@20. These results highlight the need for new training recipes that equip models with expert intuition for searching broad corpora. We envision <span class="wordmark-inline sheen">ScholarCatalyst</span> as a step toward scientific agents that can take a half-formed idea and point to the prior research it needs.</p>
 </div>
 </section>
 
       <section id="task" class="figure-section">
 <div class="container narrow center">
 <h2>Catalyst Paper Retrieval at the Early Stage of Research</h2>
-<p class="task-copy">Given an early stage research question, a system must rank papers that could offer useful ideas for pursuing it. It searches a temporally filtered corpus and is evaluated against the catalyst papers identified by the source paper authors.</p>
-<p class="temporal-note"><strong>Temporal cutoff</strong> Systems search only papers published before the source paper. The source paper is withheld and web search is disabled, so the task reflects the literature available while the research was still in progress.</p>
+<p class="task-copy justify">Given an early stage research question, a system must rank papers that could offer useful ideas for pursuing it. It searches a temporally filtered corpus and is evaluated against the catalyst papers identified by the source paper authors.</p>
+<p class="temporal-note justify"><strong>Temporal cutoff</strong> Systems search only papers published before the source paper. The source paper is withheld and web search is disabled, so the task reflects the literature available while the research was still in progress.</p>
 </div>
 <figure class="paper-figure paper-figure--fig1">
-<img src="assets/fig1.png" alt="ScholarCatalyst task overview: inspiring papers can be semantically dissimilar while topically related papers may not advance a project." />
+<img src="assets/fig1.webp" alt="ScholarCatalyst task overview: inspiring papers can be semantically dissimilar while topically related papers may not advance a project." />
 </figure>
 </section>
 
       <section id="results">
 <div class="container center">
 <h2>Main Results</h2>
-<p class="results-summary">Current retrievers miss most of the papers that inspired a project. General purpose dense retrievers perform best, yet place 39% of author identified inspiration papers in the top 20 for Core Research Queries and 51% for Subfield specific Queries. Agentic search does not improve over embedding retrieval.</p>
-<div class="main-results-scroll"><img class="main-results-image" src="assets/main-results.png" alt="Main retrieval results across Core Research Query and Subfield-specific Query, including performance footnotes." /></div>
+<p class="results-summary justify">Current retrievers miss most of the papers that inspired a project. General purpose dense retrievers perform best, yet place 39% of author identified inspiration papers in the top 20 for Core Research Queries and 51% for Subfield specific Queries. Agentic search does not improve over embedding retrieval.</p>
+<div class="main-results-scroll"><img class="main-results-image" src="assets/main-results.webp" alt="Main retrieval results across Core Research Query and Subfield-specific Query, including performance footnotes." /></div>
 </div>
 </section>
 
       <section id="data" class="demo-section">
 <div class="container center">
 <h2>Our Data</h2>
-<p class="demo-intro">Each completed source paper contributes one Core Research Query and one or more Subfield specific Queries. For every query, authors identify catalyst papers that offered useful ideas, distinguish topically related hard negatives, and provide a rationale for each judgment. Authors review and revise all of these materials.</p>
+<p class="demo-intro justify">Each completed source paper contributes one Core Research Query and one or more Subfield specific Queries. For every query, authors identify catalyst papers that offered useful ideas, distinguish topically related hard negatives, and provide a rationale for each judgment. Authors review and revise all of these materials.</p>
 <figure class="paper-figure paper-figure--fig3">
-<img src="assets/fig3_compact.png" alt="A ScholarCatalyst instance with a source paper, research question, author identified catalyst papers, hard negatives, and rationale." />
+<img src="assets/fig3_compact.webp" alt="A ScholarCatalyst instance with a source paper, research question, author identified catalyst papers, hard negatives, and rationale." />
 </figure>
-<article class="demo-card" data-query-type="core" aria-label="Benchmark instance browser">
-<div class="demo-navigator">
-<button id="demo-previous" class="demo-control" type="button" aria-label="Previous source paper">◀</button>
-<div class="query-tabs" aria-label="Query type">
-<button class="query-tab is-active" type="button" data-query-type="core">CoreQ</button>
-<button class="query-tab" type="button" data-query-type="thread">SubQ</button>
-</div>
-<button id="demo-next" class="demo-control" type="button" aria-label="Next source paper">▶</button>
-</div>
-<div class="demo-card__body">
-<div class="instance-table">
-<div class="instance-row instance-row--source">
-<div class="instance-label">
-<span class="demo-meta"><span id="demo-award" class="award">NeurIPS 2025 Spotlight</span><span id="demo-domain" class="domain">cs.AI</span></span>
-</div>
-<div id="demo-source" class="instance-value demo-source">Towards Understanding the Mechanisms of Classifier-Free Guidance</div>
-</div>
-<div class="instance-row instance-row--query">
-<div class="instance-label">Query</div>
-<div id="demo-question" class="instance-value demo-question">Classifier-free guidance (CFG) is a highly effective inference-time guidance method that significantly improves sample quality and condition alignment in diffusion models, but its underlying mechanisms remain poorly understood. Existing theoretical analyses mainly study isotropic Gaussian mixtures or one-dimensional distributions, where much of the complex structure of natural images is absent. This made us wonder (i) whether we could construct a simplified model in which the effects of CFG on image structures become directly visible, hence capturing the underlying mechanism of CFG more faithfully than the simplified settings considered in prior theoretical analyses and (ii) whether the mechanisms identified in this simplified setting extend beyond itself and can help explain, at least partially explain the CFG's mechanism in real-world diffusion models?</div>
-</div>
-<div class="instance-row">
-<div id="demo-catalyst-label" class="instance-label">Catalyst Paper</div>
-<div id="demo-catalysts" class="instance-value demo-positive"></div>
-</div>
-<div class="instance-row instance-row--rationale">
-<div class="instance-label">Rationale</div>
-<div id="demo-rationale" class="instance-value demo-rationale"></div>
-</div>
-</div>
-<details class="mobile-rationale">
-<summary>Show rationale</summary>
-<p id="demo-rationale-mobile"></p>
-</details>
-<div class="demo-controls">
-<span></span>
-<a class="demo-counter" href="https://huggingface.co/ScholarCatalyst" target="_blank" rel="noreferrer">
-<img class="hf-icon" src="assets/hf.webp?v=1" alt="" />Full set on Hugging Face</a>
-<span>
-</span>
-</div>
-</div>
-</article>
 <details class="contributor-card">
 <summary>Benchmark Contributors</summary>
-<p class="contributor-note">Their firsthand knowledge is the foundation of this benchmark, and we thank them for generously dedicating their time and expertise. Contributors are listed in alphabetical order.</p>
-<p>Adir Dayan, Ajay Sridhar, Alberta Longhini, Alberto Rota, Alexandru Oarga, Ali Hatamizadeh, Alireza Mousavi-Hosseini, Angana Borah, Anjiang Wei, Atharva Kulkarni, Bhuvan Sachdeva, Bo Liu, Bryan Sangwoo Kim, Burouj Armgaan, Camila Blank, Caroline Choi, Changho Shin, Changyeon Kim, Chaofan Lin, Chengyang He, Chuhan Li, David Anugraha, Dayoon Ko, Dilara Soylu, Dongjin Kang, Dongyang Fan, Ekaterina Kochetkova, Eunkyu Park, Fan Nie, Fanhu Zeng, Fatemeh Pesaran Zadeh, Francesco De Santis, Gaotang Li, Giung Nam, Guancheng Zhou, Guangnian Wan, Guijin Son, Gul Sena Altıntas, Gyuhyeon Seo, Han Luo, Hanane Moussa, Hangoo Kang, Haochen Tian, Haoyu Zhang, Haozhe Chen, Haozhe Wang, Himanshu Gupta, Ho Sy Tuyen, Hoang Pham, Houjun Liu, Hwan Chang, Hyeong Kyu Choi, Hyunji Lee, Hyunjun Lee, Ifdita Hasan Orney, Ilia Sucholutsky, Insu Lee, Itay Itzhak, Jaewoo Ahn, Jarek Liesen, Jason S Lucas, Jen-Yen Chang, Jiaju Ma, Jiaqi Liu, Jiayin Zhu, Jingzhe Shi, Jinheon Baek, Jinkun Hao, Jinwoo Lim, Jiwoo Chung, Johannes Kirmayr, Johnny Tian-Zheng Wei, Jongseo Lee, Joonghyuk Shin, Jubayer Ibn Hamid, Junchi Yu, Jungwoo Kim, Junyoung Lim, Kallol Saha, Kevin Qinghong Lin, Kodai Kawamura, Korneel Van den Berghe, Kunwoong Kim, Letian Fu, Linus Kreitner, Lucy Xiaoyang Shi, Lynnette Hui Xian Ng, Madhav Kanda, Mahyar Ghazanfari, Marcel Torne, Marco Bertolini, Marco Fumero, Maria Parelli, Marie Brockschmidt, Markus Gross, Mert Cemri, Michael Rizvi-Martel, Ming Hu, Mingtong Zhang, Mingyu Kim, Minki Kang, Minkyu Kim, Minseo Kim, Na Min An, Nathaniel L. Diamant, Niels Mündler, Nilesh Jain, Nilesh Prasad Pandey, Omin Kwon, Peng Xia, Pengcheng Wang, Pratik Sachdeva, Qingyang Zhang, Qizheng Zhang, Rahul Sharma, Raj Ghugare, Richard Cornelius Suwandi, Rohit Jena, Rosen Ting-Ying Yu, Roshen Sanjay Nair, Roussel Desmond Nzoyem, Rulin Shao, Runhan Huang, Sanghyun Jo, Seohong Park, Seokwon Song, Seonghyeon Ye, Seungone Kim, Shayan Talaei, Shihao Wang, Shiyin Jiang, Sijia Liu, Sijie Zhao, Siqi Zhu, Taehoon Yoon, Tanvir Ahmed Sijan, Tianhe Wu, Tongtian Zhu, Truong Buu Phan, Valentin Hofmann, Valeria Ruscio, Vasily Ilin, Wei Chen, Weiheng Liu, Wenbin Ouyang, Wenjie Zhu, Woomin Song, Woongyeong Yeo, Xiang Li, Xiaotian Liu, Xuan Luo, Xuanming Zhang, Xuying Ning, Yancheng Zhang, Yang Li, Yangcen Liu, Yanggan Gu, Yangtian Zhang, Yanjiang Guo, Yaozhong Shi, Yasaman Haghighi, Yichao Cai, Yifan Zhang, Yoonho Lee, Yoonkyo Jung, Yoonsang Lee, Yuante Li, Yuejiang Liu, Yujia Zheng, Yumin Choi, Yusuf Dalva, Zeyuan Chen, Zhaoyang Liu, Zheng Huang, Zhenhao Chen, Zhongxing Xu, Zijian Feng, Zixuan Hu</p>
+<p class="contributor-note justify">Their firsthand knowledge is the foundation of this benchmark, and we thank them for generously dedicating their time and expertise. Contributors are listed in alphabetical order.</p>
+<p class="justify">Adir Dayan, Ajay Sridhar, Alberta Longhini, Alberto Rota, Alexandru Oarga, Ali Hatamizadeh, Alireza Mousavi-Hosseini, Angana Borah, Anjiang Wei, Atharva Kulkarni, Bhuvan Sachdeva, Bo Liu, Bryan Sangwoo Kim, Burouj Armgaan, Camila Blank, Caroline Choi, Changho Shin, Changyeon Kim, Chaofan Lin, Chengyang He, Chuhan Li, David Anugraha, Dayoon Ko, Dilara Soylu, Dongjin Kang, Dongyang Fan, Ekaterina Kochetkova, Eunkyu Park, Fan Nie, Fanhu Zeng, Fatemeh Pesaran Zadeh, Francesco De Santis, Gaotang Li, Giung Nam, Guancheng Zhou, Guangnian Wan, Guijin Son, Gul Sena Altıntas, Gyuhyeon Seo, Han Luo, Hanane Moussa, Hangoo Kang, Haochen Tian, Haoyu Zhang, Haozhe Chen, Haozhe Wang, Himanshu Gupta, Ho Sy Tuyen, Hoang Pham, Houjun Liu, Hwan Chang, Hyeong Kyu Choi, Hyunji Lee, Hyunjun Lee, Ifdita Hasan Orney, Ilia Sucholutsky, Insu Lee, Itay Itzhak, Jaewoo Ahn, Jarek Liesen, Jason S Lucas, Jen-Yen Chang, Jiaju Ma, Jiaqi Liu, Jiayin Zhu, Jingzhe Shi, Jinheon Baek, Jinkun Hao, Jinwoo Lim, Jiwoo Chung, Johannes Kirmayr, Johnny Tian-Zheng Wei, Jongseo Lee, Joonghyuk Shin, Jubayer Ibn Hamid, Junchi Yu, Jungwoo Kim, Junyoung Lim, Kallol Saha, Kevin Qinghong Lin, Kodai Kawamura, Korneel Van den Berghe, Kunwoong Kim, Letian Fu, Linus Kreitner, Lucy Xiaoyang Shi, Lynnette Hui Xian Ng, Madhav Kanda, Mahyar Ghazanfari, Marcel Torne, Marco Bertolini, Marco Fumero, Maria Parelli, Marie Brockschmidt, Markus Gross, Mert Cemri, Michael Rizvi-Martel, Ming Hu, Mingtong Zhang, Mingyu Kim, Minki Kang, Minkyu Kim, Minseo Kim, Na Min An, Nathaniel L. Diamant, Niels Mündler, Nilesh Jain, Nilesh Prasad Pandey, Omin Kwon, Peng Xia, Pengcheng Wang, Pratik Sachdeva, Qingyang Zhang, Qizheng Zhang, Rahul Sharma, Raj Ghugare, Richard Cornelius Suwandi, Rohit Jena, Rosen Ting-Ying Yu, Roshen Sanjay Nair, Roussel Desmond Nzoyem, Rulin Shao, Runhan Huang, Sanghyun Jo, Seohong Park, Seokwon Song, Seonghyeon Ye, Seungone Kim, Shayan Talaei, Shihao Wang, Shiyin Jiang, Sijia Liu, Sijie Zhao, Siqi Zhu, Taehoon Yoon, Tanvir Ahmed Sijan, Tianhe Wu, Tongtian Zhu, Truong Buu Phan, Valentin Hofmann, Valeria Ruscio, Vasily Ilin, Wei Chen, Weiheng Liu, Wenbin Ouyang, Wenjie Zhu, Woomin Song, Woongyeong Yeo, Xiang Li, Xiaotian Liu, Xuan Luo, Xuanming Zhang, Xuying Ning, Yancheng Zhang, Yang Li, Yangcen Liu, Yanggan Gu, Yangtian Zhang, Yanjiang Guo, Yaozhong Shi, Yasaman Haghighi, Yichao Cai, Yifan Zhang, Yoonho Lee, Yoonkyo Jung, Yoonsang Lee, Yuante Li, Yuejiang Liu, Yujia Zheng, Yumin Choi, Yusuf Dalva, Zeyuan Chen, Zhaoyang Liu, Zheng Huang, Zhenhao Chen, Zhongxing Xu, Zijian Feng, Zixuan Hu</p>
 </details>
 </div>
 </section>
 
 <section id="pipeline" class="figure-section">
-<div class="container narrow center"><h2>Data Collection Pipeline</h2><ul class="pipeline-list"><li><strong>Automated construction</strong> Starting from one source paper arXiv ID, the pipeline parses the paper, resolves its references, proposes a Core Research Query and Subfield specific Queries, then retrieves candidate papers from the temporally appropriate corpus.</li><li><strong>Author validation and revision</strong> Authors review every proposed query and candidate paper. They validate, revise, or rewrite the materials, mark catalyst papers and hard negatives, and explain each relevance judgment.</li></ul></div>
+<div class="container narrow center"><h2>Data Collection Pipeline</h2><ul class="pipeline-list justify"><li><strong>Automated construction</strong> Starting from one source paper arXiv ID, the pipeline parses the paper, resolves its references, proposes a Core Research Query and Subfield specific Queries, then retrieves candidate papers from the temporally appropriate corpus.</li><li><strong>Author validation and revision</strong> Authors review every proposed query and candidate paper. They validate, revise, or rewrite the materials, mark catalyst papers and hard negatives, and explain each relevance judgment.</li></ul></div>
 <figure class="paper-figure paper-figure--data-overview">
-<img src="assets/fig2_compact.png" alt="ScholarCatalyst construction process, from automated reference resolution and candidate retrieval to author validation." />
+<img src="assets/fig2_compact.webp" alt="ScholarCatalyst construction process, from automated reference resolution and candidate retrieval to author validation." />
 </figure>
 </section>
 
@@ -392,81 +499,230 @@
 <h2>Analysis</h2>
 <div class="analysis-block">
 <h3 class="analysis-heading">Inspiration is diverse and not captured by similarity</h3>
-<p class="analysis-copy">An LLM judge classifies 663 key inspiration rationales under a nine type taxonomy. Authors most often credit a technique they adapted, empirical findings that supported a direction, an idea extended to a new setting, or a limitation that motivated a new approach. More than one type applies to 55.8% of rationales. Hard negatives are at least as similar to the query as catalyst papers under both lexical and embedding similarity.</p>
+<p class="analysis-copy justify">An LLM judge classifies 663 key inspiration rationales under a nine type taxonomy. Authors most often credit a technique they adapted, empirical findings that supported a direction, an idea extended to a new setting, or a limitation that motivated a new approach. More than one type applies to 55.8% of rationales. Hard negatives are at least as similar to the query as catalyst papers under both lexical and embedding similarity.</p>
 <figure class="paper-figure analysis-figure analysis-figure--inspiration">
-<img src="assets/analysis-inspiration.png" alt="Distribution of the nine author identified inspiration types." />
+<img src="assets/analysis-inspiration.webp" alt="Distribution of the nine author identified inspiration types." />
 </figure>
 </div>
 <div class="analysis-block">
 <h3 class="analysis-heading">Citation status does not identify inspiration</h3>
-<p class="analysis-copy">Source paper citations provide an incomplete signal of inspiration. 43.6% of Subfield specific catalyst papers are not cited by the source paper, and 67.8% of those uncited papers share no references with it. Among cited catalyst papers, only 46.2% for Core Research Queries and 34.0% for Subfield specific Queries carry a uses or extends citation intent label.</p>
+<p class="analysis-copy justify">Source paper citations provide an incomplete signal of inspiration. 43.6% of Subfield specific catalyst papers are not cited by the source paper, and 67.8% of those uncited papers share no references with it. Among cited catalyst papers, only 46.2% for Core Research Queries and 34.0% for Subfield specific Queries carry a uses or extends citation intent label.</p>
 </div>
 <div class="analysis-block">
 <h3 class="analysis-heading">Recognition depends on candidate coverage</h3>
-<p class="analysis-copy">To separate retrieval coverage from recognition performance, we apply LLM based reranking to the top 20 candidates from Gemini Embedding 2 for 50 Core Research Queries and 50 Subfield specific Queries. We compare reranking with and without gold injection, which replaces negative candidates with missing catalyst papers while keeping the pool size fixed. Stronger rerankers gain more in Recall at 5 from gold injection.</p>
+<p class="analysis-copy justify">To separate retrieval coverage from recognition performance, we apply LLM based reranking to the top 20 candidates from Gemini Embedding 2 for 50 Core Research Queries and 50 Subfield specific Queries. We compare reranking with and without gold injection, which replaces negative candidates with missing catalyst papers while keeping the pool size fixed. Stronger rerankers gain more in Recall at 5 from gold injection.</p>
 <figure class="paper-figure analysis-figure analysis-figure--recognition">
-<img src="assets/analysis-recognition.png" alt="Recall at 5 after reranking with and without gold paper injection." />
+<img src="assets/analysis-recognition.webp" alt="Recall at 5 after reranking with and without gold paper injection." />
 </figure>
 </div>
 <div class="analysis-block">
 <h3 class="analysis-heading">Frontier model comparison</h3>
-<p class="analysis-copy">Claude Fable 5.1 is reported separately as a comparison model. In the full benchmark, its agents reach 0.51 to 0.53 Recall at 20 on Core Research Queries. On Subfield specific Queries, the best Fable agent reaches 0.50 compared with 0.51 for the strongest embedding retriever.</p>
+<p class="analysis-copy justify">Claude Fable 5.1 is reported separately as a comparison model. In the full benchmark, its agents reach 0.51 to 0.53 Recall at 20 on Core Research Queries. On Subfield specific Queries, the best Fable agent reaches 0.50 compared with 0.51 for the strongest embedding retriever.</p>
 </div>
 </div>
 </section>
-      <section id="outro"><div class="container abstract-content outro-content center"><h2>Outro</h2><p>Recent work on reasoning-intensive retrieval evaluates relevance relations that require reasoning to recognize. <span class="wordmark-inline">ScholarCatalyst</span> pushes further, requiring judgments of how prior ideas could advance a research project.</p><p>We see two milestones ahead. The first is <em>expert-level</em> retrieval, matching a domain expert's judgment within their own field. The second is retrieval <em>beyond any individual expert</em>: being able to exercise that level of intuition across a breadth of fields no single researcher can follow.</p><p>This breadth may be where such systems help most, since nearly half of the papers our authors credit (49.5%) come from outside their project's subject area, and 43.6% of subfield-specific positives were never cited in the source paper. Researchers may therefore be limited more by what they have seen than by how well they judge it. The full literature makes this gap far larger than our benchmark shows: Semantic Scholar alone indexes over 225M papers, compared with 190K in our corpus.</p><p>What stands between current systems and both milestones is <em>an expert-level sense of which ideas matter</em>, and we hope <span class="wordmark-inline">ScholarCatalyst</span> offers a starting point for developing it. If <a href="https://www.jstor.org/stable/4307965?seq=1" target="_blank" rel="noreferrer"><strong>undiscovered public knowledge</strong></a> (1986) is as common as our results imply, models capable of expert judgment across fields could unlock a large backlog of progress hidden in plain sight.</p></div></section>
+      <section id="outro"><div class="container abstract-content outro-content center"><h2>Outro</h2><p class="justify">Recent work on reasoning-intensive retrieval evaluates relevance relations that require reasoning to recognize. <span class="wordmark-inline sheen">ScholarCatalyst</span> pushes further, requiring judgments of how prior ideas could advance a research project.</p><p class="justify">We see two milestones ahead. The first is <em>expert-level</em> retrieval, matching a domain expert's judgment within their own field. The second is retrieval <em>beyond any individual expert</em>: being able to exercise that level of intuition across a breadth of fields no single researcher can follow.</p><p class="justify">This breadth may be where such systems help most, since nearly half of the papers our authors credit (49.5%) come from outside their project's subject area, and 43.6% of subfield-specific positives were never cited in the source paper. Researchers may therefore be limited more by what they have seen than by how well they judge it. The full literature makes this gap far larger than our benchmark shows: Semantic Scholar alone indexes over 225M papers, compared with 190K in our corpus.</p><p class="justify">What stands between current systems and both milestones is <em>an expert-level sense of which ideas matter</em>, and we hope <span class="wordmark-inline sheen">ScholarCatalyst</span> offers a starting point for developing it. If <a href="https://www.jstor.org/stable/4307965?seq=1" target="_blank" rel="noreferrer"><strong>undiscovered public knowledge</strong></a> (1986) is as common as our results imply, models capable of expert judgment across fields could unlock a large backlog of progress hidden in plain sight.</p></div></section>
 
       <section class="citation-section">
 <div class="container narrow center">
 <h2>Citation</h2>
-<div class="citation">@article{inspiration2026,
-  title  = {ScholarCatalyst: A Benchmark for Retrieving Papers that Inspire New Research},
-  author = {Kim, Sohyeon and Lee, Yoonho and others},
-  year   = {2026}
-}</div>
+<div class="citation-wrap"><div class="citation-bar"><span class="citation-lang">BibTeX</span><button id="copy-citation" class="copy-button" type="button" aria-label="Copy citation"><svg class="copy-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"/><path fill="currentColor" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/></svg><span class="copy-label">Copy</span></button></div><pre id="citation-text" class="citation"><code>@article{kim2026scholarcatalyst,
+    title   = {ScholarCatalyst: A Benchmark for Retrieving Papers that Inspire New Research},
+    author  = {Kim, Sohyeon and Lee, Yoonho and Liu, Bo and Ko, Dayoon and Shao, Rulin and Kim, Seungone and Neubig, Graham and Koh, Pang Wei and Chowdhery, Aakanksha and Asai, Akari and Khattab, Omar and Choi, Yejin and Kim, Gunhee and Finn, Chelsea},
+    journal = {arXiv preprint},
+    year    = {2026}
+}</code></pre></div>
 </div>
 </section>
     </main>
     <footer class="site-license">This website is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</footer>
     <script>
       (() => {
+        const byId = (id) => document.getElementById(id);
+        // Affiliation highlighting: hovering an author lights the matching logos; hovering a logo lights its authors.
+        const hero = document.querySelector(".hero");
+        const affilNodes = [...document.querySelectorAll("[data-affil]")];
+        const equalNodes = [...document.querySelectorAll("[data-equal]")];
+        const equalNote = byId("equal-note");
+        const clearLit = () => {
+          hero.classList.remove("has-affil-hover");
+          document.querySelectorAll(".is-lit, .is-source, .is-equal-lit").forEach((n) => n.classList.remove("is-lit", "is-source", "is-equal-lit"));
+        };
+        const light = (source) => {
+          clearLit();
+          const ids = source.dataset.affil.split(" ");
+          hero.classList.add("has-affil-hover");
+          source.classList.add("is-source");
+          affilNodes.forEach((node) => {
+            const own = node.dataset.affil.split(" ");
+            // An author lights their institutions; an institution lights its authors and the other way around.
+            const linked = source.classList.contains("author")
+              ? !node.classList.contains("author") && own.some((id) => ids.includes(id))
+              : own.some((id) => ids.includes(id));
+            node.classList.toggle("is-lit", linked || node === source);
+          });
+          if (source.dataset.equal) {
+            equalNodes.forEach((n) => n.classList.add("is-lit", "is-equal-lit"));
+            equalNote.classList.add("is-lit");
+          }
+        };
+        affilNodes.forEach((node) => {
+          node.addEventListener("mouseenter", () => light(node));
+          node.addEventListener("mouseleave", clearLit);
+          node.addEventListener("focusin", () => light(node));
+          node.addEventListener("focusout", clearLit);
+        });
+
+        // Instance browser.
         let samples = [];
         let sampleIndex = 0;
-        let queryType = "core";
-        const byId = (id) => document.getElementById(id);
-        const elements = {
-          award: byId("demo-award"), domain: byId("demo-domain"), source: byId("demo-source"), question: byId("demo-question"),
-          catalystLabel: byId("demo-catalyst-label"), catalysts: byId("demo-catalysts"),
-          rationale: byId("demo-rationale"), mobileRationale: byId("demo-rationale-mobile"), card: document.querySelector(".demo-card")
+        const paperUrl = (id) => {
+          if (!id) return null;
+          if (id.startsWith("arxiv_")) return `https://arxiv.org/abs/${id.slice(6)}`;
+          if (id.startsWith("s2_")) return `https://www.semanticscholar.org/paper/${id.slice(3)}`;
+          return null;
         };
+        const paperNode = (paper, { sheen = false } = {}) => {
+          const url = paperUrl(paper.id);
+          if (!url) { const span = document.createElement("span"); span.textContent = paper.title; return span; }
+          const a = document.createElement("a");
+          a.className = sheen ? "paper-link sheen" : "paper-link"; a.href = url; a.target = "_blank"; a.rel = "noreferrer"; a.textContent = paper.title;
+          return a;
+        };
+        // Deterministic per-paper shuffle so the answer position is stable across visits.
+        const seeded = (seed) => { let h = 2166136261; for (const c of seed) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 10000) / 10000; }; };
+        const tokens = (t) => new Set(t.toLowerCase().replace(/[^a-z0-9 ]+/g, " ").split(/\s+/).filter((w) => w.length > 3));
+        const overlap = (a, b) => { const A = tokens(a), B = tokens(b); let n = 0; A.forEach((w) => { if (B.has(w)) n += 1; }); return n / Math.max(1, Math.min(A.size, B.size)); };
+        // Easier distractors: the hard negatives whose titles overlap least with the catalyst paper.
+        const pickDistractors = (sample, count) => {
+          const key = sample.core_query.key_paper;
+          const positives = new Set([key.id, ...sample.thread.positives.map((p) => p.id)]);
+          return (sample.thread.hard_negatives || []).filter((p) => !positives.has(p.id))
+            .map((p) => ({ p, o: overlap(p.title, key.title) })).sort((x, y) => x.o - y.o).slice(0, count).map((x) => x.p);
+        };
+        let quiz = { options: [], answerId: null, selected: null, done: false };
+        const quizEls = { options: byId("quiz-options"), submit: byId("quiz-submit"), reveal: byId("quiz-reveal"), verdict: byId("quiz-verdict"), coreReveal: byId("core-reveal"), threadLocked: byId("thread-locked"), threadReveal: byId("thread-reveal") };
+        const paperCard = (paper, { state = null, selected = false, selectable = false } = {}) => {
+          const url = paperUrl(paper.id);
+          // Revealed cards are links themselves; selectable cards keep a separate Read link so clicking selects.
+          const card = document.createElement(!selectable && url ? "a" : "div");
+          if (!selectable && url) { card.href = url; card.target = "_blank"; card.rel = "noreferrer"; }
+          card.className = "quiz-option"; card.dataset.id = paper.id;
+          if (state === "answer") card.classList.add("is-answer");
+          if (state === "negative") card.classList.add("is-negative");
+          if (state === "wrong") card.classList.add("is-wrong");
+          if (!selectable) card.classList.add("is-locked");
+          if (selectable) { card.setAttribute("role", "radio"); card.tabIndex = 0; card.setAttribute("aria-checked", String(selected)); card.classList.toggle("is-selected", selected); }
+          const radio = document.createElement("span"); radio.className = "quiz-radio"; if (!selectable) radio.classList.add("is-hidden");
+          const body = document.createElement("div");
+          const title = document.createElement("div"); title.className = "quiz-title"; title.textContent = paper.title;
+          if (state === "answer") { title.classList.add("sheen"); title.style.setProperty("--sheen-base", "#222"); }
+          body.append(title);
+          card.append(radio, body);
+          if (selectable) {
+            const open = document.createElement("a"); open.className = "quiz-open"; open.textContent = "Read ↗"; open.target = "_blank"; open.rel = "noreferrer";
+            if (url) open.href = url; else open.hidden = true;
+            open.addEventListener("click", (e) => e.stopPropagation());
+            card.append(open);
+          }
+          return card;
+        };
+        const renderOptions = () => {
+          quizEls.options.replaceChildren();
+          quiz.options.forEach((paper) => {
+            const isAnswer = paper.id === quiz.answerId, isSelected = paper.id === quiz.selected;
+            const state = !quiz.done ? null : isAnswer ? "answer" : isSelected ? "wrong" : "negative";
+            const card = paperCard(paper, { state, selected: isSelected, selectable: !quiz.done });
+            if (!quiz.done) {
+              const choose = () => { quiz.selected = paper.id; quizEls.submit.disabled = false; renderOptions(); };
+              card.addEventListener("click", choose);
+              card.addEventListener("keydown", (e) => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); choose(); } });
+            }
+            quizEls.options.append(card);
+          });
+        };
+        const finishQuiz = (viaReveal) => {
+          if (quiz.done) return;
+          quiz.done = true;
+          const sample = samples[sampleIndex];
+          quizEls.submit.disabled = true; quizEls.reveal.disabled = true;
+          quizEls.verdict.className = "quiz-verdict";
+          if (viaReveal) quizEls.verdict.textContent = "Answer revealed.";
+          else if (quiz.selected === quiz.answerId) { quizEls.verdict.textContent = "Correct. You found it among five; the benchmark asks for it among ~190K."; quizEls.verdict.classList.add("is-correct"); }
+          else { quizEls.verdict.textContent = "Not this one. The rationale below explains the authors' pick."; quizEls.verdict.classList.add("is-wrong"); }
+          renderOptions();
+          byId("core-rationale").textContent = sample.core_query.key_paper.rationale;
+          quizEls.coreReveal.hidden = false;
+          const cards = byId("thread-cards"); cards.replaceChildren();
+          sample.thread.positives.forEach((paper) => cards.append(paperCard(paper, { state: "answer" })));
+          (sample.thread.hard_negatives || []).forEach((paper) => cards.append(paperCard(paper, { state: "negative" })));
+          byId("thread-rationale").textContent = sample.thread.criterion;
+          quizEls.threadLocked.hidden = true; quizEls.threadReveal.hidden = false;
+          if (window.renderMathInElement) window.renderMathInElement(document.querySelector(".demo-card"), { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}], throwOnError: false });
+        };
+        quizEls.submit.addEventListener("click", () => { if (quiz.selected) finishQuiz(false); });
+        quizEls.reveal.addEventListener("click", () => finishQuiz(true));
         const render = () => {
           const sample = samples[sampleIndex];
           if (!sample) return;
-          const query = queryType === "core" ? sample.core_query : sample.thread;
-          const papers = queryType === "core" ? [sample.core_query.key_paper] : sample.thread.positives;
-          const rationale = queryType === "core" ? sample.core_query.key_paper.rationale : sample.thread.criterion;
-          elements.award.hidden = !sample.award;
-          elements.award.textContent = sample.award || "";
-          elements.domain.hidden = !sample.domain;
-          elements.domain.textContent = sample.domain || "";
-          elements.source.textContent = sample.title;
-          elements.question.textContent = query.question;
-          elements.catalystLabel.textContent = papers.length === 1 ? "Catalyst Paper" : "Catalyst Papers";
-          elements.catalysts.replaceChildren();
-          papers.forEach((paper, index) => {
-            const item = document.createElement("p");
-            item.textContent = papers.length > 1 ? `• ${paper.title}` : paper.title;
-            elements.catalysts.append(item);
-          });
-          elements.rationale.textContent = rationale;
-          elements.mobileRationale.textContent = rationale;
-          elements.card.dataset.queryType = queryType;
-          document.querySelectorAll(".query-tab").forEach((tab) => tab.classList.toggle("is-active", tab.dataset.queryType === queryType));
-          if (window.renderMathInElement) window.renderMathInElement(elements.card, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}], throwOnError: false });
+          const award = byId("demo-award"), domain = byId("demo-domain"), source = byId("demo-source");
+          award.hidden = !sample.award; award.textContent = sample.award || "";
+          domain.hidden = !sample.domain; domain.textContent = sample.domain || "";
+          source.textContent = sample.title;
+          const url = paperUrl(sample.paper_id);
+          if (url) { source.href = url; source.classList.remove("is-unlinked"); } else { source.removeAttribute("href"); source.classList.add("is-unlinked"); }
+          byId("demo-counter-text").textContent = `${sampleIndex + 1} / ${samples.length}`;
+          byId("core-question").textContent = sample.core_query.question;
+          byId("thread-question").textContent = sample.thread.question;
+          const key = sample.core_query.key_paper;
+          const options = [key, ...pickDistractors(sample, 4)];
+          const rand = seeded(sample.paper_id);
+          for (let i = options.length - 1; i > 0; i -= 1) { const j = Math.floor(rand() * (i + 1)); [options[i], options[j]] = [options[j], options[i]]; }
+          quiz = { options, answerId: key.id, selected: null, done: false };
+          quizEls.submit.disabled = true; quizEls.reveal.disabled = false; quizEls.verdict.textContent = ""; quizEls.verdict.className = "quiz-verdict";
+          quizEls.coreReveal.hidden = true; quizEls.threadLocked.hidden = false; quizEls.threadReveal.hidden = true;
+          renderOptions();
+          if (window.renderMathInElement) window.renderMathInElement(document.querySelector(".demo-card"), { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}], throwOnError: false });
         };
-        byId("demo-previous").addEventListener("click", () => { if (samples.length) { sampleIndex = (sampleIndex - 1 + samples.length) % samples.length; render(); } });
-        byId("demo-next").addEventListener("click", () => { if (samples.length) { sampleIndex = (sampleIndex + 1) % samples.length; render(); } });
-        document.querySelectorAll(".query-tab").forEach((tab) => tab.addEventListener("click", () => { queryType = tab.dataset.queryType; render(); }));
+        const stage = document.querySelector(".demo-stage");
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        let sliding = false;
+        const step = (direction) => {
+          if (!samples.length || sliding) return;
+          const next = () => { sampleIndex = (sampleIndex + direction + samples.length) % samples.length; render(); };
+          if (!stage.animate) { next(); return; }
+          // Under prefers-reduced-motion the cards crossfade instead of sliding.
+          const shift = reduceMotion ? 0 : 36;
+          sliding = true;
+          const out = stage.animate([{ transform: "translateX(0)", opacity: 1 }, { transform: `translateX(${-shift * direction}px)`, opacity: 0 }], { duration: 170, easing: "cubic-bezier(.4,0,1,1)", fill: "forwards" });
+          out.onfinish = () => {
+            next();
+            const inAnim = stage.animate([{ transform: `translateX(${shift * direction}px)`, opacity: 0 }, { transform: "translateX(0)", opacity: 1 }], { duration: 300, easing: "cubic-bezier(.2,.8,.2,1)" });
+            out.cancel();
+            inAnim.onfinish = () => { sliding = false; };
+          };
+        };
+        byId("demo-previous").addEventListener("click", () => step(-1));
+        byId("demo-next").addEventListener("click", () => step(1));
+        document.addEventListener("keydown", (e) => { if (e.target.closest("input, textarea")) return; if (e.key === "ArrowRight") step(1); if (e.key === "ArrowLeft") step(-1); });
+        // Tease the wordmark sheen when each inline wordmark first scrolls into view.
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+          const teaser = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              const el = entry.target;
+              teaser.unobserve(el);
+              setTimeout(() => { el.classList.add("is-teasing"); el.addEventListener("animationend", () => el.classList.remove("is-teasing"), { once: true }); }, 350);
+            });
+          }, { threshold: 1 });
+          document.querySelectorAll(".sheen").forEach((el) => teaser.observe(el));
+        }
+        const copyButton = byId("copy-citation");
+        copyButton.addEventListener("click", async () => {
+          try { await navigator.clipboard.writeText(byId("citation-text").textContent.trim()); copyButton.querySelector(".copy-label").textContent = "Copied"; copyButton.classList.add("is-copied"); }
+          catch { copyButton.querySelector(".copy-label").textContent = "Select and copy"; }
+          setTimeout(() => { copyButton.querySelector(".copy-label").textContent = "Copy"; copyButton.classList.remove("is-copied"); }, 1800);
+        });
         fetch("assets/sample.json").then((response) => response.ok ? response.json() : Promise.reject(response.status)).then((data) => {
           const sampleOrder = [
             "Spurious Rewards: Rethinking Training Signals in RLVR",
