@@ -90,7 +90,7 @@
       .button .ai { font-size:20px; line-height:1; }
       .button:hover .button-icon { filter:none; }
       .pending { margin:13px 0 0; color:#777; font-size:13px; }
-      section { padding:50px 0; }
+      section { padding:30px 0; }
       .narrow { width:min(100%,var(--text-w)); margin:0 auto; }
       .abstract-content { width:min(100%,var(--text-w)); margin:0 auto; }
       .outro-content { width:min(100%,var(--text-w)); }
@@ -98,7 +98,7 @@
       h2 { width:min(100%,var(--text-w)); margin:0 auto 20px; color:var(--plum); text-align:left; font-family:"Noto Sans",Arial,sans-serif; font-size:29px; font-weight:500; letter-spacing:-.025em; line-height:1.2; }
       h3 { margin:0 0 10px; font-family:"Noto Sans",Arial,sans-serif; font-size:21px; letter-spacing:-.015em; }
       p { margin:0 0 16px; }
-      .figure-section { padding:32px 0 38px; }
+      .figure-section { padding:20px 0 24px; }
       .paper-figure { width:min(100% - 56px,940px); margin:0 auto; }
       .paper-figure--fig1 { max-width:720px; margin-top:28px; }
       .paper-figure--fig3 { max-width:980px; }
@@ -134,17 +134,19 @@
       .demo-control:hover { color:var(--plum); border-color:var(--plum); background:#FBF4F9; }
       .demo-control:active { transform:scale(.94); }
       .demo-card__body { padding:0 22px 22px; }
-      .query-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
-      .query-column { padding:20px 24px 22px; border-radius:14px; }
-      .query-column--core { background:#FBF5FA; }
-      .query-column--thread { background:#F1F9F9; }
-      .query-heading { margin:0 0 14px; font:500 14px "Optimistic","Noto Sans",sans-serif; letter-spacing:.03em; text-transform:uppercase; }
-      .query-column--core .query-heading { color:var(--plum); }
-      .query-column--thread .query-heading { color:#008780; }
-      .query-column--thread .instance-label, .query-column--thread .query-rationale summary { color:#008780; }
-      .instance-label.sheen { color:var(--sheen-base); }
-      .instance-label.sheen:hover { animation-duration:1.1s; }
-      .instance-label.sheen.is-teasing { animation-duration:1.4s; }
+      .query-tabs { display:flex; justify-content:center; gap:6px; margin:4px 0 16px; }
+      .query-tab { padding:8px 16px; border:1px solid transparent; border-radius:999px; background:transparent; color:#8a7686; cursor:pointer; font:500 14px "Optimistic","Noto Sans",sans-serif; letter-spacing:.02em; transition:background .2s ease, color .2s ease, border-color .2s ease; }
+      .query-tab:hover { color:var(--plum); }
+      .query-tab.is-active { background:#FBF5FA; border-color:rgba(122,0,94,.18); color:var(--plum); }
+      .query-tab[data-query-type="thread"].is-active { background:#F1F9F9; border-color:rgba(0,135,128,.25); color:#008780; }
+      .query-panel { padding:22px 28px 26px; border-radius:14px; background:#FBF5FA; transition:background .3s ease; }
+      .query-panel[data-query-type="thread"] { background:#F1F9F9; }
+      .query-panel[data-query-type="thread"] .instance-label { --sheen-base:#008780; color:#008780; }
+      .query-panel[data-query-type="thread"] .quiz-button--primary { background:#0a6f69; border-color:#0a6f69; }
+      .query-panel[data-query-type="thread"] .quiz-button--primary:hover:not(:disabled) { background:#075953; border-color:#075953; }
+      .query-panel[data-query-type="thread"] .quiz-option.is-selected { border-color:#008780; box-shadow:0 0 0 2px rgba(0,135,128,.12); }
+      .query-panel[data-query-type="thread"] .quiz-option.is-selected .quiz-radio { border-color:#008780; background:radial-gradient(circle, #008780 45%, transparent 50%); }
+      .quiz-others { margin-bottom:16px; }
       .query-block { padding:12px 0 14px; }
       .query-block + .query-block { border-top:1px solid rgba(0,0,0,.06); }
       .instance-label { margin-bottom:6px; color:var(--plum); font-family:"Optimistic","Noto Sans",sans-serif; font-size:15px; font-weight:400; letter-spacing:0; text-transform:none; }
@@ -171,7 +173,7 @@
       .query-rationale p { margin:10px 0 0; color:#222; font-size:14.5px; line-height:1.55; }
       .demo-challenge { margin:0 0 16px; padding:0 2px; color:#5a4a55; font-size:14.5px; line-height:1.55; }
       .quiz-definition { margin:0 0 10px; color:#6b5b66; font-size:13.5px; line-height:1.5; }
-      .quiz-options { display:flex; flex-direction:column; gap:8px; margin-top:6px; }
+      .quiz-options { display:grid; grid-template-columns:1fr; gap:8px; margin-top:6px; }
       .quiz-option { display:grid; grid-template-columns:22px minmax(0,1fr) auto; align-items:start; gap:10px; padding:10px 12px; border:1px solid rgba(0,0,0,.08); border-radius:10px; background:#fff; cursor:pointer; text-align:left; transition:border-color .2s ease, box-shadow .2s ease, background .2s ease, transform .2s ease; }
       .quiz-option:hover { border-color:rgba(122,0,94,.35); }
       .quiz-option.is-selected { border-color:var(--plum); box-shadow:0 0 0 2px rgba(122,0,94,.12); }
@@ -209,8 +211,6 @@
       .quiz-reveal { margin-top:14px; padding-top:14px; border-top:1px solid rgba(0,0,0,.06); animation:reveal-in .45s cubic-bezier(.2,.8,.2,1) both; }
       .quiz-reveal p { margin:0; }
       @keyframes reveal-in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
-      .thread-locked { margin-top:6px; padding:18px 14px; border:1px dashed rgba(0,135,128,.35); border-radius:10px; color:#4e7f7c; font-size:14px; text-align:center; }
-      #thread-reveal { animation:reveal-in .45s cubic-bezier(.2,.8,.2,1) both; }
       .task { margin:30px auto 0; padding:26px; border:1px solid var(--line); border-radius:6px; text-align:left; }
       .task-label { margin:0 0 6px; color:var(--plum); font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
       .task-text { margin:0; font-size:19px; line-height:1.45; }
@@ -315,7 +315,7 @@
         .affiliation-logos img.logo-mit { height:28px; max-width:104px; }
         .links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; margin-top:28px; }
         .button { min-height:42px; justify-content:center; padding:8px 10px; font-size:14px; }
-        section { padding:42px 0; }
+        section { padding:26px 0; }
         h2 { margin-bottom:16px; font-size:26px; }
         .abstract-content,.narrow { width:100%; }
         .paper-figure { width:min(100% - 12px,940px); }
@@ -323,7 +323,7 @@
         .demo-section .paper-figure--fig3 { margin-bottom:28px; }
         .paper-figure--data-overview { margin-top:20px; margin-bottom:25px; }
         .paper-figure figcaption { margin-top:10px; font-size:14px; line-height:1.5; }
-        .figure-section { padding:34px 0; }
+        .figure-section { padding:20px 0; }
         .task-copy { margin-bottom:14px; }
         .temporal-note { margin-bottom:21px; font-size:14.5px; line-height:1.5; }
         .main-results-scroll { overflow-x:auto; padding:0 0 12px; scrollbar-width:thin; }
@@ -340,8 +340,8 @@
         .demo-source { font-size:16px; }
         .demo-source-row { flex-direction:column; gap:8px; }
         .demo-card__body { padding:0 12px 12px; }
-        .query-columns { grid-template-columns:1fr; gap:12px; }
-        .query-column { padding:16px 16px 18px; }
+        .query-panel { padding:16px 14px 18px; }
+        .query-tab { padding:7px 11px; font-size:13px; }
         .quiz-option { grid-template-columns:20px minmax(0,1fr); }
         .quiz-open { grid-column:2; justify-self:start; padding-left:0; }
         .demo-challenge { font-size:14px; }
@@ -394,6 +394,26 @@
         </div>
       </header>
 
+
+      <section id="intro">
+<div class="container abstract-content center">
+<h2>Abstract</h2>
+<p class="justify">What makes great scientists great? Even as AI systems start to make progress on open problems, scientists remain far ahead of them at sensing which prior idea, buried in an ever-growing archive of research, a new problem needs. To study this skill, we draw on researchers who know firsthand which earlier work advanced their completed projects, with papers serving as pointers to the ideas within. Using our automated pipeline that makes author annotation scalable, we build <span class="wordmark-inline sheen">ScholarCatalyst</span> by having 184 lead authors of 207 recent computer science papers label which candidates did or could have advanced their project, each with a detailed rationale. We introduce a <em>retrieval task</em> with author-provided judgments: given an initial research question, retrieve these papers from only the literature available when the project began. Agentic search does no better than embedding retrieval (0.42 vs. 0.48 Recall@20) despite calling that same retriever as a tool. Even an agent built on Claude Fable 5.1, which may have seen the completed papers during training, reaches only 0.51 R@20. These results highlight the need for new training recipes that equip models with expert intuition for searching broad corpora. We envision <span class="wordmark-inline sheen">ScholarCatalyst</span> as a step toward scientific agents that can take a half-formed idea and point to the prior research it needs.</p>
+</div>
+</section>
+
+      <section id="task" class="figure-section">
+<div class="container narrow center">
+<h2>Catalyst Paper Retrieval for Early-Stage Research Questions</h2>
+<p class="task-copy justify">Scientific research is inherently cumulative, with each project building on previous results and ideas. Current AI systems for research mainly accelerate progress on an already well-defined subproblem, where the remaining work is closer to engineering. Deciding which existing idea a new problem should build on is still mostly left to human researchers. An insightful prior paper can turn a vague question into a well-defined problem, for instance by revealing a limitation that motivates a new direction or suggesting an approach worth adapting, thereby shaping and accelerating (catalyzing) subsequent research. Making this choice well is a defining ability of great scientists, and a critical part of what researchers call research taste.</p>
+<p class="task-copy justify">We ask whether models can make that decision through a concrete task: given an early stage research question, find its <strong class="sheen">catalyst papers</strong>, by which we mean prior papers whose ideas did or could have meaningfully advanced the project. A system searches a temporally filtered corpus and is evaluated against the catalyst papers identified by the source paper authors.</p>
+<p class="temporal-note justify"><strong>Temporal cutoff</strong> Systems search only papers published before the source paper. The source paper is withheld and web search is disabled, so the task reflects the literature available while the research was still in progress.</p>
+</div>
+<figure class="paper-figure paper-figure--fig1">
+<img src="assets/fig1.webp" alt="ScholarCatalyst task overview: inspiring papers can be semantically dissimilar while topically related papers may not advance a project." />
+</figure>
+</section>
+
       <section id="browser" class="browser-section">
 <div class="container">
 <article class="demo-card" aria-label="Benchmark instance browser">
@@ -410,11 +430,13 @@
 <button id="demo-next" class="demo-control" type="button" aria-label="Next source paper">▶</button>
 </div>
 <div class="demo-card__body">
-<p class="demo-challenge justify">Try it yourself: one of the five papers below is the one the authors credit as the catalyst for this project. This five-way multiple choice question is much easier than the full task models face, where they have to pick the catalyst out of about 190,000 papers.</p>
-<div class="query-columns">
-<section class="query-column query-column--core" aria-label="Core Research Query">
-<h3 class="query-heading">Core Research Query</h3>
-<div class="query-block"><div class="instance-label">Query</div><div id="core-question" class="instance-value demo-question justify"></div></div>
+<div class="query-tabs" role="tablist" aria-label="Query type">
+<button class="query-tab is-active" type="button" role="tab" data-query-type="core" aria-selected="true">Core Research Query</button>
+<button class="query-tab" type="button" role="tab" data-query-type="thread" aria-selected="false">Subfield specific Query</button>
+</div>
+<p class="demo-challenge justify">Try it yourself: one of the five papers below is one the authors credit as a catalyst for this project. This five-way multiple choice question is much easier than the full task models face, where they have to pick the catalyst out of about 190,000 papers.</p>
+<section class="query-panel" data-query-type="core">
+<div class="query-block"><div class="instance-label">Query</div><div id="quiz-question" class="instance-value demo-question justify"></div></div>
 <div class="query-block">
 <div class="instance-label sheen">Which is a catalyst paper?</div>
 <p class="quiz-definition">A catalyst paper is one whose ideas did or would have moved the project forward in its early stage. Whether a paper counts as a catalyst comes directly from the project's lead authors, who did the work and thought through every part of it.</p>
@@ -425,18 +447,10 @@
 <span id="quiz-verdict" class="quiz-verdict" aria-live="polite"></span>
 </div>
 </div>
-<div id="core-reveal" class="quiz-reveal" hidden>
+<div id="quiz-reveal-block" class="quiz-reveal" hidden>
+<div id="quiz-others" class="quiz-others" hidden><div class="instance-label">Other catalyst papers for this query</div><div id="quiz-others-list" class="quiz-options"></div></div>
 <div class="instance-label">Author rationale</div>
-<p id="core-rationale" class="instance-value justify"></p>
-</div>
-</section>
-<section class="query-column query-column--thread" aria-label="Subfield specific Query">
-<h3 class="query-heading">Subfield specific Query</h3>
-<div class="query-block"><div class="instance-label">Query</div><div id="thread-question" class="instance-value demo-question justify"></div></div>
-<div id="thread-locked" class="thread-locked"><span>Catalyst papers and rationale for this query unlock with the answer on the left.</span></div>
-<div id="thread-reveal" hidden>
-<div class="query-block"><div id="thread-catalyst-label" class="instance-label sheen" style="--sheen-base:#008780">Catalyst papers and hard negatives</div><div id="thread-cards" class="quiz-options"></div></div>
-<div class="quiz-reveal"><div class="instance-label">Author rationale</div><p id="thread-rationale" class="instance-value justify"></p></div>
+<p id="quiz-rationale" class="instance-value justify"></p>
 </div>
 </section>
 </div>
@@ -446,23 +460,6 @@
 </div>
 </section>
 
-      <section id="intro">
-<div class="container abstract-content center">
-<h2>Abstract</h2>
-<p class="justify">What makes great scientists great? Even as AI systems start to make progress on open problems, scientists remain far ahead of them at sensing which prior idea, buried in an ever-growing archive of research, a new problem needs. To study this skill, we draw on researchers who know firsthand which earlier work advanced their completed projects, with papers serving as pointers to the ideas within. Using our automated pipeline that makes author annotation scalable, we build <span class="wordmark-inline sheen">ScholarCatalyst</span> by having 184 lead authors of 207 recent computer science papers label which candidates did or could have advanced their project, each with a detailed rationale. We introduce a <em>retrieval task</em> with author-provided judgments: given an initial research question, retrieve these papers from only the literature available when the project began. Agentic search does no better than embedding retrieval (0.42 vs. 0.48 Recall@20) despite calling that same retriever as a tool. Even an agent built on Claude Fable 5.1, which may have seen the completed papers during training, reaches only 0.51 R@20. These results highlight the need for new training recipes that equip models with expert intuition for searching broad corpora. We envision <span class="wordmark-inline sheen">ScholarCatalyst</span> as a step toward scientific agents that can take a half-formed idea and point to the prior research it needs.</p>
-</div>
-</section>
-
-      <section id="task" class="figure-section">
-<div class="container narrow center">
-<h2>Catalyst Paper Retrieval at the Early Stage of Research</h2>
-<p class="task-copy justify">Given an early stage research question, a system must rank papers that could offer useful ideas for pursuing it. It searches a temporally filtered corpus and is evaluated against the catalyst papers identified by the source paper authors.</p>
-<p class="temporal-note justify"><strong>Temporal cutoff</strong> Systems search only papers published before the source paper. The source paper is withheld and web search is disabled, so the task reflects the literature available while the research was still in progress.</p>
-</div>
-<figure class="paper-figure paper-figure--fig1">
-<img src="assets/fig1.webp" alt="ScholarCatalyst task overview: inspiring papers can be semantically dissimilar while topically related papers may not advance a project." />
-</figure>
-</section>
 
       <section id="results">
 <div class="container center">
@@ -600,8 +597,23 @@
           return (sample.thread.hard_negatives || []).filter((p) => !positives.has(p.id))
             .map((p) => ({ p, o: overlap(p.title, key.title) })).sort((x, y) => x.o - y.o).slice(0, count).map((x) => x.p);
         };
-        let quiz = { options: [], answerId: null, selected: null, done: false };
-        const quizEls = { options: byId("quiz-options"), submit: byId("quiz-submit"), reveal: byId("quiz-reveal"), verdict: byId("quiz-verdict"), coreReveal: byId("core-reveal"), threadLocked: byId("thread-locked"), threadReveal: byId("thread-reveal") };
+        let queryType = "core";
+        const quizStates = new Map();   // `${sampleIndex}:${queryType}` -> quiz state, so switching tabs keeps progress
+        let quiz = null;
+        const quizEls = { panel: document.querySelector(".query-panel"), question: byId("quiz-question"), options: byId("quiz-options"), submit: byId("quiz-submit"), reveal: byId("quiz-reveal"), verdict: byId("quiz-verdict"), revealBlock: byId("quiz-reveal-block"), others: byId("quiz-others"), othersList: byId("quiz-others-list"), rationale: byId("quiz-rationale") };
+        const mathIn = (el) => { if (window.renderMathInElement) window.renderMathInElement(el, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}], throwOnError: false }); };
+        // Each query becomes a five-way question: one catalyst plus the four hard negatives least similar to it.
+        const buildQuiz = (sample, type) => {
+          const rand = seeded(`${sample.paper_id}:${type}`);
+          const positives = type === "core" ? [sample.core_query.key_paper] : sample.thread.positives;
+          const answer = positives[Math.floor(rand() * positives.length)];
+          const exclude = new Set([sample.core_query.key_paper.id, ...sample.thread.positives.map((p) => p.id)]);
+          const negatives = (sample.thread.hard_negatives || []).filter((p) => !exclude.has(p.id))
+            .map((p) => ({ p, o: overlap(p.title, answer.title) })).sort((x, y) => x.o - y.o).slice(0, 4).map((x) => x.p);
+          const options = [answer, ...negatives];
+          for (let i = options.length - 1; i > 0; i -= 1) { const j = Math.floor(rand() * (i + 1)); [options[i], options[j]] = [options[j], options[i]]; }
+          return { options, answerId: answer.id, selected: null, done: false, others: positives.filter((p) => p.id !== answer.id), rationale: type === "core" ? sample.core_query.key_paper.rationale : sample.thread.criterion, question: type === "core" ? sample.core_query.question : sample.thread.question };
+        };
         const paperCard = (paper, { state = null, selected = false, selectable = false } = {}) => {
           const url = paperUrl(paper.id);
           // Revealed cards are links themselves; selectable cards keep a separate Read link so clicking selects.
@@ -641,27 +653,36 @@
             quizEls.options.append(card);
           });
         };
-        const finishQuiz = (viaReveal) => {
-          if (quiz.done) return;
-          quiz.done = true;
-          const sample = samples[sampleIndex];
-          quizEls.submit.disabled = true; quizEls.reveal.disabled = true;
-          quizEls.verdict.className = "quiz-verdict";
-          if (viaReveal) quizEls.verdict.textContent = "Answer revealed.";
-          else if (quiz.selected === quiz.answerId) { quizEls.verdict.textContent = "Correct. You found it among five; the benchmark asks for it among ~190K."; quizEls.verdict.classList.add("is-correct"); }
-          else { quizEls.verdict.textContent = "Not this one. The rationale below explains the authors' pick."; quizEls.verdict.classList.add("is-wrong"); }
+        const renderQuiz = () => {
+          const key = `${sampleIndex}:${queryType}`;
+          if (!quizStates.has(key)) quizStates.set(key, buildQuiz(samples[sampleIndex], queryType));
+          quiz = quizStates.get(key);
+          quizEls.panel.dataset.queryType = queryType;
+          document.querySelectorAll(".query-tab").forEach((tab) => { const on = tab.dataset.queryType === queryType; tab.classList.toggle("is-active", on); tab.setAttribute("aria-selected", String(on)); });
+          quizEls.question.textContent = quiz.question;
+          quizEls.submit.disabled = quiz.done || !quiz.selected; quizEls.reveal.disabled = quiz.done;
+          quizEls.verdict.className = "quiz-verdict"; quizEls.verdict.textContent = quiz.verdict || "";
+          if (quiz.verdictClass) quizEls.verdict.classList.add(quiz.verdictClass);
           renderOptions();
-          byId("core-rationale").textContent = sample.core_query.key_paper.rationale;
-          quizEls.coreReveal.hidden = false;
-          const cards = byId("thread-cards"); cards.replaceChildren();
-          sample.thread.positives.forEach((paper) => cards.append(paperCard(paper, { state: "answer" })));
-          (sample.thread.hard_negatives || []).forEach((paper) => cards.append(paperCard(paper, { state: "negative" })));
-          byId("thread-rationale").textContent = sample.thread.criterion;
-          quizEls.threadLocked.hidden = true; quizEls.threadReveal.hidden = false;
-          if (window.renderMathInElement) window.renderMathInElement(document.querySelector(".demo-card"), { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}], throwOnError: false });
+          quizEls.revealBlock.hidden = !quiz.done;
+          if (quiz.done) {
+            quizEls.others.hidden = quiz.others.length === 0;
+            quizEls.othersList.replaceChildren(); quiz.others.forEach((paper) => quizEls.othersList.append(paperCard(paper, { state: "answer" })));
+            quizEls.rationale.textContent = quiz.rationale;
+          }
+          mathIn(document.querySelector(".demo-card"));
         };
-        quizEls.submit.addEventListener("click", () => { if (quiz.selected) finishQuiz(false); });
+        const finishQuiz = (viaReveal) => {
+          if (!quiz || quiz.done) return;
+          quiz.done = true;
+          if (viaReveal) { quiz.verdict = "Answer revealed."; quiz.verdictClass = ""; }
+          else if (quiz.selected === quiz.answerId) { quiz.verdict = "Correct. You found it among five; the benchmark asks for it among ~190K."; quiz.verdictClass = "is-correct"; }
+          else { quiz.verdict = "Not this one. The rationale below explains the authors' pick."; quiz.verdictClass = "is-wrong"; }
+          renderQuiz();
+        };
+        quizEls.submit.addEventListener("click", () => { if (quiz && quiz.selected) finishQuiz(false); });
         quizEls.reveal.addEventListener("click", () => finishQuiz(true));
+        document.querySelectorAll(".query-tab").forEach((tab) => tab.addEventListener("click", () => { queryType = tab.dataset.queryType; renderQuiz(); }));
         const render = () => {
           const sample = samples[sampleIndex];
           if (!sample) return;
@@ -672,17 +693,7 @@
           const url = paperUrl(sample.paper_id);
           if (url) { source.href = url; source.classList.remove("is-unlinked"); } else { source.removeAttribute("href"); source.classList.add("is-unlinked"); }
           byId("demo-counter-text").textContent = `${sampleIndex + 1} / ${samples.length}`;
-          byId("core-question").textContent = sample.core_query.question;
-          byId("thread-question").textContent = sample.thread.question;
-          const key = sample.core_query.key_paper;
-          const options = [key, ...pickDistractors(sample, 4)];
-          const rand = seeded(sample.paper_id);
-          for (let i = options.length - 1; i > 0; i -= 1) { const j = Math.floor(rand() * (i + 1)); [options[i], options[j]] = [options[j], options[i]]; }
-          quiz = { options, answerId: key.id, selected: null, done: false };
-          quizEls.submit.disabled = true; quizEls.reveal.disabled = false; quizEls.verdict.textContent = ""; quizEls.verdict.className = "quiz-verdict";
-          quizEls.coreReveal.hidden = true; quizEls.threadLocked.hidden = false; quizEls.threadReveal.hidden = true;
-          renderOptions();
-          if (window.renderMathInElement) window.renderMathInElement(document.querySelector(".demo-card"), { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}], throwOnError: false });
+          renderQuiz();
         };
         const stage = document.querySelector(".demo-stage");
         const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
