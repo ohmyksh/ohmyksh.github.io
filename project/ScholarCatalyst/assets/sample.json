@@ -18,20 +18,68 @@
         "question": "Traditional learned image compression relies on scalar quantization with differentiable approximations to allow gradients from the rate penalty to update the encoder. Vector quantization provides structural advantages over scalar quantization but relies on discrete assignments that block these continuous gradients. How can the coding rate of discrete vector-quantized representations be modeled and incorporated into end-to-end rate-distortion optimization?",
         "criterion": "End-to-End Optimized Image Compression (2017) established the foundation of end-to-end learned image compression by formulating compression as a rate-distortion optimization problem. It demonstrated that the encoder, decoder, and entropy model can be jointly optimized, allowing the rate term to directly influence the learned representation rather than treating compression as a separate coding stage. This principle provided the fundamental insight behind our investigation into how discrete representations could be optimized jointly with their coding efficiency. Variational Image Compression with a Scale Hyperprior (2018) further developed the end-to-end learned compression framework by introducing a learned scale hyperprior for more accurate entropy modeling. Beyond improving rate estimation, it reinforced the importance of jointly optimizing representation learning and entropy modeling under a rate-distortion objective. This insight motivated our exploration of whether vector-quantized representations could also benefit from a similar optimization principle, where coding efficiency contributes to shaping the learned discrete representation.",
         "positives": [
-          {"id": "arxiv_1802.01436", "title": "Variational image compression with a scale hyperprior", "cited": true},
-          {"id": "arxiv_1611.01704", "title": "End-to-end Optimized Image Compression", "cited": true}
+          {
+            "id": "arxiv_1802.01436",
+            "title": "Variational image compression with a scale hyperprior",
+            "cited": true
+          },
+          {
+            "id": "arxiv_1611.01704",
+            "title": "End-to-end Optimized Image Compression",
+            "cited": true
+          }
         ],
         "hard_negatives": [
-          {"id": "arxiv_2310.03004", "title": "Soft Convex Quantization: Revisiting Vector Quantization with Convex Optimization", "cited": false},
-          {"id": "arxiv_2405.14222", "title": "Rate-Adaptive Quantization: A Multi-Rate Codebook Adaptation for Vector Quantization-based Generative Models", "cited": false},
-          {"id": "arxiv_2410.00557", "title": "STanH : Parametric Quantization for Variable Rate Learned Image Compression", "cited": false},
-          {"id": "s2_0a1355e822c8305b5ad7fccfa262b363ae8ac962", "title": "Adaptive Bitrate Quantization Scheme Without Codebook for Learned Image Compression", "cited": true},
-          {"id": "arxiv_2007.01919", "title": "Efficient Marginalization of Discrete and Structured Latent Variables via Sparsity", "cited": false},
-          {"id": "arxiv_2212.07372", "title": "Image Compression with Product Quantized Masked Image Modeling", "cited": true},
-          {"id": "arxiv_2104.03305", "title": "Learned transform compression with optimized entropy encoding", "cited": false},
-          {"id": "arxiv_2002.08111", "title": "Hierarchical Quantized Autoencoders", "cited": false},
-          {"id": "arxiv_2305.16025", "title": "NVTC: Nonlinear Vector Transform Coding", "cited": false},
-          {"id": "arxiv_2410.06424", "title": "Restructuring Vector Quantization with the Rotation Trick", "cited": false}
+          {
+            "id": "arxiv_2310.03004",
+            "title": "Soft Convex Quantization: Revisiting Vector Quantization with Convex Optimization",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2405.14222",
+            "title": "Rate-Adaptive Quantization: A Multi-Rate Codebook Adaptation for Vector Quantization-based Generative Models",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2410.00557",
+            "title": "STanH : Parametric Quantization for Variable Rate Learned Image Compression",
+            "cited": false
+          },
+          {
+            "id": "s2_0a1355e822c8305b5ad7fccfa262b363ae8ac962",
+            "title": "Adaptive Bitrate Quantization Scheme Without Codebook for Learned Image Compression",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2007.01919",
+            "title": "Efficient Marginalization of Discrete and Structured Latent Variables via Sparsity",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2212.07372",
+            "title": "Image Compression with Product Quantized Masked Image Modeling",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2104.03305",
+            "title": "Learned transform compression with optimized entropy encoding",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2002.08111",
+            "title": "Hierarchical Quantized Autoencoders",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2305.16025",
+            "title": "NVTC: Nonlinear Vector Transform Coding",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2410.06424",
+            "title": "Restructuring Vector Quantization with the Rotation Trick",
+            "cited": false
+          }
         ]
       }
     },
@@ -53,22 +101,78 @@
         "question": "Large language models possess strong semantic priors that can be harnessed to translate high-level text prompts into structural arrangements of 3D objects in simulated environments. How can we design a structured reasoning process that allows a language model to infer necessary objects and final 3D bounding box layouts directly from abstract task instructions?",
         "criterion": "These methods all utilize an LLM to generate scenarios based on instructions, including training and training-free methods.",
         "positives": [
-          {"id": "arxiv_2305.15393", "title": "LayoutGPT: Compositional Visual Planning and Generation with Large Language Models", "cited": true},
-          {"id": "arxiv_2312.09067", "title": "Holodeck: Language Guided Generation of 3D Embodied AI Environments", "cited": true},
-          {"id": "arxiv_2406.03866", "title": "LLplace: The 3D Indoor Scene Layout Generation and Editing via Large Language Model", "cited": true},
-          {"id": "arxiv_2404.02838", "title": "I-Design: Personalized LLM Interior Designer", "cited": true}
+          {
+            "id": "arxiv_2305.15393",
+            "title": "LayoutGPT: Compositional Visual Planning and Generation with Large Language Models",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2312.09067",
+            "title": "Holodeck: Language Guided Generation of 3D Embodied AI Environments",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2406.03866",
+            "title": "LLplace: The 3D Indoor Scene Layout Generation and Editing via Large Language Model",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2404.02838",
+            "title": "I-Design: Personalized LLM Interior Designer",
+            "cited": true
+          }
         ],
         "hard_negatives": [
-          {"id": "arxiv_2211.04604", "title": "StructDiffusion: Language-Guided Creation of Physically-Valid Structures using Unseen Objects", "cited": false},
-          {"id": "arxiv_2403.13801", "title": "Natural Language as Policies: Reasoning for Coordinate-Level Embodied Control with LLMs", "cited": false},
-          {"id": "arxiv_2305.15808", "title": "Towards Language-guided Interactive 3D Generation: LLMs as Layout Interpreter with Generative Feedback", "cited": false},
-          {"id": "arxiv_2407.21333", "title": "Chat2Layout: Interactive 3D Furniture Layout with a Multimodal LLM", "cited": false},
-          {"id": "arxiv_2310.10640", "title": "LLM Blueprint: Enabling Text-to-Image Generation with Complex and Detailed Prompts", "cited": false},
-          {"id": "arxiv_2402.09052", "title": "L3GO: Language Agents with Chain-of-3D-Thoughts for Generating Unconventional Objects", "cited": false},
-          {"id": "arxiv_2303.06247", "title": "Task and Motion Planning with Large Language Models for Object Rearrangement", "cited": false},
-          {"id": "arxiv_2304.02893", "title": "Object-centric Inference for Language Conditioned Placement: A Foundation Model based Approach", "cited": false},
-          {"id": "arxiv_2403.09675", "title": "Open-Universe Indoor Scene Generation using LLM Program Synthesis and Uncurated Object Databases", "cited": false},
-          {"id": "arxiv_2407.07580", "title": "InstructLayout: Instruction-Driven 2D and 3D Layout Synthesis with Semantic Graph Prior", "cited": false}
+          {
+            "id": "arxiv_2211.04604",
+            "title": "StructDiffusion: Language-Guided Creation of Physically-Valid Structures using Unseen Objects",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2403.13801",
+            "title": "Natural Language as Policies: Reasoning for Coordinate-Level Embodied Control with LLMs",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2305.15808",
+            "title": "Towards Language-guided Interactive 3D Generation: LLMs as Layout Interpreter with Generative Feedback",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2407.21333",
+            "title": "Chat2Layout: Interactive 3D Furniture Layout with a Multimodal LLM",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2310.10640",
+            "title": "LLM Blueprint: Enabling Text-to-Image Generation with Complex and Detailed Prompts",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2402.09052",
+            "title": "L3GO: Language Agents with Chain-of-3D-Thoughts for Generating Unconventional Objects",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2303.06247",
+            "title": "Task and Motion Planning with Large Language Models for Object Rearrangement",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2304.02893",
+            "title": "Object-centric Inference for Language Conditioned Placement: A Foundation Model based Approach",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2403.09675",
+            "title": "Open-Universe Indoor Scene Generation using LLM Program Synthesis and Uncurated Object Databases",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2407.07580",
+            "title": "InstructLayout: Instruction-Driven 2D and 3D Layout Synthesis with Semantic Graph Prior",
+            "cited": false
+          }
         ]
       }
     },
@@ -87,23 +191,76 @@
         }
       },
       "thread": {
-        "question": "Prior work evaluates language model agents by measuring their ability to execute single and sequential API calls within diverse simulated environments. How can we design an evaluation framework that systematically assesses the consistency and robustness of tool-using agents across repeated trials in complex interactive settings?",
-        "criterion": "Establish realistic real-world human-AI interaction through dynamic and large-scale environments, including user and agent stochastic actions.",
+        "question": "Prior research investigates the tendency of language models to hallucinate plausible completions instead of admitting uncertainty and explores meta-reasoning strategies for active information gathering. How can we systematically evaluate an agent's ability to recognize its own limitations, resolve underspecified instructions, and gather necessary information before prematurely taking action?",
+        "criterion": "The positive papers are findings establishing that LLMs hallucinate, are missing self-awareness and disambiguation capability, and exploring why. The negative papers are frameworks around the model to improve as this can be benchmarked in the end with our established method but are not framing the research question and underlying problem.",
         "positives": [
-          {"id": "arxiv_2406.12045", "title": "$\\tau$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains", "cited": true},
-          {"id": "arxiv_2408.04682", "title": "ToolSandbox: A Stateful, Conversational, Interactive Evaluation Benchmark for LLM Tool Use Capabilities", "cited": true},
-          {"id": "arxiv_2307.13854", "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents", "cited": true},
-          {"id": "arxiv_2409.16427", "title": "HAICOSYSTEM: An Ecosystem for Sandboxing Safety Risks in Human-AI Interactions", "cited": false}
+          {
+            "id": "arxiv_2509.04664",
+            "title": "Why Language Models Hallucinate",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2502.04485",
+            "title": "Active Task Disambiguation with LLMs",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2311.05232",
+            "title": "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2407.14767",
+            "title": "I Need Help! Evaluating LLM's Ability to Ask for Users' Support: A Case Study on Text-to-SQL Generation",
+            "cited": false
+          }
         ],
         "hard_negatives": [
-          {"id": "arxiv_2404.06411", "title": "AgentQuest: A Modular Benchmark Framework to Measure Progress and Improve LLM Agents", "cited": false},
-          {"id": "arxiv_2401.13178", "title": "AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents", "cited": false},
-          {"id": "arxiv_2403.07714", "title": "StableToolBench: Towards Stable Large-Scale Benchmarking on Tool Learning of Large Language Models", "cited": true},
-          {"id": "arxiv_2407.08713", "title": "GTA: A Benchmark for General Tool Agents", "cited": false},
-          {"id": "arxiv_2305.13455", "title": "Clembench: Using Game Play to Evaluate Chat-Optimized Language Models as Conversational Agents", "cited": false},
-          {"id": "arxiv_2206.09203", "title": "Interactive Visual Reasoning under Uncertainty", "cited": false},
-          {"id": "arxiv_2401.00741", "title": "ToolEyes: Fine-Grained Evaluation for Tool Learning Capabilities of Large Language Models in Real-world Scenarios", "cited": false},
-          {"id": "arxiv_2311.10775", "title": "ToolTalk: Evaluating Tool-Usage in a Conversational Setting", "cited": true}
+          {
+            "id": "arxiv_2206.09203",
+            "title": "Interactive Visual Reasoning under Uncertainty",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2006.05456",
+            "title": "Dialog Policy Learning for Joint Clarification and Active Learning Queries",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2405.13022",
+            "title": "LLMs can learn self-restraint through iterative self-reflection",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2305.13534",
+            "title": "How Language Model Hallucinations Can Snowball",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2007.08037",
+            "title": "Active Visual Information Gathering for Vision-Language Navigation",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2012.14983",
+            "title": "Reducing conversational agents' overconfidence through linguistic calibration",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2402.03271",
+            "title": "Uncertainty of Thoughts: Uncertainty-Aware Planning Enhances Information Seeking in Large Language Models",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2406.02543",
+            "title": "To Believe or Not to Believe Your LLM",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2401.14016",
+            "title": "Towards Uncertainty-Aware Language Agent",
+            "cited": false
+          }
         ]
       }
     },
@@ -122,26 +279,81 @@
         }
       },
       "thread": {
-        "question": "Previous research has explored applying reinforcement learning to language models using unsupervised reward signals derived from self-consistency or majority voting rather than ground-truth labels. How much noise can this method tolerate when the reward signals are not reliable in practice?",
-        "criterion": "These papers mostly use majority-voted answers as the unsupervised RLVR labels, which is the method that we found can work spuriously on Qwen math models.",
+        "question": "Recent studies suggest that reinforcement learning for alignment primarily surfaces latent capabilities acquired during pretraining. How do the pre-existing reasoning strategies encoded in different base models influence their ability to improve reasoning performance during reinforcement learning post-training?",
+        "criterion": "The selected papers partially contributed to the intuition that RL is eliciting pre-existing behaviors, while we were not aware of the negative ones when coming up with this intuition or the topic is unrelated to this question.",
         "positives": [
-          {"id": "arxiv_2504.16084", "title": "TTRL: Test-Time Reinforcement Learning", "cited": true},
-          {"id": "arxiv_2505.19590", "title": "Learning to Reason without External Rewards", "cited": false},
-          {"id": "arxiv_2504.20571", "title": "Reinforcement Learning for Reasoning in Large Language Models with One Training Example", "cited": true},
-          {"id": "arxiv_2411.04109", "title": "Self-Consistency Preference Optimization", "cited": true},
-          {"id": "arxiv_2504.05812", "title": "Right Question is Already Half the Answer: Fully Unsupervised LLM Reasoning Incentivization", "cited": false},
-          {"id": "arxiv_2505.22660", "title": "Maximizing Confidence Alone Improves Reasoning", "cited": true}
+          {
+            "id": "arxiv_2503.20783",
+            "title": "Understanding R1-Zero-Like Training: A Critical Perspective",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2504.13837",
+            "title": "Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2504.07912",
+            "title": "Echo Chamber: RL Post-training Amplifies Behaviors Learned in Pretraining",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2503.01307",
+            "title": "Cognitive Behaviors that Enable Self-Improving Reasoners, or, Four Habits of Highly Effective STaRs",
+            "cited": true
+          },
+          {
+            "id": "s2_2eed1fad9bbf887d4395de40f20144c4fafefd7f",
+            "title": "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2503.18892",
+            "title": "SimpleRL-Zoo: Investigating and Taming Zero Reinforcement Learning for Open Base Models in the Wild",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2506.01939",
+            "title": "Beyond the 80/20 Rule: High-Entropy Minority Tokens Drive Effective Reinforcement Learning for LLM Reasoning",
+            "cited": true
+          }
         ],
         "hard_negatives": [
-          {"id": "arxiv_2410.17126", "title": "Exploring RL-based LLM Training for Formal Language Tasks with Programmed Rewards", "cited": false},
-          {"id": "arxiv_2401.06081", "title": "Improving Large Language Models via Fine-grained Reinforcement Learning with Minimum Editing Constraint", "cited": false},
-          {"id": "arxiv_2410.15115", "title": "On Designing Effective RL Reward at Training Time for LLM Reasoning", "cited": true},
-          {"id": "arxiv_2411.00418", "title": "Self-Evolved Reward Learning for LLMs", "cited": false},
-          {"id": "s2_2eed1fad9bbf887d4395de40f20144c4fafefd7f", "title": "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning", "cited": true},
-          {"id": "arxiv_2505.21444", "title": "Can Large Reasoning Models Self-Train?", "cited": true},
-          {"id": "arxiv_2403.19279", "title": "Fine-Tuning Language Models with Reward Learning on Policy", "cited": false},
-          {"id": "arxiv_2308.06385", "title": "ZYN: Zero-Shot Reward Models with Yes-No Questions for RLAIF", "cited": false},
-          {"id": "arxiv_2401.07382", "title": "Beyond Sparse Rewards: Enhancing Reinforcement Learning with Language Model Critique in Text Generation", "cited": false}
+          {
+            "id": "arxiv_2212.08286",
+            "title": "ALERT: Adapting Language Models to Reasoning Tasks",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2410.23912",
+            "title": "RL-STaR: Theoretical Analysis of Reinforcement Learning Frameworks for Self-Taught Reasoner",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2410.03717",
+            "title": "Revisiting the Superficial Alignment Hypothesis",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2504.04022",
+            "title": "Rethinking Reflection in Pre-Training",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2410.15115",
+            "title": "On Designing Effective RL Reward at Training Time for LLM Reasoning",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2411.04282",
+            "title": "Language Models are Hidden Reasoners: Unlocking Latent Reasoning Capabilities via Self-Rewarding",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2505.21444",
+            "title": "Can Large Reasoning Models Self-Train?",
+            "cited": true
+          }
         ]
       }
     },
@@ -163,21 +375,73 @@
         "question": "Prior work has shown that stochastic gradient Markov Chain Monte Carlo methods enable scalable Bayesian inference for complex models by introducing controlled noise into gradient updates. In the context of learning from potentially untrusted data, robust training often requires estimating the unobserved reliability of each individual data point. How can we leverage scalable Bayesian sampling techniques to efficiently infer the posterior distributions of data-specific weights during model training?",
         "criterion": "The positive papers provide the foundational ideas of SGLD and Bayesian data selection used in our work. We only rely on these basic principles and do not involve the more advanced extensions or improvements to SGLD studied in the remaining papers.",
         "positives": [
-          {"id": "arxiv_1907.06986", "title": "Stochastic gradient Markov chain Monte Carlo", "cited": true},
-          {"id": "arxiv_2411.03768", "title": "A Bayesian Approach to Data Point Selection", "cited": true},
-          {"id": "arxiv_2308.10544", "title": "Towards Accelerated Model Training via Bayesian Data Selection", "cited": true}
+          {
+            "id": "arxiv_1907.06986",
+            "title": "Stochastic gradient Markov chain Monte Carlo",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2411.03768",
+            "title": "A Bayesian Approach to Data Point Selection",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2308.10544",
+            "title": "Towards Accelerated Model Training via Bayesian Data Selection",
+            "cited": true
+          }
         ],
         "hard_negatives": [
-          {"id": "arxiv_2008.13600", "title": "β-Cores: Robust Large-Scale Bayesian Data Summarization in the Presence of Outliers", "cited": false},
-          {"id": "arxiv_2303.11278", "title": "Bayesian Pseudo-Coresets via Contrastive Divergence", "cited": false},
-          {"id": "arxiv_2006.05087", "title": "Isotropic SGD: a Practical Approach to Bayesian Posterior Sampling", "cited": false},
-          {"id": "arxiv_2107.09028", "title": "Structured Stochastic Gradient MCMC", "cited": false},
-          {"id": "arxiv_2406.00104", "title": "Scalable Bayesian Learning with posteriors", "cited": false},
-          {"id": "arxiv_2303.05101", "title": "Scalable Stochastic Gradient Riemannian Langevin Dynamics in Non-Diagonal Metrics", "cited": false},
-          {"id": "arxiv_2002.02842", "title": "Assessing the Adversarial Robustness of Monte Carlo and Distillation Methods for Deep Bayesian Neural Network Classification", "cited": false},
-          {"id": "arxiv_2306.02729", "title": "Gibbs Sampling the Posterior of Neural Networks", "cited": false},
-          {"id": "arxiv_2107.04296", "title": "Differentially private training of neural networks with Langevin dynamics for calibrated predictive uncertainty", "cited": false},
-          {"id": "arxiv_2212.02895", "title": "Training Neural Networks on Data Sources with Unknown Reliability", "cited": false}
+          {
+            "id": "arxiv_2008.13600",
+            "title": "β-Cores: Robust Large-Scale Bayesian Data Summarization in the Presence of Outliers",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2303.11278",
+            "title": "Bayesian Pseudo-Coresets via Contrastive Divergence",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2006.05087",
+            "title": "Isotropic SGD: a Practical Approach to Bayesian Posterior Sampling",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2107.09028",
+            "title": "Structured Stochastic Gradient MCMC",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2406.00104",
+            "title": "Scalable Bayesian Learning with posteriors",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2303.05101",
+            "title": "Scalable Stochastic Gradient Riemannian Langevin Dynamics in Non-Diagonal Metrics",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2002.02842",
+            "title": "Assessing the Adversarial Robustness of Monte Carlo and Distillation Methods for Deep Bayesian Neural Network Classification",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2306.02729",
+            "title": "Gibbs Sampling the Posterior of Neural Networks",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2107.04296",
+            "title": "Differentially private training of neural networks with Langevin dynamics for calibrated predictive uncertainty",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2212.02895",
+            "title": "Training Neural Networks on Data Sources with Unknown Reliability",
+            "cited": false
+          }
         ]
       }
     },
@@ -199,21 +463,410 @@
         "question": "A line of work already lets users correct a robot while it acts. Some approaches edit trajectories from verbal feedback, others train recovery behaviors from simulator-constructed perturbations, and others route spoken corrections through a language channel between a high-level and a low-level policy. Each demonstrates that mid-execution language can redirect behavior, but each is bounded: by a single task prompt, by the specific correction phrases human annotators happened to produce, or by feedback that never depends on what the robot is currently seeing. Utterances like \"that's not trash\" or \"leave it alone\" are unresolvable from text alone. They refer to whatever is in the gripper right now. What determines the range of corrections such a system can absorb, and can a robot ground feedback in its live observations while also handling phrasings and situations that never appeared in its interaction data?",
         "criterion": "Positive papers each contribute a mechanism for a human to redirect a robot mid-execution with language grounded in the current scene, which is exactly what bounds the range of absorbable corrections. Negative papers contribute modality binding, cross-session adaptation, self-generated correction signals, reward synthesis, and in-context control loops, none of which turn on a human grounding feedback in what the robot is doing right now.",
         "positives": [
-          {"id": "arxiv_2310.17555", "title": "Interactive Robot Learning from Verbal Correction", "cited": true},
-          {"id": "arxiv_2403.12910", "title": "Yell At Your Robot: Improving On-the-Fly from Language Corrections", "cited": true},
-          {"id": "arxiv_2409.14674", "title": "RACER: Rich Language-Guided Failure Recovery Policies for Imitation Learning", "cited": true},
-          {"id": "arxiv_2301.02555", "title": "\"No, to the Right\" -- Online Language Corrections for Robotic Manipulation via Shared Autonomy", "cited": false}
+          {
+            "id": "arxiv_2310.17555",
+            "title": "Interactive Robot Learning from Verbal Correction",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2403.12910",
+            "title": "Yell At Your Robot: Improving On-the-Fly from Language Corrections",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2409.14674",
+            "title": "RACER: Rich Language-Guided Failure Recovery Policies for Imitation Learning",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2301.02555",
+            "title": "\"No, to the Right\" -- Online Language Corrections for Robotic Manipulation via Shared Autonomy",
+            "cited": false
+          }
         ],
         "hard_negatives": [
-          {"id": "arxiv_2411.15033", "title": "One to rule them all: natural language to bind communication, perception and action", "cited": false},
-          {"id": "arxiv_2204.05186", "title": "Correcting Robot Plans with Natural Language Feedback", "cited": false},
-          {"id": "arxiv_2402.11450", "title": "Learning to Learn Faster from Human Feedback with Language Model Predictive Control", "cited": false},
-          {"id": "arxiv_2406.11548", "title": "AIC MLLM: Autonomous Interactive Correction MLLM for Robust Robotic Manipulation", "cited": false},
-          {"id": "arxiv_2306.08647", "title": "Language to Rewards for Robotic Skill Synthesis", "cited": false},
-          {"id": "arxiv_2210.06407", "title": "Interactive Language: Talking to Robots in Real Time", "cited": false},
-          {"id": "arxiv_2402.05188", "title": "InCoRo: In-Context Learning for Robotics Control with Feedback Loops", "cited": false},
-          {"id": "arxiv_2412.12602", "title": "Don't Yell at Your Robot: Physical Correction as the Collaborative Interface for Language Model Powered Robots", "cited": false},
-          {"id": "arxiv_2311.10678", "title": "Distilling and Retrieving Generalizable Knowledge for Robot Manipulation via Language Corrections", "cited": false}
+          {
+            "id": "arxiv_2411.15033",
+            "title": "One to rule them all: natural language to bind communication, perception and action",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2204.05186",
+            "title": "Correcting Robot Plans with Natural Language Feedback",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2402.11450",
+            "title": "Learning to Learn Faster from Human Feedback with Language Model Predictive Control",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2406.11548",
+            "title": "AIC MLLM: Autonomous Interactive Correction MLLM for Robust Robotic Manipulation",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2306.08647",
+            "title": "Language to Rewards for Robotic Skill Synthesis",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2210.06407",
+            "title": "Interactive Language: Talking to Robots in Real Time",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2402.05188",
+            "title": "InCoRo: In-Context Learning for Robotics Control with Feedback Loops",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2412.12602",
+            "title": "Don't Yell at Your Robot: Physical Correction as the Collaborative Interface for Language Model Powered Robots",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2311.10678",
+            "title": "Distilling and Retrieving Generalizable Knowledge for Robot Manipulation via Language Corrections",
+            "cited": false
+          }
+        ]
+      }
+    },
+    {
+      "paper_id": "arxiv_2603.28052",
+      "title": "Meta-Harness: End-to-End Optimization of Model Harnesses",
+      "domain": "cs.AI",
+      "award": "COLM 2026",
+      "core_query": {
+        "question": "The performance of large language model systems depends heavily on the surrounding harness. While recent work attempts to automate text optimization, these existing methods compress feedback into scalar scores or short summaries. This compression discards the long-horizon diagnostic information necessary for harness optimization. How can we fully automate the optimization of the complex code surrounding language models while preserving the rich diagnostic history needed to improve it?",
+        "key_paper": {
+          "id": "arxiv_2512.24601",
+          "title": "Recursive Language Models",
+          "cited": true,
+          "rationale": "This paper introduces an inference strategy that places a long input into an external environment and allows an LLM to inspect it programmatically. We brought this externalized-context idea to harness optimization: instead of compressing previous attempts into a score or summary, we can give the proposer filesystem access to the source code, execution traces, and scores of every prior candidate. We expect this richer interface to preserve long-horizon evidence."
+        }
+      },
+      "thread": {
+        "question": "Language models can generate and revise executable code using task-level evaluations as feedback. However, code search is difficult because a single score provides little information about which implementation choices caused a behavior or how to change them. How can automated code search use detailed execution evidence to improve complex programs over successive attempts?",
+        "criterion": "Papers in this thread search over executable programs, using evaluation results to guide successive revisions or select candidates. They provide the foundation for our investigation into how detailed execution evidence can improve automated code search. Work on coding agents qualifies when it develops this search process; general code-generation or software-engineering capabilities alone are insufficient.",
+        "positives": [
+          {
+            "id": "arxiv_2206.08896",
+            "title": "Evolution through Large Models",
+            "cited": true
+          },
+          {
+            "id": "oa_W4389727268",
+            "title": "Mathematical discoveries from program search with large language models",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2408.08435",
+            "title": "Automated Design of Agentic Systems",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2410.10762",
+            "title": "AFlow: Automating Agentic Workflow Generation",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2405.16450",
+            "title": "Synthesizing Programmatic Reinforcement Learning Policies with Large Language Model Guided Search",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2602.20133",
+            "title": "AdaEvolve: Adaptive LLM Driven Zeroth-Order Optimization",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2205.00167",
+            "title": "Self-Programming Artificial Intelligence Using Code-Generating Language Models",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2412.18890",
+            "title": "CoEvo: Continual Evolution of Symbolic Solutions Using Large Language Models",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2306.02907",
+            "title": "SelfEvolve: A Code Evolution Framework via Large Language Models",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2412.04057",
+            "title": "From Code to Play: Benchmarking Program Search for Games Using Large Language Models",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2311.15500",
+            "title": "Function-constrained Program Synthesis",
+            "cited": false
+          }
+        ],
+        "hard_negatives": [
+          {
+            "id": "arxiv_2402.18381",
+            "title": "Large Language Models As Evolution Strategies",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2406.13444",
+            "title": "VDebugger: Harnessing Execution Feedback for Debugging Visual Programs",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2506.13131",
+            "title": "AlphaEvolve: A coding agent for scientific and algorithmic discovery",
+            "cited": true
+          }
+        ]
+      }
+    },
+    {
+      "paper_id": "arxiv_2509.15221",
+      "title": "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+      "domain": "cs.CV",
+      "award": "ICLR 2026 Oral",
+      "core_query": {
+        "question": "Recent advances in vision-language models have made it increasingly feasible to automate digital interactions through graphical user interfaces. While proprietary models demonstrate strong capabilities in this domain, progress in open-source computer automation remains fundamentally constrained by the scarcity of large-scale, high-quality training data. Effective computer use requires extensive in-domain knowledge and fine-grained action trajectories, yet such data is costly to collect, highly platform-specific, and vulnerable to becoming outdated as software environments evolve. Although unified, end-to-end agents have shown promise, the limited scale and coverage of existing open-source training corpora continue to restrict their generalization across heterogeneous operating systems and applications. How can we efficiently scale the collection of diverse, high-quality, cross-platform GUI interaction data to train versatile open-source foundation models for autonomous computer use?",
+        "key_paper": {
+          "id": "arxiv_2406.08451",
+          "title": "GUIOdyssey: A Comprehensive Dataset for Cross-App GUI Navigation on Mobile Devices",
+          "cited": true,
+          "rationale": "GUIOdyssey introduced a comprehensive cross-app mobile navigation dataset containing 8,334 episodes across 212 applications and 1,357 app combinations, with each step annotated for screen comprehension, historical context, and decision rationale. Its central contribution was to move GUI-agent training beyond short, single-app demonstrations toward long-horizon trajectories that preserve the context required to coordinate actions across applications. Inspired by this work, we incorporated goal-directed, multi-step interaction trajectories and reasoning-oriented supervision into our broader effort to train general-purpose computer-use agents across mobile, desktop, and web environments. We expected this idea to transfer because GUIOdyssey showed that semantic annotations improved performance under both high- and low-level instructions, while its history ablations found that contextual summaries increased overall action-matching accuracy by 9.17 points and success rate by 240% relative to using no historical information."
+        }
+      },
+      "thread": {
+        "question": "Recent advances in large vision-language models have demonstrated strong multimodal understanding and reasoning capabilities across broad domains. How can we adapt and fine-tune these general-purpose foundational architectures to develop capable agents that autonomously operate graphical user interfaces?",
+        "criterion": "The positive papers contribute concrete mechanisms for adapting general-purpose vision-language models into GUI agents. Qwen2.5-VL and GPT-4o provide agent-capable visual architectures and GUI-specific vision-language-action training, while GUICourse, UGround, Aria-UI, and the UI-decomposition work introduce scalable grounding and instruction-data formulations. The remaining positive papers contribute complementary methodologies, including task-generalization-based mid-training, trajectory behavior cloning, temporal GUI supervision, and self-evolving environment or reinforcement-learning pipelines. Together, these contributions directly inform backbone selection, data construction, visual grounding, action modeling, and fine-tuning for autonomous GUI operation. In contrast, the GPT-4o System Card and Gemini primarily describe and evaluate broadly capable multimodal foundation models. Although they provide strong baselines and motivate this direction, their primary contributions do not offer a GUI-specific adaptation, training, or interaction methodology.",
+        "positives": [
+          {
+            "id": "arxiv_2502.13923",
+            "title": "Qwen2.5-VL Technical Report",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2410.21276",
+            "title": "GPT-4o System Card",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2312.11805",
+            "title": "Gemini: A Family of Highly Capable Multimodal Models",
+            "cited": true
+          }
+        ],
+        "hard_negatives": [
+          {
+            "id": "arxiv_2504.10127",
+            "title": "Breaking the Data Barrier -- Building GUI Agents Through Task Generalization",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2505.13227",
+            "title": "Scaling Computer-Use Grounding via User Interface Decomposition and Synthesis",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2408.06327",
+            "title": "VisualAgentBench: Towards Large Multimodal Models as Visual Foundation Agents",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2410.05243",
+            "title": "Navigating the Digital World as Humans Do: Universal Visual Grounding for GUI Agents",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2411.17465",
+            "title": "ShowUI: One Vision-Language-Action Model for GUI Visual Agent",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2406.11317",
+            "title": "GUICourse: From General Vision Language Models to Versatile GUI Agents",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2406.10819",
+            "title": "GUI-World: A Video Benchmark and Dataset for Multimodal GUI-oriented Understanding",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2412.16256",
+            "title": "Aria-UI: Visual Grounding for GUI Instructions",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2508.15144",
+            "title": "Mobile-Agent-v3: Fundamental Agents for GUI Automation",
+            "cited": true
+          }
+        ]
+      }
+    },
+    {
+      "paper_id": "arxiv_2501.06425",
+      "title": "Tensor Product Attention Is All You Need",
+      "domain": "cs.CL",
+      "award": "NeurIPS 2025 Spotlight",
+      "core_query": {
+        "question": "As language models scale to longer contexts, the memory required for key-value caches and the computational cost of attention during both prefill and autoregressive decoding become major bottlenecks. Existing approaches reduce KV-cache memory through techniques such as sharing or compressing key and value representations, but these savings can come at the cost of representational capacity or computational efficiency. Moreover, some compressed attention mechanisms are tightly coupled to particular positional encoding schemes, making it difficult to combine them cleanly with modern or newly developed positional representations. Can we design an attention representation that simultaneously compresses the KV cache, reduces FLOPs during both prefill and decoding, and remains compatible with arbitrary positional encoding mechanisms?",
+        "key_paper": {
+          "id": "arxiv_2405.04434",
+          "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model",
+          "cited": true,
+          "rationale": "DeepSeek-V2 introduced Multi-head Latent Attention (MLA), which compresses the key-value cache into a learned low-dimensional latent representation rather than directly storing independent keys and values for every attention head. This provided strong evidence that learned low-dimensional structure in attention activations could dramatically reduce KV-cache memory while remaining effective in a large-scale language model. The reported reduction in KV-cache size and improvement in generation throughput gave us confidence that activation-level compression, rather than only head sharing, was a viable direction for efficient attention. We took this insight further by asking whether queries, keys, and values could be represented through contextual tensor factorizations, allowing the representation to remain compact while providing greater flexibility across heads and tokens."
+        }
+      },
+      "thread": {
+        "question": "Modern language models rely on rotary positional embeddings to inject relative positional information by applying rotation matrices to the query and key vectors. How can rotary or other relative positional encoding mechanisms be incorporated into memory- and compute-efficient attention architectures without undermining their efficiency or representational flexibility?",
+        "criterion": "RoFormer introduced the multiplicative rotary transformations and relative-position property that an efficient compressed attention mechanism must preserve. Linearized Relative Positional Encoding provided a closely related perspective on incorporating positional transformations into attention mechanisms whose query and key representations are structurally factorized, while preserving their computational advantages. Kernelized Attention with Relative Positional Encoding further demonstrated that positional information can be incorporated into a structurally constrained efficient attention formulation without forfeiting its efficiency. The remaining papers either study positional encodings without addressing their interaction with compressed or factorized representations, improve RoPE computation for different objectives, or propose efficient attention mechanisms without addressing how multiplicative positional rotations interact with the compressed representation itself.",
+        "positives": [
+          {
+            "id": "arxiv_2307.09270",
+            "title": "Linearized Relative Positional Encoding",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2104.09864",
+            "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+            "cited": true
+          }
+        ],
+        "hard_negatives": [
+          {
+            "id": "arxiv_2106.05505",
+            "title": "Convolutions and Self-Attention: Re-interpreting Relative Positions in Pre-trained Language Models",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2410.22649",
+            "title": "WaveRoRA: Wavelet Rotary Route Attention for Multivariate Time Series Forecasting",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2407.03157",
+            "title": "Let the Code LLM Edit Itself When You Edit the Code",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2412.17316",
+            "title": "RoPE Attention Can Be Trained in Almost Linear Time",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2106.12566",
+            "title": "Stable, Fast and Accurate: Kernelized Attention with Relative Positional Encoding",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2104.08698",
+            "title": "A Simple and Effective Positional Encoding for Transformers",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2402.07901",
+            "title": "FAST: Factorizable Attention for Speeding up Transformers",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2308.03429",
+            "title": "RCMHA: Relative Convolutional Multi-Head Attention for Natural Language Modelling",
+            "cited": false
+          }
+        ]
+      }
+    },
+    {
+      "paper_id": "arxiv_2506.24119",
+      "title": "SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning",
+      "domain": "cs.AI",
+      "award": "ICLR 2026",
+      "core_query": {
+        "question": "Recent advances show that applying reinforcement learning with verifiable rewards can significantly enhance the reasoning capabilities of large language models, by selecting and reinforcing the generalizable chain-of-thought patterns already latent in pretrained models. However, this approach relies heavily on human curated problem sets and carefully engineered reward functions for specific domains. This manual curation creates a fundamental scalability bottleneck that limits the diversity and volume of reasoning challenges available for training. While competitive self-play has historically driven breakthroughs in other artificial intelligence domains by providing automated feedback and a natural curriculum, applying these dynamics to language models for general problem solving remains largely unexplored. Can language models continue to develop general reasoning through competitive self-play without relying on an ever-growing supply of human-curated problems and hand-engineered rewards?",
+        "key_paper": {
+          "id": "arxiv_2404.10642",
+          "title": "Self-playing Adversarial Language Game Enhances LLM Reasoning",
+          "cited": true,
+          "rationale": "It showed that self-play on a single two-player adversarial language game improves an instruction-tuned LLM on general reasoning benchmarks. The gain came from the game alone, with no task-specific reasoning data. The training used offline RL, not an online self-play loop. The authors released the training code. I did not take the central idea from this paper. I reached the same direction on my own, and read the paper afterward. Its contribution still helped me in two concrete ways. First, it was a prior existence proof that the direction was real. Second, its code base gave me a reference point for a self-play setup on a language game. Its own version was limited: one hand-built game, offline RL, instruction-tuned models only, and no online self-play. It did not scale. I redesigned the optimization and the code from scratch. My version runs self-play online, across many games, and on base and reasoning models. The paper reported measurable reasoning gains from self-play on one crude offline game with an instruction-tuned model. This is published evidence, not assumption, that a self-play game signal can raise reasoning. One offline game already produced transfer. So a scalable online version, across many games and on stronger base and reasoning models, was likely to go further."
+        }
+      },
+      "thread": {
+        "question": "Research on interactive environments suggests that training agents on specific games can cultivate fundamental cognitive patterns that transfer broadly to out of domain cognitive tasks. What types of structured interactive environments can naturally scaffold the development of distinct logical and strategic skills in language models such that these skills generalize to formal academic reasoning domains?",
+        "criterion": "This direction asks which structured interactive environments or games cultivate skills in language models that TRANSFER to general, out-of-domain reasoning. A paper is Positive only if its primary contribution supplies a mechanism or substantiated thesis for how training inside a game or environment yields skills that carry OUT of that game to reasoning tasks. Benchmark or measurement-only papers, in-domain agent-improvement with no external transfer, and position or roadmap papers are Negative. \"Play to Generalize: Learning to Reason Through Game Play\" is the cleanest fit: RL on arcade games produces a 7B multimodal model that improves on MathVista, MMMU, and VSI-Bench without seeing math or diagrams. \"Logic-RL: Unleashing LLM Reasoning with Rule-Based Reinforcement Learning\" trains on synthetic logic puzzles and shows emergent skills generalizing to AIME and AMC math. \"Game-RL: Synthesizing Multimodal Verifiable Game Data to Boost VLMs' General Reasoning\" trains VLMs solely on game-derived tasks and reports gains across seven vision-language benchmarks.  \"Boundless Socratic Learning with Language Games\" is a position paper that envisions endless game learning can drive continuous general capability improvement.\n\nThe Negatives fail the transfer bar: \"GameBench: Evaluating Strategic Reasoning Abilities of LLM Agents\" and \"Measuring General Intelligence with Generated Games\" are evaluation benchmarks that train nothing. \"Situated Language Learning via Interactive Narratives\", and \"Large Language Models as Agents in Two-Player Games\" are position or roadmap papers with no demonstrated out-of-domain transfer mechanism. \"Knowledge-enhanced Agents for Interactive Text Games\", \"EnvGen: Generating and Adapting Environments via LLMs for Training Embodied Agents\", and \"STARLING: Self-supervised Training of Text-based Reinforcement Learning Agent with Large Language Models\" improve agents only within their own game or embodied domain. \"ScienceWorld: Is your Agent Smarter than a 5th Grader?\" is primarily a benchmark whose evidence stays within the same environment, and \"Emergent Communication of Generalizations\" concerns compositionality of emergent languages, not transfer to external reasoning.",
+        "positives": [
+          {
+            "id": "arxiv_2506.08011",
+            "title": "Play to Generalize: Learning to Reason Through Game Play",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2502.14768",
+            "title": "Logic-RL: Unleashing LLM Reasoning with Rule-Based Reinforcement Learning",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2411.16905",
+            "title": "Boundless Socratic Learning with Language Games",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2505.13886",
+            "title": "Game-RL: Synthesizing Multimodal Verifiable Game Data to Boost VLMs' General Reasoning",
+            "cited": true
+          }
+        ],
+        "hard_negatives": [
+          {
+            "id": "arxiv_2406.06613",
+            "title": "GameBench: Evaluating Strategic Reasoning Abilities of LLM Agents",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2305.05091",
+            "title": "Knowledge-enhanced Agents for Interactive Text Games",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2505.07215",
+            "title": "Measuring General Intelligence with Generated Games",
+            "cited": true
+          },
+          {
+            "id": "arxiv_2103.09977",
+            "title": "Situated Language Learning via Interactive Narratives",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2106.02668",
+            "title": "Emergent Communication of Generalizations",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2402.08078",
+            "title": "Large Language Models as Agents in Two-Player Games",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2203.07540",
+            "title": "ScienceWorld: Is your Agent Smarter than a 5th Grader?",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2403.12014",
+            "title": "EnvGen: Generating and Adapting Environments via LLMs for Training Embodied Agents",
+            "cited": false
+          },
+          {
+            "id": "arxiv_2406.05872",
+            "title": "STARLING: Self-supervised Training of Text-based Reinforcement Learning Agent with Large Language Models",
+            "cited": false
+          }
         ]
       }
     }

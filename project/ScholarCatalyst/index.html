@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="ScholarCatalyst: a benchmark for retrieving papers that inspire new research." />
     <title>ScholarCatalyst: A Benchmark for Retrieving Papers that Inspire New Research</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ScholarCatalyst" />
+    <meta property="og:title" content="ScholarCatalyst: A Benchmark for Retrieving Papers that Inspire New Research" />
+    <meta property="og:description" content="ScholarCatalyst: a benchmark for retrieving papers that inspire new research." />
+    <meta property="og:url" content="https://ohmyksh.github.io/project/ScholarCatalyst/" />
+    <meta property="og:image" content="https://ohmyksh.github.io/project/ScholarCatalyst/assets/images/scholarcatalyst-card.png" />
+    <meta property="og:image:width" content="1820" />
+    <meta property="og:image:height" content="2045" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ScholarCatalyst: A Benchmark for Retrieving Papers that Inspire New Research" />
+    <meta name="twitter:description" content="ScholarCatalyst: a benchmark for retrieving papers that inspire new research." />
+    <meta name="twitter:image" content="https://ohmyksh.github.io/project/ScholarCatalyst/assets/images/scholarcatalyst-card.png" />
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
@@ -18,14 +30,17 @@
       body { margin:0; background:#fff; color:var(--ink); font-family:"Noto Sans",Arial,sans-serif; font-size:16px; font-weight:400; line-height:1.55; }
       a { color:var(--link); }
       .container { width:min(100% - 40px,1160px); margin:0 auto; }
-      .hero { padding:78px 0 48px; text-align:center; }
+      .hero { padding:78px 0 var(--section-pad); text-align:center; }
       .kicker { margin:0 0 12px; color:#666; font-size:14px; letter-spacing:.02em; }
       h1 { font-family:"Google Sans","Noto Sans",Arial,sans-serif; }
       h1 { max-width:900px; margin:0 auto; color:var(--plum); font-size:clamp(46px,6vw,68px); font-weight:700; letter-spacing:-.04em; line-height:1.05; }
       .wordmark-logo { display:inline-block; height:.84em; margin:0 -.015em -.06em .01em; vertical-align:baseline; }
       .wordmark-prefix { color:var(--yellow); }
-      .wordmark-suffix { color:var(--plum); }
+      /* Page load: a golden glint sweeps through "atalyst" once. */
+      .wordmark-suffix { color:var(--plum); background:linear-gradient(100deg,var(--plum) 0 34%,var(--yellow) 50%,var(--plum) 66% 100%); background-size:280% 100%; background-position:100% 0; -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; animation:wordmark-sheen 1.4s cubic-bezier(.3,.6,.3,1) .5s 1 both; }
+      @media (prefers-reduced-motion:reduce) { .wordmark-suffix { animation:none; } }
       .wordmark-inline { font-family:"Google Sans","Noto Sans",Arial,sans-serif; font-weight:700; }
+      .task-title-font { font-family:"Google Sans","Noto Sans",Arial,sans-serif; }
       /* Yellow glint that sweeps through the text on hover; base color comes from --sheen-base. */
       .sheen { --sheen-base:var(--plum); color:var(--sheen-base); background:linear-gradient(100deg,var(--sheen-base) 0 38%,var(--yellow) 50%,var(--sheen-base) 62% 100%); background-size:260% 100%; background-position:100% 0; -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
       .sheen:hover { animation:wordmark-sheen .55s cubic-bezier(.2,.7,.3,1) 1; }
@@ -44,10 +59,10 @@
       .equal-note .equal-marker { display:inline-block; font-size:.8em; margin-right:3px; vertical-align:middle; transform:translateY(-1px); }
       .equal-note { margin:2px auto 0; color:#666; font-family:"Google Sans","Noto Sans",Arial,sans-serif; font-size:14px; }
       .affiliations { margin:10px auto 0; color:#555; font-family:"Google Sans","Noto Sans",Arial,sans-serif; font-size:16px; line-height:1.35; }
-      .affiliation-logos { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:16px 26px; margin:8px auto 0; }
+      .affiliation-logos { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:16px 40px; margin:8px auto 0; }
       .affiliation-logos img { display:block; width:auto; height:36px; max-width:145px; object-fit:contain; transform-origin:center; transition:transform .45s cubic-bezier(.2,.8,.2,1), opacity .35s ease, filter .35s ease; }
-      .affiliation-logos img.logo-stanford { height:46px; max-width:60px; }
-      .affiliation-logos img.logo-cmu { height:40px; max-width:150px; }
+      .affiliation-logos img.logo-stanford { height:46px; max-width:60px; margin-right:6px; }
+      .affiliation-logos img.logo-cmu { height:36px; max-width:135px; }
       .affiliation-logos img.logo-ai2 { height:31px; max-width:96px; }
       .affiliation-logos img.logo-snu { height:48px; max-width:125px; }
       .affiliation-logos img.logo-mit { height:36px; max-width:135px; }
@@ -90,56 +105,87 @@
       .button .ai { font-size:20px; line-height:1; }
       .button:hover .button-icon { filter:none; }
       .pending { margin:13px 0 0; color:#777; font-size:13px; }
-      section { padding:30px 0; }
+      :root { --section-pad:88px; --figure-gap:56px; --demo-gap:80px; }
+      section { padding:var(--section-pad) 0; }
       .narrow { width:min(100%,var(--text-w)); margin:0 auto; }
       .abstract-content { width:min(100%,var(--text-w)); margin:0 auto; }
       .outro-content { width:min(100%,var(--text-w)); }
       .center { text-align:center; }
       h2 { width:min(100%,var(--text-w)); margin:0 auto 20px; color:var(--plum); text-align:left; font-family:"Noto Sans",Arial,sans-serif; font-size:29px; font-weight:500; letter-spacing:-.025em; line-height:1.2; }
+      .h2-sub { color:var(--plum); font-size:1em; font-weight:300; }
       h3 { margin:0 0 10px; font-family:"Noto Sans",Arial,sans-serif; font-size:21px; letter-spacing:-.015em; }
       p { margin:0 0 16px; }
-      .figure-section { padding:20px 0 24px; }
+      .figure-section { padding:var(--section-pad) 0; }
       .paper-figure { width:min(100% - 56px,940px); margin:0 auto; }
-      .paper-figure--fig1 { max-width:720px; margin-top:28px; }
+      .paper-figure--fig1 { max-width:720px; margin-top:var(--figure-gap); }
       .paper-figure--fig3 { max-width:980px; }
-      .demo-section .paper-figure--fig3 { margin-bottom:38px; }
-      .paper-figure--data-overview { max-width:980px; margin-top:26px; margin-bottom:32px; }
+      .paper-figure--stats { max-width:800px; margin-top:40px; margin-bottom:var(--figure-gap); }
+      .demo-section .paper-figure--fig3 { margin-bottom:0; }
+      .paper-figure--data-overview { max-width:980px; margin-top:var(--figure-gap); margin-bottom:calc(var(--figure-gap) - 8px); }
       .paper-figure img { display:block; width:100%; height:auto; }
-      .paper-figure figcaption { margin-top:12px; color:var(--muted); font-family:"Noto Sans",Arial,sans-serif; font-size:15px; line-height:1.5; text-align:left; }
-      .demo-section { padding:38px 0 48px; }
-      .browser-section { padding:0 0 10px; }
-      .demo-intro { width:min(100%,var(--text-w)); margin:0 auto 24px; color:var(--muted); }
+      .paper-figure figcaption { max-width:720px; margin:12px auto 0; color:#6b6b6b; font-family:"Noto Sans",Arial,sans-serif; font-size:15px; line-height:1.4; text-align:center; }
+      .paper-figure figcaption a { color:#111; text-decoration:none; border-bottom:1px solid rgba(0,0,0,.3); transition:border-color .15s ease; }
+      .paper-figure figcaption a:hover { border-bottom-color:#111; }
+      .demo-section { padding:var(--section-pad) 0; }
+      .browser-section { padding:var(--section-pad) 0; }
+      #intro { padding-top:64px; }
+      #browser { padding-top:8px; }
+      #introduction { padding-top:32px; }
+      .demo-intro { width:min(100%,var(--text-w)); margin:0 auto var(--figure-gap); color:var(--muted); }
+      .demo-intro--tight { margin-bottom:16px; }
+      .demo-toolbar.demo-toolbar--end { margin:var(--figure-gap) auto 0; }
       .pipeline-list { max-width:none; margin:0 0 24px; padding-left:22px; color:var(--muted); text-align:left; }
       .pipeline-list li { margin:0 0 12px; padding-left:4px; }
       .pipeline-list li:last-child { margin-bottom:0; }
-      .pipeline-list strong { color:#222; font-weight:500; }
+      .pipeline-list strong { color:var(--plum); font-weight:500; }
+      .pipeline-sub { margin:28px 0 6px; color:var(--plum); font-family:"Noto Sans",Arial,sans-serif; font-size:18px; font-weight:500; letter-spacing:-.015em; line-height:1.25; text-align:left; }
+      .diamond-sub { position:relative; padding-left:24px; }
+      .diamond-sub::before { content:""; position:absolute; left:4.25px; top:calc(.625em - 3.25px); width:6.5px; height:6.5px; background:var(--plum); transform:rotate(45deg); }
+      .diamond-copy { padding-left:24px; }
+      .query-list { margin:0 0 15px; padding:0; list-style:none; text-align:left; }
+      .query-list li { position:relative; margin:0 0 8px; padding-left:24px; }
+      .query-list li:last-child { margin-bottom:0; }
+      .query-list li::before { content:""; position:absolute; left:4.25px; top:calc(.775em - 3.25px); width:6.5px; height:6.5px; background:var(--plum); transform:rotate(45deg); }
+      .key-word { color:var(--plum); font-weight:500; }
+      .lead-black { color:#1f1f1f; font-weight:600; }
+      .lead-question { color:#1f1f1f; font-weight:500; }
+      .center .pipeline-list.justify { text-align:left; hyphens:manual; -webkit-hyphens:manual; }
       .demo-card { overflow:hidden; border:1px solid #ECE3EA; border-radius:18px; background:#fff; box-shadow:0 1px 2px rgba(34,16,30,.04), 0 24px 60px -24px rgba(74,11,61,.18); text-align:left; }
       .browser-section .demo-card { width:min(100%,1240px); margin:0 auto; }
       .browser-section .container { width:min(100% - 40px,1240px); }
-      .demo-topbar { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 22px; border-bottom:1px solid #F1EBF0; background:linear-gradient(180deg,#FCF8FB,#fff); }
-      .demo-kicker { color:#8a7686; font:500 13px "Noto Sans",Arial,sans-serif; letter-spacing:.04em; text-transform:uppercase; }
+      .demo-topbar { display:flex; align-items:center; justify-content:center; padding:22px 26px; border-bottom:1px solid #F1EBF0; background:linear-gradient(180deg,#FCF8FB,#fff); text-align:center; }
+      .demo-paper-heading { width:100%; min-width:0; }
+      .demo-source-row { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px 14px; min-width:0; }
+      .demo-toolbar { display:flex; justify-content:center; margin:0 auto 22px; }
       .demo-hf { display:inline-flex; align-items:center; gap:7px; padding:7px 14px; border:1px solid #E6DCE3; border-radius:999px; background:#fff; color:#4B0B3D; font-size:13.5px; font-weight:500; text-decoration:none; transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
       .demo-hf:hover { border-color:var(--plum); box-shadow:0 4px 14px rgba(122,0,94,.12); transform:translateY(-1px); }
       .hf-icon { display:inline-block; width:18px; height:18px; object-fit:contain; }
-      .demo-navigator { display:grid; grid-template-columns:40px minmax(0,1fr) 40px; align-items:center; gap:14px; padding:16px 22px 12px; }
-      .demo-source-block { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
-      .demo-source-row { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px 12px; }
+      .demo-navigator { display:grid; grid-template-columns:36px minmax(0,1fr) 36px; align-items:center; gap:14px; padding:8px 22px 14px; }
       .demo-meta { flex-shrink:0; }
       .demo-stage { will-change:transform, opacity; }
-      .demo-source { color:#1d1d1d; font-family:"Google Sans","Noto Sans",Arial,sans-serif; font-size:17px; font-weight:500; line-height:1.3; letter-spacing:-.01em; text-decoration:none; transition:color .2s ease; }
+      .demo-source { flex:0 1 auto; min-width:0; color:#1d1d1d; font-family:"Google Sans","Noto Sans",Arial,sans-serif; font-size:20px; font-weight:500; line-height:1.35; letter-spacing:-.01em; text-align:center; text-wrap:pretty; text-decoration:none; transition:color .2s ease; }
       .demo-source:hover { color:var(--plum); }
       .demo-source.is-unlinked { pointer-events:none; }
-      .demo-counter-text { margin-left:10px; color:#a39aa0; font-size:12.5px; font-variant-numeric:tabular-nums; letter-spacing:0; text-transform:none; }
-      .demo-control { width:40px; height:40px; padding:0; border:1px solid #E6DCE3; border-radius:50%; background:#fff; color:#8a7686; cursor:pointer; font-size:13px; line-height:1; transition:color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease; }
+      .demo-control { width:36px; height:36px; padding:0; border:1px solid #E6DCE3; border-radius:50%; background:#fff; color:#8a7686; cursor:pointer; font-size:12px; line-height:1; transition:color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease; }
       .demo-control:hover { color:var(--plum); border-color:var(--plum); background:#FBF4F9; }
       .demo-control:active { transform:scale(.94); }
       .demo-card__body { padding:0 22px 22px; }
-      .query-tabs { display:flex; justify-content:center; gap:6px; margin:4px 0 16px; }
+      .query-tabs { display:flex; justify-content:center; gap:6px; margin:0; transform:translateY(2px); }
       .query-tab { padding:8px 16px; border:1px solid transparent; border-radius:999px; background:transparent; color:#8a7686; cursor:pointer; font:500 14px "Optimistic","Noto Sans",sans-serif; letter-spacing:.02em; transition:background .2s ease, color .2s ease, border-color .2s ease; }
       .query-tab:hover { color:var(--plum); }
+      .query-tab[data-query-type="thread"]:hover { color:#008780; }
       .query-tab.is-active { background:#FBF5FA; border-color:rgba(122,0,94,.18); color:var(--plum); }
       .query-tab[data-query-type="thread"].is-active { background:#F1F9F9; border-color:rgba(0,135,128,.25); color:#008780; }
-      .query-panel { padding:22px 28px 26px; border-radius:14px; background:#FBF5FA; transition:background .3s ease; }
+      .query-term { font-family:"Optimistic","Noto Sans",sans-serif; font-weight:500; }
+      .query-term--core { color:var(--plum); }
+      .query-term--sub { color:#008780; }
+      .milestone-term { color:#008780; font-family:"Optimistic","Noto Sans",sans-serif; font-style:normal; font-weight:500; }
+      .soft-strong { font-weight:500; }
+      .full-paper-link { margin:28px 0 0; font-size:18px; font-weight:500; text-align:left; }
+      .full-paper-link a { color:var(--plum); text-decoration:none; }
+      .full-paper-link a:hover { text-decoration:underline; text-underline-offset:3px; }
+      .query-panel { padding:10px 28px 26px; border-radius:14px; background:#FBF5FA; transition:background .3s ease; }
+      .query-panel > .query-block:first-child { padding-top:4px; }
       .query-panel[data-query-type="thread"] { background:#F1F9F9; }
       .query-panel[data-query-type="thread"] .instance-label { --sheen-base:#008780; color:#008780; }
       .query-panel[data-query-type="thread"] .quiz-button--primary { background:#0a6f69; border-color:#0a6f69; }
@@ -153,7 +199,7 @@
       .instance-value { min-width:0; color:#222; font-size:15px; line-height:1.55; }
       .instance-value p { margin:0; }
       .award { display:inline-block; padding:5px 11px; border-radius:999px; background:#FFE47A; color:#514100; font-family:"Noto Sans",Arial,sans-serif; font-size:12.5px; font-weight:500; line-height:1.3; white-space:nowrap; }
-      .demo-meta { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:7px; }
+      .demo-meta { display:flex; flex-shrink:0; flex-wrap:wrap; align-items:center; justify-content:flex-end; gap:7px; }
       .domain { display:inline-block; padding:5px 10px; border-radius:999px; background:#F1F1F1; color:#555; font-family:"Noto Sans",Arial,sans-serif; font-size:12.5px; font-weight:500; line-height:1.3; white-space:nowrap; }
       .demo-question { font-size:15px; line-height:1.6; }
       .demo-positive p { margin:0 0 7px; padding-left:14px; text-indent:-14px; font-size:15px; line-height:1.5; }
@@ -171,11 +217,13 @@
       .demo-negatives .paper-link { color:#555; border-bottom-color:rgba(0,0,0,.1); }
       .demo-negatives .paper-link:hover { color:var(--plum); border-bottom-color:var(--plum); }
       .query-rationale p { margin:10px 0 0; color:#222; font-size:14.5px; line-height:1.55; }
-      .demo-challenge { margin:0 0 16px; padding:0 2px; color:#5a4a55; font-size:14.5px; line-height:1.55; }
+      .demo-challenge { max-width:800px; margin:0 auto 48px; padding:0 12px; color:#4B0B3D; font-size:16px; font-weight:400; line-height:1.6; text-align:center; }
+      .demo-mobile-note { display:none; }
       .quiz-definition { margin:0 0 10px; color:#6b5b66; font-size:13.5px; line-height:1.5; }
       .quiz-options { display:grid; grid-template-columns:1fr; gap:8px; margin-top:6px; }
       .quiz-option { display:grid; grid-template-columns:22px minmax(0,1fr) auto; align-items:start; gap:10px; padding:10px 12px; border:1px solid rgba(0,0,0,.08); border-radius:10px; background:#fff; cursor:pointer; text-align:left; transition:border-color .2s ease, box-shadow .2s ease, background .2s ease, transform .2s ease; }
       .quiz-option:hover { border-color:rgba(122,0,94,.35); }
+      .query-panel[data-query-type="thread"] .quiz-option:hover { border-color:rgba(0,135,128,.35); }
       .quiz-option.is-selected { border-color:var(--plum); box-shadow:0 0 0 2px rgba(122,0,94,.12); }
       .quiz-option.is-locked { cursor:default; }
       .quiz-option.is-locked:hover { border-color:rgba(0,0,0,.08); }
@@ -185,12 +233,14 @@
       .quiz-option:has(.quiz-radio.is-hidden) { grid-template-columns:minmax(0,1fr); }
       a.quiz-option { text-decoration:none; color:inherit; cursor:pointer; }
       a.quiz-option:hover { border-color:rgba(122,0,94,.35) !important; transform:translateY(-1px); box-shadow:0 6px 16px -8px rgba(34,16,30,.25); }
+      .query-panel[data-query-type="thread"] a.quiz-option:hover { border-color:rgba(0,135,128,.35) !important; box-shadow:0 6px 16px -8px rgba(0,135,128,.25); }
       a.quiz-option.is-answer:hover .quiz-title.sheen { animation:wordmark-sheen 1.2s cubic-bezier(.2,.7,.3,1) 1; }
       .quiz-radio { width:18px; height:18px; margin-top:1px; border:2px solid #c9b8c4; border-radius:50%; transition:border-color .2s ease, background .2s ease; }
       .quiz-option.is-selected .quiz-radio { border-color:var(--plum); background:radial-gradient(circle, var(--plum) 45%, transparent 50%); }
-      .quiz-title { font-size:15px; line-height:1.45; color:#222; }
+      .quiz-title { font-size:14.5px; line-height:1.45; color:#222; }
       .quiz-open { color:#8a7686; font-size:12.5px; text-decoration:none; white-space:nowrap; padding:2px 6px; border-radius:6px; transition:color .15s ease, background .15s ease; }
       .quiz-open:hover { color:var(--plum); background:#F9EEF6; }
+      .query-panel[data-query-type="thread"] .quiz-open:hover { color:#008780; background:#E5F4F3; }
       .quiz-tag { display:inline-block; margin-top:6px; padding:2px 8px; border-radius:999px; font-size:11.5px; font-weight:500; letter-spacing:.02em; }
       .quiz-option.is-answer { border-color:rgba(255,193,0,.8); background:#FFFDF3; }
       .quiz-option.is-answer .quiz-title { font-weight:500; }
@@ -208,6 +258,8 @@
       .quiz-verdict { font-size:14px; color:#5a4a55; }
       .quiz-verdict.is-correct { color:#1a7f37; font-weight:500; }
       .quiz-verdict.is-wrong { color:#9a1f4a; font-weight:500; }
+      .query-panel[data-query-type="core"] .quiz-verdict.is-wrong { color:var(--plum); }
+      .query-panel[data-query-type="thread"] .quiz-verdict.is-wrong { color:#0a6f69; }
       .quiz-reveal { margin-top:14px; padding-top:14px; border-top:1px solid rgba(0,0,0,.06); animation:reveal-in .45s cubic-bezier(.2,.8,.2,1) both; }
       .quiz-reveal p { margin:0; }
       @keyframes reveal-in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
@@ -227,17 +279,14 @@
       .result { padding:22px 18px; border:1px solid var(--line); border-radius:6px; }
       .result-number { margin-bottom:8px; color:var(--plum); font-family:"Noto Sans",Arial,sans-serif; font-size:40px; font-weight:700; letter-spacing:-.04em; line-height:1; }
       .result p { margin:0; color:var(--muted); font-size:15px; }
-      .citation-wrap { border:1px solid #d1d9e0; border-radius:8px; background:#f6f8fa; overflow:hidden; text-align:left; }
-      .citation-bar { display:flex; align-items:center; justify-content:space-between; padding:6px 8px 6px 14px; border-bottom:1px solid #d1d9e0; background:#f6f8fa; }
-      .citation-lang { color:#59636e; font:12px ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace; }
-      .copy-button { display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border:1px solid #d1d9e0; border-radius:6px; background:#f6f8fa; color:#59636e; cursor:pointer; font:12px "Noto Sans",Arial,sans-serif; transition:background .15s ease, color .15s ease; }
-      .copy-button:hover { background:#eff2f5; color:#1f2328; }
+      .citation-wrap { border:1px solid #EBDCE7; border-radius:8px; background:#FCF7FB; overflow:hidden; text-align:left; }
+      .citation-bar { display:flex; align-items:center; justify-content:space-between; padding:6px 8px 6px 14px; border-bottom:1px solid #F0E3EC; background:#F8EEF5; }
+      .citation-lang { color:#8C6B82; font:12px ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace; }
+      .copy-button { display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border:1px solid #E6D3E0; border-radius:6px; background:#FCF7FB; color:#7A5A70; cursor:pointer; font:12px "Noto Sans",Arial,sans-serif; transition:background .15s ease, color .15s ease; }
+      .copy-button:hover { background:#F3E4EE; color:var(--plum); }
       .copy-button.is-copied { color:#1a7f37; border-color:#1a7f37; }
-      .citation { margin:0; padding:16px 18px; overflow-x:auto; color:#1f2328; font:13.5px/1.6 ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace; white-space:pre; tab-size:4; }
-      .citation-section { padding-bottom:48px; }
-      .site-license { padding:0 20px 48px; color:#777; font-size:13px; text-align:center; }
-      .site-license a { color:#777; }
-      .site-license a:hover { color:var(--plum); }
+      .citation { margin:0; padding:16px 18px; overflow-x:auto; color:#2E1F2B; font:13.5px/1.6 ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace; white-space:pre; tab-size:4; }
+      .citation-section { padding-bottom:var(--section-pad); }
       .comparison-table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:8px; background:#fff; box-shadow:0 5px 18px rgba(34,16,30,.06); text-align:left; }
       .comparison-table { width:100%; min-width:970px; border-collapse:collapse; font-family:"Noto Sans",Arial,sans-serif; font-size:14px; line-height:1.35; }
       .comparison-table th { padding:12px 10px; color:#333; font-family:"Noto Sans",Arial,sans-serif; font-size:13px; font-weight:500; text-align:left; vertical-align:bottom; }
@@ -262,38 +311,63 @@
       .main-results-table .postcutoff td { background:#F2F2F2; }
       .main-results-table .group-row td { padding:8px; color:#666; background:#F2F2F2; font-size:12px; font-style:normal; text-align:left; }
       .main-results-image { display:block; width:min(100%,830px); height:auto; margin:0 auto; }
-      .main-results-scroll { max-width:100%; }
+      .main-results-scroll { max-width:100%; margin-top:52px; }
       .results-summary { width:min(100%,var(--text-w)); margin:0 auto 24px; }
-      .analysis-block { max-width:none; margin:0 0 54px; }
+      .results-question { width:min(100%,var(--text-w)); margin:0 auto 24px; color:#4B0B3D; font-size:18px; font-weight:700; line-height:1.5; text-align:center; }
+      #results { padding:var(--section-pad) 0; }
+      #data { padding-top:var(--section-pad); }
+      .analysis-block { max-width:none; margin:0 0 72px; }
       .analysis-block:last-child { margin-bottom:0; }
       .analysis-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:38px; max-width:960px; margin:0 auto; }
       .analysis-pair .analysis-block { max-width:none; margin:0; }
       .analysis-pair .analysis-copy { max-width:none; }
       .analysis-pair .analysis-figure { width:100%; }
       .analysis-heading { margin:0 0 12px; color:#222; text-align:left; font:500 22px/1.2 "Noto Sans",Arial,sans-serif; letter-spacing:-.015em; }
-      .analysis-copy { max-width:none; margin:0 0 22px; }
+      .analysis-copy { max-width:none; margin:0 0 36px; }
       .analysis-figure { margin:0 auto; }
-      .analysis-figure--recognition { width:min(100% - 180px,480px); }
+      .analysis-figure--recognition { width:min(100% - 180px,430px); }
       .analysis-figure--inspiration { width:min(100% - 180px,400px); }
       .analysis-figure--backbone { width:min(100% - 180px,480px); }
+      .analysis-figure figcaption { width:min(720px,calc(100vw - 56px)); max-width:none; margin-left:50%; transform:translateX(-50%); }
+      .analysis-figure--inspiration figcaption { width:min(900px,calc(100vw - 56px)); }
       @media (max-width:760px) {
         .analysis-pair { grid-template-columns:1fr; gap:46px; }
       }
       .task-copy { max-width:none; margin:0 0 15px; }
       .temporal-note { max-width:none; margin:0 0 25px; color:#3e2438; }
       .temporal-note strong { color:var(--plum); font-family:"Optimistic","Noto Sans",sans-serif; font-weight:500; }
-      .contributor-card { width:fit-content; max-width:calc(100% - 32px); margin:22px auto 0; border:2px solid var(--plum); border-radius:16px; background:#fff; box-shadow:0 11px 25px rgba(34,16,30,.08); text-align:center; }
-      .contributor-card[open] { width:min(100%,920px); }
-      .contributor-card[open] summary { padding-top:16px; padding-bottom:16px; font-size:18px; }
-      .contributor-card summary { padding:10px 16px; color:var(--plum); cursor:pointer; font:500 16px "Optimistic","Noto Sans",sans-serif; text-align:center; list-style:none; }
+      .contributor-card { width:fit-content; max-width:calc(100% - 32px); margin:22px auto 0; border:0; border-radius:0; background:transparent; box-shadow:none; text-align:center; }
+      .contributor-card[open] { width:min(100%,920px); border:1px solid var(--line); border-radius:12px; background:#fff; box-shadow:0 8px 24px rgba(34,16,30,.06); }
+      .contributor-card[open] { transition:box-shadow .3s ease, transform .3s ease; }
+      .contributor-card[open]:hover { transform:translateY(-4px); box-shadow:0 22px 44px -8px rgba(122,0,94,.16), 0 0 30px 2px rgba(255,193,0,.16), 0 6px 14px rgba(34,16,30,.07); animation:contributor-aura 3.4s ease-in-out infinite; }
+      @keyframes contributor-aura {
+        0%, 100% { box-shadow:0 22px 44px -8px rgba(122,0,94,.16), -4px 0 30px 2px rgba(255,193,0,.14), 0 6px 14px rgba(34,16,30,.07); }
+        33% { box-shadow:0 22px 44px -8px rgba(122,0,94,.16), 4px -3px 42px 6px rgba(255,193,0,.26), 0 6px 14px rgba(34,16,30,.07); }
+        66% { box-shadow:0 22px 44px -8px rgba(122,0,94,.16), 0 4px 36px 4px rgba(255,200,40,.20), 0 6px 14px rgba(34,16,30,.07); }
+      }
+      @media (prefers-reduced-motion:reduce) { .contributor-card[open]:hover { animation:none; } }
+      .contributor-card[open] summary { display:flex; width:fit-content; margin:16px auto; }
+      .contributor-card summary { display:inline-flex; align-items:center; justify-content:center; padding:10px 22px; border:0; border-radius:999px; background:linear-gradient(100deg,var(--plum) 0 38%,var(--yellow) 50%,var(--plum) 62% 100%); background-size:260% 100%; background-position:100% 0; color:#fff; cursor:pointer; font:500 15px "Google Sans","Noto Sans",Arial,sans-serif; letter-spacing:-.005em; text-align:center; list-style:none; box-shadow:0 3px 10px rgba(122,0,94,.22); transition:box-shadow .25s ease, transform .25s ease; }
+      .contributor-card summary:hover, .contributor-card summary:focus-visible { animation:wordmark-sheen .7s cubic-bezier(.2,.7,.3,1) 1; box-shadow:0 8px 22px rgba(122,0,94,.34), 0 0 0 3px rgba(255,193,0,.5); transform:translateY(-2px); outline:none; }
+      .contributor-card summary:active { transform:translateY(0) scale(.97); }
+      .contributor-card[open] summary { box-shadow:0 3px 10px rgba(122,0,94,.22), 0 0 0 3px rgba(255,193,0,.55); }
       .contributor-card summary::-webkit-details-marker { display:none; }
       .contributor-card summary span { float:right; color:#888; font:400 13px "Noto Sans",Arial,sans-serif; }
-      .contributor-card p { padding:0 30px 28px; margin:0; color:#111; font-size:15px; line-height:1.75; text-align:left; }
-      .contributor-card .contributor-note { padding-bottom:14px; color:var(--plum); font-size:14px; line-height:1.65; }
-      @media (hover:hover) {
-        .contributor-card { transition:transform .2s ease, box-shadow .2s ease; }
-        .contributor-card:hover { transform:translateY(-3px); box-shadow:0 16px 31px rgba(34,16,30,.1); }
-      }
+      .contributor-card p { padding:0 52px 28px; margin:0; color:#111; font-size:15px; line-height:1.75; text-align:left; }
+      .contributor-card .contributor-note { padding-bottom:14px; color:#111; font-size:14px; line-height:1.65; }
+      #pipeline { padding-top:var(--section-pad); }
+      .dark-plum { color:#4B0B3D; font-weight:500; }
+      .results-after { margin-bottom:16px; }
+      .strongest-comparison-figure { width:min(100%,830px); margin:var(--figure-gap) auto 0; }
+      .main-results-scroll + .results-after { margin-top:var(--figure-gap); }
+      .results-after strong { color:#1f1f1f; font-weight:600; }
+      .query-list.results-after li { margin-bottom:12px; }
+      .query-list.results-after li:last-child { margin-bottom:0; }
+      .results-after strong.dark-plum { color:var(--plum); font-size:1em; font-weight:400; }
+      .contributor-thanks { max-width:900px; margin:56px auto 0; color:#111; font-size:16px; line-height:1.6; text-align:center; }
+      .contributor-thanks + .contributor-card { margin-top:14px; }
+      .contributors-block { padding:0 0 var(--section-pad); }
+      .contributors-block .contributor-thanks { margin-top:0; }
       footer { padding:36px 0 54px; color:#777; font-size:14px; text-align:center; }
       @media (max-width:680px) {
         body { font-size:15.5px; line-height:1.55; }
@@ -303,61 +377,76 @@
         .hero-title { margin-top:10px; font-size:22px; line-height:1.18; }
         .authors { margin-top:26px; font-size:16px; line-height:1.7; }
         .authors-break { display:none; }
-        .justify, .center .justify { text-align:left; hyphens:auto; }
+        .justify, .center .justify { text-align:left; hyphens:manual; -webkit-hyphens:manual; }
         .equal-note { margin-top:4px; font-size:13px; }
         .affiliations { margin-top:10px; font-size:14px; line-height:1.45; }
-        .affiliation-logos { gap:11px 17px; margin-top:10px; }
+        .affiliation-logos { gap:12px 24px; margin-top:10px; }
         .affiliation-logos img { height:28px; max-width:112px; }
         .affiliation-logos img.logo-stanford { height:36px; max-width:48px; }
-        .affiliation-logos img.logo-cmu { height:31px; max-width:118px; }
+        .affiliation-logos img.logo-cmu { height:28px; max-width:106px; }
         .affiliation-logos img.logo-ai2 { height:25px; max-width:78px; }
         .affiliation-logos img.logo-snu { height:35px; max-width:92px; }
         .affiliation-logos img.logo-mit { height:28px; max-width:104px; }
         .links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; margin-top:28px; }
         .button { min-height:42px; justify-content:center; padding:8px 10px; font-size:14px; }
-        section { padding:26px 0; }
-        h2 { margin-bottom:16px; font-size:26px; }
-        .abstract-content,.narrow { width:100%; }
+        :root { --section-pad:44px; --figure-gap:32px; --demo-gap:44px; }
+        section { padding:var(--section-pad) 0; }
+        h2 { margin-bottom:14px; font-size:23px; }
+        .abstract-content,.narrow { width:min(100% - 32px,1000px); }
         .paper-figure { width:min(100% - 12px,940px); }
-        .paper-figure--fig1 { margin-top:22px; }
-        .demo-section .paper-figure--fig3 { margin-bottom:28px; }
-        .paper-figure--data-overview { margin-top:20px; margin-bottom:25px; }
-        .paper-figure figcaption { margin-top:10px; font-size:14px; line-height:1.5; }
-        .figure-section { padding:20px 0; }
+        .paper-figure--fig1 { margin-top:var(--figure-gap); }
+        .demo-section .paper-figure--fig3 { margin-bottom:0; }
+        .paper-figure--stats { margin-top:26px; margin-bottom:var(--figure-gap); }
+        .stats-scroll { overflow-x:auto; padding-bottom:10px; scrollbar-width:thin; }
+        .paper-figure--stats .stats-scroll img { width:600px; max-width:none; }
+        .paper-figure--data-overview { margin-top:var(--figure-gap); margin-bottom:calc(var(--figure-gap) - 8px); }
+        .paper-figure figcaption { margin-top:10px; font-size:14.5px; line-height:1.4; }
+        .figure-section { padding:var(--section-pad) 0; }
         .task-copy { margin-bottom:14px; }
         .temporal-note { margin-bottom:21px; font-size:14.5px; line-height:1.5; }
         .main-results-scroll { overflow-x:auto; padding:0 0 12px; scrollbar-width:thin; }
         .main-results-scroll .main-results-image { width:720px; max-width:none; padding:0 4px; }
         .results-summary { margin-bottom:18px; }
-        .demo-section { padding-top:36px; }
-        .browser-section { padding:0 0 4px; }
-        .demo-topbar { padding:12px 14px; }
-        .demo-kicker { font-size:0; }
-        .demo-kicker .demo-counter-text { font-size:12.5px; margin-left:0; }
+        #results { padding:var(--section-pad) 0; }
+        #data { padding-top:var(--section-pad); }
+        .demo-section { padding-top:var(--section-pad); padding-bottom:var(--section-pad); }
+        .browser-section { padding:var(--section-pad) 0; }
+        #intro { padding-top:44px; }
+        #browser { padding-top:8px; }
+        #introduction { padding-top:16px; }
+        .demo-topbar { padding:16px 12px; }
+        .demo-source-row { gap:8px 12px; }
+        .demo-source { flex:1 1 100%; font-size:19px; }
+        .demo-meta { justify-content:center; }
+        .demo-toolbar { margin-bottom:18px; }
         .demo-hf { font-size:13px; padding:6px 12px; }
-        .demo-navigator { grid-template-columns:34px minmax(0,1fr) 34px; gap:8px; padding:14px 12px 10px; }
-        .demo-control { width:34px; height:34px; }
-        .demo-source { font-size:16px; }
-        .demo-source-row { flex-direction:column; gap:8px; }
+        .demo-navigator { grid-template-columns:32px minmax(0,1fr) 32px; gap:8px; padding:4px 12px 10px; }
+        .demo-control { width:32px; height:32px; }
+        .demo-source-row { gap:8px; }
         .demo-card__body { padding:0 12px 12px; }
-        .query-panel { padding:16px 14px 18px; }
-        .query-tab { padding:7px 11px; font-size:13px; }
+        .query-panel { padding:8px 14px 18px; }
+        .query-tab { padding:5px 6px; font-size:11px; letter-spacing:0; }
         .quiz-option { grid-template-columns:20px minmax(0,1fr); }
         .quiz-open { grid-column:2; justify-self:start; padding-left:0; }
-        .demo-challenge { font-size:14px; }
+        .demo-challenge { margin-bottom:28px; font-size:14.5px; }
+        .demo-challenge { display:none; }
+        .demo-challenge.demo-mobile-note { display:block; margin-bottom:24px; }
+        .demo-card { display:none; }
         .instance-value,.demo-question,.demo-positive p { font-size:15px; line-height:1.55; }
         .contributor-card { margin-top:18px; border-radius:14px; }
-        .contributor-card summary { padding:17px 18px; font-size:16px; }
-        .contributor-card p { padding:0 18px 22px; font-size:14px; line-height:1.7; }
+        .contributor-card summary { padding:9px 18px; font-size:14px; }
+        .contributor-card p { padding:0 28px 22px; font-size:14px; line-height:1.7; }
         .contributor-card .contributor-note { padding-bottom:11px; font-size:13.5px; }
+        .contributor-thanks { margin-top:20px; font-size:14px; }
         .analysis-block { margin-bottom:44px; }
         .analysis-pair { gap:44px; }
-        .analysis-heading { font-size:20px; }
+        .analysis-heading { font-size:19px; }
+        .pipeline-sub { font-size:17px; }
         .analysis-copy { margin-bottom:18px; }
         .analysis-figure,.analysis-pair .analysis-figure { width:min(100% - 12px,500px); }
         .citation { padding:14px; font-size:12.5px; }
-        .citation-section { padding-bottom:38px; }
-        .site-license { padding:0 20px 36px; font-size:12px; }
+        .full-paper-link { margin-top:22px; font-size:17px; }
+        .citation-section { padding-bottom:var(--section-pad); }
         .stats,.steps,.results { grid-template-columns:1fr; }
         .stat { border-right:0; border-bottom:1px solid var(--line); }
         .stat:last-child { border-bottom:0; }
@@ -370,7 +459,7 @@
       <header class="hero container">
         <h1>
 <span class="wordmark-prefix">Scholar</span>
-<img class="wordmark-logo" src="assets/catalyst-c.png" alt="C" /><span class="wordmark-suffix">atalyst</span>
+<img class="wordmark-logo" src="assets/images/catalyst-c.png" alt="C" /><span class="wordmark-suffix">atalyst</span>
 </h1>
         <p class="hero-title">A Benchmark for Retrieving Papers<br />that Inspire New Research</p>
         <p class="authors">
@@ -384,13 +473,13 @@
 <span class="affil-name" data-affil="1"><sup>1</sup> Stanford University</span> &nbsp;&nbsp; <span class="affil-name" data-affil="2"><sup>2</sup> Seoul National University</span> &nbsp;&nbsp; <span class="affil-name" data-affil="3"><sup>3</sup> University of Washington</span></div>
 <div>
 <span class="affil-name" data-affil="4"><sup>4</sup> Carnegie Mellon University</span> &nbsp;&nbsp; <span class="affil-name" data-affil="5"><sup>5</sup> Allen Institute for AI</span> &nbsp;&nbsp; <span class="affil-name" data-affil="6"><sup>6</sup> MIT</span></div>
-<div class="affiliation-logos" aria-label="Affiliated institutions"><img class="logo-stanford" data-affil="1" src="assets/stanford-block-s.png" alt="Stanford University" /><img class="logo-snu" data-affil="2" src="assets/snu.svg" alt="Seoul National University" /><img data-affil="3" src="assets/uw.webp" alt="University of Washington" /><img class="logo-cmu" data-affil="4" src="assets/cmu-simple-cropped.png" alt="Carnegie Mellon University" /><img class="logo-ai2" data-affil="5" src="assets/ai2.png" alt="Allen Institute for AI" /><img class="logo-mit" data-affil="6" src="assets/mit-cropped.png" alt="MIT" /></div>
+<div class="affiliation-logos" aria-label="Affiliated institutions"><img class="logo-stanford" data-affil="1" src="assets/images/stanford-block-s.png" alt="Stanford University" /><img class="logo-snu" data-affil="2" src="assets/images/snu.svg" alt="Seoul National University" /><img data-affil="3" src="assets/images/uw.webp" alt="University of Washington" /><img class="logo-cmu" data-affil="4" src="assets/images/cmu-simple-cropped.png" alt="Carnegie Mellon University" /><img class="logo-ai2" data-affil="5" src="assets/images/ai2.png" alt="Allen Institute for AI" /><img class="logo-mit" data-affil="6" src="assets/images/mit-cropped.png" alt="MIT" /></div>
 </div>
         <div class="links" aria-label="Project links">
-          <a class="button" href="#intro"><i class="ai ai-arxiv" aria-hidden="true"></i>Paper</a>
-          <a class="button" href="https://huggingface.co/ScholarCatalyst" target="_blank" rel="noreferrer"><img class="button-icon" src="assets/hf.webp?v=1" alt="" />Data</a>
-          <a class="button" href="https://github.com/stanford-iris-lab/ScholarCatalyst" target="_blank" rel="noreferrer"><img class="button-icon" src="assets/github-white-icon.png" alt="" />GitHub</a>
-          <a class="button" href="https://x.com/ohmyksh?s=21" target="_blank" rel="noreferrer">𝕏 Thread</a>
+          <a class="button" href="https://arxiv.org/abs/2610.02202" target="_blank" rel="noreferrer"><i class="ai ai-arxiv" aria-hidden="true"></i>Paper</a>
+          <a class="button" href="https://huggingface.co/ScholarCatalyst" target="_blank" rel="noreferrer"><img class="button-icon" src="assets/images/hf.webp?v=1" alt="" />Data</a>
+          <a class="button" href="https://github.com/stanford-iris-lab/ScholarCatalyst" target="_blank" rel="noreferrer"><img class="button-icon" src="assets/images/github-white-icon.png" alt="" />GitHub</a>
+          <a class="button" href="https://x.com/ohmyksh/status/2106034142400086512?s=20" target="_blank" rel="noreferrer">𝕏 Thread</a>
         </div>
       </header>
 
@@ -402,44 +491,39 @@
 </div>
 </section>
 
-      <section id="task" class="figure-section">
+      <section id="introduction">
 <div class="container narrow center">
-<h2>Catalyst Paper Retrieval for Early-Stage Research Questions</h2>
-<p class="task-copy justify">Scientific research is inherently cumulative, with each project building on previous results and ideas. Current AI systems for research mainly accelerate progress on an already well-defined subproblem, where the remaining work is closer to engineering. Deciding which existing idea a new problem should build on is still mostly left to human researchers. An insightful prior paper can turn a vague question into a well-defined problem, for instance by revealing a limitation that motivates a new direction or suggesting an approach worth adapting, thereby shaping and accelerating (catalyzing) subsequent research. Making this choice well is a defining ability of great scientists, and a critical part of what researchers call research taste.</p>
-<p class="task-copy justify">We ask whether models can make that decision through a concrete task: given an early stage research question, find its <strong class="sheen">catalyst papers</strong>, by which we mean prior papers whose ideas did or could have meaningfully advanced the project. A system searches a temporally filtered corpus and is evaluated against the catalyst papers identified by the source paper authors.</p>
-<p class="temporal-note justify"><strong>Temporal cutoff</strong> Systems search only papers published before the source paper. The source paper is withheld and web search is disabled, so the task reflects the literature available while the research was still in progress.</p>
+<h2>Intro<span class="h2-sub">: Research starts by choosing which prior idea to build on</span></h2>
+<p class="task-copy justify">Scientific research is inherently cumulative, with each project building on previous results and ideas. Current AI systems for research mainly accelerate progress on an already well-defined subproblem, where the remaining work is closer to engineering. Deciding which existing idea a new problem should build on is still mostly left to human researchers. An insightful prior paper can turn a vague question into a well-defined problem, for instance by revealing a limitation that motivates a new direction or suggesting an approach worth adapting, thereby shaping and accelerating—<em style="color:#000;">catalyzing</em>—subsequent research. Making this choice well is a defining ability of great scientists, and a critical part of what researchers call research taste.</p>
+<p class="task-copy justify">We call such a paper a <strong class="sheen task-title-font">catalyst paper</strong>: one whose ideas did or would have moved the project forward in its early stage. Only a tiny fraction of the millions of papers in the literature qualify, yet each plays a pivotal role in a project. We asked the lead authors, who did the work and know every part of it, to identify them.</p>
 </div>
-<figure class="paper-figure paper-figure--fig1">
-<img src="assets/fig1.webp" alt="ScholarCatalyst task overview: inspiring papers can be semantically dissimilar while topically related papers may not advance a project." />
-</figure>
 </section>
 
-      <section id="browser" class="browser-section">
+<section id="browser" class="browser-section">
 <div class="container">
+<p class="demo-challenge">Try it yourself! One of the five papers below is one the authors credit as a catalyst for this project.<br />This five-way multiple choice question is much easier than the full task models face, where they have to pick the catalyst papers out of 191K papers.</p>
+<p class="demo-challenge demo-mobile-note">We have an interactive game here where you find the catalyst paper yourself.<br />It works best on a PC, so please try it there.</p>
+<div class="demo-toolbar"><a class="demo-hf" href="https://huggingface.co/ScholarCatalyst" target="_blank" rel="noreferrer"><img class="hf-icon" src="assets/images/hf.webp?v=1" alt="" />Full set on Hugging Face</a></div>
 <article class="demo-card" aria-label="Benchmark instance browser">
 <div class="demo-topbar">
-<span class="demo-kicker">Browse the benchmark <span id="demo-counter-text" class="demo-counter-text"></span></span>
-<a class="demo-hf" href="https://huggingface.co/ScholarCatalyst" target="_blank" rel="noreferrer"><img class="hf-icon" src="assets/hf.webp?v=1" alt="" />Full set on Hugging Face</a>
+<div class="demo-paper-heading">
+<div class="demo-source-row"><a id="demo-source" class="demo-source" href="#" target="_blank" rel="noreferrer"></a><span class="demo-meta"><span id="demo-award" class="award"></span><span id="demo-domain" class="domain"></span></span></div>
+</div>
 </div>
 <div class="demo-stage">
 <div class="demo-navigator">
 <button id="demo-previous" class="demo-control" type="button" aria-label="Previous source paper">◀</button>
-<div class="demo-source-block">
-<div class="demo-source-row"><a id="demo-source" class="demo-source" href="#" target="_blank" rel="noreferrer"></a><span class="demo-meta"><span id="demo-award" class="award"></span><span id="demo-domain" class="domain"></span></span></div>
-</div>
-<button id="demo-next" class="demo-control" type="button" aria-label="Next source paper">▶</button>
-</div>
-<div class="demo-card__body">
 <div class="query-tabs" role="tablist" aria-label="Query type">
 <button class="query-tab is-active" type="button" role="tab" data-query-type="core" aria-selected="true">Core Research Query</button>
 <button class="query-tab" type="button" role="tab" data-query-type="thread" aria-selected="false">Subfield specific Query</button>
 </div>
-<p class="demo-challenge justify">Try it yourself: one of the five papers below is one the authors credit as a catalyst for this project. This five-way multiple choice question is much easier than the full task models face, where they have to pick the catalyst out of about 190,000 papers.</p>
+<button id="demo-next" class="demo-control" type="button" aria-label="Next source paper">▶</button>
+</div>
+<div class="demo-card__body">
 <section class="query-panel" data-query-type="core">
 <div class="query-block"><div class="instance-label">Query</div><div id="quiz-question" class="instance-value demo-question justify"></div></div>
 <div class="query-block">
-<div class="instance-label sheen">Which is a catalyst paper?</div>
-<p class="quiz-definition">A catalyst paper is one whose ideas did or would have moved the project forward in its early stage. Whether a paper counts as a catalyst comes directly from the project's lead authors, who did the work and thought through every part of it.</p>
+<div class="instance-label">Identify the catalyst paper for this query</div>
 <div id="quiz-options" class="quiz-options" role="radiogroup" aria-label="Candidate papers"></div>
 <div class="quiz-actions">
 <button id="quiz-submit" class="quiz-button quiz-button--primary" type="button" disabled>Submit guess</button>
@@ -460,35 +544,68 @@
 </div>
 </section>
 
-
-      <section id="results">
-<div class="container center">
-<h2>Main Results</h2>
-<p class="results-summary justify">Current retrievers miss most of the papers that inspired a project. General purpose dense retrievers perform best, yet place 39% of author identified inspiration papers in the top 20 for Core Research Queries and 51% for Subfield specific Queries. Agentic search does not improve over embedding retrieval.</p>
-<div class="main-results-scroll"><img class="main-results-image" src="assets/main-results.webp" alt="Main retrieval results across Core Research Query and Subfield-specific Query, including performance footnotes." /></div>
+      <section id="task" class="figure-section">
+<div class="container narrow center">
+<h2>We evaluate finding catalyst papers at the start of research</h2>
+<p class="task-copy justify">We ask whether models can make that decision at the start of a project, when researchers do not yet know what to look for. We reflect this early stage setting in our task: given a research question from the outset of a project, a model must retrieve its catalyst papers from a corpus of 191K papers, all published before the source paper was completed, so it can only draw on the literature that existed at the time.</p>
+<p class="task-copy justify">We consider two query types that reflect how an early stage project develops from a broad central research question into particular subfields, with an inspiring paper potentially shaping the next step at either stage.</p>
+<ul class="query-list">
+<li><span class="query-term query-term--core">Core Research Query</span> asks which prior ideas could help address the project’s central research question.</li>
+<li><span class="query-term query-term--sub">Subfield specific Query</span> approaches the same research question from a particular research subfield, asking which prior ideas could help advance the project from that perspective.</li>
+</ul>
 </div>
+<figure class="paper-figure paper-figure--fig1">
+<img src="assets/images/fig1.webp" alt="ScholarCatalyst task overview: inspiring papers can be semantically dissimilar while topically related papers may not advance a project." />
+<figcaption>ScholarCatalyst asks whether a system can retrieve prior papers that inspire progress on a research project. Such a paper may share little semantic similarity with the question yet offer an insight that advances the project (right), while topically related work may not (left).</figcaption>
+</figure>
+</section>
+
+
+
+
+      <section id="pipeline" class="figure-section">
+<div class="container narrow center"><h2>How did we build this testbed?</h2><p class="justify">Evaluating this task requires ground truth about which papers catalyzed a project. Yet published papers document completed projects, while the ideation behind them is largely <span class="key-word">undocumented</span>, and bibliographies rarely identify which works provided nonobvious, critical insights.</p>
+<p class="justify"><strong class="lead-black">Why do we need a new benchmark?</strong> Existing scientific retrieval benchmarks measure facet-level similarity, relevance to a stated information need, or citation-intent signals. These signals do not capture whether a paper could have inspired an early-stage project, especially when the eventual paper does not cite it.</p><figure class="paper-figure paper-figure--data-overview">
+<img src="assets/images/fig2_compact.webp?v=2" alt="ScholarCatalyst construction process, from automated reference resolution and candidate retrieval to author validation." />
+<figcaption>Our automated pipeline builds a retrieval corpus and author-review materials, including structured paper data and candidate papers, which authors review through our interface to revise queries, judge candidate relevance, and provide rationales.</figcaption>
+</figure>
+<h3 class="pipeline-sub diamond-sub">Our Automated Construction Pipeline</h3>
+<p class="justify diamond-copy">To collect this data from scratch, we built a scalable pipeline. Given only an arXiv ID, it gathers the paper and its one hop citation graph, drafts an initial query, and assembles a pool of candidate papers. This lets us keep growing the testbed over time.</p>
+<h3 class="pipeline-sub diamond-sub">Collecting Authors’ Firsthand Accounts</h3>
+<p class="justify diamond-copy">We collected this information directly from the authors, reaching authors of award papers at recent conferences as well as through an open call. The authors reviewed every proposed query and candidate paper, validated, revised, or rewrote them, marked the catalyst papers and hard negatives, and explained each relevance judgment.</p>
 </section>
 
       <section id="data" class="demo-section">
 <div class="container center">
-<h2>Our Data</h2>
-<p class="demo-intro justify">Each completed source paper contributes one Core Research Query and one or more Subfield specific Queries. For every query, authors identify catalyst papers that offered useful ideas, distinguish topically related hard negatives, and provide a rationale for each judgment. Authors review and revise all of these materials.</p>
-<figure class="paper-figure paper-figure--fig3">
-<img src="assets/fig3_compact.webp" alt="A ScholarCatalyst instance with a source paper, research question, author identified catalyst papers, hard negatives, and rationale." />
+<h2>Inside ScholarCatalyst</h2>
+<p class="demo-intro demo-intro--tight justify">Each completed source paper contributes one <span class="query-term query-term--core">Core Research Query</span> and one or more <span class="query-term query-term--sub">Subfield specific Queries</span>. For every query, authors identify catalyst papers that offered useful ideas, distinguish topically related hard negatives, and provide a rationale for each judgment.</p>
+<figure class="paper-figure paper-figure--stats">
+<div class="stats-scroll"><img src="assets/images/stats.webp" alt="Table 2: Dataset statistics. For each query type, the number of queries, the average number of positive papers and hard negatives, the share of cited and uncited positives, and the average query length in tokens." /></div>
 </figure>
-<details class="contributor-card">
-<summary>Benchmark Contributors</summary>
-<p class="contributor-note justify">Their firsthand knowledge is the foundation of this benchmark, and we thank them for generously dedicating their time and expertise. Contributors are listed in alphabetical order.</p>
-<p class="justify">Adir Dayan, Ajay Sridhar, Alberta Longhini, Alberto Rota, Alexandru Oarga, Ali Hatamizadeh, Alireza Mousavi-Hosseini, Angana Borah, Anjiang Wei, Atharva Kulkarni, Bhuvan Sachdeva, Bo Liu, Bryan Sangwoo Kim, Burouj Armgaan, Camila Blank, Caroline Choi, Changho Shin, Changyeon Kim, Chaofan Lin, Chengyang He, Chuhan Li, David Anugraha, Dayoon Ko, Dilara Soylu, Dongjin Kang, Dongyang Fan, Ekaterina Kochetkova, Eunkyu Park, Fan Nie, Fanhu Zeng, Fatemeh Pesaran Zadeh, Francesco De Santis, Gaotang Li, Giung Nam, Guancheng Zhou, Guangnian Wan, Guijin Son, Gul Sena Altıntas, Gyuhyeon Seo, Han Luo, Hanane Moussa, Hangoo Kang, Haochen Tian, Haoyu Zhang, Haozhe Chen, Haozhe Wang, Himanshu Gupta, Ho Sy Tuyen, Hoang Pham, Houjun Liu, Hwan Chang, Hyeong Kyu Choi, Hyunji Lee, Hyunjun Lee, Ifdita Hasan Orney, Ilia Sucholutsky, Insu Lee, Itay Itzhak, Jaewoo Ahn, Jarek Liesen, Jason S Lucas, Jen-Yen Chang, Jiaju Ma, Jiaqi Liu, Jiayin Zhu, Jingzhe Shi, Jinheon Baek, Jinkun Hao, Jinwoo Lim, Jiwoo Chung, Johannes Kirmayr, Johnny Tian-Zheng Wei, Jongseo Lee, Joonghyuk Shin, Jubayer Ibn Hamid, Junchi Yu, Jungwoo Kim, Junyoung Lim, Kallol Saha, Kevin Qinghong Lin, Kodai Kawamura, Korneel Van den Berghe, Kunwoong Kim, Letian Fu, Linus Kreitner, Lucy Xiaoyang Shi, Lynnette Hui Xian Ng, Madhav Kanda, Mahyar Ghazanfari, Marcel Torne, Marco Bertolini, Marco Fumero, Maria Parelli, Marie Brockschmidt, Markus Gross, Mert Cemri, Michael Rizvi-Martel, Ming Hu, Mingtong Zhang, Mingyu Kim, Minki Kang, Minkyu Kim, Minseo Kim, Na Min An, Nathaniel L. Diamant, Niels Mündler, Nilesh Jain, Nilesh Prasad Pandey, Omin Kwon, Peng Xia, Pengcheng Wang, Pratik Sachdeva, Qingyang Zhang, Qizheng Zhang, Rahul Sharma, Raj Ghugare, Richard Cornelius Suwandi, Rohit Jena, Rosen Ting-Ying Yu, Roshen Sanjay Nair, Roussel Desmond Nzoyem, Rulin Shao, Runhan Huang, Sanghyun Jo, Seohong Park, Seokwon Song, Seonghyeon Ye, Seungone Kim, Shayan Talaei, Shihao Wang, Shiyin Jiang, Sijia Liu, Sijie Zhao, Siqi Zhu, Taehoon Yoon, Tanvir Ahmed Sijan, Tianhe Wu, Tongtian Zhu, Truong Buu Phan, Valentin Hofmann, Valeria Ruscio, Vasily Ilin, Wei Chen, Weiheng Liu, Wenbin Ouyang, Wenjie Zhu, Woomin Song, Woongyeong Yeo, Xiang Li, Xiaotian Liu, Xuan Luo, Xuanming Zhang, Xuying Ning, Yancheng Zhang, Yang Li, Yangcen Liu, Yanggan Gu, Yangtian Zhang, Yanjiang Guo, Yaozhong Shi, Yasaman Haghighi, Yichao Cai, Yifan Zhang, Yoonho Lee, Yoonkyo Jung, Yoonsang Lee, Yuante Li, Yuejiang Liu, Yujia Zheng, Yumin Choi, Yusuf Dalva, Zeyuan Chen, Zhaoyang Liu, Zheng Huang, Zhenhao Chen, Zhongxing Xu, Zijian Feng, Zixuan Hu</p>
-</details>
+<p class="demo-intro justify">Our data also includes something that is rarely public: the authors' own explanations of why a paper helped, what they hoped to gain from it, and why other related papers did not. Such reasoning behind the ideation is almost never documented in published papers.</p>
+<figure class="paper-figure paper-figure--fig3">
+<img src="assets/images/fig3_compact.webp" alt="A ScholarCatalyst instance with a source paper, research question, author identified catalyst papers, hard negatives, and rationale." />
+<figcaption>An example instance from <a href="https://arxiv.org/pdf/2506.10947" target="_blank" rel="noreferrer">Spurious Rewards</a>: the authors mark the paper that inspired the project, point out similar papers that did not, and explain each judgment in a rationale.</figcaption>
+</figure>
+<div class="demo-toolbar demo-toolbar--end"><a class="demo-hf" href="https://huggingface.co/ScholarCatalyst" target="_blank" rel="noreferrer"><img class="hf-icon" src="assets/images/hf.webp?v=1" alt="" />Full set on Hugging Face</a></div>
+
 </div>
 </section>
 
-<section id="pipeline" class="figure-section">
-<div class="container narrow center"><h2>Data Collection Pipeline</h2><ul class="pipeline-list justify"><li><strong>Automated construction</strong> Starting from one source paper arXiv ID, the pipeline parses the paper, resolves its references, proposes a Core Research Query and Subfield specific Queries, then retrieves candidate papers from the temporally appropriate corpus.</li><li><strong>Author validation and revision</strong> Authors review every proposed query and candidate paper. They validate, revise, or rewrite the materials, mark catalyst papers and hard negatives, and explain each relevance judgment.</li></ul></div>
-<figure class="paper-figure paper-figure--data-overview">
-<img src="assets/fig2_compact.webp" alt="ScholarCatalyst construction process, from automated reference resolution and candidate retrieval to author validation." />
+<section id="results">
+<div class="container center">
+<h2>Can current retrieval systems identify the catalyst papers?</h2>
+<p class="results-summary justify">Our evaluation corpus of 191K computer-science papers is far smaller than the 3M papers on <a href="https://blog.arxiv.org/2026/07/09/arxiv-now-hosts-over-3-million-articles/" target="_blank" rel="noreferrer">arXiv</a>, among which researchers are able to find work that inspires a project. Retrieval in this corpus is therefore an easier version of the problem researchers actually face. <span class="lead-question">Can current retrieval systems identify the catalyst papers that inspired a project from among the many topically related papers in the corpus?</span></p>
+<div class="main-results-scroll"><img class="main-results-image" src="assets/images/main-results.webp" alt="Main retrieval results across Core Research Query and Subfield-specific Query, including performance footnotes." /></div>
+<ul class="query-list results-summary results-after">
+<li><strong>Current retrievers miss most of the papers that inspired a project.</strong> General purpose dense retrievers perform best, yet place only 39% of author identified inspiration papers in the top 20 for Core Research Queries and 51% for Subfield specific Queries. Scientific document retrievers, BM25, and LateOn all trail them, so training on citation signals alone does not solve the task.</li>
+<li><strong>Agentic search does not improve over embedding retrieval.</strong> In our experiments, grep based search performs worst, finding only 8% of gold query and paper pairs compared with 46% for the tool calling agent. We attribute this to <strong class="dark-plum">candidate coverage</strong>, since an agent sees the corpus only through its own search queries and can inspect just a small fraction of it.</li>
+</ul>
+<figure class="paper-figure strongest-comparison-figure">
+<img class="main-results-image" src="assets/images/all-comparison.png" alt="Recall@20 for the grep agent, deep research agent, tool calling agent, best embedding model, and Claude Fable 5.1 on Core Research Queries and Subfield specific Queries." />
+<figcaption>Current systems still struggle to find catalyst papers. Agentic search doesn’t beat embedding retrieval, even with the same retrieval tool underneath. Even Fable 5.1 finds only about half of them, despite potentially having seen the finished papers during training.</figcaption>
 </figure>
+</div>
 </section>
 
 <section id="analysis">
@@ -496,29 +613,37 @@
 <h2>Analysis</h2>
 <div class="analysis-block">
 <h3 class="analysis-heading">Inspiration is diverse and not captured by similarity</h3>
-<p class="analysis-copy justify">An LLM judge classifies 663 key inspiration rationales under a nine type taxonomy. Authors most often credit a technique they adapted, empirical findings that supported a direction, an idea extended to a new setting, or a limitation that motivated a new approach. More than one type applies to 55.8% of rationales. Hard negatives are at least as similar to the query as catalyst papers under both lexical and embedding similarity.</p>
+<p class="analysis-copy justify">An LLM judge classifies 663 key inspiration rationales under a nine type taxonomy. Authors most often credit a technique they adapted, empirical findings that supported a direction, an idea extended to a new setting, or a limitation that motivated a new approach. A single paper often inspires through several mechanisms at once, with more than one type applying to 55.8% of rationales.</p>
 <figure class="paper-figure analysis-figure analysis-figure--inspiration">
-<img src="assets/analysis-inspiration.webp" alt="Distribution of the nine author identified inspiration types." />
+<img src="assets/images/analysis-inspiration.webp" alt="Distribution of the nine author identified inspiration types." />
+<figcaption>Inspiration is diverse, ranging from a reusable method to supporting evidence or a new way of framing a problem.<br>Percentages sum to more than 100% because a rationale can receive multiple types.</figcaption>
 </figure>
 </div>
 <div class="analysis-block">
-<h3 class="analysis-heading">Citation status does not identify inspiration</h3>
-<p class="analysis-copy justify">Source paper citations provide an incomplete signal of inspiration. 43.6% of Subfield specific catalyst papers are not cited by the source paper, and 67.8% of those uncited papers share no references with it. Among cited catalyst papers, only 46.2% for Core Research Queries and 34.0% for Subfield specific Queries carry a uses or extends citation intent label.</p>
+<h3 class="analysis-heading">Topical similarity and citation status do not capture inspiration</h3>
+<p class="analysis-copy justify">Hard negatives are at least as similar to the query as catalyst papers under both lexical and embedding similarity, so topical similarity cannot single out the papers that inspired a project. Citation status is also an incomplete signal. For Subfield specific Queries, 43.6% of catalyst papers are never cited by the source paper. Even among the catalyst papers that are cited, a citation intent classifier assigns a uses or extends label to only 46.2% for Core Research Queries and 34.0% for Subfield specific Queries, so being cited does not mean a paper was built upon.</p>
 </div>
 <div class="analysis-block">
 <h3 class="analysis-heading">Recognition depends on candidate coverage</h3>
-<p class="analysis-copy justify">To separate retrieval coverage from recognition performance, we apply LLM based reranking to the top 20 candidates from Gemini Embedding 2 for 50 Core Research Queries and 50 Subfield specific Queries. We compare reranking with and without gold injection, which replaces negative candidates with missing catalyst papers while keeping the pool size fixed. Stronger rerankers gain more in Recall at 5 from gold injection.</p>
+<p class="analysis-copy justify">To separate retrieval coverage from recognition performance, we apply LLM based reranking to the top 20 candidates from Gemini Embedding 2 on a subset of 100 queries. We compare reranking with and without gold injection, which replaces negative candidates with missing catalyst papers while keeping the pool size fixed. Stronger rerankers gain more in Recall@5 from gold injection. The widening gap suggests that candidate coverage limits what a stronger reranker can deliver, since its ability to pick out useful papers only matters when those papers enter the pool. Better retrieval should therefore yield larger gains as rerankers improve.</p>
 <figure class="paper-figure analysis-figure analysis-figure--recognition">
-<img src="assets/analysis-recognition.webp" alt="Recall at 5 after reranking with and without gold paper injection." />
+<img src="assets/images/analysis-recognition.webp" alt="Recall@5 after reranking with and without gold paper injection." />
+<figcaption>Stronger rerankers gain more from gold injection. Recall@5 after reranking the retriever's top 20, with and without missing gold papers swapped in. Claude Fable rises from roughly 27% to 50%.</figcaption>
 </figure>
 </div>
-<div class="analysis-block">
-<h3 class="analysis-heading">Frontier model comparison</h3>
-<p class="analysis-copy justify">Claude Fable 5.1 is reported separately as a comparison model. In the full benchmark, its agents reach 0.51 to 0.53 Recall at 20 on Core Research Queries. On Subfield specific Queries, the best Fable agent reaches 0.50 compared with 0.51 for the strongest embedding retriever.</p>
-</div>
+<p class="full-paper-link"><a href="https://arxiv.org/abs/2610.02202" target="_blank" rel="noreferrer">Read the full paper for more experiments and analysis &rarr;</a></p>
 </div>
 </section>
-      <section id="outro"><div class="container abstract-content outro-content center"><h2>Outro</h2><p class="justify">Recent work on reasoning-intensive retrieval evaluates relevance relations that require reasoning to recognize. <span class="wordmark-inline sheen">ScholarCatalyst</span> pushes further, requiring judgments of how prior ideas could advance a research project.</p><p class="justify">We see two milestones ahead. The first is <em>expert-level</em> retrieval, matching a domain expert's judgment within their own field. The second is retrieval <em>beyond any individual expert</em>: being able to exercise that level of intuition across a breadth of fields no single researcher can follow.</p><p class="justify">This breadth may be where such systems help most, since nearly half of the papers our authors credit (49.5%) come from outside their project's subject area, and 43.6% of subfield-specific positives were never cited in the source paper. Researchers may therefore be limited more by what they have seen than by how well they judge it. The full literature makes this gap far larger than our benchmark shows: Semantic Scholar alone indexes over 225M papers, compared with 190K in our corpus.</p><p class="justify">What stands between current systems and both milestones is <em>an expert-level sense of which ideas matter</em>, and we hope <span class="wordmark-inline sheen">ScholarCatalyst</span> offers a starting point for developing it. If <a href="https://www.jstor.org/stable/4307965?seq=1" target="_blank" rel="noreferrer"><strong>undiscovered public knowledge</strong></a> (1986) is as common as our results imply, models capable of expert judgment across fields could unlock a large backlog of progress hidden in plain sight.</p></div></section>
+      <section id="outro"><div class="container abstract-content outro-content center"><h2>Outro</h2><p class="justify">Recent work on reasoning-intensive retrieval evaluates relevance relations that require reasoning to recognize. <span class="wordmark-inline sheen">ScholarCatalyst</span> pushes further, requiring judgments of how prior ideas could advance a research project.</p><p class="justify">We see two milestones ahead. The first is <span class="milestone-term">expert-level</span> retrieval, matching a domain expert's judgment within their own field. The second is retrieval <span class="milestone-term">beyond any individual expert</span>: being able to exercise that level of intuition across a breadth of fields no single researcher can follow.</p><p class="justify">This breadth may be where such systems help most, since nearly half of the papers our authors credit (49.5%) come from outside their project's subject area, and 43.6% of subfield-specific positives were never cited in the source paper. Researchers may therefore be limited more by what they have seen than by how well they judge it. The full literature makes this gap far larger than our benchmark shows: Semantic Scholar alone indexes over 225M papers, compared with 191K in our corpus.</p><p class="justify">What stands between current systems and both milestones is an expert-level sense of which ideas matter, and we hope <span class="wordmark-inline sheen">ScholarCatalyst</span> offers a starting point for developing it. If <a href="https://www.jstor.org/stable/4307965?seq=1" target="_blank" rel="noreferrer"><strong class="soft-strong">undiscovered public knowledge</strong></a> (1986) is as common as our results imply, models capable of expert judgment across fields could unlock a large backlog of progress hidden in plain sight.</p></div></section>
+
+      <div class="container center contributors-block">
+<p class="contributor-thanks">The ScholarCatalyst benchmark would not have been possible without the researchers<br />who shared how their discoveries came about, and we are deeply grateful for their invaluable contributions.</p>
+<details class="contributor-card">
+<summary>Benchmark Contributors</summary>
+<p class="contributor-note justify">Their firsthand knowledge is the foundation of this benchmark, and we thank them for generously dedicating their time and expertise. Contributors are listed in alphabetical order.</p>
+<p class="justify">Adir Dayan, Ajay Sridhar, Alberta Longhini, Alberto Rota, Alexandru Oarga, Ali Hatamizadeh, Alireza Mousavi-Hosseini, Angana Borah, Anjiang Wei, Atharva Kulkarni, Bhuvan Sachdeva, Bo Liu, Bryan Sangwoo Kim, Burouj Armgaan, Camila Blank, Caroline Choi, Changho Shin, Changyeon Kim, Chaofan Lin, Chengyang He, Chuhan Li, David Anugraha, Dayoon Ko, Dilara Soylu, Dongjin Kang, Dongyang Fan, Ekaterina Kochetkova, Eunkyu Park, Fan Nie, Fanhu Zeng, Fatemeh Pesaran Zadeh, Francesco De Santis, Gaotang Li, Giung Nam, Guancheng Zhou, Guangnian Wan, Guijin Son, Gul Sena Altıntas, Gyuhyeon Seo, Han Luo, Hanane Moussa, Hangoo Kang, Haochen Tian, Haoyu Zhang, Haozhe Chen, Haozhe Wang, Himanshu Gupta, Ho Sy Tuyen, Hoang Pham, Houjun Liu, Hwan Chang, Hyeong Kyu Choi, Hyunji Lee, Hyunjun Lee, Ifdita Hasan Orney, Ilia Sucholutsky, Insu Lee, Itay Itzhak, Jaewoo Ahn, Jarek Liesen, Jason S Lucas, Jen-Yen Chang, Jiaju Ma, Jiaqi Liu, Jiayin Zhu, Jingzhe Shi, Jinheon Baek, Jinkun Hao, Jinwoo Lim, Jiwoo Chung, Johannes Kirmayr, Johnny Tian-Zheng Wei, Jongseo Lee, Joonghyuk Shin, Jubayer Ibn Hamid, Junchi Yu, Jungwoo Kim, Junyoung Lim, Kallol Saha, Kevin Qinghong Lin, Kodai Kawamura, Korneel Van den Berghe, Kunwoong Kim, Letian Fu, Linus Kreitner, Lucy Xiaoyang Shi, Lynnette Hui Xian Ng, Madhav Kanda, Mahyar Ghazanfari, Marcel Torne, Marco Bertolini, Marco Fumero, Maria Parelli, Marie Brockschmidt, Markus Gross, Mert Cemri, Michael Rizvi-Martel, Ming Hu, Mingtong Zhang, Mingyu Kim, Minki Kang, Minkyu Kim, Minseo Kim, Na Min An, Nathaniel L. Diamant, Niels Mündler, Nilesh Jain, Nilesh Prasad Pandey, Omin Kwon, Peng Xia, Pengcheng Wang, Pratik Sachdeva, Qingyang Zhang, Qizheng Zhang, Rahul Sharma, Raj Ghugare, Richard Cornelius Suwandi, Rohit Jena, Rosen Ting-Ying Yu, Roshen Sanjay Nair, Roussel Desmond Nzoyem, Rulin Shao, Runhan Huang, Sanghyun Jo, Seohong Park, Seokwon Song, Seonghyeon Ye, Seungone Kim, Shayan Talaei, Shihao Wang, Shiyin Jiang, Sijia Liu, Sijie Zhao, Siqi Zhu, Taehoon Yoon, Tanvir Ahmed Sijan, Tianhe Wu, Tongtian Zhu, Truong Buu Phan, Valentin Hofmann, Valeria Ruscio, Vasily Ilin, Wei Chen, Weiheng Liu, Wenbin Ouyang, Wenjie Zhu, Woomin Song, Woongyeong Yeo, Xiang Li, Xiaotian Liu, Xuan Luo, Xuanming Zhang, Xuying Ning, Yancheng Zhang, Yang Li, Yangcen Liu, Yanggan Gu, Yangtian Zhang, Yanjiang Guo, Yaozhong Shi, Yasaman Haghighi, Yichao Cai, Yifan Zhang, Yoonho Lee, Yoonkyo Jung, Yoonsang Lee, Yuante Li, Yuejiang Liu, Yujia Zheng, Yumin Choi, Yusuf Dalva, Zeyuan Chen, Zhaoyang Liu, Zheng Huang, Zhenhao Chen, Zhongxing Xu, Zijian Feng, Zixuan Hu</p>
+</details>
+      </div>
 
       <section class="citation-section">
 <div class="container narrow center">
@@ -526,13 +651,12 @@
 <div class="citation-wrap"><div class="citation-bar"><span class="citation-lang">BibTeX</span><button id="copy-citation" class="copy-button" type="button" aria-label="Copy citation"><svg class="copy-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"/><path fill="currentColor" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/></svg><span class="copy-label">Copy</span></button></div><pre id="citation-text" class="citation"><code>@article{kim2026scholarcatalyst,
     title   = {ScholarCatalyst: A Benchmark for Retrieving Papers that Inspire New Research},
     author  = {Kim, Sohyeon and Lee, Yoonho and Liu, Bo and Ko, Dayoon and Shao, Rulin and Kim, Seungone and Neubig, Graham and Koh, Pang Wei and Chowdhery, Aakanksha and Asai, Akari and Khattab, Omar and Choi, Yejin and Kim, Gunhee and Finn, Chelsea},
-    journal = {arXiv preprint},
+    journal = {arXiv preprint arXiv:2610.02202},
     year    = {2026}
 }</code></pre></div>
 </div>
 </section>
     </main>
-    <footer class="site-license">This website is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</footer>
     <script>
       (() => {
         const byId = (id) => document.getElementById(id);
@@ -632,7 +756,7 @@
           body.append(title);
           card.append(radio, body);
           if (selectable) {
-            const open = document.createElement("a"); open.className = "quiz-open"; open.textContent = "Read ↗"; open.target = "_blank"; open.rel = "noreferrer";
+            const open = document.createElement("a"); open.className = "quiz-open"; open.textContent = "Read →"; open.target = "_blank"; open.rel = "noreferrer";
             if (url) open.href = url; else open.hidden = true;
             open.addEventListener("click", (e) => e.stopPropagation());
             card.append(open);
@@ -676,7 +800,7 @@
           if (!quiz || quiz.done) return;
           quiz.done = true;
           if (viaReveal) { quiz.verdict = "Answer revealed."; quiz.verdictClass = ""; }
-          else if (quiz.selected === quiz.answerId) { quiz.verdict = "Correct. You found it among five; the benchmark asks for it among ~190K."; quiz.verdictClass = "is-correct"; }
+          else if (quiz.selected === quiz.answerId) { quiz.verdict = "Correct. You found it among five, and our benchmark asks for it among about 190K."; quiz.verdictClass = "is-correct"; }
           else { quiz.verdict = "Not this one. The rationale below explains the authors' pick."; quiz.verdictClass = "is-wrong"; }
           renderQuiz();
         };
@@ -689,10 +813,9 @@
           const award = byId("demo-award"), domain = byId("demo-domain"), source = byId("demo-source");
           award.hidden = !sample.award; award.textContent = sample.award || "";
           domain.hidden = !sample.domain; domain.textContent = sample.domain || "";
-          source.textContent = sample.title;
+          source.textContent = sample.title.replace(/-/g, "‑");
           const url = paperUrl(sample.paper_id);
           if (url) { source.href = url; source.classList.remove("is-unlinked"); } else { source.removeAttribute("href"); source.classList.add("is-unlinked"); }
-          byId("demo-counter-text").textContent = `${sampleIndex + 1} / ${samples.length}`;
           renderQuiz();
         };
         const stage = document.querySelector(".demo-stage");
@@ -738,11 +861,14 @@
           const sampleOrder = [
             "Spurious Rewards: Rethinking Training Signals in RLVR",
             "Hi Robot: Open-Ended Instruction Following with Hierarchical Vision-Language-Action Models",
+            "Meta-Harness: End-to-End Optimization of Model Harnesses",
             "Adaptive Defense against Harmful Fine-Tuning for Large Language Models via Bayesian Data Scheduler",
             "Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression",
             "MesaTask: Towards Task-Driven Tabletop Scene Generation via 3D Spatial Reasoning"
           ];
-          samples = (data.samples || []).sort((a, b) => {
+          // Show a spaced double hyphen in paper titles as an em dash.
+          const fixDashes = (value) => typeof value === "string" ? value.replace(/\s*--\s*/g, " \u2014 ") : Array.isArray(value) ? value.map(fixDashes) : value && typeof value === "object" ? Object.fromEntries(Object.entries(value).map(([key, inner]) => [key, fixDashes(inner)])) : value;
+          samples = fixDashes(data.samples || []).sort((a, b) => {
             const aIndex = sampleOrder.indexOf(a.title);
             const bIndex = sampleOrder.indexOf(b.title);
             return (aIndex < 0 ? sampleOrder.length : aIndex) - (bIndex < 0 ? sampleOrder.length : bIndex);
