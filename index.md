@@ -13,7 +13,7 @@ layout: default
 </p>
 
 <p style="color:#000; font-weight:300; margin-bottom:12px;">
-  To learn more about how I think beyond research, read my <a href="{{ '/blog/' | relative_url }}" style="color:#7A005E;">Blog</a>.
+  I enjoy thinking and reading about research and beyond. You can find my thoughts on my <a href="{{ '/blog/' | relative_url }}" style="color:#7A005E;">Blog</a> and my <a href="{{ '/reading/' | relative_url }}" style="color:#7A005E;">reading</a>.
 </p>
 
 <div style="height:15px;"></div>
@@ -27,7 +27,7 @@ layout: default
   <span style="font-size:0.95em;"><span style="font-weight:400; color:#000">Sohyeon Kim</span><sup>*</sup>, Yoonho Lee<sup>*</sup>, Bo Liu, Dayoon Ko, Rulin Shao, Seungone Kim, Graham Neubig, Pang Wei Koh, Aakanksha Chowdhery, Akari Asai, Omar Khattab, Yejin Choi, Gunhee Kim, Chelsea Finn</span><br>
   <span style="font-size:15px;">Preprint 2026&nbsp;&nbsp;<a href="{{ '/project/ScholarCatalyst/' | relative_url }}" style="color:#7A005E;">Website</a>&nbsp;&nbsp;<a href="https://arxiv.org/abs/2610.02202" style="color:#7A005E;">Paper</a>&nbsp;&nbsp;<a href="https://github.com/stanford-iris-lab/ScholarCatalyst" style="color:#7A005E;">Code</a>&nbsp;&nbsp;<a href="https://huggingface.co/ScholarCatalyst" style="color:#7A005E;">Data</a>&nbsp;&nbsp;<span style="font-size:13px; color:#777;">*equal contribution</span></span>
 </p>
-<figure style="margin:14px 0 52px 0; width:100%;">
+<figure style="margin:14px 0 52px 0; width:60%;">
   <a href="{{ '/project/ScholarCatalyst/' | relative_url }}"><img src="{{ '/project/ScholarCatalyst/assets/images/fig1.webp' | relative_url }}" alt="ScholarCatalyst task overview: inspiring papers can be semantically dissimilar while topically related papers may not advance a project." style="width:100%; max-width:100%; display:block;"></a>
   <figcaption style="margin-top:8px; font-size:13px; font-weight:300; color:#444;">ScholarCatalyst is a benchmark built from AI researchers’ firsthand accounts of what inspired their work. A paper that inspires a project may share little surface similarity with the question (right), while topically related work may not (left). Even strong retrieval systems, including agents, find only about half of such papers.</figcaption>
 </figure>

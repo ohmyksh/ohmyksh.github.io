@@ -4,6 +4,10 @@
 @import "jekyll-theme-minimal";
 
 section a {
+  font-weight: 300;
+}
+
+section a:hover, section a:focus {
   font-weight: 400;
 }
 
