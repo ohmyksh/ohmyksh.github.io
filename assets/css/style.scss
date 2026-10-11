@@ -11,6 +11,20 @@ section a:hover, section a:focus {
   font-weight: 400;
 }
 
+.pub-figure-img {
+  display: block;
+  width: 60%;
+  max-width: 60%;
+  height: auto;
+}
+
+@media screen and (max-width: 720px) {
+  .pub-figure-img {
+    width: 90%;
+    max-width: 90%;
+  }
+}
+
 .thought-link:hover {
   font-weight: 700;
 }
