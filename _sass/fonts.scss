@@ -1,4 +1,11 @@
 @font-face {
+  font-family: 'Palatino';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../fonts/Palatino/palatino.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Roboto';
   font-weight: 300;
   font-style: normal;
@@ -44,14 +51,14 @@
   font-family: 'Noto Sans Light';
   font-weight: 100 900;
   font-style: normal;
-  src: url('../fonts/NotoSansVariable/NotoSans-Variable.ttf') format('truetype-variations');
+  src: url('../fonts/NotoSansVariable/NotoSans-Variable.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Noto Sans Light';
   font-weight: 100 900;
   font-style: italic;
-  src: url('../fonts/NotoSansVariable/NotoSans-Italic-Variable.ttf') format('truetype-variations');
+  src: url('../fonts/NotoSansVariable/NotoSans-Italic-Variable.ttf') format('truetype');
 }
 
 @font-face {

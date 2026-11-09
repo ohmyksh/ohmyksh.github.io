@@ -7,8 +7,60 @@ section a {
   font-weight: 300;
 }
 
-section a:hover, section a:focus {
-  font-weight: 400;
+/* Links: a thin 1px underline appears on hover (no weight change, no animation).
+   Drawn as a background line because text-decoration ignores sub-pixel thickness. */
+section a {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 calc(100% - 1px);
+  background-size: 0 1px;
+}
+
+section a:hover, section a:focus-visible {
+  background-size: 100% 1px;
+}
+
+section a:has(img), .social-links a, .back-link, .thought-link {
+  background-image: none;
+}
+
+/* "develop my own taste": always underlined (thin), and only gets bolder on hover */
+section a.taste-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+}
+
+section a.taste-link:hover, section a.taste-link:focus-visible {
+  font-weight: 450;
+}
+
+.social-links a {
+  color: #333;
+  font-weight: 550;
+}
+
+.social-links a:hover, .social-links a:focus-visible {
+  color: #0E8C8C;
+}
+
+/* Home: keep the title to photo gap the same at every width */
+@media screen and (max-width: 960px) {
+  .home section {
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .home header h1 {
+    margin-bottom: 20px;
+  }
+}
+
+/* Home: photo shrinks a little as the stacked layout narrows */
+@media screen and (max-width: 959px) {
+  .bio-flex .bio-photo-col img {
+    width: clamp(160px, 30vw, 220px);
+  }
 }
 
 .pub-figure-img {

@@ -1,10 +1,44 @@
 @import "fonts";
 @import "rouge-github";
 
+.bio-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bio-flex .bio-photo-col {
+  flex-shrink: 0;
+}
+
+@media screen and (min-width: 960px) {
+  .bio-flex {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 40px;
+  }
+
+  .bio-flex .bio-photo-col {
+    width: 31%;
+    max-width: 270px;
+    flex-shrink: 1;
+  }
+
+  .bio-flex .bio-photo-col img {
+    width: 100%;
+    height: auto;
+  }
+
+  .bio-flex .bio-text-col {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
 body {
   background-color: #fff;
   padding:50px;
-  font: 16px/1.6 "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 16px/1.6 "Noto Sans Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#000;
   font-weight:300;
 }
@@ -38,7 +72,7 @@ h3, h4, h5, h6 {
 
 h3 {
   font-weight:400;
-  font-size:22px;
+  font-size:25px;
 }
 
 a.title {
@@ -48,13 +82,12 @@ a.title {
 }
 
 a {
-  color:#7A005E;
+  color:#0E8C8C;
   text-decoration:none;
 }
 
-a:hover, a:focus {
-  color:#4C0E41;
-  font-weight: 500;
+a:hover, a:focus-visible {
+  color:#0A4F43;
 }
 
 a small {
@@ -138,6 +171,7 @@ header {
   width: 250px;
   float:none;
   position:static;
+  margin-top: 60px;
   -webkit-font-smoothing:subpixel-antialiased;
 }
 
@@ -234,6 +268,10 @@ footer {
 
 @media print, screen and (max-width: 960px) {
 
+  .scholarcatalyst-figure {
+    display: none !important;
+  }
+
   div.wrapper {
     width:auto;
     margin:0;
@@ -243,10 +281,6 @@ footer {
     float:none;
     position:static;
     width:auto;
-  }
-
-  header {
-    padding-right:320px;
   }
 
   section {
