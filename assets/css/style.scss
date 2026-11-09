@@ -44,7 +44,7 @@ section a.taste-link:hover, section a.taste-link:focus-visible {
 }
 
 /* Home: keep the title to photo gap the same at every width */
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1000px) {
   .home section {
     padding-top: 0;
   }
@@ -57,7 +57,7 @@ section a.taste-link:hover, section a.taste-link:focus-visible {
 }
 
 /* Home: photo shrinks a little as the stacked layout narrows */
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 999px) {
   .bio-flex .bio-photo-col img {
     width: clamp(160px, 30vw, 220px);
   }
