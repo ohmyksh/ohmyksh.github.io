@@ -92,6 +92,10 @@ section a.taste-link:hover, section a.taste-link:focus-visible {
     line-height: 1.55;
   }
 
+  header {
+    margin-top: 0;
+  }
+
   header h1 {
     font-size: 24px;
     margin-bottom: 8px;
@@ -134,7 +138,8 @@ section a.taste-link:hover, section a.taste-link:focus-visible {
     margin-bottom: 24px !important;
   }
 
-  .thought-link {
+  .thought-link,
+  .phil-title {
     font-size: 14.5px !important;
   }
 }
