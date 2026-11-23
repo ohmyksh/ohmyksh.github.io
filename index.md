@@ -7,10 +7,10 @@ layout: default
     <img src="/assets/img/profile_Nov26.jpg" style="max-width:100%; height:auto; display:block;" alt="Logo" />
     <p style="color:#000; font-size:13.5px; font-weight:350; margin-top:10px; margin-bottom:6px;">sohyeon@stanford.edu<br>sohyeon.kim@vision.snu.ac.kr</p>
     <div class="social-links" style="display:flex; flex-direction:row; flex-wrap:nowrap; white-space:nowrap; gap:8px; margin-top:0; font-size:14px;">
-      <a href="https://github.com/ohmyksh" style="text-decoration:none;">Github</a>
-      <a href="https://scholar.google.com/citations?user=Oe6wbtMAAAAJ&hl=en" style="text-decoration:none;">Scholar</a>
-      <a href="https://www.linkedin.com/in/kimsohyeon/" style="text-decoration:none;">LinkedIn</a>
       <a href="https://x.com/ohmyksh?s=21" style="text-decoration:none;">X</a>
+      <a href="https://www.linkedin.com/in/kimsohyeon/" style="text-decoration:none;">LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=Oe6wbtMAAAAJ&hl=en" style="text-decoration:none;">Scholar</a>
+      <a href="https://github.com/ohmyksh" style="text-decoration:none;">Github</a>
       <a href="{{ '/blog/' | relative_url }}" style="text-decoration:none;">Blog</a>
     </div>
   </div>
@@ -36,14 +36,9 @@ layout: default
 <div style="height:45px;"></div>
 ### Research
 <p style="margin:0; margin-top:10px; font-weight:300">
-  <div style="display:flex; align-items:center; gap:16px;">
-  <a href="https://ai.stanford.edu/blog/scholarcatalyst/" class="scholarcatalyst-figure" style="flex-shrink:0;"><img src="{{ '/assets/img/sail.jpg' | relative_url }}" alt="Stanford AI Lab" style="height:52px; width:auto; max-width:none;"></a>
-  <div>
   <a href="https://ai.stanford.edu/blog/scholarcatalyst/" style="color:#000; font-weight:500">Research Intuition as a Retrieval Task</a><br>
   <span style="font-size:0.92em; font-weight:350;"><span style="text-decoration:underline;">Sohyeon Kim</span> and Yoonho Lee</span><br>
-  <span style="font-size:15px;">November 2026&nbsp;&nbsp;<a href="https://ai.stanford.edu/blog/scholarcatalyst/" style="color:#0E8C8C; font-weight:450;">SAIL Blog Post</a></span>
-  </div>
-  </div>
+  <span style="font-size:15px;">November 2026&nbsp;&nbsp;<a href="https://ai.stanford.edu/blog/scholarcatalyst/" style="color:#0E8C8C; font-weight:450;">Stanford AI Lab Blog</a></span>
 </p>
 <p style="margin:0; margin-top:28px; font-weight:300">
   <div style="display:flex; justify-content:space-between">
@@ -51,12 +46,7 @@ layout: default
   </div>
   <span style="font-size:0.92em; font-weight:350;"><span style="text-decoration:underline;">Sohyeon Kim</span><sup>*</sup>, Yoonho Lee<sup>*</sup>, Bo Liu, Dayoon Ko, Rulin Shao, Seungone Kim, Graham Neubig, Pang Wei Koh, Aakanksha Chowdhery, Akari Asai, Omar Khattab, Yejin Choi, Gunhee Kim, Chelsea Finn</span><br>
   <span style="font-size:15px;">Preprint 2026&nbsp;&nbsp;<a href="{{ '/project/ScholarCatalyst/' | relative_url }}" style="color:#0E8C8C; font-weight:450;">Website</a>&nbsp;&nbsp;<a href="https://arxiv.org/abs/2610.02202" style="color:#0E8C8C; font-weight:450;">Paper</a>&nbsp;&nbsp;<a href="https://github.com/stanford-iris-lab/ScholarCatalyst" style="color:#0E8C8C; font-weight:450;">Code</a>&nbsp;&nbsp;<a href="https://huggingface.co/ScholarCatalyst" style="color:#0E8C8C; font-weight:450;">Data</a>&nbsp;&nbsp;<span style="font-size:13px; color:#777;">*equal contribution</span></span><br>
-  <span style="font-size:15px; color:#000;">Selected for Laude Institute's <a href="https://www.laude.org/updates/slingshots-four" style="color:#0E8C8C; font-weight:450;">Slingshots // FOUR</a></span>
 </p>
-<figure class="scholarcatalyst-figure" style="margin:14px 0 52px 0; display:flex; align-items:center; gap:14px;">
-  <a href="https://www.laude.org/updates/slingshots-four"><img src="{{ '/assets/img/scholarcatalyst.png' | relative_url }}" alt="Selected for Laude Institute's Slingshots // FOUR" style="height:200px; width:auto; max-width:none;"></a>
-  <a href="{{ '/project/ScholarCatalyst/' | relative_url }}"><img src="{{ '/project/ScholarCatalyst/assets/images/fig1.webp' | relative_url }}" alt="ScholarCatalyst task overview: inspiring papers can be semantically dissimilar while topically related papers may not advance a project." style="height:200px; width:auto; max-width:none;"></a>
-</figure>
 <p style="margin:0; margin-top:10px; font-weight:300">
   <div style="display:flex; justify-content:space-between">
   <span style="color:#000; font-weight:500">MULTI3IR: A Benchmark for Multi-perspective Multi-domain Multi-modal Information Retrieval</span>
